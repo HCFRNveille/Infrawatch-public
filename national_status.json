@@ -1,0 +1,121 @@
+{
+  "schema_version": "analytics-0.1",
+  "generated_at": "2026-08-26T12:35:27.169161+00:00",
+  "national": {
+    "level": "N1",
+    "label": "Vigilance"
+  },
+  "sectors": {
+    "electricity": {
+      "level": "N0",
+      "label": "Nominal",
+      "confidence": "élevée",
+      "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
+      "metrics": {
+        "consumption_mw": 49717.0,
+        "forecast_error_pct": 1.744,
+        "exchange_ratio_pct": -15.844,
+        "observation_time": "2026-08-26T12:15:00+00:00"
+      },
+      "baseline": {
+        "forecast_error_abs_pct": {
+          "count": 0,
+          "median": null,
+          "mean": null,
+          "stdev": null,
+          "p90": null,
+          "p95": null
+        }
+      }
+    },
+    "nuclear": {
+      "level": "N0",
+      "label": "Nominal",
+      "confidence": "moyenne+",
+      "rationale": "Qualification provisoire fondée sur disponibilité et événements fortuits ; la baseline saisonnière remplacera progressivement les seuils initiaux.",
+      "metrics": {
+        "fleet_availability_pct": 59.9,
+        "fleet_available_capacity_mw": 37732.0,
+        "fleet_max_capacity_mw": 62990.0,
+        "planned_current_events": 23,
+        "unplanned_current_events": 6,
+        "chronic_current_events": 207
+      },
+      "baseline": {
+        "fleet_availability_pct": {
+          "count": 0,
+          "median": null,
+          "mean": null,
+          "stdev": null,
+          "p90": null,
+          "p95": null
+        },
+        "unplanned_events": {
+          "count": 0,
+          "median": null,
+          "mean": null,
+          "stdev": null,
+          "p90": null,
+          "p95": null
+        }
+      }
+    },
+    "telecom_mobile": {
+      "level": "N1",
+      "label": "Vigilance",
+      "confidence": "élevée",
+      "rationale": "Concentrations territoriales multi-opérateurs significatives.",
+      "metrics": {
+        "national_down_ratio_pct": 1.4362,
+        "unique_operator_sites_down": 1784,
+        "active_operator_sites_reference": 124214,
+        "four_operator_clusters": 6,
+        "multi_operator_hotspots_20pct": 1,
+        "by_operator": [
+          {
+            "operator_code": "bouygues",
+            "operator": "Bouygues Telecom",
+            "sites_down": 316,
+            "active_sites_reference": 30563,
+            "down_ratio_pct": 1.0339
+          },
+          {
+            "operator_code": "free",
+            "operator": "Free",
+            "sites_down": 154,
+            "active_sites_reference": 30636,
+            "down_ratio_pct": 0.5027
+          },
+          {
+            "operator_code": "orange",
+            "operator": "Orange",
+            "sites_down": 866,
+            "active_sites_reference": 32607,
+            "down_ratio_pct": 2.6559
+          },
+          {
+            "operator_code": "sfr",
+            "operator": "SFR",
+            "sites_down": 448,
+            "active_sites_reference": 30408,
+            "down_ratio_pct": 1.4733
+          }
+        ]
+      },
+      "baseline": {
+        "national_down_ratio_pct": {
+          "count": 0,
+          "median": null,
+          "mean": null,
+          "stdev": null,
+          "p90": null,
+          "p95": null
+        }
+      }
+    }
+  },
+  "method": {
+    "principle": "Mesure actuelle -> baseline comparable -> anomalie -> persistance/concentration -> N0-N4.",
+    "baseline_note": "Avant 14 observations historiques comparables, des seuils provisoires conservateurs sont utilisés."
+  }
+}
