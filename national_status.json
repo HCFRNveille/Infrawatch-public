@@ -1,6 +1,6 @@
 {
-  "schema_version": "analytics-0.2",
-  "generated_at": "2026-08-28T09:41:46.549389+00:00",
+  "schema_version": "analytics-0.3",
+  "generated_at": "2026-08-28T09:48:19.996242+00:00",
   "national": {
     "level": "N1",
     "label": "Vigilance"
@@ -12,17 +12,17 @@
       "confidence": "élevée",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 48515.0,
-        "forecast_error_pct": 1.062,
-        "exchange_ratio_pct": -23.762,
-        "observation_time": "2026-08-28T09:15:00+00:00"
+        "consumption_mw": 48484.0,
+        "forecast_error_pct": 0.38,
+        "exchange_ratio_pct": -23.851,
+        "observation_time": "2026-08-28T09:30:00+00:00"
       },
       "baseline": {
         "forecast_error_abs_pct": {
-          "count": 18,
-          "median": 0.27,
-          "mean": 0.3902,
-          "stdev": 0.3592,
+          "count": 19,
+          "median": 0.359,
+          "mean": 0.4256,
+          "stdev": 0.3816,
           "p90": 1.062,
           "p95": 1.062
         }
@@ -34,27 +34,27 @@
       "confidence": "élevée",
       "rationale": "Disponibilité et événements fortuits compatibles avec la référence historique.",
       "metrics": {
-        "fleet_availability_pct": 60.73,
-        "fleet_available_capacity_mw": 38254.0,
+        "fleet_availability_pct": 60.7,
+        "fleet_available_capacity_mw": 38237.0,
         "fleet_max_capacity_mw": 62990.0,
         "planned_current_events": 23,
         "unplanned_current_events": 7,
-        "chronic_current_events": 205
+        "chronic_current_events": 207
       },
       "baseline": {
         "fleet_availability_pct": {
-          "count": 27,
+          "count": 28,
           "median": 60.73,
-          "mean": 59.627,
-          "stdev": 2.051,
+          "mean": 59.6664,
+          "stdev": 2.0234,
           "p90": 61.54,
           "p95": 61.54
         },
         "unplanned_events": {
-          "count": 27,
+          "count": 28,
           "median": 7.0,
-          "mean": 7.3704,
-          "stdev": 1.1485,
+          "mean": 7.3571,
+          "stdev": 1.1292,
           "p90": 9.0,
           "p95": 9.0
         }
@@ -104,12 +104,12 @@
       },
       "baseline": {
         "national_down_ratio_pct": {
-          "count": 27,
+          "count": 28,
           "median": 1.5667,
-          "mean": 1.5228,
-          "stdev": 0.0698,
+          "mean": 1.5247,
+          "stdev": 0.0693,
           "p90": 1.5779,
-          "p95": 1.5836
+          "p95": 1.5832
         }
       }
     },
@@ -131,17 +131,82 @@
         "alerts": []
       },
       "baseline": {}
+    },
+    "fuels": {
+      "level": "N1",
+      "label": "Vigilance",
+      "confidence": "moyenne+",
+      "rationale": "Des concentrations territoriales significatives de ruptures sont observées.",
+      "metrics": {
+        "eligible_stations": 9786,
+        "stations_with_any_shortage": 332,
+        "national_shortage_ratio_pct": 3.3926,
+        "diesel_shortage_ratio_pct": 1.3216,
+        "petrol_shortage_ratio_pct": 3.1681,
+        "departments_with_shortage": 82,
+        "significant_departments": [
+          {
+            "dept_code": "67",
+            "shortage_ratio_pct": 16.4384,
+            "stations_with_any_shortage": 24,
+            "eligible_stations": 146
+          },
+          {
+            "dept_code": "75",
+            "shortage_ratio_pct": 12.766,
+            "stations_with_any_shortage": 6,
+            "eligible_stations": 47
+          },
+          {
+            "dept_code": "68",
+            "shortage_ratio_pct": 10.6195,
+            "stations_with_any_shortage": 12,
+            "eligible_stations": 113
+          }
+        ],
+        "severe_departments": [
+          {
+            "dept_code": "67",
+            "shortage_ratio_pct": 16.4384,
+            "stations_with_any_shortage": 24,
+            "eligible_stations": 146
+          }
+        ]
+      },
+      "baseline": {
+        "national_shortage_ratio_pct": {
+          "count": 0,
+          "median": null,
+          "mean": null,
+          "stdev": null,
+          "p90": null,
+          "p95": null
+        }
+      }
     }
   },
   "method": {
     "principle": "Mesure actuelle -> référence opérationnelle ou baseline comparable -> anomalie -> persistance/concentration -> N0-N4.",
-    "baseline_note": "Avant 14 observations historiques comparables, des seuils provisoires conservateurs sont utilisés pour les secteurs nécessitant une baseline. Le gaz repose prioritairement sur la vigilance opérationnelle Smart NaTran.",
+    "baseline_note": "Avant 14 observations historiques comparables, des seuils provisoires conservateurs sont utilisés pour les secteurs nécessitant une baseline. Le gaz repose prioritairement sur la vigilance opérationnelle Smart NaTran. Les carburants combinent taux national de rupture et concentration territoriale.",
     "gas_mapping": {
       "GREEN": "N0",
       "ORANGE": "N1",
       "RED": "N2",
       "VIOLET": "N3",
       "UNKNOWN": "ND"
+    },
+    "fuels_provisional_thresholds": {
+      "national": {
+        "N1": ">= 5 %",
+        "N2": ">= 8 %",
+        "N3": ">= 15 %",
+        "N4": "Non produit automatiquement par le seul taux de rupture."
+      },
+      "territorial": {
+        "significant": ">= 10 %, >= 3 stations en rupture et >= 20 stations éligibles.",
+        "severe": ">= 15 %, >= 5 stations en rupture et >= 40 stations éligibles.",
+        "critical": ">= 25 %, >= 10 stations en rupture et >= 40 stations éligibles."
+      }
     }
   }
 }
