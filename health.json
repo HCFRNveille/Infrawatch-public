@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-08-30T05:44:08.642479+00:00",
+  "generated_at": "2026-08-30T14:44:06.330743+00:00",
   "sources": {
     "rte_eco2mix": {
       "status": "OK",
       "status_code": 200,
       "source_api": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records",
-      "observation_time": "2026-08-30T05:15:00+00:00"
+      "observation_time": "2026-08-30T14:15:00+00:00"
     },
     "telecom": {
       "free": {
         "status_code": 200,
         "content_type": "text/csv; charset=UTF-8",
-        "content_length": 16782,
-        "last_modified": "Sun, 30 Aug 2026 05:43:18 GMT",
-        "etag": "W/\"418e-1a051319299\"",
+        "content_length": 14137,
+        "last_modified": "Sun, 30 Aug 2026 14:43:18 GMT",
+        "etag": "W/\"3739-1a0531ff5a7\"",
         "status": "OK",
-        "rows": 114,
-        "valid_coordinates": 114,
-        "valid_departments": 114,
-        "valid_communes": 114,
+        "rows": 97,
+        "valid_coordinates": 97,
+        "valid_departments": 97,
+        "valid_communes": 97,
         "original_columns": [
           "code_site_op",
           "region",
@@ -45,8 +45,8 @@
         "status_code": 200,
         "content_type": "text/csv",
         "content_length": 110307,
-        "last_modified": "Sun, 30 Aug 2026 03:00:11 GMT",
-        "etag": "\"1aee3-65a3ae24f60b9\"",
+        "last_modified": "Sun, 30 Aug 2026 09:00:13 GMT",
+        "etag": "\"1aee3-65a3fe9df29c8\"",
         "status": "OK",
         "rows": 689,
         "valid_coordinates": 689,
@@ -80,14 +80,14 @@
       "sfr": {
         "status_code": 200,
         "content_type": "text/csv",
-        "content_length": 44896,
+        "content_length": 44388,
         "last_modified": null,
         "etag": null,
         "status": "OK",
-        "rows": 293,
-        "valid_coordinates": 290,
-        "valid_departments": 290,
-        "valid_communes": 293,
+        "rows": 294,
+        "valid_coordinates": 291,
+        "valid_departments": 291,
+        "valid_communes": 294,
         "original_columns": [
           "code_site_op",
           "Antenne relais gérée par SFR",
@@ -164,31 +164,8 @@
       }
     },
     "edf_remit": {
-      "status": "OK",
-      "status_code": 200,
-      "content_type": "application/csv",
-      "content_length": 9510412,
-      "last_modified": "Sun, 30 Aug 2026 01:54:28 GMT",
-      "etag": null,
-      "source_url": "https://www.edf.fr/doaat/export/light/csv",
-      "encoding_used": "cp1252",
-      "header_line": 1,
-      "active_publications": 17389,
-      "current_operational_events": 28,
-      "current_chronic_events": 190,
-      "detected_columns": {
-        "status": "Status",
-        "identifier": "Identifiant",
-        "version": "Numéro de version",
-        "asset": "Nom",
-        "asset_type": "Filière",
-        "start": "Date de début",
-        "end": "Date de fin",
-        "event_type": "Type",
-        "maximum_capacity": "Puissance maximale (MW)",
-        "available_capacity": "Puissance disponible (MW)",
-        "publication": "Date de publication"
-      }
+      "status": "ERROR",
+      "error": "RuntimeError: Schéma EDF incomplet : status, fuel, start, end, event_type, maximum_capacity, available_capacity"
     },
     "gas": {
       "status": "OK",
@@ -199,7 +176,7 @@
         "source": "Smart NaTran",
         "dataset": "infovigilance",
         "observation_date": "2026-08-30",
-        "operational_status": "GREEN",
+        "operational_status": "ORANGE",
         "data_quality": "OK",
         "limits_count": 10,
         "unknown_limits_count": 0
@@ -216,58 +193,58 @@
       "status": "OK",
       "source": "Prix des carburants - Ministère de l'Économie",
       "dataset": "instantane_ruptures",
-      "collected_at": "2026-08-30T05:44:21.444606+00:00",
+      "collected_at": "2026-08-30T14:44:16.515780+00:00",
       "source_url": "https://donnees.roulez-eco.fr/opendata/instantane_ruptures",
       "stations_source_total": 9801,
-      "eligible_stations": 9790
+      "eligible_stations": 9791
     },
     "rail": {
       "status": "OK",
       "source": "SNCF / transport.data.gouv.fr",
       "scope": "TGV, Intercités et TER",
-      "collected_at": "2026-08-30T05:44:23.568801+00:00",
+      "collected_at": "2026-08-30T14:44:18.719866+00:00",
       "service_alerts": {
         "status": "OK",
         "url": "https://proxy.transport.data.gouv.fr/resource/sncf-gtfs-rt-service-alerts",
         "http_status": 200,
-        "content_bytes": 825452,
+        "content_bytes": 926963,
         "gtfs_realtime_version": "1.0",
-        "feed_timestamp": "2026-08-30T05:44:20+00:00",
-        "entities_count": 347
+        "feed_timestamp": "2026-08-30T14:42:56+00:00",
+        "entities_count": 439
       },
       "trip_updates": {
         "status": "OK",
         "url": "https://proxy.transport.data.gouv.fr/resource/sncf-gtfs-rt-trip-updates",
         "http_status": 200,
-        "content_bytes": 489194,
+        "content_bytes": 912196,
         "gtfs_realtime_version": "1.0",
-        "feed_timestamp": "2026-08-30T05:44:06+00:00",
-        "entities_count": 669
+        "feed_timestamp": "2026-08-30T14:42:47+00:00",
+        "entities_count": 1291
       }
     },
     "risks_threats": {
       "status": "OK",
       "schema_version": "risks-threats-0.4",
-      "generated_at": "2026-08-30T05:44:25.210025+00:00",
-      "operational_slot": "morning",
-      "operational_cycle_id": "2026-08-30:morning",
+      "generated_at": "2026-08-30T14:44:20.698501+00:00",
+      "operational_slot": "evening",
+      "operational_cycle_id": "2026-08-30:evening",
       "feeds_configured": 7,
       "feeds_ok": 7,
       "feeds_error": 0,
       "retained_infrastructure_relevant": 2,
-      "new": 0,
-      "carried_over": 2,
+      "new": 2,
+      "carried_over": 0,
       "eligible_for_next_carry": 2
     },
     "infrawatch_point": {
       "status": "OK",
       "schema_version": "infrawatch-point-0.1",
-      "generated_at": "2026-08-30T05:44:37.428581+00:00",
-      "operational_slot": "morning",
-      "operational_cycle_id": "2026-08-30:morning",
+      "generated_at": "2026-08-30T14:44:30.415895+00:00",
+      "operational_slot": "evening",
+      "operational_cycle_id": "2026-08-30:evening",
       "national_level": "N2",
-      "new_risk_signals": 0,
-      "carried_over_risk_signals": 2,
+      "new_risk_signals": 2,
+      "carried_over_risk_signals": 0,
       "concomitant_signals": 0,
       "automatic_causality": false,
       "affects_n0_n4": false
