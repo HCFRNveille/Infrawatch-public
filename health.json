@@ -1,24 +1,38 @@
 {
-  "generated_at": "2026-09-01T05:43:29.657022+00:00",
+  "generated_at": "2026-09-01T09:58:04.607358+00:00",
+  "collection_policy": {
+    "retry_attempts": 3,
+    "retry_delays_seconds": [
+      5.0,
+      15.0
+    ],
+    "fallback_to_previous_snapshot": false,
+    "synthetic_data_allowed": false
+  },
   "sources": {
     "rte_eco2mix": {
       "status": "OK",
       "status_code": 200,
       "source_api": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records",
-      "observation_time": "2026-08-31T13:15:00+00:00"
+      "observation_time": "2026-09-01T09:00:00+00:00",
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 0.501,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "telecom": {
       "free": {
         "status_code": 200,
         "content_type": "text/csv; charset=UTF-8",
-        "content_length": 15083,
-        "last_modified": "Tue, 01 Sep 2026 05:43:21 GMT",
-        "etag": "W/\"3aeb-1a05b7e585f\"",
+        "content_length": 20995,
+        "last_modified": "Tue, 01 Sep 2026 09:57:32 GMT",
+        "etag": "W/\"5203-1a05c670cff\"",
         "status": "OK",
-        "rows": 103,
-        "valid_coordinates": 103,
-        "valid_departments": 103,
-        "valid_communes": 103,
+        "rows": 144,
+        "valid_coordinates": 144,
+        "valid_departments": 144,
+        "valid_communes": 144,
         "original_columns": [
           "code_site_op",
           "region",
@@ -45,8 +59,8 @@
         "status_code": 200,
         "content_type": "text/csv",
         "content_length": 111859,
-        "last_modified": "Tue, 01 Sep 2026 03:00:12 GMT",
-        "etag": "\"1b4f3-65a631e08663b\"",
+        "last_modified": "Tue, 01 Sep 2026 09:00:12 GMT",
+        "etag": "\"1b4f3-65a682586f3b1\"",
         "status": "OK",
         "rows": 700,
         "valid_coordinates": 700,
@@ -80,14 +94,14 @@
       "sfr": {
         "status_code": 200,
         "content_type": "text/csv",
-        "content_length": 43308,
+        "content_length": 46279,
         "last_modified": null,
         "etag": null,
         "status": "OK",
-        "rows": 280,
-        "valid_coordinates": 277,
-        "valid_departments": 277,
-        "valid_communes": 280,
+        "rows": 302,
+        "valid_coordinates": 299,
+        "valid_departments": 299,
+        "valid_communes": 302,
         "original_columns": [
           "code_site_op",
           "Antenne relais gérée par SFR",
@@ -161,7 +175,12 @@
           "orange": 32607,
           "sfr": 30408
         }
-      }
+      },
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 7.217,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "edf_remit": {
       "status": "OK",
@@ -188,7 +207,12 @@
         "maximum_capacity": "Puissance maximale (MW)",
         "available_capacity": "Puissance disponible (MW)",
         "publication": "Date de publication"
-      }
+      },
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 1.458,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "gas": {
       "status": "OK",
@@ -199,7 +223,7 @@
         "source": "Smart NaTran",
         "dataset": "infovigilance",
         "observation_date": "2026-09-01",
-        "operational_status": "GREEN",
+        "operational_status": "ORANGE",
         "data_quality": "OK",
         "limits_count": 10,
         "unknown_limits_count": 0
@@ -210,45 +234,60 @@
         "observation_time": "2026-07-31T21:00:00+00:00",
         "freshness": "historical_reference",
         "france_total_mw": 20062
-      }
+      },
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 1.393,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "fuels": {
       "status": "OK",
       "source": "Prix des carburants - Ministère de l'Économie",
       "dataset": "instantane_ruptures",
-      "collected_at": "2026-09-01T05:43:39.009523+00:00",
+      "collected_at": "2026-09-01T09:58:15.191169+00:00",
       "source_url": "https://donnees.roulez-eco.fr/opendata/instantane_ruptures",
-      "stations_source_total": 9800,
-      "eligible_stations": 9791
+      "stations_source_total": 9802,
+      "eligible_stations": 9789,
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 1.268,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "rail": {
       "status": "OK",
       "source": "SNCF / transport.data.gouv.fr",
       "scope": "TGV, Intercités et TER",
-      "collected_at": "2026-09-01T05:43:40.116263+00:00",
+      "collected_at": "2026-09-01T09:58:16.459642+00:00",
       "service_alerts": {
         "status": "OK",
         "url": "https://proxy.transport.data.gouv.fr/resource/sncf-gtfs-rt-service-alerts",
         "http_status": 200,
-        "content_bytes": 919064,
+        "content_bytes": 922310,
         "gtfs_realtime_version": "1.0",
-        "feed_timestamp": "2026-09-01T05:43:37+00:00",
-        "entities_count": 495
+        "feed_timestamp": "2026-09-01T09:58:09+00:00",
+        "entities_count": 476
       },
       "trip_updates": {
         "status": "OK",
         "url": "https://proxy.transport.data.gouv.fr/resource/sncf-gtfs-rt-trip-updates",
         "http_status": 200,
-        "content_bytes": 1501026,
+        "content_bytes": 967405,
         "gtfs_realtime_version": "1.0",
-        "feed_timestamp": "2026-09-01T05:42:32+00:00",
-        "entities_count": 2172
-      }
+        "feed_timestamp": "2026-09-01T09:57:43+00:00",
+        "entities_count": 1418
+      },
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 1.468,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "risks_threats": {
       "status": "OK",
       "schema_version": "risks-threats-0.4",
-      "generated_at": "2026-09-01T05:43:41.805147+00:00",
+      "generated_at": "2026-09-01T09:58:17.927315+00:00",
       "operational_slot": "morning",
       "operational_cycle_id": "2026-09-01:morning",
       "feeds_configured": 7,
@@ -257,13 +296,20 @@
       "retained_infrastructure_relevant": 0,
       "new": 0,
       "carried_over": 0,
-      "eligible_for_next_carry": 0
+      "eligible_for_next_carry": 0,
+      "affects_operational_collection": false,
+      "affects_n0_n4": false,
+      "attempts": 1,
+      "max_attempts": 3,
+      "elapsed_seconds": 8.424,
+      "recovered_after_retry": false,
+      "retry_delays_seconds": []
     },
     "infrawatch_point": {
-      "status": "DEGRADED",
+      "status": "OK",
       "schema_version": "infrawatch-point-0.1",
-      "generated_at": "2026-09-01T05:43:50.694430+00:00",
-      "operational_slot": "evening",
+      "generated_at": "2026-09-01T09:58:26.362496+00:00",
+      "operational_slot": "morning",
       "operational_cycle_id": "2026-09-01:morning",
       "national_level": "N2",
       "new_risk_signals": 0,
@@ -272,5 +318,16 @@
       "automatic_causality": false,
       "affects_n0_n4": false
     }
+  },
+  "operational_status": "DEGRADED",
+  "status": "DEGRADED",
+  "summary": {
+    "operational_sources_expected": 6,
+    "operational_sources_ok": 5,
+    "operational_sources_degraded": 0,
+    "operational_sources_error": 1,
+    "risks_threats_status": "OK",
+    "no_data_fabrication": true,
+    "fallback_to_previous_snapshot": false
   }
 }
