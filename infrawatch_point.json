@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-09-02T05:44:27.569358+00:00",
+  "generated_at": "2026-09-02T10:07:39.684823+00:00",
   "operational_slot": "morning",
-  "operational_cycle_id": "2026-09-02:morning",
+  "operational_cycle_id": "2026-09-02:evening",
   "report_posture": "VIGILANCE",
   "authority": {
     "n0_n4_source": "national_status.json",
@@ -11,13 +11,13 @@
     "automatic_causality": false
   },
   "source_alignment": {
-    "status": "OK",
-    "operational_generated_at": "2026-09-02T05:44:27.568728+00:00",
-    "risks_threats_generated_at": "2026-09-02T05:44:16.844427+00:00",
-    "age_difference_seconds": 10.724,
+    "status": "DEGRADED",
+    "operational_generated_at": "2026-09-02T10:07:39.684183+00:00",
+    "risks_threats_generated_at": "2026-09-02T10:07:27.776625+00:00",
+    "age_difference_seconds": 11.908,
     "operational_slot": "morning",
-    "risks_threats_slot": "morning",
-    "same_operational_slot": true
+    "risks_threats_slot": "evening",
+    "same_operational_slot": false
   },
   "operational_status": {
     "schema_version": "analytics-0.8",
@@ -79,11 +79,11 @@
         "confidence": "moyenne+",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
         "metrics": {
-          "consumption_mw": 41919.0,
-          "forecast_error_pct": 0.642,
-          "forecast_error_abs_pct": 0.642,
-          "exchange_ratio_pct": -23.536,
-          "observation_time": "2026-09-02T05:15:00+00:00",
+          "consumption_mw": 48921.0,
+          "forecast_error_pct": 0.247,
+          "forecast_error_abs_pct": 0.247,
+          "exchange_ratio_pct": -22.888,
+          "observation_time": "2026-09-02T09:45:00+00:00",
           "slot": "morning",
           "statistical_z_score": null
         },
@@ -106,34 +106,34 @@
         "confidence": "moyenne+",
         "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
         "metrics": {
-          "fleet_availability_pct": 63.4,
-          "fleet_available_capacity_mw": 39937.0,
-          "fleet_max_capacity_mw": 62990.0,
-          "planned_current_events": 23,
-          "unplanned_current_events": 5,
-          "chronic_current_events": 197,
-          "slot": "morning",
+          "fleet_availability_pct": 83.61,
+          "fleet_available_capacity_mw": 30346.0,
+          "fleet_max_capacity_mw": 36295.0,
+          "planned_current_events": 7,
+          "unplanned_current_events": 2,
+          "chronic_current_events": 295,
+          "slot": "evening",
           "availability_statistical_z_score": null,
           "unplanned_events_statistical_z_score": null
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 5,
+          "comparable_slot": "evening",
+          "comparable_count": 6,
           "fleet_availability_pct": {
-            "count": 5,
-            "median": 60.62,
-            "mean": 60.39,
-            "stdev": 1.6196,
-            "p90": 61.768,
-            "p95": 62.114
+            "count": 6,
+            "median": 59.595,
+            "mean": 59.405,
+            "stdev": 1.9054,
+            "p90": 61.28,
+            "p95": 61.295
           },
           "unplanned_events": {
-            "count": 5,
-            "median": 4.0,
-            "mean": 4.8,
-            "stdev": 1.3038,
-            "p90": 6.2,
-            "p95": 6.6
+            "count": 6,
+            "median": 6.0,
+            "mean": 6.0,
+            "stdev": 1.6733,
+            "p90": 7.5,
+            "p95": 8.25
           }
         }
       },
@@ -143,12 +143,12 @@
         "confidence": "élevée",
         "rationale": "Concentrations territoriales multi-opérateurs significatives.",
         "metrics": {
-          "national_down_ratio_pct": 1.4024,
-          "unique_operator_sites_down": 1742,
+          "national_down_ratio_pct": 1.4982,
+          "unique_operator_sites_down": 1861,
           "active_operator_sites_reference": 124214,
           "four_operator_clusters": 5,
           "multi_operator_hotspots_20pct": 0,
-          "slot": "morning",
+          "slot": "evening",
           "statistical_z_score": null,
           "by_operator": [
             {
@@ -161,9 +161,9 @@
             {
               "operator_code": "free",
               "operator": "Free",
-              "sites_down": 107,
+              "sites_down": 178,
               "active_sites_reference": 30636,
-              "down_ratio_pct": 0.3493
+              "down_ratio_pct": 0.581
             },
             {
               "operator_code": "orange",
@@ -175,22 +175,22 @@
             {
               "operator_code": "sfr",
               "operator": "SFR",
-              "sites_down": 282,
+              "sites_down": 330,
               "active_sites_reference": 30408,
-              "down_ratio_pct": 0.9274
+              "down_ratio_pct": 1.0852
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 5,
+          "comparable_slot": "evening",
+          "comparable_count": 7,
           "national_down_ratio_pct": {
-            "count": 5,
-            "median": 1.177,
-            "mean": 1.2071,
-            "stdev": 0.1725,
-            "p90": 1.3862,
-            "p95": 1.4237
+            "count": 7,
+            "median": 1.1891,
+            "mean": 1.2525,
+            "stdev": 0.1979,
+            "p90": 1.4636,
+            "p95": 1.4841
           }
         }
       },
@@ -232,21 +232,15 @@
         "confidence": "moyenne+",
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
-          "eligible_stations": 9794,
-          "stations_with_any_shortage": 606,
-          "national_shortage_ratio_pct": 6.1875,
-          "diesel_shortage_ratio_pct": 1.6984,
-          "petrol_shortage_ratio_pct": 5.9156,
-          "departments_with_shortage": 91,
-          "slot": "morning",
+          "eligible_stations": 9791,
+          "stations_with_any_shortage": 546,
+          "national_shortage_ratio_pct": 5.5765,
+          "diesel_shortage_ratio_pct": 1.4655,
+          "petrol_shortage_ratio_pct": 5.332,
+          "departments_with_shortage": 87,
+          "slot": "evening",
           "statistical_z_score": null,
           "significant_departments": [
-            {
-              "dept_code": "67",
-              "shortage_ratio_pct": 19.1781,
-              "stations_with_any_shortage": 28,
-              "eligible_stations": 146
-            },
             {
               "dept_code": "35",
               "shortage_ratio_pct": 18.7919,
@@ -254,70 +248,58 @@
               "eligible_stations": 149
             },
             {
+              "dept_code": "67",
+              "shortage_ratio_pct": 17.1233,
+              "stations_with_any_shortage": 25,
+              "eligible_stations": 146
+            },
+            {
+              "dept_code": "72",
+              "shortage_ratio_pct": 15.4639,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 97
+            },
+            {
               "dept_code": "75",
-              "shortage_ratio_pct": 17.0213,
-              "stations_with_any_shortage": 8,
+              "shortage_ratio_pct": 14.8936,
+              "stations_with_any_shortage": 7,
               "eligible_stations": 47
             },
             {
               "dept_code": "53",
-              "shortage_ratio_pct": 16.6667,
-              "stations_with_any_shortage": 9,
+              "shortage_ratio_pct": 14.8148,
+              "stations_with_any_shortage": 8,
               "eligible_stations": 54
             },
             {
-              "dept_code": "33",
-              "shortage_ratio_pct": 14.9123,
-              "stations_with_any_shortage": 34,
-              "eligible_stations": 228
-            },
-            {
               "dept_code": "47",
-              "shortage_ratio_pct": 14.4578,
-              "stations_with_any_shortage": 12,
+              "shortage_ratio_pct": 13.253,
+              "stations_with_any_shortage": 11,
               "eligible_stations": 83
             },
             {
-              "dept_code": "72",
-              "shortage_ratio_pct": 14.433,
-              "stations_with_any_shortage": 14,
-              "eligible_stations": 97
-            },
-            {
               "dept_code": "24",
-              "shortage_ratio_pct": 14.1414,
-              "stations_with_any_shortage": 14,
+              "shortage_ratio_pct": 13.1313,
+              "stations_with_any_shortage": 13,
               "eligible_stations": 99
             },
             {
+              "dept_code": "33",
+              "shortage_ratio_pct": 11.4035,
+              "stations_with_any_shortage": 26,
+              "eligible_stations": 228
+            },
+            {
               "dept_code": "46",
-              "shortage_ratio_pct": 12.6984,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 63
+              "shortage_ratio_pct": 11.2903,
+              "stations_with_any_shortage": 7,
+              "eligible_stations": 62
             },
             {
               "dept_code": "41",
-              "shortage_ratio_pct": 12.5,
-              "stations_with_any_shortage": 8,
+              "shortage_ratio_pct": 10.9375,
+              "stations_with_any_shortage": 7,
               "eligible_stations": 64
-            },
-            {
-              "dept_code": "68",
-              "shortage_ratio_pct": 11.5044,
-              "stations_with_any_shortage": 13,
-              "eligible_stations": 113
-            },
-            {
-              "dept_code": "60",
-              "shortage_ratio_pct": 11.1111,
-              "stations_with_any_shortage": 13,
-              "eligible_stations": 117
-            },
-            {
-              "dept_code": "95",
-              "shortage_ratio_pct": 11.1111,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 108
             },
             {
               "dept_code": "70",
@@ -326,31 +308,25 @@
               "eligible_stations": 55
             },
             {
-              "dept_code": "11",
-              "shortage_ratio_pct": 10.4651,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 86
-            },
-            {
               "dept_code": "64",
               "shortage_ratio_pct": 10.4348,
               "stations_with_any_shortage": 12,
               "eligible_stations": 115
             },
             {
-              "dept_code": "16",
-              "shortage_ratio_pct": 10.2941,
-              "stations_with_any_shortage": 7,
-              "eligible_stations": 68
+              "dept_code": "95",
+              "shortage_ratio_pct": 10.1852,
+              "stations_with_any_shortage": 11,
+              "eligible_stations": 108
+            },
+            {
+              "dept_code": "49",
+              "shortage_ratio_pct": 10.0917,
+              "stations_with_any_shortage": 11,
+              "eligible_stations": 109
             }
           ],
           "severe_departments": [
-            {
-              "dept_code": "67",
-              "shortage_ratio_pct": 19.1781,
-              "stations_with_any_shortage": 28,
-              "eligible_stations": 146
-            },
             {
               "dept_code": "35",
               "shortage_ratio_pct": 18.7919,
@@ -358,29 +334,29 @@
               "eligible_stations": 149
             },
             {
-              "dept_code": "75",
-              "shortage_ratio_pct": 17.0213,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 47
+              "dept_code": "67",
+              "shortage_ratio_pct": 17.1233,
+              "stations_with_any_shortage": 25,
+              "eligible_stations": 146
             },
             {
-              "dept_code": "53",
-              "shortage_ratio_pct": 16.6667,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 54
+              "dept_code": "72",
+              "shortage_ratio_pct": 15.4639,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 97
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 4,
+          "comparable_slot": "evening",
+          "comparable_count": 5,
           "national_shortage_ratio_pct": {
-            "count": 4,
-            "median": 6.6497,
-            "mean": 6.3148,
-            "stdev": 1.9325,
-            "p90": 7.9361,
-            "p95": 7.9666
+            "count": 5,
+            "median": 6.6612,
+            "mean": 5.9813,
+            "stdev": 1.8975,
+            "p90": 7.686,
+            "p95": 7.8853
           }
         }
       },
@@ -390,53 +366,53 @@
         "confidence": "moyenne+",
         "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
         "metrics": {
-          "collected_at": "2026-09-02T05:44:15.142661+00:00",
-          "slot": "morning",
-          "trips_count": 2148,
-          "scheduled_trips": 1904,
-          "added_trips": 222,
-          "canceled_trips": 22,
-          "canceled_ratio_pct": 1.0242,
-          "trips_delay_ge_15min": 77,
-          "trips_delay_ge_15min_ratio_pct": 3.5847,
-          "trips_delay_ge_30min": 29,
-          "trips_delay_ge_30min_ratio_pct": 1.3501,
-          "trips_delay_ge_60min": 7,
-          "trips_delay_ge_60min_ratio_pct": 0.3259,
-          "average_max_delay_seconds": 95.3,
-          "maximum_delay_seconds": 6000,
-          "active_service_alerts": 515,
+          "collected_at": "2026-09-02T10:07:25.409953+00:00",
+          "slot": "evening",
+          "trips_count": 1446,
+          "scheduled_trips": 1289,
+          "added_trips": 143,
+          "canceled_trips": 14,
+          "canceled_ratio_pct": 0.9682,
+          "trips_delay_ge_15min": 68,
+          "trips_delay_ge_15min_ratio_pct": 4.7026,
+          "trips_delay_ge_30min": 36,
+          "trips_delay_ge_30min_ratio_pct": 2.4896,
+          "trips_delay_ge_60min": 11,
+          "trips_delay_ge_60min_ratio_pct": 0.7607,
+          "average_max_delay_seconds": 125.4,
+          "maximum_delay_seconds": 5400,
+          "active_service_alerts": 459,
           "qualified_operational_alerts": 0,
           "canceled_statistical_z_score": null,
           "delay_30_statistical_z_score": null,
           "delay_60_statistical_z_score": null
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 4,
+          "comparable_slot": "evening",
+          "comparable_count": 5,
           "canceled_ratio_pct": {
-            "count": 4,
-            "median": 1.545,
-            "mean": 1.4165,
-            "stdev": 0.7861,
-            "p90": 2.0833,
-            "p95": 2.1055
+            "count": 5,
+            "median": 1.5333,
+            "mean": 1.3296,
+            "stdev": 0.5528,
+            "p90": 1.8394,
+            "p95": 1.9048
           },
           "delay_ge_30min_ratio_pct": {
-            "count": 4,
-            "median": 1.3872,
-            "mean": 1.4185,
-            "stdev": 0.8704,
-            "p90": 2.2408,
-            "p95": 2.3461
+            "count": 5,
+            "median": 1.5335,
+            "mean": 1.3768,
+            "stdev": 0.2563,
+            "p90": 1.5482,
+            "p95": 1.5487
           },
           "delay_ge_60min_ratio_pct": {
-            "count": 4,
-            "median": 0.1808,
-            "mean": 0.3795,
-            "stdev": 0.5306,
-            "p90": 0.8923,
-            "p95": 1.0243
+            "count": 5,
+            "median": 0.3873,
+            "mean": 0.3667,
+            "stdev": 0.1008,
+            "p90": 0.4636,
+            "p95": 0.4739
           }
         }
       }
@@ -445,7 +421,31 @@
   "risks_threats": {
     "schema_version": "risks-threats-0.4",
     "source_health": "OK",
-    "new_signals": [],
+    "new_signals": [
+      {
+        "fingerprint": "c2a84a19418c893c4a2efccfef36efe33585fa33aa187d72bd1cd30051e717cd",
+        "title": "Le débat - Incursions de drones, sabotages, cyberattaques, espionnage : Moscou pousse-t-il l'Europe à bout ?",
+        "link": "https://www.france24.com/fr/%C3%A9missions/le-d%C3%A9bat/20260901-incursions-de-drones-sabotages-cyberattaques-espionnages-moscou-pousse-t-il-l-europe-%C3%A0-bout?GJlXzGgqHj=&utm_medium=social&utm_campaign=x&utm_source=shorty&utm_slink=f24.my%2FC8ME",
+        "source_domain": "france24.com",
+        "category": "hybrid_threats",
+        "category_label": "Menaces hybrides",
+        "published_at": "2026-09-02T08:50:01+00:00",
+        "qualification": "WATCH",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "air"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-02T10:07:27.776625+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "carried_over_context": [
       {
         "fingerprint": "9fa492959785e4edc2277bd0f85c3db6662fcded0145af5e239e9cbda02aed8a",
@@ -466,7 +466,7 @@
           "water"
         ],
         "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-        "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -491,7 +491,7 @@
           "rail"
         ],
         "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-        "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -499,6 +499,29 @@
       }
     ],
     "active_situation": [
+      {
+        "fingerprint": "c2a84a19418c893c4a2efccfef36efe33585fa33aa187d72bd1cd30051e717cd",
+        "title": "Le débat - Incursions de drones, sabotages, cyberattaques, espionnage : Moscou pousse-t-il l'Europe à bout ?",
+        "link": "https://www.france24.com/fr/%C3%A9missions/le-d%C3%A9bat/20260901-incursions-de-drones-sabotages-cyberattaques-espionnages-moscou-pousse-t-il-l-europe-%C3%A0-bout?GJlXzGgqHj=&utm_medium=social&utm_campaign=x&utm_source=shorty&utm_slink=f24.my%2FC8ME",
+        "source_domain": "france24.com",
+        "category": "hybrid_threats",
+        "category_label": "Menaces hybrides",
+        "published_at": "2026-09-02T08:50:01+00:00",
+        "qualification": "WATCH",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "air"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-02T10:07:27.776625+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
       {
         "fingerprint": "9fa492959785e4edc2277bd0f85c3db6662fcded0145af5e239e9cbda02aed8a",
         "title": "Figeac cherche des solutions pour ne pas manquer d’eau potable lors des prochaines sécheresses",
@@ -518,7 +541,7 @@
           "water"
         ],
         "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-        "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -543,7 +566,7 @@
           "rail"
         ],
         "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-        "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -552,13 +575,13 @@
     ],
     "resolved_since_collection": [],
     "counts": {
-      "retained": 2,
-      "new": 0,
+      "retained": 3,
+      "new": 1,
       "carried_over": 2,
-      "active_situation": 2,
+      "active_situation": 3,
       "resolved": 0,
       "impact_candidates": 2,
-      "watch": 0,
+      "watch": 1,
       "context": 0
     }
   },
@@ -589,7 +612,7 @@
             "rail"
           ],
           "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-          "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+          "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
@@ -633,7 +656,31 @@
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
       }
     ],
-    "new_risk_signals": [],
+    "new_risk_signals": [
+      {
+        "fingerprint": "c2a84a19418c893c4a2efccfef36efe33585fa33aa187d72bd1cd30051e717cd",
+        "title": "Le débat - Incursions de drones, sabotages, cyberattaques, espionnage : Moscou pousse-t-il l'Europe à bout ?",
+        "link": "https://www.france24.com/fr/%C3%A9missions/le-d%C3%A9bat/20260901-incursions-de-drones-sabotages-cyberattaques-espionnages-moscou-pousse-t-il-l-europe-%C3%A0-bout?GJlXzGgqHj=&utm_medium=social&utm_campaign=x&utm_source=shorty&utm_slink=f24.my%2FC8ME",
+        "source_domain": "france24.com",
+        "category": "hybrid_threats",
+        "category_label": "Menaces hybrides",
+        "published_at": "2026-09-02T08:50:01+00:00",
+        "qualification": "WATCH",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "air"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-02T10:07:27.776625+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "inherited_risk_context": [
       {
         "fingerprint": "9fa492959785e4edc2277bd0f85c3db6662fcded0145af5e239e9cbda02aed8a",
@@ -654,7 +701,7 @@
           "water"
         ],
         "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-        "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -679,7 +726,7 @@
           "rail"
         ],
         "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-        "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+        "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -712,7 +759,7 @@
             "rail"
           ],
           "first_seen_at": "2026-09-01T14:22:12.127542+00:00",
-          "last_seen_at": "2026-09-02T05:44:16.844427+00:00",
+          "last_seen_at": "2026-09-02T10:07:27.776625+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
