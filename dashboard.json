@@ -1,10 +1,19 @@
 {
-  "schema_version": "infrawatch-dashboard-0.1",
-  "generated_at": "2026-09-03T05:44:28.769968+00:00",
-  "point_label": "POINT DE SITUATION NATIONAL · 08H00",
+  "schema_version": "infrawatch-dashboard-0.2",
+  "mode": "LIVE",
+  "generated_at": "2026-09-03T09:33:53.367462+00:00",
+  "point_label": "ÉTAT COURANT NATIONAL · 11H33",
   "location": "France",
+  "last_consolidated_point": {
+    "generated_at": "2026-09-03T05:44:28.769968+00:00",
+    "operational_slot": "morning",
+    "operational_cycle_id": "2026-09-03:morning",
+    "label": "POINT DE SITUATION NATIONAL · 08H00",
+    "national_level": "N2",
+    "national_label": "Dégradé"
+  },
   "source_health": {
-    "ok": 6,
+    "ok": 5,
     "total": 6,
     "freshness_minutes": 0
   },
@@ -18,10 +27,10 @@
   "driver": {
     "sector": "CARBURANTS",
     "sector_id": "fuel",
-    "metric": "4,99 %",
-    "numerator": 489,
-    "denominator": 9791,
-    "delta": -1.19
+    "metric": "4,77 %",
+    "numerator": 467,
+    "denominator": 9789,
+    "delta": -1.42
   },
   "sectors": [
     {
@@ -30,26 +39,26 @@
       "short": "ÉLEC.",
       "level": "N0",
       "trend": "up",
-      "metric": "43,09 GW",
-      "detail": "écart prévision 0,91 %"
+      "metric": "48,05 GW",
+      "detail": "écart prévision -1,46 %"
     },
     {
       "id": "nuclear",
       "label": "Nucléaire",
       "short": "NUCL.",
       "level": "N0",
-      "trend": "stable",
-      "metric": "39,94 GW",
-      "detail": "63,40 % du parc"
+      "trend": "down",
+      "metric": "38,92 GW",
+      "detail": "61,79 % du parc"
     },
     {
       "id": "gas",
       "label": "Gaz",
       "short": "GAZ",
-      "level": "N1",
+      "level": "N0",
       "trend": "unknown",
-      "metric": "9/10 vertes",
-      "detail": "Smart NaTran ORANGE"
+      "metric": "10/10 vertes",
+      "detail": "Smart NaTran GREEN"
     },
     {
       "id": "fuel",
@@ -57,8 +66,8 @@
       "short": "CARB.",
       "level": "N2",
       "trend": "down",
-      "metric": "4,99 %",
-      "detail": "489 stations"
+      "metric": "4,77 %",
+      "detail": "467 stations"
     },
     {
       "id": "telecom",
@@ -66,7 +75,7 @@
       "short": "TÉL.",
       "level": "N1",
       "trend": "down",
-      "metric": "1,05 %",
+      "metric": "1,09 %",
       "detail": "8 clusters"
     },
     {
@@ -75,14 +84,14 @@
       "short": "RAIL",
       "level": "N0",
       "trend": "up",
-      "metric": "1,81 %",
+      "metric": "1,59 %",
       "detail": "trains annulés"
     }
   ],
   "territories": [
     {
       "name": "Bas-Rhin",
-      "value": 17.8082
+      "value": 17.2414
     },
     {
       "name": "Paris",
@@ -90,15 +99,15 @@
     },
     {
       "name": "Ille-et-Vilaine",
-      "value": 16.7785
+      "value": 15.4362
     },
     {
       "name": "Sarthe",
-      "value": 15.4639
+      "value": 14.433
     },
     {
-      "name": "Mayenne",
-      "value": 12.963
+      "name": "Indre-et-Loire",
+      "value": 13.1868
     }
   ],
   "history": [
@@ -134,8 +143,17 @@
     },
     {
       "label": "03/09",
-      "fuel": 4.9944,
-      "telecom": 1.0474
+      "fuel": 4.7707,
+      "telecom": 1.0925
+    }
+  ],
+  "live_history": [
+    {
+      "generated_at": "2026-09-03T09:33:41.097498+00:00",
+      "label": "03/09 11:33",
+      "national_level": "N2",
+      "fuel": 4.7707,
+      "telecom": 1.0925
     }
   ],
   "threats": {
@@ -153,20 +171,20 @@
       "text": "Aucune concomitance intersectorielle n'est caractérisée dans le point InfraWatch courant."
     }
   ],
-  "assessment": "Situation nationale N2 — Dégradé. Les secteurs en vigilance ou dégradation sont : Télécommunications N1, Gaz N1, Carburants N2. Restent au niveau nominal : Électricité, Nucléaire, Ferroviaire.",
-  "watchlist": [
-    "Télécommunications N1",
-    "Gaz N1",
-    "Carburants N2"
-  ],
+  "assessment": "Situation nationale N2 — Dégradé.",
+  "watchlist": [],
   "authority": {
-    "n0_n4_source": "national_status.json",
+    "current_n0_n4_source": "current_status.json",
+    "last_consolidated_n0_n4_source": "national_status.json",
     "risks_threats_source": "risks_threats.json",
     "cross_sector_source": "infrawatch_point.json",
-    "health_source": "health.json",
+    "health_source": "health_live.json",
+    "official_history_source": "history.ndjson",
+    "live_history_source": "history_live.ndjson",
     "dashboard_is_presentation_only": true,
     "automatic_causality": false,
     "rss_affects_n0_n4": false,
-    "synthetic_data_allowed": false
+    "synthetic_data_allowed": false,
+    "live_history_affects_official_baseline": false
   }
 }
