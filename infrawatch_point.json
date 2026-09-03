@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-09-03T05:44:28.769968+00:00",
-  "operational_slot": "morning",
-  "operational_cycle_id": "2026-09-03:morning",
+  "generated_at": "2026-09-03T15:06:01.129760+00:00",
+  "operational_slot": "evening",
+  "operational_cycle_id": "2026-09-03:evening",
   "report_posture": "VIGILANCE",
   "authority": {
     "n0_n4_source": "national_status.json",
@@ -12,11 +12,11 @@
   },
   "source_alignment": {
     "status": "OK",
-    "operational_generated_at": "2026-09-03T05:44:28.769319+00:00",
-    "risks_threats_generated_at": "2026-09-03T05:44:20.105617+00:00",
-    "age_difference_seconds": 8.664,
-    "operational_slot": "morning",
-    "risks_threats_slot": "morning",
+    "operational_generated_at": "2026-09-03T15:05:50.172349+00:00",
+    "risks_threats_generated_at": "2026-09-03T15:05:50.182763+00:00",
+    "age_difference_seconds": 0.01,
+    "operational_slot": "evening",
+    "risks_threats_slot": "evening",
     "same_operational_slot": true
   },
   "operational_status": {
@@ -32,13 +32,6 @@
         "label": "Vigilance",
         "confidence": "élevée",
         "rationale": "Concentrations territoriales multi-opérateurs significatives."
-      },
-      {
-        "sector": "gas",
-        "level": "N1",
-        "label": "Vigilance",
-        "confidence": "élevée",
-        "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange."
       },
       {
         "sector": "fuels",
@@ -64,6 +57,13 @@
         "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal."
       },
       {
+        "sector": "gas",
+        "level": "N0",
+        "label": "Nominal",
+        "confidence": "élevée",
+        "rationale": "Les limites surveillées par Smart NaTran sont en situation nominale."
+      },
+      {
         "sector": "rail",
         "level": "N0",
         "label": "Nominal",
@@ -79,24 +79,24 @@
         "confidence": "moyenne+",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
         "metrics": {
-          "consumption_mw": 43090.0,
-          "forecast_error_pct": 0.905,
-          "forecast_error_abs_pct": 0.905,
-          "exchange_ratio_pct": -22.646,
-          "observation_time": "2026-09-03T05:15:00+00:00",
-          "slot": "morning",
+          "consumption_mw": 47660.0,
+          "forecast_error_pct": 0.65,
+          "forecast_error_abs_pct": 0.65,
+          "exchange_ratio_pct": -25.625,
+          "observation_time": "2026-09-03T14:45:00+00:00",
+          "slot": "evening",
           "statistical_z_score": null
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 6,
+          "comparable_slot": "evening",
+          "comparable_count": 8,
           "forecast_error_abs_pct": {
-            "count": 6,
-            "median": 0.7275,
-            "mean": 1.1098,
-            "stdev": 1.0008,
-            "p90": 2.351,
-            "p95": 2.481
+            "count": 8,
+            "median": 1.342,
+            "mean": 1.2655,
+            "stdev": 0.7728,
+            "p90": 2.0041,
+            "p95": 2.3075
           }
         }
       },
@@ -106,34 +106,34 @@
         "confidence": "moyenne+",
         "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
         "metrics": {
-          "fleet_availability_pct": 63.4,
-          "fleet_available_capacity_mw": 39937.0,
+          "fleet_availability_pct": 62.15,
+          "fleet_available_capacity_mw": 39148.0,
           "fleet_max_capacity_mw": 62990.0,
-          "planned_current_events": 23,
+          "planned_current_events": 24,
           "unplanned_current_events": 5,
-          "chronic_current_events": 196,
-          "slot": "morning",
+          "chronic_current_events": 202,
+          "slot": "evening",
           "availability_statistical_z_score": null,
           "unplanned_events_statistical_z_score": null
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 6,
+          "comparable_slot": "evening",
+          "comparable_count": 7,
           "fleet_availability_pct": {
-            "count": 6,
-            "median": 60.675,
-            "mean": 60.8917,
-            "stdev": 1.8996,
-            "p90": 62.93,
-            "p95": 63.165
+            "count": 7,
+            "median": 59.9,
+            "mean": 62.92,
+            "stdev": 9.4611,
+            "p90": 70.39,
+            "p95": 77.2
           },
           "unplanned_events": {
-            "count": 6,
-            "median": 4.5,
-            "mean": 4.8333,
-            "stdev": 1.169,
-            "p90": 6.0,
-            "p95": 6.5
+            "count": 7,
+            "median": 6.0,
+            "mean": 5.2857,
+            "stdev": 2.43,
+            "p90": 7.2,
+            "p95": 8.1
           }
         }
       },
@@ -143,12 +143,12 @@
         "confidence": "élevée",
         "rationale": "Concentrations territoriales multi-opérateurs significatives.",
         "metrics": {
-          "national_down_ratio_pct": 1.0474,
-          "unique_operator_sites_down": 1301,
+          "national_down_ratio_pct": 1.0095,
+          "unique_operator_sites_down": 1254,
           "active_operator_sites_reference": 124214,
-          "four_operator_clusters": 8,
+          "four_operator_clusters": 6,
           "multi_operator_hotspots_20pct": 0,
-          "slot": "morning",
+          "slot": "evening",
           "statistical_z_score": null,
           "by_operator": [
             {
@@ -161,9 +161,9 @@
             {
               "operator_code": "free",
               "operator": "Free",
-              "sites_down": 97,
+              "sites_down": 69,
               "active_sites_reference": 30636,
-              "down_ratio_pct": 0.3166
+              "down_ratio_pct": 0.2252
             },
             {
               "operator_code": "orange",
@@ -175,54 +175,41 @@
             {
               "operator_code": "sfr",
               "operator": "SFR",
-              "sites_down": 257,
+              "sites_down": 238,
               "active_sites_reference": 30408,
-              "down_ratio_pct": 0.8452
+              "down_ratio_pct": 0.7827
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 6,
+          "comparable_slot": "evening",
+          "comparable_count": 8,
           "national_down_ratio_pct": {
-            "count": 6,
-            "median": 1.2253,
-            "mean": 1.2397,
-            "stdev": 0.1737,
-            "p90": 1.4318,
-            "p95": 1.4465
+            "count": 8,
+            "median": 1.2889,
+            "mean": 1.2695,
+            "stdev": 0.1894,
+            "p90": 1.4567,
+            "p95": 1.4807
           }
         }
       },
       "gas": {
-        "level": "N1",
-        "label": "Vigilance",
+        "level": "N0",
+        "label": "Nominal",
         "confidence": "élevée",
-        "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange.",
+        "rationale": "Les limites surveillées par Smart NaTran sont en situation nominale.",
         "metrics": {
           "observation_date": "2026-09-03",
-          "operational_status": "ORANGE",
+          "operational_status": "GREEN",
           "data_quality": "OK",
           "limits_count": 10,
-          "green_limits_count": 9,
-          "orange_limits_count": 1,
+          "green_limits_count": 10,
+          "orange_limits_count": 0,
           "red_limits_count": 0,
           "violet_limits_count": 0,
           "unknown_limits_count": 0,
-          "alerts": [
-            {
-              "limit": "NS3",
-              "vigilance": "ORANGE",
-              "vigilance_rgb": "FFFF9933",
-              "detection_method": "validated_color",
-              "application_side": "Aval",
-              "small_impact_works_gwh_25c": 0,
-              "maintenance": "Oui",
-              "interruptible_uioli_sales_stop": "Non",
-              "localized_spread": "Non",
-              "mutualized_restriction": "Non"
-            }
-          ]
+          "alerts": []
         },
         "baseline": {}
       },
@@ -232,32 +219,20 @@
         "confidence": "moyenne+",
         "rationale": "Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
-          "eligible_stations": 9791,
-          "stations_with_any_shortage": 489,
-          "national_shortage_ratio_pct": 4.9944,
-          "diesel_shortage_ratio_pct": 1.4629,
-          "petrol_shortage_ratio_pct": 4.7237,
+          "eligible_stations": 9790,
+          "stations_with_any_shortage": 458,
+          "national_shortage_ratio_pct": 4.6782,
+          "diesel_shortage_ratio_pct": 1.3408,
+          "petrol_shortage_ratio_pct": 4.4124,
           "departments_with_shortage": 87,
-          "slot": "morning",
+          "slot": "evening",
           "statistical_z_score": null,
           "significant_departments": [
             {
-              "dept_code": "67",
-              "shortage_ratio_pct": 17.8082,
-              "stations_with_any_shortage": 26,
-              "eligible_stations": 146
-            },
-            {
               "dept_code": "75",
-              "shortage_ratio_pct": 17.0213,
-              "stations_with_any_shortage": 8,
+              "shortage_ratio_pct": 19.1489,
+              "stations_with_any_shortage": 9,
               "eligible_stations": 47
-            },
-            {
-              "dept_code": "35",
-              "shortage_ratio_pct": 16.7785,
-              "stations_with_any_shortage": 25,
-              "eligible_stations": 149
             },
             {
               "dept_code": "72",
@@ -266,85 +241,73 @@
               "eligible_stations": 97
             },
             {
-              "dept_code": "53",
-              "shortage_ratio_pct": 12.963,
-              "stations_with_any_shortage": 7,
-              "eligible_stations": 54
+              "dept_code": "67",
+              "shortage_ratio_pct": 15.1724,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 145
             },
             {
-              "dept_code": "24",
-              "shortage_ratio_pct": 11.1111,
-              "stations_with_any_shortage": 11,
-              "eligible_stations": 99
-            },
-            {
-              "dept_code": "46",
-              "shortage_ratio_pct": 11.1111,
-              "stations_with_any_shortage": 7,
-              "eligible_stations": 63
+              "dept_code": "35",
+              "shortage_ratio_pct": 14.7651,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 149
             },
             {
               "dept_code": "37",
-              "shortage_ratio_pct": 10.989,
-              "stations_with_any_shortage": 10,
+              "shortage_ratio_pct": 12.0879,
+              "stations_with_any_shortage": 11,
               "eligible_stations": 91
             },
             {
-              "dept_code": "47",
-              "shortage_ratio_pct": 10.8434,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 83
-            },
-            {
               "dept_code": "57",
-              "shortage_ratio_pct": 10.7692,
-              "stations_with_any_shortage": 14,
+              "shortage_ratio_pct": 11.5385,
+              "stations_with_any_shortage": 15,
               "eligible_stations": 130
             },
             {
-              "dept_code": "36",
-              "shortage_ratio_pct": 10.4167,
-              "stations_with_any_shortage": 5,
-              "eligible_stations": 48
+              "dept_code": "55",
+              "shortage_ratio_pct": 10.8108,
+              "stations_with_any_shortage": 4,
+              "eligible_stations": 37
+            },
+            {
+              "dept_code": "95",
+              "shortage_ratio_pct": 10.1852,
+              "stations_with_any_shortage": 11,
+              "eligible_stations": 108
             }
           ],
           "severe_departments": [
             {
-              "dept_code": "67",
-              "shortage_ratio_pct": 17.8082,
-              "stations_with_any_shortage": 26,
-              "eligible_stations": 146
-            },
-            {
               "dept_code": "75",
-              "shortage_ratio_pct": 17.0213,
-              "stations_with_any_shortage": 8,
+              "shortage_ratio_pct": 19.1489,
+              "stations_with_any_shortage": 9,
               "eligible_stations": 47
-            },
-            {
-              "dept_code": "35",
-              "shortage_ratio_pct": 16.7785,
-              "stations_with_any_shortage": 25,
-              "eligible_stations": 149
             },
             {
               "dept_code": "72",
               "shortage_ratio_pct": 15.4639,
               "stations_with_any_shortage": 15,
               "eligible_stations": 97
+            },
+            {
+              "dept_code": "67",
+              "shortage_ratio_pct": 15.1724,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 145
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 5,
+          "comparable_slot": "evening",
+          "comparable_count": 6,
           "national_shortage_ratio_pct": {
-            "count": 5,
-            "median": 6.1875,
-            "mean": 6.2893,
-            "stdev": 1.6746,
-            "p90": 7.9157,
-            "p95": 7.9564
+            "count": 6,
+            "median": 5.9754,
+            "mean": 5.866,
+            "stdev": 1.7205,
+            "p90": 7.5863,
+            "p95": 7.8355
           }
         }
       },
@@ -354,53 +317,53 @@
         "confidence": "moyenne+",
         "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
         "metrics": {
-          "collected_at": "2026-09-03T05:44:18.358311+00:00",
-          "slot": "morning",
-          "trips_count": 2151,
-          "scheduled_trips": 1893,
-          "added_trips": 219,
-          "canceled_trips": 39,
-          "canceled_ratio_pct": 1.8131,
-          "trips_delay_ge_15min": 81,
-          "trips_delay_ge_15min_ratio_pct": 3.7657,
-          "trips_delay_ge_30min": 39,
-          "trips_delay_ge_30min_ratio_pct": 1.8131,
-          "trips_delay_ge_60min": 13,
-          "trips_delay_ge_60min_ratio_pct": 0.6044,
-          "average_max_delay_seconds": 103.7,
-          "maximum_delay_seconds": 10800,
-          "active_service_alerts": 450,
+          "collected_at": "2026-09-03T15:05:47.455438+00:00",
+          "slot": "evening",
+          "trips_count": 2154,
+          "scheduled_trips": 1899,
+          "added_trips": 214,
+          "canceled_trips": 41,
+          "canceled_ratio_pct": 1.9034,
+          "trips_delay_ge_15min": 80,
+          "trips_delay_ge_15min_ratio_pct": 3.714,
+          "trips_delay_ge_30min": 35,
+          "trips_delay_ge_30min_ratio_pct": 1.6249,
+          "trips_delay_ge_60min": 10,
+          "trips_delay_ge_60min_ratio_pct": 0.4643,
+          "average_max_delay_seconds": 105.6,
+          "maximum_delay_seconds": 9000,
+          "active_service_alerts": 517,
           "qualified_operational_alerts": 0,
           "canceled_statistical_z_score": null,
           "delay_30_statistical_z_score": null,
           "delay_60_statistical_z_score": null
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 5,
+          "comparable_slot": "evening",
+          "comparable_count": 6,
           "canceled_ratio_pct": {
-            "count": 5,
-            "median": 1.1102,
-            "mean": 1.338,
-            "stdev": 0.7031,
-            "p90": 2.0685,
-            "p95": 2.0981
+            "count": 6,
+            "median": 1.2769,
+            "mean": 1.278,
+            "stdev": 0.5103,
+            "p90": 1.8068,
+            "p95": 1.8885
           },
           "delay_ge_30min_ratio_pct": {
-            "count": 5,
-            "median": 1.3501,
-            "mean": 1.4048,
-            "stdev": 0.7544,
-            "p90": 2.1706,
-            "p95": 2.311
+            "count": 6,
+            "median": 1.4393,
+            "mean": 1.3715,
+            "stdev": 0.2296,
+            "p90": 1.5479,
+            "p95": 1.5485
           },
           "delay_ge_60min_ratio_pct": {
-            "count": 5,
-            "median": 0.2762,
-            "mean": 0.3688,
-            "stdev": 0.4601,
-            "p90": 0.8241,
-            "p95": 0.9902
+            "count": 6,
+            "median": 0.4099,
+            "mean": 0.3829,
+            "stdev": 0.0985,
+            "p90": 0.474,
+            "p95": 0.4792
           }
         }
       }
@@ -409,18 +372,116 @@
   "risks_threats": {
     "schema_version": "risks-threats-0.4",
     "source_health": "OK",
-    "new_signals": [],
+    "new_signals": [
+      {
+        "fingerprint": "263ee413e4415b2dabb4d5129d0c865596c22e8e2478c553d6cc0681a4ec429c",
+        "title": "\"Rendez-nous notre capacité à travailler\" les organisations patronales disent stop aux blocages",
+        "link": "https://la1ere.franceinfo.fr/mayotte/rendez-nous-notre-capacite-a-travailler-les-organisations-patronales-disent-stop-aux-blocages-au-port-de-longoni-a-koungou-et-aux-travaux-caribus-1735019.html",
+        "source_domain": "la1ere.franceinfo.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-03T14:38:29+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "maritime"
+        ],
+        "impacted_sectors": [
+          "maritime"
+        ],
+        "first_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "last_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "1d74edb0878eba86efda9f09715f2a9a2ac65300c12c6c3ca414ed25bba5525c",
+        "title": "Préavis de grève Volotéa : l'aéroport de Limoges annonce un maintien des vols Limoges-Paris ce vendredi",
+        "link": "https://france3-regions.franceinfo.fr/nouvelle-aquitaine/haute-vienne/limoges/preavis-de-greve-volotea-l-aeroport-de-limoges-annonce-un-maintien-des-vols-limoges-paris-ce-vendredi-3410756.html",
+        "source_domain": "france3-regions.franceinfo.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-03T13:18:55+00:00",
+        "qualification": "WATCH",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
+        "sectors": [
+          "air"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "last_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "carried_over_context": [],
-    "active_situation": [],
+    "active_situation": [
+      {
+        "fingerprint": "263ee413e4415b2dabb4d5129d0c865596c22e8e2478c553d6cc0681a4ec429c",
+        "title": "\"Rendez-nous notre capacité à travailler\" les organisations patronales disent stop aux blocages",
+        "link": "https://la1ere.franceinfo.fr/mayotte/rendez-nous-notre-capacite-a-travailler-les-organisations-patronales-disent-stop-aux-blocages-au-port-de-longoni-a-koungou-et-aux-travaux-caribus-1735019.html",
+        "source_domain": "la1ere.franceinfo.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-03T14:38:29+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "maritime"
+        ],
+        "impacted_sectors": [
+          "maritime"
+        ],
+        "first_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "last_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "1d74edb0878eba86efda9f09715f2a9a2ac65300c12c6c3ca414ed25bba5525c",
+        "title": "Préavis de grève Volotéa : l'aéroport de Limoges annonce un maintien des vols Limoges-Paris ce vendredi",
+        "link": "https://france3-regions.franceinfo.fr/nouvelle-aquitaine/haute-vienne/limoges/preavis-de-greve-volotea-l-aeroport-de-limoges-annonce-un-maintien-des-vols-limoges-paris-ce-vendredi-3410756.html",
+        "source_domain": "france3-regions.franceinfo.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-03T13:18:55+00:00",
+        "qualification": "WATCH",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
+        "sectors": [
+          "air"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "last_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "resolved_since_collection": [],
     "counts": {
-      "retained": 0,
-      "new": 0,
+      "retained": 2,
+      "new": 2,
       "carried_over": 0,
-      "active_situation": 0,
+      "active_situation": 2,
       "resolved": 0,
-      "impact_candidates": 0,
-      "watch": 0,
+      "impact_candidates": 1,
+      "watch": 1,
       "context": 0
     }
   },
@@ -446,13 +507,6 @@
         "rationale": "Concentrations territoriales multi-opérateurs significatives."
       },
       {
-        "sector": "gas",
-        "level": "N1",
-        "label": "Vigilance",
-        "confidence": "élevée",
-        "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange."
-      },
-      {
         "sector": "fuels",
         "level": "N2",
         "label": "Dégradé",
@@ -460,7 +514,56 @@
         "rationale": "Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
       }
     ],
-    "new_risk_signals": [],
+    "new_risk_signals": [
+      {
+        "fingerprint": "263ee413e4415b2dabb4d5129d0c865596c22e8e2478c553d6cc0681a4ec429c",
+        "title": "\"Rendez-nous notre capacité à travailler\" les organisations patronales disent stop aux blocages",
+        "link": "https://la1ere.franceinfo.fr/mayotte/rendez-nous-notre-capacite-a-travailler-les-organisations-patronales-disent-stop-aux-blocages-au-port-de-longoni-a-koungou-et-aux-travaux-caribus-1735019.html",
+        "source_domain": "la1ere.franceinfo.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-03T14:38:29+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "maritime"
+        ],
+        "impacted_sectors": [
+          "maritime"
+        ],
+        "first_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "last_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "1d74edb0878eba86efda9f09715f2a9a2ac65300c12c6c3ca414ed25bba5525c",
+        "title": "Préavis de grève Volotéa : l'aéroport de Limoges annonce un maintien des vols Limoges-Paris ce vendredi",
+        "link": "https://france3-regions.franceinfo.fr/nouvelle-aquitaine/haute-vienne/limoges/preavis-de-greve-volotea-l-aeroport-de-limoges-annonce-un-maintien-des-vols-limoges-paris-ce-vendredi-3410756.html",
+        "source_domain": "france3-regions.franceinfo.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-03T13:18:55+00:00",
+        "qualification": "WATCH",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
+        "sectors": [
+          "air"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "last_seen_at": "2026-09-03T15:05:50.182763+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "inherited_risk_context": [],
     "concomitant_signals": [],
     "contextual_infrastructure_signals": []
