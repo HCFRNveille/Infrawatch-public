@@ -1,0 +1,96 @@
+name: Generate InfraWatch national point
+
+on:
+  workflow_dispatch:
+    inputs:
+      cycle:
+        description: "Cycle à forcer (08H00 ou 17H00)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - "08H00"
+          - "17H00"
+
+  schedule:
+    # Les deux heures UTC possibles sont planifiées pour absorber CET/CEST.
+    # Le job ci-dessous vérifie ensuite l'heure Europe/Paris.
+    - cron: "5 6,7,15,16 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: infrawatch-point-national
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve Paris cycle
+        id: cycle
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          forced = "${{ github.event.inputs.cycle }}"
+          now = datetime.now(ZoneInfo("Europe/Paris"))
+
+          if forced in {"08H00", "17H00"}:
+              cycle = forced
+          elif now.hour == 8:
+              cycle = "08H00"
+          elif now.hour == 17:
+              cycle = "17H00"
+          else:
+              cycle = ""
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"cycle={cycle}\n")
+          PY
+
+      - name: Stop outside national cycles
+        if: steps.cycle.outputs.cycle == ''
+        run: echo "Hors cycle 08H00/17H00 Europe/Paris — aucune génération."
+
+      - name: Set up Python
+        if: steps.cycle.outputs.cycle != ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        if: steps.cycle.outputs.cycle != ''
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai reportlab
+
+      - name: Generate national point
+        if: steps.cycle.outputs.cycle != ''
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          POINT_NATIONAL_MODEL: ${{ vars.POINT_NATIONAL_MODEL || 'gpt-5.6-terra' }}
+        run: |
+          python generate_point_national.py             --source-dir .             --output-dir points             --prompt point_national_prompt.md             --cycle "${{ steps.cycle.outputs.cycle }}"
+
+      - name: Commit generated point
+        if: steps.cycle.outputs.cycle != ''
+        shell: bash
+        run: |
+          git config user.name "infrawatch-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add points/
+          if git diff --cached --quiet; then
+            echo "Aucun changement à publier."
+            exit 0
+          fi
+          git commit -m "Point national ${{ steps.cycle.outputs.cycle }}"
+          git push
