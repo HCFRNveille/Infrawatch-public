@@ -5,16 +5,29 @@ on:
     inputs:
       cycle:
         description: "Cycle à forcer (08H00 ou 17H00)"
-        required: false
+        required: true
         type: choice
         options:
-          - ""
           - "08H00"
           - "17H00"
 
+      facts_only:
+        description: "Construire uniquement le fact packet, sans appel LLM"
+        required: false
+        type: boolean
+        default: false
+
   schedule:
-    # Les deux heures UTC possibles sont planifiées pour absorber CET/CEST.
-    # Le job ci-dessous vérifie ensuite l'heure Europe/Paris.
+    # Les deux heures UTC possibles sont planifiées afin
+    # d'absorber automatiquement les passages CET / CEST.
+    #
+    # 06:05 UTC = 08:05 à Paris en heure d'été
+    # 07:05 UTC = 08:05 à Paris en heure d'hiver
+    # 15:05 UTC = 17:05 à Paris en heure d'été
+    # 16:05 UTC = 17:05 à Paris en heure d'hiver
+    #
+    # Le job vérifie ensuite l'heure réelle Europe/Paris
+    # afin d'éviter toute double génération.
     - cron: "5 6,7,15,16 * * *"
 
 permissions:
@@ -29,9 +42,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ---------------------------------------------------------
+      # Dépôt public InfraWatch
+      # ---------------------------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ---------------------------------------------------------
+      # Détermination du cycle national
+      # ---------------------------------------------------------
       - name: Resolve Paris cycle
         id: cycle
         shell: bash
@@ -53,44 +72,159 @@ jobs:
           else:
               cycle = ""
 
-          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+          print(f"Heure Europe/Paris : {now.isoformat()}")
+          print(f"Cycle retenu : {cycle or 'aucun'}")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
               f.write(f"cycle={cycle}\n")
           PY
 
+      # ---------------------------------------------------------
+      # Hors créneau : aucune génération
+      # ---------------------------------------------------------
       - name: Stop outside national cycles
         if: steps.cycle.outputs.cycle == ''
-        run: echo "Hors cycle 08H00/17H00 Europe/Paris — aucune génération."
+        run: |
+          echo "Hors cycle 08H00/17H00 Europe/Paris — aucune génération."
 
+      # ---------------------------------------------------------
+      # Python
+      # ---------------------------------------------------------
       - name: Set up Python
         if: steps.cycle.outputs.cycle != ''
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      # ---------------------------------------------------------
+      # Dépendances
+      # ---------------------------------------------------------
       - name: Install dependencies
         if: steps.cycle.outputs.cycle != ''
         run: |
           python -m pip install --upgrade pip
-          pip install openai reportlab
+          pip install -r requirements_point_national.txt
 
+      # ---------------------------------------------------------
+      # Vérification des fichiers indispensables
+      # ---------------------------------------------------------
+      - name: Check generator files
+        if: steps.cycle.outputs.cycle != ''
+        shell: bash
+        run: |
+          set -e
+
+          REQUIRED_FILES=(
+            "generate_point_national.py"
+            "point_national_prompt.md"
+            "point_national_analysis_schema_v1.json"
+            "dashboard.json"
+            "latest_live.json"
+          )
+
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "Fichier indispensable absent : $file"
+              exit 1
+            fi
+          done
+
+          echo "Tous les fichiers indispensables sont présents."
+
+      # ---------------------------------------------------------
+      # Génération
+      #
+      # facts_only=true :
+      #   construit uniquement points/fact_packet_latest.json
+      #   aucun appel OpenAI
+      #
+      # facts_only=false :
+      #   fact packet + LLM + JSON + HTML + PDF
+      # ---------------------------------------------------------
       - name: Generate national point
         if: steps.cycle.outputs.cycle != ''
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           POINT_NATIONAL_MODEL: ${{ vars.POINT_NATIONAL_MODEL || 'gpt-5.6-terra' }}
+        shell: bash
         run: |
-          python generate_point_national.py             --source-dir .             --output-dir points             --prompt point_national_prompt.md             --cycle "${{ steps.cycle.outputs.cycle }}"
+          set -e
 
+          EXTRA_ARGS=""
+
+          if [ "${{ github.event.inputs.facts_only }}" = "true" ]; then
+            echo "Mode FACTS ONLY activé — aucun appel LLM."
+            EXTRA_ARGS="--facts-only"
+          else
+            echo "Mode COMPLET activé — génération analytique LLM + PDF."
+          fi
+
+          python generate_point_national.py \
+            --source-dir . \
+            --output-dir points \
+            --prompt point_national_prompt.md \
+            --schema point_national_analysis_schema_v1.json \
+            --cycle "${{ steps.cycle.outputs.cycle }}" \
+            $EXTRA_ARGS
+
+      # ---------------------------------------------------------
+      # Contrôle des sorties
+      # ---------------------------------------------------------
+      - name: Check generated outputs
+        if: steps.cycle.outputs.cycle != ''
+        shell: bash
+        run: |
+          set -e
+
+          if [ ! -f "points/fact_packet_latest.json" ]; then
+            echo "ERREUR : points/fact_packet_latest.json absent."
+            exit 1
+          fi
+
+          echo "Fact packet présent."
+
+          if [ "${{ github.event.inputs.facts_only }}" != "true" ]; then
+            REQUIRED_OUTPUTS=(
+              "points/latest.json"
+              "points/latest.html"
+              "points/latest.pdf"
+              "points/manifest.json"
+            )
+
+            for file in "${REQUIRED_OUTPUTS[@]}"; do
+              if [ ! -f "$file" ]; then
+                echo "ERREUR : sortie attendue absente : $file"
+                exit 1
+              fi
+            done
+
+            echo "Toutes les sorties du point national sont présentes."
+          fi
+
+      # ---------------------------------------------------------
+      # Publication dans le dépôt public
+      # ---------------------------------------------------------
       - name: Commit generated point
         if: steps.cycle.outputs.cycle != ''
         shell: bash
         run: |
+          set -e
+
           git config user.name "infrawatch-bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add points/
+
           if git diff --cached --quiet; then
             echo "Aucun changement à publier."
             exit 0
           fi
-          git commit -m "Point national ${{ steps.cycle.outputs.cycle }}"
+
+          if [ "${{ github.event.inputs.facts_only }}" = "true" ]; then
+            COMMIT_MESSAGE="Test fact packet ${{ steps.cycle.outputs.cycle }}"
+          else
+            COMMIT_MESSAGE="Point national ${{ steps.cycle.outputs.cycle }}"
+          fi
+
+          git commit -m "$COMMIT_MESSAGE"
           git push
