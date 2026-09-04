@@ -278,6 +278,122 @@ def current_metrics(latest: dict[str, Any], sid: str) -> dict[str, Any]:
     return {}
 
 
+
+def build_source_health_context(
+    dashboard: dict[str, Any],
+    generated_at: Any,
+    now: datetime,
+) -> dict[str, Any]:
+    """
+    Sépare explicitement :
+    - l'âge du snapshot dashboard utilisé par le générateur ;
+    - la fraîcheur agrégée des sources telle que calculée par le backend.
+
+    Ces deux valeurs n'ont pas la même sémantique et ne doivent jamais
+    être comparées comme si elles mesuraient la même chose.
+    """
+    raw = copy.deepcopy(
+        dashboard.get("source_health")
+        or {}
+    )
+
+    backend_freshness = raw.pop(
+        "freshness_minutes",
+        None,
+    )
+
+    return {
+        "dashboard_snapshot": {
+            "generated_at": generated_at,
+            "age_minutes_at_generation": freshness_minutes(
+                generated_at,
+                now,
+            ),
+            "meaning": (
+                "Âge du dashboard.json utilisé pour construire ce point. "
+                "Ce n'est pas une mesure de fraîcheur individuelle des sources."
+            ),
+        },
+        "backend_source_health": {
+            **raw,
+            "reported_freshness_minutes": backend_freshness,
+            "meaning": (
+                "Fraîcheur agrégée déclarée par le backend InfraWatch pour "
+                "les sources exploitées. Cette valeur est distincte de l'âge "
+                "du snapshot dashboard."
+            ),
+        },
+    }
+
+
+def build_risks_threats_context(
+    dashboard: dict[str, Any],
+    sources: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Normalise le bloc Risques & Menaces sans permettre au LLM
+    d'inventer la nature de signaux non détaillés.
+
+    Priorité :
+    1. événements détaillés du fichier risks_threats.json s'ils existent ;
+    2. sinon événements déjà exposés dans dashboard.json ;
+    3. sinon compteurs uniquement avec garde-fou explicite.
+    """
+    dashboard_threats = (
+        dashboard.get("threats")
+        or {}
+    )
+    raw_threats = (
+        sources.get("risks_threats.json")
+        or {}
+    )
+
+    dashboard_events = dashboard_threats.get(
+        "events"
+    )
+    raw_events = raw_threats.get(
+        "events"
+    )
+
+    if not isinstance(
+        dashboard_events,
+        list,
+    ):
+        dashboard_events = []
+
+    if not isinstance(
+        raw_events,
+        list,
+    ):
+        raw_events = []
+
+    events = (
+        raw_events
+        if raw_events
+        else dashboard_events
+    )
+
+    def first_value(key: str):
+        if dashboard_threats.get(key) is not None:
+            return dashboard_threats.get(key)
+        return raw_threats.get(key)
+
+    return {
+        "collected": first_value("collected"),
+        "recent": first_value("recent"),
+        "relevant": first_value("relevant"),
+        "impacts": first_value("impacts"),
+        "events_detail_available": bool(events),
+        "events": events[:10],
+        "interpretation_guard": (
+            "Les compteurs collected/recent/relevant/impacts peuvent être "
+            "mentionnés comme des volumes uniquement. Si events_detail_available "
+            "est false, la nature des événements, leur secteur, leur territoire, "
+            "leur cause et leur impact précis sont inconnus et ne doivent jamais "
+            "être inventés ou déduits."
+        ),
+    }
+
 def build_fact_packet(sources: dict[str, Any], origins: dict[str, str], cycle: str, now: datetime) -> dict[str, Any]:
     dashboard = sources["dashboard.json"]
     latest = sources["latest_live.json"]
@@ -301,7 +417,6 @@ def build_fact_packet(sources: dict[str, Any], origins: dict[str, str], cycle: s
         "schema_version": "point-national-facts-1.0",
         "cycle": cycle,
         "generated_at": generated_at,
-        "generated_freshness_minutes": freshness_minutes(generated_at, now),
         "source_origins": origins,
         "doctrine": {
             "scoring_authority": "InfraWatch backend only",
@@ -311,11 +426,18 @@ def build_fact_packet(sources: dict[str, Any], origins: dict[str, str], cycle: s
         },
         "national": dashboard.get("national") or {},
         "driver": dashboard.get("driver") or {},
-        "source_health": dashboard.get("source_health") or {},
+        "source_health": build_source_health_context(
+            dashboard,
+            generated_at,
+            now,
+        ),
         "sectors": sectors,
         "territories": dashboard.get("territories") or [],
         "correlations": dashboard.get("correlations") or [],
-        "risks_threats": dashboard.get("threats") or sources.get("risks_threats.json") or {},
+        "risks_threats": build_risks_threats_context(
+            dashboard,
+            sources,
+        ),
     }
     return packet
 
