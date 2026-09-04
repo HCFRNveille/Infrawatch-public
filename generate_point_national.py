@@ -35,7 +35,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.platypus import (
     BaseDocTemplate, Frame, PageTemplate, Paragraph, Spacer, Table, TableStyle,
-    PageBreak, KeepTogether
+    PageBreak, KeepTogether, Image
 )
 
 PARIS = ZoneInfo("Europe/Paris")
@@ -696,6 +696,198 @@ def safe_text(value: Any) -> str:
     return str(value).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def _format_datetime_fr(value: Any) -> str:
+    dt = parse_dt(value)
+    if dt is None:
+        return "ND"
+    local = dt.astimezone(PARIS)
+    return f"{local:%d/%m/%Y} · {local:%H}h{local:%M}"
+
+
+def _fmt_int(value: Any) -> str:
+    if value is None:
+        return "ND"
+    try:
+        return f"{int(value):,}".replace(",", " ")
+    except Exception:
+        return str(value)
+
+
+def _fmt_pct(value: Any, digits: int = 2) -> str:
+    if value is None:
+        return "ND"
+    try:
+        return f"{float(value):.{digits}f} %".replace(".", ",")
+    except Exception:
+        return str(value)
+
+
+def _fmt_signed_delta(value: Any, digits: int = 2) -> str:
+    if value is None:
+        return "Comparaison ND"
+    try:
+        val = float(value)
+    except Exception:
+        return str(value)
+
+    # ASCII arrows avoided for maximum PDF renderer compatibility.
+    direction = "Baisse" if val < 0 else ("Hausse" if val > 0 else "Stable")
+    return f"{direction} · {val:+.{digits}f} pt".replace(".", ",")
+
+
+def _fmt_gw(value_mw: Any, digits: int = 2) -> str:
+    if value_mw is None:
+        return "ND"
+    try:
+        return f"{float(value_mw) / 1000:.{digits}f} GW".replace(".", ",")
+    except Exception:
+        return str(value_mw)
+
+
+def _trend_label(value: Any) -> str:
+    mapping = {
+        "up": "Hausse",
+        "down": "Baisse",
+        "stable": "Stable",
+        "unknown": "Indéterminée",
+        None: "Indéterminée",
+    }
+    return mapping.get(value, str(value))
+
+
+def _level_hex(level: str) -> str:
+    mapping = {
+        "N0": "#26b36c",
+        "N1": "#e2b84f",
+        "N2": "#f08a38",
+        "N3": "#d94b67",
+        "N4": "#8b4cc7",
+        "ND": "#8aa0ab",
+    }
+    return mapping.get(level, "#8aa0ab")
+
+
+def _sector_metric_line(sid: str, current: dict[str, Any]) -> str:
+    if sid == "fuel":
+        return (
+            f"{_fmt_pct(current.get('national_shortage_ratio_pct'))} · "
+            f"{_fmt_int(current.get('stations_with_any_shortage'))} / "
+            f"{_fmt_int(current.get('eligible_stations'))} stations"
+        )
+
+    if sid == "gas":
+        return (
+            f"Statut {current.get('operational_status') or 'ND'} · "
+            f"{_fmt_int(current.get('orange_limits_count'))} limite(s) orange"
+        )
+
+    if sid == "telecom":
+        clusters = current.get("four_operator_clusters")
+        cluster_text = (
+            f" · {_fmt_int(clusters)} cluster(s) 4 opérateurs"
+            if clusters is not None
+            else ""
+        )
+        return (
+            f"{_fmt_pct(current.get('national_down_ratio_pct'))} · "
+            f"{_fmt_int(current.get('unique_operator_sites_down'))} sites indisponibles"
+            f"{cluster_text}"
+        )
+
+    if sid == "rail":
+        return (
+            f"{_fmt_pct(current.get('canceled_ratio_pct'))} annulations · "
+            f"{_fmt_pct(current.get('trips_delay_ge_30min_ratio_pct'))} retards ≥ 30 min"
+        )
+
+    if sid == "electricity":
+        value = current.get("forecast_error_pct")
+        absolute = abs(float(value)) if value is not None else None
+        return (
+            f"Écart absolu {_fmt_pct(absolute)} · "
+            f"consommation {_fmt_gw(current.get('consumption_mw'))}"
+        )
+
+    if sid == "nuclear":
+        return (
+            f"Disponibilité {_fmt_pct(current.get('fleet_availability_pct'))} · "
+            f"{_fmt_gw(current.get('fleet_available_capacity_mw'))} disponibles"
+        )
+
+    return ""
+
+
+def _build_panel(
+    width: float,
+    title: str,
+    flowables: list[Any],
+    *,
+    accent: str = "#2a4350",
+    bg: str = "#ffffff",
+) -> Table:
+    panel_header = ParagraphStyle(
+        "PanelHeaderIW",
+        fontName="Helvetica-Bold",
+        fontSize=7.1,
+        leading=8.7,
+        textColor=colors.HexColor("#607884"),
+        spaceAfter=4,
+    )
+
+    content = [Paragraph(safe_text(title), panel_header)] + flowables
+    table = Table([[content]], colWidths=[width])
+
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor(bg)),
+        ("BOX", (0, 0), (-1, -1), 0.75, colors.HexColor("#c8d5da")),
+        ("LINEBEFORE", (0, 0), (0, 0), 3.0, colors.HexColor(accent)),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 7),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+        ("TOPPADDING", (0, 0), (-1, -1), 7),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+    ]))
+    return table
+
+
+def _normalize_dynamic_status(value: Any) -> tuple[str, str]:
+    raw = str(value or "").strip().lower()
+
+    if raw in {"confirmed", "confirmée", "confirmee"}:
+        return "Confirmée", "#d94b67"
+
+    if raw in {"watch", "surveillance", "à surveiller", "a surveiller"}:
+        return "À surveiller", "#e2b84f"
+
+    if raw in {"none", "aucune", "non caractérisée", "non caracterisee", ""}:
+        return "Non caractérisée", "#8aa0ab"
+
+    return str(value), "#8aa0ab"
+
+
+def _two_column_cards(cards: list[Any], total_width: float) -> Table:
+    rows = []
+    items = list(cards)
+
+    while items:
+        first = items.pop(0)
+        second = items.pop(0) if items else Spacer(1, 1)
+        rows.append([first, second])
+
+    if not rows:
+        rows = [[Spacer(1, 1), Spacer(1, 1)]]
+
+    table = Table(rows, colWidths=[total_width / 2, total_width / 2])
+    table.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+    ]))
+    return table
+
+
 def render_html(document: dict[str, Any], output: Path) -> None:
     rows = []
     for sid in SECTOR_ORDER:
@@ -749,121 +941,589 @@ class NumberedCanvasMixin:
     pass
 
 
-def render_pdf(document: dict[str, Any], output: Path) -> None:
+def render_pdf(
+    document: dict[str, Any],
+    output: Path,
+    assets_dir: Path | None = None,
+) -> None:
     styles = getSampleStyleSheet()
+
     title = ParagraphStyle(
-        "TitleIW", parent=styles["Title"], fontName="Helvetica-Bold",
-        fontSize=17, leading=20, textColor=colors.HexColor("#15232c"),
-        spaceAfter=4
+        "TitleIW",
+        parent=styles["Title"],
+        fontName="Helvetica-Bold",
+        fontSize=18,
+        leading=21,
+        textColor=colors.HexColor("#15232c"),
+        spaceAfter=2,
+    )
+    subtitle = ParagraphStyle(
+        "SubtitleIW",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=8.2,
+        leading=10,
+        textColor=colors.HexColor("#607884"),
+        spaceAfter=0,
     )
     eyebrow = ParagraphStyle(
-        "EyebrowIW", parent=styles["Normal"], fontName="Helvetica-Bold",
-        fontSize=7.2, leading=9, textColor=colors.HexColor("#607884"),
-        spaceAfter=4
+        "EyebrowIW",
+        parent=styles["Normal"],
+        fontName="Helvetica-Bold",
+        fontSize=7.2,
+        leading=8.8,
+        textColor=colors.HexColor("#607884"),
+        spaceAfter=3,
     )
     h2 = ParagraphStyle(
-        "H2IW", parent=styles["Heading2"], fontName="Helvetica-Bold",
-        fontSize=10.5, leading=13, textColor=colors.HexColor("#13232c"),
-        spaceBefore=5, spaceAfter=5
+        "H2IW",
+        parent=styles["Heading2"],
+        fontName="Helvetica-Bold",
+        fontSize=10.3,
+        leading=12.5,
+        textColor=colors.HexColor("#13232c"),
+        spaceAfter=2,
     )
     body = ParagraphStyle(
-        "BodyIW", parent=styles["BodyText"], fontName="Helvetica",
-        fontSize=8.5, leading=12.1, textColor=colors.HexColor("#263b45"),
-        spaceAfter=6
+        "BodyIW",
+        parent=styles["BodyText"],
+        fontName="Helvetica",
+        fontSize=7.8,
+        leading=10.6,
+        textColor=colors.HexColor("#263b45"),
+        spaceAfter=3,
     )
-    small = ParagraphStyle(
-        "SmallIW", parent=body, fontSize=7.1, leading=9.5,
-        textColor=colors.HexColor("#607884")
+    body_small = ParagraphStyle(
+        "BodySmallIW",
+        parent=body,
+        fontSize=7.0,
+        leading=9.2,
+        spaceAfter=2,
     )
-    center = ParagraphStyle(
-        "CenterIW", parent=body, alignment=TA_CENTER, fontName="Helvetica-Bold"
+    metric = ParagraphStyle(
+        "MetricIW",
+        parent=body,
+        fontName="Helvetica-Bold",
+        fontSize=8.1,
+        leading=10,
+        textColor=colors.HexColor("#263b45"),
+        spaceAfter=2,
+    )
+    big = ParagraphStyle(
+        "BigIW",
+        parent=body,
+        fontName="Helvetica-Bold",
+        fontSize=17.5,
+        leading=20,
+        textColor=colors.HexColor("#13232c"),
+        spaceAfter=1,
+    )
+    note = ParagraphStyle(
+        "NoteIW",
+        parent=body,
+        fontSize=6.8,
+        leading=8.6,
+        textColor=colors.HexColor("#607884"),
+        spaceAfter=0,
     )
 
     doc = BaseDocTemplate(
-        str(output), pagesize=A4,
-        leftMargin=15*mm, rightMargin=15*mm, topMargin=15*mm, bottomMargin=14*mm,
+        str(output),
+        pagesize=A4,
+        leftMargin=13 * mm,
+        rightMargin=13 * mm,
+        topMargin=13 * mm,
+        bottomMargin=12 * mm,
         title=f"InfraWatch - Point national {document['cycle']}",
-        author="HCFRN / InfraWatch"
+        author="HCFRN / InfraWatch",
     )
-    frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="normal")
+
+    frame = Frame(
+        doc.leftMargin,
+        doc.bottomMargin,
+        doc.width,
+        doc.height,
+        id="normal",
+    )
 
     def footer(canvas, _doc):
         canvas.saveState()
-        canvas.setFont("Helvetica", 6.5)
+        canvas.setStrokeColor(colors.HexColor("#d5e0e5"))
+        canvas.line(
+            doc.leftMargin,
+            10 * mm,
+            A4[0] - doc.rightMargin,
+            10 * mm,
+        )
+        canvas.setFont("Helvetica", 6.2)
         canvas.setFillColor(colors.HexColor("#718792"))
-        canvas.drawString(15*mm, 8*mm, "INFRAWATCH - Niveaux et métriques issus du moteur. Analyse LLM qualitative uniquement.")
-        canvas.drawRightString(A4[0]-15*mm, 8*mm, f"Page {_doc.page}")
+        canvas.drawString(
+            doc.leftMargin,
+            7.1 * mm,
+            "INFRAWATCH - Niveaux et métriques issus du moteur ; analyse LLM qualitative ; aucune causalité automatique.",
+        )
+        canvas.drawRightString(
+            A4[0] - doc.rightMargin,
+            7.1 * mm,
+            f"Page {_doc.page}",
+        )
         canvas.restoreState()
 
-    doc.addPageTemplates(PageTemplate(id="main", frames=frame, onPage=footer))
+    doc.addPageTemplates(
+        PageTemplate(
+            id="main",
+            frames=frame,
+            onPage=footer,
+        )
+    )
 
-    story = []
-    story.append(Paragraph("INFRAWATCH · POINT DE SITUATION NATIONAL", eyebrow))
-    story.append(Paragraph(f"{document['cycle']} · France", title))
+    national = document.get("national") or {}
+    driver = document.get("driver") or {}
+    source_health = document.get("source_health") or {}
+    backend_health = source_health.get("backend_source_health") or {}
+    snapshot_health = source_health.get("dashboard_snapshot") or {}
 
-    national_level = document["national"].get("level", "ND")
-    national_table = Table([
-        [
-            Paragraph("<b>ÉTAT NATIONAL</b>", eyebrow),
-            Paragraph("<b>FACTEUR DIMENSIONNANT</b>", eyebrow),
-        ],
-        [
-            Paragraph(f"<b>{safe_text(fmt_level(national_level))}</b>", ParagraphStyle("Big", parent=body, fontName="Helvetica-Bold", fontSize=18, leading=21)),
-            Paragraph(f"<b>{safe_text(document['driver'].get('sector','ND'))}</b><br/>{safe_text(document['driver'].get('metric',''))}", body),
-        ],
-    ], colWidths=[doc.width*0.48, doc.width*0.52])
-    national_table.setStyle(TableStyle([
-        ("BACKGROUND",(0,0),(-1,-1),colors.HexColor("#eef3f5")),
-        ("BOX",(0,0),(-1,-1),0.5,colors.HexColor("#a9bac2")),
-        ("INNERGRID",(0,0),(-1,-1),0.35,colors.HexColor("#c5d1d6")),
-        ("VALIGN",(0,0),(-1,-1),"TOP"),
-        ("LEFTPADDING",(0,0),(-1,-1),7),
-        ("RIGHTPADDING",(0,0),(-1,-1),7),
-        ("TOPPADDING",(0,0),(-1,-1),6),
-        ("BOTTOMPADDING",(0,0),(-1,-1),6),
+    usable = backend_health.get("usable")
+    total = backend_health.get("total")
+    snapshot_age = snapshot_health.get("age_minutes_at_generation")
+
+    story: list[Any] = []
+
+    # ---------------------------------------------------------
+    # PAGE 1 - Situation opérationnelle nationale
+    # ---------------------------------------------------------
+    logo = None
+    if assets_dir is not None:
+        for candidate in (
+            "logo_hcfrn.jpg",
+            "logo_hcfrn.jpeg",
+            "logo_hcfrn.png",
+            "logo-hcfrn.jpg",
+            "logo-hcfrn.png",
+        ):
+            candidate_path = assets_dir / candidate
+            if candidate_path.exists():
+                try:
+                    logo = Image(
+                        str(candidate_path),
+                        width=24 * mm,
+                        height=16 * mm,
+                    )
+                except Exception:
+                    logo = None
+                break
+
+    header_text = [
+        Paragraph(
+            "INFRAWATCH · POINT DE SITUATION NATIONAL",
+            eyebrow,
+        ),
+        Paragraph(
+            f"{safe_text(document['cycle'])} · France",
+            title,
+        ),
+        Paragraph(
+            safe_text(_format_datetime_fr(document.get("generated_at"))),
+            subtitle,
+        ),
+    ]
+
+    if logo is not None:
+        identity = Table(
+            [[logo, header_text]],
+            colWidths=[27 * mm, doc.width * 0.53 - 27 * mm],
+        )
+    else:
+        identity = Table(
+            [[header_text]],
+            colWidths=[doc.width * 0.53],
+        )
+
+    identity.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
     ]))
-    story += [national_table, Spacer(1, 5*mm)]
 
-    story.append(Paragraph("SYNTHÈSE NATIONALE", eyebrow))
-    story.append(Paragraph(safe_text(document["national_synthesis"]), body))
-    story.append(Spacer(1, 2*mm))
+    quality_text = (
+        f"{_fmt_int(usable)}/{_fmt_int(total)} sources exploitables"
+        if usable is not None and total is not None
+        else "Qualité sources : ND"
+    )
+
+    header_status = [
+        Paragraph(
+            f"<b>{safe_text(fmt_level(national.get('level', 'ND')))}</b>",
+            h2,
+        ),
+        Paragraph(
+            f"Facteur dimensionnant : <b>{safe_text(driver.get('sector', 'ND'))}</b>",
+            body_small,
+        ),
+        Paragraph(
+            f"{safe_text(quality_text)} · snapshot {safe_text(_fmt_int(snapshot_age))} min",
+            note,
+        ),
+    ]
+
+    header = Table(
+        [[identity, header_status]],
+        colWidths=[doc.width * 0.62, doc.width * 0.38],
+    )
+    header.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#eef3f5")),
+        ("BOX", (0, 0), (-1, -1), 0.75, colors.HexColor("#c7d4d9")),
+        (
+            "LINEBEFORE",
+            (0, 0),
+            (0, 0),
+            3.2,
+            colors.HexColor(_level_hex(national.get("level", "ND"))),
+        ),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 7),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+    ]))
+
+    story.extend([
+        header,
+        Spacer(1, 3.5 * mm),
+    ])
+
+    state_card = _build_panel(
+        doc.width / 3 - 3,
+        "ÉTAT NATIONAL",
+        [
+            Paragraph(
+                safe_text(fmt_level(national.get("level", "ND"))),
+                big,
+            ),
+        ],
+        accent=_level_hex(national.get("level", "ND")),
+        bg="#f9fbfc",
+    )
+
+    driver_card = _build_panel(
+        doc.width / 3 - 3,
+        "FACTEUR DIMENSIONNANT",
+        [
+            Paragraph(
+                safe_text(driver.get("sector", "ND")),
+                h2,
+            ),
+            Paragraph(
+                safe_text(driver.get("metric") or "ND"),
+                metric,
+            ),
+            Paragraph(
+                safe_text(_fmt_signed_delta(driver.get("delta"))),
+                body_small,
+            ),
+        ],
+        accent="#f08a38",
+        bg="#fffaf6",
+    )
+
+    trend_card = _build_panel(
+        doc.width / 3 - 3,
+        "TENDANCE GÉNÉRALE",
+        [
+            Paragraph(
+                safe_text(national.get("trend") or "INDÉTERMINÉE"),
+                h2,
+            ),
+            Paragraph(
+                safe_text(national.get("trend_detail") or "Lecture backend"),
+                body_small,
+            ),
+        ],
+        accent="#5aa5e8",
+        bg="#f7fbfd",
+    )
+
+    summary_cards = Table(
+        [[state_card, driver_card, trend_card]],
+        colWidths=[
+            doc.width / 3,
+            doc.width / 3,
+            doc.width / 3,
+        ],
+    )
+    summary_cards.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+    ]))
+
+    story.extend([
+        summary_cards,
+        Spacer(1, 3.5 * mm),
+    ])
+
+    story.append(
+        _build_panel(
+            doc.width,
+            "SYNTHÈSE NATIONALE",
+            [
+                Paragraph(
+                    safe_text(document.get("national_synthesis") or ""),
+                    body,
+                )
+            ],
+            accent=_level_hex(national.get("level", "ND")),
+            bg="#ffffff",
+        )
+    )
+    story.append(Spacer(1, 3.5 * mm))
+
+    sector_cards = []
 
     for sid in SECTOR_ORDER:
-        s = document["sectors"][sid]
-        block = [
-            Paragraph(f"{safe_text(s['label']).upper()} · {safe_text(fmt_level(s['official_level']))}", h2),
-            Paragraph(safe_text(s["analysis"]), body),
-        ]
-        story.append(KeepTogether(block))
+        sector = document["sectors"][sid]
+        current = sector.get("current") or {}
+        level = sector.get("official_level", "ND")
 
-    story.append(Spacer(1, 2*mm))
-    story.append(Paragraph("DYNAMIQUES INTERSECTORIELLES", eyebrow))
-    if document["intersectoral_dynamics"]:
-        for item in document["intersectoral_dynamics"]:
-            story.append(Paragraph(
-                f"<b>{safe_text(item['title'])}</b> [{safe_text(item['status'])}] — {safe_text(item['analysis'])}",
-                body
-            ))
+        sector_cards.append(
+            _build_panel(
+                doc.width / 2 - 3,
+                sector["label"].upper(),
+                [
+                    Paragraph(
+                        f"<b>{safe_text(fmt_level(level))}</b>",
+                        h2,
+                    ),
+                    Paragraph(
+                        safe_text(_sector_metric_line(sid, current)),
+                        metric,
+                    ),
+                    Paragraph(
+                        f"Tendance backend : <b>{safe_text(_trend_label(sector.get('backend_trend')))}</b>",
+                        note,
+                    ),
+                ],
+                accent=_level_hex(level),
+                bg="#ffffff",
+            )
+        )
+
+    sector_matrix = Table(
+        [
+            [sector_cards[0], sector_cards[1]],
+            [sector_cards[2], sector_cards[3]],
+            [sector_cards[4], sector_cards[5]],
+        ],
+        colWidths=[doc.width / 2, doc.width / 2],
+    )
+    sector_matrix.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+    ]))
+
+    story.append(sector_matrix)
+    story.append(Spacer(1, 3.5 * mm))
+
+    # Faits saillants : le facteur dimensionnant et le principal secteur
+    # secondaire de vigilance, sans modifier le contenu analytique produit.
+    highlight_ids = []
+    driver_sid = driver.get("sector_id")
+    if driver_sid in document.get("sectors", {}):
+        highlight_ids.append(driver_sid)
+
+    if "gas" in document.get("sectors", {}) and "gas" not in highlight_ids:
+        highlight_ids.append("gas")
+
+    if len(highlight_ids) < 2:
+        ranked = sorted(
+            document.get("sectors", {}).items(),
+            key=lambda item: (
+                {"N0": 0, "N1": 1, "N2": 2, "N3": 3, "N4": 4, "ND": -1}.get(
+                    item[1].get("official_level", "ND"),
+                    -1,
+                )
+            ),
+            reverse=True,
+        )
+        for sid, _sector in ranked:
+            if sid not in highlight_ids:
+                highlight_ids.append(sid)
+            if len(highlight_ids) == 2:
+                break
+
+    highlight_cards = []
+    for sid in highlight_ids[:2]:
+        sector = document["sectors"][sid]
+        level = sector.get("official_level", "ND")
+        highlight_cards.append(
+            _build_panel(
+                doc.width / 2 - 3,
+                f"FAIT SAILLANT · {sector['label'].upper()}",
+                [
+                    Paragraph(
+                        safe_text(sector.get("analysis") or ""),
+                        body_small,
+                    )
+                ],
+                accent=_level_hex(level),
+                bg="#ffffff",
+            )
+        )
+
+    if highlight_cards:
+        if len(highlight_cards) == 1:
+            highlights = Table(
+                [[highlight_cards[0], Spacer(1, 1)]],
+                colWidths=[doc.width / 2, doc.width / 2],
+            )
+        else:
+            highlights = Table(
+                [[highlight_cards[0], highlight_cards[1]]],
+                colWidths=[doc.width / 2, doc.width / 2],
+            )
+
+        highlights.setStyle(TableStyle([
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("LEFTPADDING", (0, 0), (-1, -1), 0),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+            ("TOPPADDING", (0, 0), (-1, -1), 0),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+        ]))
+        story.append(highlights)
+
+    story.append(PageBreak())
+
+    # ---------------------------------------------------------
+    # PAGE 2 - Appréciation et surveillance
+    # ---------------------------------------------------------
+    story.append(
+        Paragraph(
+            "INFRAWATCH · APPRÉCIATION ET SURVEILLANCE",
+            eyebrow,
+        )
+    )
+    story.append(
+        Paragraph(
+            f"{safe_text(document['cycle'])} · Prochain cycle",
+            title,
+        )
+    )
+    story.append(Spacer(1, 2.5 * mm))
+
+    dynamics = document.get("intersectoral_dynamics") or []
+
+    if dynamics:
+        dynamic_flowables = []
+        for item in dynamics:
+            status_label, status_color = _normalize_dynamic_status(
+                item.get("status")
+            )
+            dynamic_flowables.extend([
+                Paragraph(
+                    f"<b>{safe_text(item.get('title', 'Dynamique intersectorielle'))}</b>",
+                    h2,
+                ),
+                Paragraph(
+                    f"Statut : <font color='{status_color}'><b>{safe_text(status_label)}</b></font>",
+                    body_small,
+                ),
+                Paragraph(
+                    safe_text(item.get("analysis") or ""),
+                    body,
+                ),
+            ])
     else:
-        story.append(Paragraph("Aucune dynamique intersectorielle caractérisée dans les données du cycle.", body))
+        dynamic_flowables = [
+            Paragraph(
+                "Aucune dynamique intersectorielle caractérisée dans les données du cycle.",
+                body,
+            )
+        ]
 
-    story.append(Spacer(1, 2*mm))
-    story.append(Paragraph("POINTS DE SURVEILLANCE · PROCHAIN CYCLE", eyebrow))
-    for item in document["surveillance_points"]:
-        story.append(Paragraph(
-            f"<b>{safe_text(item['title'])}</b> — {safe_text(item['analysis'])}",
-            body
-        ))
+    story.append(
+        _build_panel(
+            doc.width,
+            "DYNAMIQUES INTERSECTORIELLES",
+            dynamic_flowables,
+            accent="#5aa5e8",
+            bg="#f7fbfd",
+        )
+    )
+    story.append(Spacer(1, 3.5 * mm))
 
-    story.append(Spacer(1, 2*mm))
-    story.append(Paragraph("APPRÉCIATION NATIONALE", eyebrow))
-    story.append(Paragraph(safe_text(document["national_assessment"]), body))
-    story.append(Spacer(1, 3*mm))
-    story.append(Paragraph(
-        "Doctrine : niveaux N0-N4, facteur dimensionnant, seuils et métriques issus exclusivement du moteur InfraWatch. "
-        "Le LLM produit uniquement la couche qualitative et ne peut modifier le scoring ni établir une causalité automatique.",
-        small
-    ))
+    watch_cards = []
+    for item in document.get("surveillance_points") or []:
+        watch_cards.append(
+            _build_panel(
+                doc.width / 2 - 3,
+                "POINT DE SURVEILLANCE",
+                [
+                    Paragraph(
+                        f"<b>{safe_text(item.get('title', 'Point de surveillance'))}</b>",
+                        body,
+                    ),
+                    Paragraph(
+                        safe_text(item.get("analysis") or ""),
+                        body_small,
+                    ),
+                ],
+                accent="#f08a38",
+                bg="#ffffff",
+            )
+        )
+
+    story.append(
+        _two_column_cards(
+            watch_cards,
+            doc.width,
+        )
+    )
+    story.append(Spacer(1, 3.5 * mm))
+
+    story.append(
+        _build_panel(
+            doc.width,
+            "APPRÉCIATION NATIONALE",
+            [
+                Paragraph(
+                    safe_text(document.get("national_assessment") or ""),
+                    body,
+                )
+            ],
+            accent=_level_hex(national.get("level", "ND")),
+            bg="#f9fbfc",
+        )
+    )
+    story.append(Spacer(1, 3 * mm))
+
+    doctrine = (
+        "Niveaux N0-N4, facteur dimensionnant, seuils et métriques issus "
+        "exclusivement du moteur InfraWatch. Le LLM produit uniquement la "
+        "couche qualitative et ne peut modifier le scoring. Les dynamiques "
+        "intersectorielles ne valent pas causalité automatique."
+    )
+
+    story.append(
+        _build_panel(
+            doc.width,
+            "CADRE DOCTRINAL",
+            [
+                Paragraph(
+                    safe_text(doctrine),
+                    note,
+                )
+            ],
+            accent="#8aa0ab",
+            bg="#ffffff",
+        )
+    )
 
     doc.build(story)
 
@@ -875,7 +1535,7 @@ def archive_name(generated_at: str | None, cycle: str) -> str:
     return f"{local:%Y-%m-%d}_{cycle_slug}"
 
 
-def publish_outputs(document: dict[str, Any], out_dir: Path) -> None:
+def publish_outputs(document: dict[str, Any], out_dir: Path, assets_dir: Path | None = None) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     archive = out_dir / "archive"
     archive.mkdir(parents=True, exist_ok=True)
@@ -887,7 +1547,7 @@ def publish_outputs(document: dict[str, Any], out_dir: Path) -> None:
 
     json_path.write_text(json.dumps(document, ensure_ascii=False, indent=2), encoding="utf-8")
     render_html(document, html_path)
-    render_pdf(document, pdf_path)
+    render_pdf(document, pdf_path, assets_dir=assets_dir)
 
     shutil.copy2(json_path, out_dir / "latest.json")
     shutil.copy2(html_path, out_dir / "latest.html")
@@ -945,7 +1605,7 @@ def main() -> int:
     )
     validate_analysis(analysis)
     document = build_final_document(facts, analysis)
-    publish_outputs(document, Path(args.output_dir))
+    publish_outputs(document, Path(args.output_dir), assets_dir=Path(args.source_dir))
     print(f"Point national généré : {Path(args.output_dir) / 'latest.pdf'}")
     return 0
 
