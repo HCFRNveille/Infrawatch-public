@@ -1,0 +1,119 @@
+{
+  "schema_version": "point-national-analysis-1.0",
+  "description": "Sortie analytique LLM uniquement. Les niveaux N0-N4 et indicateurs chiffrés restent injectés hors LLM depuis les données InfraWatch.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "national_synthesis",
+    "sector_summaries",
+    "intersectoral_dynamics",
+    "surveillance_points",
+    "national_assessment"
+  ],
+  "properties": {
+    "national_synthesis": {
+      "type": "string",
+      "description": "Synthèse nationale courte, sans recalcul ni attribution de niveau N0-N4."
+    },
+    "sector_summaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "electricity",
+        "nuclear",
+        "gas",
+        "fuel",
+        "telecom",
+        "rail"
+      ],
+      "properties": {
+        "electricity": {
+          "type": "string"
+        },
+        "nuclear": {
+          "type": "string"
+        },
+        "gas": {
+          "type": "string"
+        },
+        "fuel": {
+          "type": "string"
+        },
+        "telecom": {
+          "type": "string"
+        },
+        "rail": {
+          "type": "string"
+        }
+      }
+    },
+    "intersectoral_dynamics": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "analysis",
+          "status"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "analysis": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "watch",
+              "none"
+            ]
+          }
+        }
+      }
+    },
+    "surveillance_points": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sector_id",
+          "title",
+          "analysis"
+        ],
+        "properties": {
+          "sector_id": {
+            "type": "string",
+            "enum": [
+              "national",
+              "electricity",
+              "nuclear",
+              "gas",
+              "fuel",
+              "telecom",
+              "rail",
+              "intersectoral"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "analysis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "national_assessment": {
+      "type": "string",
+      "description": "Appréciation stratégique nationale, sans création ou modification d'un niveau N0-N4."
+    }
+  }
+}
