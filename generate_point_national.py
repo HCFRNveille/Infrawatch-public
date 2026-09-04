@@ -213,11 +213,26 @@ def current_metrics(latest: dict[str, Any], sid: str) -> dict[str, Any]:
         }
     if sid == "telecom":
         t = latest.get("telecom_mobile") or {}
+
+        four_operator_clusters = t.get("four_operator_clusters")
+        if four_operator_clusters is None:
+            clusters = t.get("multi_operator_coordinate_clusters") or []
+            if isinstance(clusters, list):
+                four_operator_clusters = sum(
+                    1
+                    for item in clusters
+                    if isinstance(item, dict) and item.get("operators") == 4
+                )
+
         return {
             "national_down_ratio_pct": t.get("national_down_ratio_pct"),
             "unique_operator_sites_down": t.get("unique_operator_sites_down"),
-            "four_operator_clusters": t.get("four_operator_clusters"),
-            "top_departments": t.get("top_departments") or [],
+            "four_operator_clusters": four_operator_clusters,
+            "top_departments": (
+                t.get("top_departments")
+                or t.get("top_operator_departments_by_ratio")
+                or []
+            ),
         }
     if sid == "rail":
         trip = (latest.get("rail") or {}).get("trip_updates") or {}
@@ -528,6 +543,122 @@ def validate_analysis(analysis: dict[str, Any]) -> None:
             )
 
 
+
+def compact_current_for_document(sid: str, current: dict[str, Any]) -> dict[str, Any]:
+    """
+    Conserve uniquement les métriques nécessaires à la restitution finale.
+    Le fact packet reste détaillé pour l'analyse LLM ; latest.json reste compact
+    pour le dashboard, l'HTML, le PDF et les archives.
+    """
+    if sid == "electricity":
+        keys = (
+            "consumption_mw",
+            "forecast_j_mw",
+            "forecast_j1_mw",
+            "forecast_error_pct",
+            "physical_exchanges_mw",
+            "exchange_ratio_pct",
+            "production_total_mw",
+            "production_by_fuel_mw",
+        )
+        return {key: current.get(key) for key in keys}
+
+    if sid == "nuclear":
+        keys = (
+            "fleet_max_capacity_mw",
+            "fleet_available_capacity_mw",
+            "fleet_unavailable_capacity_mw",
+            "fleet_availability_pct",
+            "planned_current_events",
+            "unplanned_current_events",
+            "chronic_current_events",
+            "current_operational_unavailability_events",
+        )
+        return {key: current.get(key) for key in keys}
+
+    if sid == "gas":
+        return {
+            "operational_status": current.get("operational_status"),
+            "data_quality": current.get("data_quality"),
+            "limits_count": current.get("limits_count"),
+            "green_limits_count": current.get("green_limits_count"),
+            "orange_limits_count": current.get("orange_limits_count"),
+            "red_limits_count": current.get("red_limits_count"),
+            "violet_limits_count": current.get("violet_limits_count"),
+            "unknown_limits_count": current.get("unknown_limits_count"),
+            "alerts": [
+                {
+                    "limit": item.get("limit"),
+                    "vigilance": item.get("vigilance"),
+                    "application_side": item.get("application_side"),
+                    "maintenance": item.get("maintenance"),
+                }
+                for item in (current.get("alerts") or [])
+                if isinstance(item, dict)
+            ][:10],
+            "consumption_reference": current.get("consumption_reference") or {},
+        }
+
+    if sid == "fuel":
+        keys = (
+            "eligible_stations",
+            "stations_with_any_shortage",
+            "national_shortage_ratio_pct",
+            "departments_with_shortage",
+        )
+        compact = {key: current.get(key) for key in keys}
+        compact["top_departments"] = [
+            {
+                "dept_code": item.get("dept_code"),
+                "shortage_ratio_pct": item.get("shortage_ratio_pct"),
+                "stations_with_any_shortage": item.get("stations_with_any_shortage"),
+                "eligible_stations": item.get("eligible_stations"),
+            }
+            for item in (current.get("top_departments") or [])
+            if isinstance(item, dict)
+        ][:10]
+        return compact
+
+    if sid == "telecom":
+        compact = {
+            "national_down_ratio_pct": current.get("national_down_ratio_pct"),
+            "unique_operator_sites_down": current.get("unique_operator_sites_down"),
+            "four_operator_clusters": current.get("four_operator_clusters"),
+        }
+        compact["top_departments"] = [
+            {
+                "operator_code": item.get("operator_code"),
+                "dept_code": item.get("dept_code"),
+                "down_ratio_pct": item.get("down_ratio_pct"),
+                "sites_down": item.get("sites_down"),
+            }
+            for item in (current.get("top_departments") or [])
+            if isinstance(item, dict)
+        ][:10]
+        return compact
+
+    if sid == "rail":
+        alerts = current.get("service_alerts") or {}
+        return {
+            "trips_count": current.get("trips_count"),
+            "canceled_trips": current.get("canceled_trips"),
+            "canceled_ratio_pct": current.get("canceled_ratio_pct"),
+            "trips_delay_ge_30min_ratio_pct": current.get("trips_delay_ge_30min_ratio_pct"),
+            "trips_delay_ge_60min_ratio_pct": current.get("trips_delay_ge_60min_ratio_pct"),
+            "service_alerts": {
+                "active_alerts_count": alerts.get("active_alerts_count"),
+                "operational_alerts_count": alerts.get("operational_alerts_count"),
+                "informational_or_unqualified_alerts_count": alerts.get(
+                    "informational_or_unqualified_alerts_count"
+                ),
+                "effects": alerts.get("effects") or {},
+                "causes": alerts.get("causes") or {},
+            },
+        }
+
+    return current
+
+
 def build_final_document(facts: dict[str, Any], analysis: dict[str, Any]) -> dict[str, Any]:
     return {
         "schema_version": "point-national-document-1.0",
@@ -542,7 +673,10 @@ def build_final_document(facts: dict[str, Any], analysis: dict[str, Any]) -> dic
                 "label": facts["sectors"][sid]["label"],
                 "official_level": facts["sectors"][sid]["official_level"],
                 "backend_trend": facts["sectors"][sid]["backend_trend"],
-                "current": facts["sectors"][sid]["current"],
+                "current": compact_current_for_document(
+                    sid,
+                    facts["sectors"][sid]["current"],
+                ),
                 "analysis": analysis["sector_summaries"][sid],
             }
             for sid in SECTOR_ORDER
