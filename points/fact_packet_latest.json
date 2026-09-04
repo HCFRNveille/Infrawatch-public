@@ -2,7 +2,6 @@
   "schema_version": "point-national-facts-1.0",
   "cycle": "08H00",
   "generated_at": "2026-09-04T09:05:42.792299+00:00",
-  "generated_freshness_minutes": 45,
   "source_origins": {
     "dashboard.json": "local",
     "latest.json": "local",
@@ -33,12 +32,20 @@
     "delta": -0.63
   },
   "source_health": {
-    "ok": 6,
-    "degraded": 0,
-    "error": 0,
-    "usable": 6,
-    "total": 6,
-    "freshness_minutes": 0
+    "dashboard_snapshot": {
+      "generated_at": "2026-09-04T09:05:42.792299+00:00",
+      "age_minutes_at_generation": 51,
+      "meaning": "Âge du dashboard.json utilisé pour construire ce point. Ce n'est pas une mesure de fraîcheur individuelle des sources."
+    },
+    "backend_source_health": {
+      "ok": 6,
+      "degraded": 0,
+      "error": 0,
+      "usable": 6,
+      "total": 6,
+      "reported_freshness_minutes": 0,
+      "meaning": "Fraîcheur agrégée déclarée par le backend InfraWatch pour les sources exploitées. Cette valeur est distincte de l'âge du snapshot dashboard."
+    }
   },
   "sectors": {
     "electricity": {
@@ -7421,6 +7428,8 @@
     "recent": 14,
     "relevant": 2,
     "impacts": 1,
-    "events": []
+    "events_detail_available": false,
+    "events": [],
+    "interpretation_guard": "Les compteurs collected/recent/relevant/impacts peuvent être mentionnés comme des volumes uniquement. Si events_detail_available est false, la nature des événements, leur secteur, leur territoire, leur cause et leur impact précis sont inconnus et ne doivent jamais être inventés ou déduits."
   }
 }
