@@ -51,6 +51,10 @@ Le bloc source_health.dashboard_snapshot.age_minutes_at_generation mesure l'âge
 
 Dans risks_threats, les compteurs collected, recent, relevant et impacts décrivent uniquement des volumes. Si events_detail_available vaut false, tu peux mentionner les volumes, mais tu ne dois jamais attribuer une nature, un territoire, un secteur, une cause ou un impact précis aux événements non détaillés.
 
+Une amélioration d'indicateur ne prouve pas à elle seule une amélioration effective de la continuité des mobilités, des services ou des activités. Formule-la comme un signal favorable ou une détente potentielle, sans affirmer un effet opérationnel qui n'est pas directement mesuré.
+
+Pour les télécommunications, n'emploie un nombre de clusters que si four_operator_clusters est explicitement renseigné dans le paquet. S'il est nul ou absent, ne déduis aucun nombre à partir d'un autre libellé.
+
 Objectif rédactionnel
 
 Produire un point de situation national destiné à une lecture interministérielle / état-major :
