@@ -1,31 +1,31 @@
 {
   "schema_version": "0.9",
-  "generated_at": "2026-09-03T23:05:43.456135+00:00",
+  "generated_at": "2026-09-04T00:05:28.123752+00:00",
   "electricity": {
-    "generated_at": "2026-09-03T23:05:43.900530+00:00",
+    "generated_at": "2026-09-04T00:05:28.624006+00:00",
     "source": "RTE / ODRÉ éCO2mix national temps réel",
     "source_api": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records",
-    "observation_time": "2026-09-03T22:45:00+00:00",
-    "consumption_mw": 40986.0,
-    "forecast_j_mw": 41100.0,
-    "forecast_j1_mw": 41100.0,
-    "forecast_error_pct": -0.278,
+    "observation_time": "2026-09-03T23:45:00+00:00",
+    "consumption_mw": 40224.0,
+    "forecast_j_mw": 40588.0,
+    "forecast_j1_mw": 40400.0,
+    "forecast_error_pct": -0.905,
     "physical_exchanges_mw": -5331.0,
-    "exchange_ratio_pct": -13.007,
-    "production_total_mw": 46563.0,
+    "exchange_ratio_pct": -13.253,
+    "production_total_mw": 45793.0,
     "production_by_fuel_mw": {
-      "nucleaire": 38512.0,
-      "gaz": 458.0,
+      "nucleaire": 38484.0,
+      "gaz": 300.0,
       "fioul": 37.0,
       "charbon": 0.0,
-      "eolien": 3290.0,
+      "eolien": 3354.0,
       "solaire": 0.0,
-      "hydraulique": 3242.0,
-      "bioenergies": 1024.0
+      "hydraulique": 2589.0,
+      "bioenergies": 1029.0
     }
   },
   "nuclear": {
-    "generated_at": "2026-09-03T23:05:52.371161+00:00",
+    "generated_at": "2026-09-04T00:05:36.516152+00:00",
     "source_url": "https://www.edf.fr/doaat/export/light/csv",
     "encoding_used": "cp1252",
     "header_line": 1,
@@ -40,17 +40,17 @@
     "active_publications": 17484,
     "active_nuclear_publications": 11532,
     "active_fleet_assets_detected": 57,
-    "current_nuclear_events_all_types": 233,
-    "current_operational_unavailability_events": 28,
-    "current_chronic_events_context": 205,
+    "current_nuclear_events_all_types": 220,
+    "current_operational_unavailability_events": 27,
+    "current_chronic_events_context": 193,
     "assets_with_current_operational_unavailability": 26,
     "fleet_max_capacity_mw": 62990.0,
     "fleet_available_capacity_mw": 40208.0,
     "fleet_unavailable_capacity_mw": 22782.0,
     "fleet_availability_pct": 63.83,
     "planned_current_events": 23,
-    "unplanned_current_events": 5,
-    "chronic_current_events": 205,
+    "unplanned_current_events": 4,
+    "chronic_current_events": 193,
     "detected_columns": {
       "status": "Status",
       "identifier": "Identifiant",
@@ -67,14 +67,14 @@
     "method_note": "Seules les publications EDF Status=active sont retenues. Pour le calcul instantané de disponibilité, seuls les événements planifiés/programmés et fortuits/non programmés couvrant l'instant présent sont appliqués. Les événements chroniques sont conservés comme contexte mais exclus du calcul instantané. En cas de superposition d'événements opérationnels sur une unité, la puissance disponible minimale est retenue."
   },
   "telecom_mobile": {
-    "generated_at": "2026-09-03T23:05:51.005385+00:00",
-    "rows_source_total": 1265,
-    "unique_operator_sites_down": 1259,
+    "generated_at": "2026-09-04T00:05:35.869737+00:00",
+    "rows_source_total": 1266,
+    "unique_operator_sites_down": 1260,
     "operators_ok": 4,
     "operators_expected": 4,
     "collection_complete": true,
     "active_operator_sites_reference": 124214,
-    "national_down_ratio_pct": 1.0136,
+    "national_down_ratio_pct": 1.0144,
     "by_operator": [
       {
         "operator_code": "bouygues",
@@ -86,9 +86,9 @@
       {
         "operator_code": "free",
         "operator": "Free",
-        "sites_down": 74,
+        "sites_down": 75,
         "active_sites_reference": 30636,
-        "down_ratio_pct": 0.2415
+        "down_ratio_pct": 0.2448
       },
       {
         "operator_code": "orange",
@@ -557,16 +557,53 @@
       "status": "OK",
       "source": "Smart NaTran",
       "dataset": "infovigilance",
-      "observation_date": "2026-09-03",
-      "operational_status": "GREEN",
+      "observation_date": "2026-09-04",
+      "operational_status": "ORANGE",
       "data_quality": "OK",
       "limits_count": 10,
-      "green_limits_count": 10,
-      "orange_limits_count": 0,
+      "green_limits_count": 7,
+      "orange_limits_count": 3,
       "red_limits_count": 0,
       "violet_limits_count": 0,
       "unknown_limits_count": 0,
-      "alerts": [],
+      "alerts": [
+        {
+          "limit": "NS3",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Aval",
+          "small_impact_works_gwh_25c": 0,
+          "maintenance": "Oui",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        },
+        {
+          "limit": "NS4",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Aval",
+          "small_impact_works_gwh_25c": 0,
+          "maintenance": "Non",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        },
+        {
+          "limit": "EO2",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Aval",
+          "small_impact_works_gwh_25c": 0,
+          "maintenance": "Oui",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        }
+      ],
       "limits": [
         {
           "limit": "NS1",
@@ -578,15 +615,15 @@
         },
         {
           "limit": "NS3",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "NS4",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "EO2",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "S1",
@@ -613,7 +650,7 @@
         "FF98BF57": "GREEN",
         "FFFF9933": "ORANGE"
       },
-      "collected_at": "2026-09-03T23:05:52.380450+00:00",
+      "collected_at": "2026-09-04T00:05:36.526425+00:00",
       "source_url": "https://www.smart.natrangroupe.com/api/v1/fr/infovigilance/export.xls"
     },
     "consumption_reference": {
@@ -625,27 +662,27 @@
       "terega_mw": 695,
       "france_total_mw": 20062
     },
-    "collected_at": "2026-09-03T23:05:52.380447+00:00"
+    "collected_at": "2026-09-04T00:05:36.526421+00:00"
   },
   "fuels": {
     "source": "Prix des carburants - Ministère de l'Économie",
     "dataset": "instantane_ruptures",
     "source_url": "https://donnees.roulez-eco.fr/opendata/instantane_ruptures",
-    "collected_at": "2026-09-03T23:05:53.354007+00:00",
+    "collected_at": "2026-09-04T00:05:37.602081+00:00",
     "stations_source_total": 9804,
     "stations_temporarily_closed": 0,
-    "eligible_stations": 9790,
+    "eligible_stations": 9791,
     "stations_with_any_shortage": 464,
-    "national_shortage_ratio_pct": 4.7395,
+    "national_shortage_ratio_pct": 4.739,
     "diesel": {
-      "stations": 9778,
+      "stations": 9779,
       "stations_in_shortage": 138,
-      "shortage_ratio_pct": 1.4113
+      "shortage_ratio_pct": 1.4112
     },
     "petrol": {
-      "stations": 9726,
+      "stations": 9727,
       "stations_in_shortage": 437,
-      "shortage_ratio_pct": 4.4931
+      "shortage_ratio_pct": 4.4926
     },
     "departments_with_shortage": 87,
     "top_departments_by_shortage_ratio": [
@@ -817,18 +854,18 @@
   "rail": {
     "source": "SNCF / transport.data.gouv.fr",
     "scope": "TGV, Intercités et TER",
-    "collected_at": "2026-09-03T23:05:54.419027+00:00",
+    "collected_at": "2026-09-04T00:05:38.790477+00:00",
     "service_alerts": {
-      "active_alerts_count": 393,
+      "active_alerts_count": 401,
       "operational_alerts_count": 0,
-      "informational_or_unqualified_alerts_count": 393,
+      "informational_or_unqualified_alerts_count": 401,
       "effects": {
-        "UNKNOWN_EFFECT": 393
+        "UNKNOWN_EFFECT": 401
       },
       "causes": {
         "UNKNOWN_CAUSE": 169,
         "MAINTENANCE": 152,
-        "OTHER_CAUSE": 72
+        "OTHER_CAUSE": 80
       },
       "sample_active_alerts": [
         {
@@ -7220,21 +7257,21 @@
       "operational_alerts": []
     },
     "trip_updates": {
-      "trips_count": 71,
+      "trips_count": 45,
       "schedule_relationships": {
-        "ADDED": 48,
-        "SCHEDULED": 23
+        "ADDED": 28,
+        "SCHEDULED": 17
       },
       "canceled_trips": 0,
       "canceled_ratio_pct": 0.0,
-      "trips_delay_ge_15min": 21,
-      "trips_delay_ge_15min_ratio_pct": 29.5775,
-      "trips_delay_ge_30min": 7,
-      "trips_delay_ge_30min_ratio_pct": 9.8592,
-      "trips_delay_ge_60min": 1,
-      "trips_delay_ge_60min_ratio_pct": 1.4085,
-      "average_max_delay_seconds": 682.0,
-      "maximum_delay_seconds": 7200
+      "trips_delay_ge_15min": 17,
+      "trips_delay_ge_15min_ratio_pct": 37.7778,
+      "trips_delay_ge_30min": 5,
+      "trips_delay_ge_30min_ratio_pct": 11.1111,
+      "trips_delay_ge_60min": 0,
+      "trips_delay_ge_60min_ratio_pct": 0.0,
+      "average_max_delay_seconds": 720.0,
+      "maximum_delay_seconds": 3000
     }
   }
 }
