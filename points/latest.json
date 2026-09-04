@@ -1,21 +1,7 @@
 {
-  "schema_version": "point-national-facts-1.0",
+  "schema_version": "point-national-document-1.0",
   "cycle": "08H00",
   "generated_at": "2026-09-04T09:05:42.792299+00:00",
-  "source_origins": {
-    "dashboard.json": "local",
-    "latest.json": "local",
-    "latest_live.json": "local",
-    "health.json": "local",
-    "national_status.json": "local",
-    "risks_threats.json": "local"
-  },
-  "doctrine": {
-    "scoring_authority": "InfraWatch backend only",
-    "llm_role": "qualitative analysis only",
-    "no_frontend_or_llm_scoring": true,
-    "no_automatic_causality": true
-  },
   "national": {
     "level": "N2",
     "label": "DÉGRADÉ",
@@ -47,13 +33,12 @@
       "meaning": "Fraîcheur agrégée déclarée par le backend InfraWatch pour les sources exploitées. Cette valeur est distincte de l'âge du snapshot dashboard."
     }
   },
+  "national_synthesis": "La situation nationale est principalement structurée par les indisponibilités de carburants, présentes dans 427 stations et réparties sur 88 départements.\nLa tendance de ce facteur est orientée à la baisse sur 24 heures comme sur la semaine écoulée, après un point haut observé en début de période.\nLe gaz constitue le principal sujet secondaire de vigilance, avec deux limites en vigilance orange et une persistance de cette configuration depuis la veille au soir.\nL’électricité présente un faible écart entre consommation observée et prévision, en réduction sur les dernières heures.\nLa disponibilité nucléaire recule légèrement par rapport au point de la veille, tout en demeurant proche des valeurs récemment observées.\nLes télécommunications restent stables autour de 1 % de sites indisponibles.\nLe ferroviaire montre une diminution du taux d’annulations depuis le pic matinal ; les alertes de service sont à considérer comme des éléments contextuels.\nAucune dynamique intersectorielle caractérisée n’est établie par les données disponibles.\nLe socle de continuité repose ainsi sur des secteurs électriques, télécoms et ferroviaires sans dégradation simultanée objectivée, tandis que le suivi doit rester centré sur les carburants et le gaz.",
   "sectors": {
     "electricity": {
       "label": "Électricité",
       "official_level": "N0",
       "backend_trend": "down",
-      "backend_metric": "48,69 GW",
-      "backend_detail": "écart prévision -0,12 %",
       "current": {
         "consumption_mw": 48692.0,
         "forecast_j_mw": 48750.0,
@@ -73,141 +58,12 @@
           "bioenergies": 1009.0
         }
       },
-      "history_7d": [
-        {
-          "label": "29/08",
-          "value": 0.813
-        },
-        {
-          "label": "30/08",
-          "value": 2.091
-        },
-        {
-          "label": "31/08",
-          "value": 0.321
-        },
-        {
-          "label": "01/09",
-          "value": 2.611
-        },
-        {
-          "label": "02/09",
-          "value": 0.642
-        },
-        {
-          "label": "03/09",
-          "value": 0.905
-        },
-        {
-          "label": "04/09",
-          "value": 0.119
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "03/09 16:46",
-          "value": 0.601
-        },
-        {
-          "label": "03/09 17:05",
-          "value": 0.65
-        },
-        {
-          "label": "03/09 18:05",
-          "value": 1.28
-        },
-        {
-          "label": "03/09 19:05",
-          "value": 1.972
-        },
-        {
-          "label": "03/09 20:05",
-          "value": 1.78
-        },
-        {
-          "label": "03/09 21:05",
-          "value": 0.863
-        },
-        {
-          "label": "03/09 22:05",
-          "value": 1.762
-        },
-        {
-          "label": "03/09 23:05",
-          "value": 1.196
-        },
-        {
-          "label": "04/09 00:05",
-          "value": 1.8
-        },
-        {
-          "label": "04/09 01:05",
-          "value": 0.278
-        },
-        {
-          "label": "04/09 02:05",
-          "value": 0.905
-        },
-        {
-          "label": "04/09 03:05",
-          "value": 0.33
-        },
-        {
-          "label": "04/09 04:05",
-          "value": 0.957
-        },
-        {
-          "label": "04/09 05:05",
-          "value": 1.192
-        },
-        {
-          "label": "04/09 06:05",
-          "value": 1.796
-        },
-        {
-          "label": "04/09 07:05",
-          "value": 1.162
-        },
-        {
-          "label": "04/09 08:05",
-          "value": 0.169
-        },
-        {
-          "label": "04/09 09:05",
-          "value": 0.838
-        },
-        {
-          "label": "04/09 10:00",
-          "value": 0.143
-        },
-        {
-          "label": "04/09 10:06",
-          "value": 0.217
-        },
-        {
-          "label": "04/09 10:13",
-          "value": 0.217
-        },
-        {
-          "label": "04/09 10:30",
-          "value": 0.199
-        },
-        {
-          "label": "04/09 10:50",
-          "value": 0.136
-        },
-        {
-          "label": "04/09 11:05",
-          "value": 0.119
-        }
-      ]
+      "analysis": "La consommation s’établit à 48,69 GW, avec un écart à la prévision de -0,12 %, inférieur aux écarts relevés au cours des dernières 24 heures et parmi les plus faibles de la séquence hebdomadaire. La production totale atteint 62,93 GW. Les échanges physiques, à -13,07 GW, constituent un élément de contexte et ne caractérisent pas à eux seuls une anomalie. La dynamique récente est orientée à la baisse selon le backend."
     },
     "nuclear": {
       "label": "Nucléaire",
       "official_level": "N0",
       "backend_trend": "down",
-      "backend_metric": "39,31 GW",
-      "backend_detail": "62,41 % du parc",
       "current": {
         "fleet_max_capacity_mw": 62990.0,
         "fleet_available_capacity_mw": 39312.0,
@@ -218,141 +74,12 @@
         "chronic_current_events": 199,
         "current_operational_unavailability_events": 28
       },
-      "history_7d": [
-        {
-          "label": "29/08",
-          "value": 57.94
-        },
-        {
-          "label": "30/08",
-          "value": 60.62
-        },
-        {
-          "label": "31/08",
-          "value": 60.2
-        },
-        {
-          "label": "01/09",
-          "value": 62.46
-        },
-        {
-          "label": "02/09",
-          "value": 63.4
-        },
-        {
-          "label": "03/09",
-          "value": 63.4
-        },
-        {
-          "label": "04/09",
-          "value": 62.41
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "03/09 16:46",
-          "value": 62.15
-        },
-        {
-          "label": "03/09 17:05",
-          "value": 62.15
-        },
-        {
-          "label": "03/09 18:05",
-          "value": 62.15
-        },
-        {
-          "label": "03/09 19:05",
-          "value": 62.15
-        },
-        {
-          "label": "03/09 20:05",
-          "value": 62.15
-        },
-        {
-          "label": "03/09 21:05",
-          "value": 63.83
-        },
-        {
-          "label": "03/09 22:05",
-          "value": 63.83
-        },
-        {
-          "label": "03/09 23:05",
-          "value": 63.83
-        },
-        {
-          "label": "04/09 00:05",
-          "value": 63.83
-        },
-        {
-          "label": "04/09 01:05",
-          "value": 63.83
-        },
-        {
-          "label": "04/09 02:05",
-          "value": 63.83
-        },
-        {
-          "label": "04/09 03:05",
-          "value": 63.83
-        },
-        {
-          "label": "04/09 04:05",
-          "value": 63.83
-        },
-        {
-          "label": "04/09 05:05",
-          "value": 62.15
-        },
-        {
-          "label": "04/09 06:05",
-          "value": 62.31
-        },
-        {
-          "label": "04/09 07:05",
-          "value": 62.15
-        },
-        {
-          "label": "04/09 08:05",
-          "value": 62.15
-        },
-        {
-          "label": "04/09 09:05",
-          "value": 62.36
-        },
-        {
-          "label": "04/09 10:00",
-          "value": 62.41
-        },
-        {
-          "label": "04/09 10:06",
-          "value": 62.41
-        },
-        {
-          "label": "04/09 10:13",
-          "value": 62.41
-        },
-        {
-          "label": "04/09 10:30",
-          "value": 62.41
-        },
-        {
-          "label": "04/09 10:50",
-          "value": 62.31
-        },
-        {
-          "label": "04/09 11:05",
-          "value": 62.41
-        }
-      ]
+      "analysis": "La capacité disponible atteint 39,31 GW, soit 62,41 % du parc, après une légère baisse par rapport au niveau de 63,40 % observé les deux jours précédents. La disponibilité reste néanmoins supérieure aux valeurs relevées en début de période hebdomadaire. Les 23 événements planifiés, 5 non planifiés et 199 chroniques constituent des éléments contextuels ; 28 événements d’indisponibilité opérationnelle sont recensés. La dynamique fournie est orientée à la baisse."
     },
     "gas": {
       "label": "Gaz",
       "official_level": "N1",
       "backend_trend": "unknown",
-      "backend_metric": "8/10 vertes",
-      "backend_detail": "Smart NaTran ORANGE",
       "current": {
         "operational_status": "ORANGE",
         "data_quality": "OK",
@@ -437,141 +164,12 @@
           "terega_mw": 695
         }
       },
-      "history_7d": [
-        {
-          "label": "29/08",
-          "value": "GREEN"
-        },
-        {
-          "label": "30/08",
-          "value": "GREEN"
-        },
-        {
-          "label": "31/08",
-          "value": "ORANGE"
-        },
-        {
-          "label": "01/09",
-          "value": "GREEN"
-        },
-        {
-          "label": "02/09",
-          "value": "ORANGE"
-        },
-        {
-          "label": "03/09",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09",
-          "value": "ORANGE"
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "03/09 16:46",
-          "value": "GREEN"
-        },
-        {
-          "label": "03/09 17:05",
-          "value": "GREEN"
-        },
-        {
-          "label": "03/09 18:05",
-          "value": "GREEN"
-        },
-        {
-          "label": "03/09 19:05",
-          "value": "GREEN"
-        },
-        {
-          "label": "03/09 20:05",
-          "value": "GREEN"
-        },
-        {
-          "label": "03/09 21:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "03/09 22:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "03/09 23:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 00:05",
-          "value": "GREEN"
-        },
-        {
-          "label": "04/09 01:05",
-          "value": "GREEN"
-        },
-        {
-          "label": "04/09 02:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 03:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 04:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 05:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 06:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 07:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 08:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 09:05",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 10:00",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 10:06",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 10:13",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 10:30",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 10:50",
-          "value": "ORANGE"
-        },
-        {
-          "label": "04/09 11:05",
-          "value": "ORANGE"
-        }
-      ]
+      "analysis": "La situation opérationnelle est orange, avec 8 limites vertes sur 10 et deux limites orange, NS3 et NS4, situées à l’aval. Cette configuration orange persiste depuis la veille au soir après des alternances avec le vert durant la nuit précédente, et elle est également présente sur plusieurs jours de la semaine. La référence de consommation disponible est explicitement historique et ne décrit pas une situation en temps réel. Aucun élément du paquet ne fait état de limite rouge ou violette."
     },
     "fuel": {
       "label": "Carburants",
       "official_level": "N2",
       "backend_trend": "down",
-      "backend_metric": "4,36 %",
-      "backend_detail": "427 stations",
       "current": {
         "eligible_stations": 9791,
         "stations_with_any_shortage": 427,
@@ -579,282 +177,24 @@
         "departments_with_shortage": 88,
         "top_departments": []
       },
-      "history_7d": [
-        {
-          "label": "29/08",
-          "value": 3.9628
-        },
-        {
-          "label": "30/08",
-          "value": 5.5056
-        },
-        {
-          "label": "31/08",
-          "value": 7.7937
-        },
-        {
-          "label": "01/09",
-          "value": 7.9971
-        },
-        {
-          "label": "02/09",
-          "value": 6.1875
-        },
-        {
-          "label": "03/09",
-          "value": 4.9944
-        },
-        {
-          "label": "04/09",
-          "value": 4.3611
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "03/09 16:46",
-          "value": 4.6685
-        },
-        {
-          "label": "03/09 17:05",
-          "value": 4.6782
-        },
-        {
-          "label": "03/09 18:05",
-          "value": 4.8008
-        },
-        {
-          "label": "03/09 19:05",
-          "value": 4.74
-        },
-        {
-          "label": "03/09 20:05",
-          "value": 4.8018
-        },
-        {
-          "label": "03/09 21:05",
-          "value": 4.9857
-        },
-        {
-          "label": "03/09 22:05",
-          "value": 5.026
-        },
-        {
-          "label": "03/09 23:05",
-          "value": 5.097
-        },
-        {
-          "label": "04/09 00:05",
-          "value": 5.1175
-        },
-        {
-          "label": "04/09 01:05",
-          "value": 4.7395
-        },
-        {
-          "label": "04/09 02:05",
-          "value": 4.739
-        },
-        {
-          "label": "04/09 03:05",
-          "value": 4.739
-        },
-        {
-          "label": "04/09 04:05",
-          "value": 4.739
-        },
-        {
-          "label": "04/09 05:05",
-          "value": 4.739
-        },
-        {
-          "label": "04/09 06:05",
-          "value": 4.739
-        },
-        {
-          "label": "04/09 07:05",
-          "value": 4.7493
-        },
-        {
-          "label": "04/09 08:05",
-          "value": 4.4735
-        },
-        {
-          "label": "04/09 09:05",
-          "value": 4.2905
-        },
-        {
-          "label": "04/09 10:00",
-          "value": 4.3927
-        },
-        {
-          "label": "04/09 10:06",
-          "value": 4.3412
-        },
-        {
-          "label": "04/09 10:13",
-          "value": 4.3927
-        },
-        {
-          "label": "04/09 10:30",
-          "value": 4.3407
-        },
-        {
-          "label": "04/09 10:50",
-          "value": 4.3305
-        },
-        {
-          "label": "04/09 11:05",
-          "value": 4.3611
-        }
-      ]
+      "analysis": "Les indisponibilités concernent 427 stations sur 9 791 éligibles, soit 4,36 %, réparties dans 88 départements. Ce volume demeure le facteur structurant du point national, mais il recule de 0,63 point depuis le dernier point consolidé et prolonge la baisse engagée depuis le maximum hebdomadaire proche de 8 %. La trajectoire récente traduit une amélioration à confirmer au prochain cycle, sans précision disponible sur les départements les plus affectés."
     },
     "telecom": {
       "label": "Télécommunications",
       "official_level": "N0",
       "backend_trend": "stable",
-      "backend_metric": "1,02 %",
-      "backend_detail": "4 clusters",
       "current": {
         "national_down_ratio_pct": 1.0216,
         "unique_operator_sites_down": 1269,
         "four_operator_clusters": null,
         "top_departments": []
       },
-      "history_7d": [
-        {
-          "label": "29/08",
-          "value": 1.2736
-        },
-        {
-          "label": "30/08",
-          "value": 1.0031
-        },
-        {
-          "label": "31/08",
-          "value": 1.177
-        },
-        {
-          "label": "01/09",
-          "value": 1.1206
-        },
-        {
-          "label": "02/09",
-          "value": 1.4024
-        },
-        {
-          "label": "03/09",
-          "value": 1.0474
-        },
-        {
-          "label": "04/09",
-          "value": 1.0216
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "03/09 16:46",
-          "value": 1.0136
-        },
-        {
-          "label": "03/09 17:05",
-          "value": 1.0095
-        },
-        {
-          "label": "03/09 18:05",
-          "value": 1.0079
-        },
-        {
-          "label": "03/09 19:05",
-          "value": 1.0112
-        },
-        {
-          "label": "03/09 20:05",
-          "value": 1.0289
-        },
-        {
-          "label": "03/09 21:05",
-          "value": 1.0128
-        },
-        {
-          "label": "03/09 22:05",
-          "value": 1.0112
-        },
-        {
-          "label": "03/09 23:05",
-          "value": 1.0144
-        },
-        {
-          "label": "04/09 00:05",
-          "value": 1.0128
-        },
-        {
-          "label": "04/09 01:05",
-          "value": 1.0136
-        },
-        {
-          "label": "04/09 02:05",
-          "value": 1.0144
-        },
-        {
-          "label": "04/09 03:05",
-          "value": 1.016
-        },
-        {
-          "label": "04/09 04:05",
-          "value": 1.012
-        },
-        {
-          "label": "04/09 05:05",
-          "value": 0.9943
-        },
-        {
-          "label": "04/09 06:05",
-          "value": 0.9943
-        },
-        {
-          "label": "04/09 07:05",
-          "value": 0.9798
-        },
-        {
-          "label": "04/09 08:05",
-          "value": 1.0055
-        },
-        {
-          "label": "04/09 09:05",
-          "value": 0.9991
-        },
-        {
-          "label": "04/09 10:00",
-          "value": 1.0015
-        },
-        {
-          "label": "04/09 10:06",
-          "value": 1.0112
-        },
-        {
-          "label": "04/09 10:13",
-          "value": 1.0112
-        },
-        {
-          "label": "04/09 10:30",
-          "value": 1.0112
-        },
-        {
-          "label": "04/09 10:50",
-          "value": 1.0216
-        },
-        {
-          "label": "04/09 11:05",
-          "value": 1.0216
-        }
-      ]
+      "analysis": "Le taux national de sites indisponibles est de 1,02 %, pour 1 269 sites uniques, avec quatre clusters signalés. L’indicateur est globalement stable sur 24 heures, après un point bas voisin de 0,98 %, et se situe en léger retrait par rapport à la veille ainsi qu’au regard du point haut hebdomadaire. Aucune concentration départementale n’est fournie dans le paquet."
     },
     "rail": {
       "label": "Ferroviaire",
       "official_level": "N0",
       "backend_trend": "down",
-      "backend_metric": "1,07 %",
-      "backend_detail": "trains annulés",
       "current": {
         "trips_count": 1211,
         "canceled_trips": 13,
@@ -7263,173 +6603,48 @@
           "operational_alerts": []
         }
       },
-      "history_7d": [
-        {
-          "label": "29/08",
-          "value": 1.1102
-        },
-        {
-          "label": "30/08",
-          "value": 0.4484
-        },
-        {
-          "label": "31/08",
-          "value": 2.1277
-        },
-        {
-          "label": "01/09",
-          "value": 1.9797
-        },
-        {
-          "label": "02/09",
-          "value": 1.0242
-        },
-        {
-          "label": "03/09",
-          "value": 1.8131
-        },
-        {
-          "label": "04/09",
-          "value": 1.0735
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "03/09 16:46",
-          "value": 1.8607
-        },
-        {
-          "label": "03/09 17:05",
-          "value": 1.9034
-        },
-        {
-          "label": "03/09 18:05",
-          "value": 1.9089
-        },
-        {
-          "label": "03/09 19:05",
-          "value": 1.6008
-        },
-        {
-          "label": "03/09 20:05",
-          "value": 1.1748
-        },
-        {
-          "label": "03/09 21:05",
-          "value": 0.6403
-        },
-        {
-          "label": "03/09 22:05",
-          "value": 0.6036
-        },
-        {
-          "label": "03/09 23:05",
-          "value": 0.0
-        },
-        {
-          "label": "04/09 00:05",
-          "value": 1.8692
-        },
-        {
-          "label": "04/09 01:05",
-          "value": 0.0
-        },
-        {
-          "label": "04/09 02:05",
-          "value": 0.0
-        },
-        {
-          "label": "04/09 03:05",
-          "value": 0.0
-        },
-        {
-          "label": "04/09 04:05",
-          "value": 0.0
-        },
-        {
-          "label": "04/09 05:05",
-          "value": 2.144
-        },
-        {
-          "label": "04/09 06:05",
-          "value": 3.0928
-        },
-        {
-          "label": "04/09 07:05",
-          "value": 2.9412
-        },
-        {
-          "label": "04/09 08:05",
-          "value": 2.8112
-        },
-        {
-          "label": "04/09 09:05",
-          "value": 2.1277
-        },
-        {
-          "label": "04/09 10:00",
-          "value": 1.6474
-        },
-        {
-          "label": "04/09 10:06",
-          "value": 1.6611
-        },
-        {
-          "label": "04/09 10:13",
-          "value": 1.6529
-        },
-        {
-          "label": "04/09 10:30",
-          "value": 1.3457
-        },
-        {
-          "label": "04/09 10:50",
-          "value": 1.2521
-        },
-        {
-          "label": "04/09 11:05",
-          "value": 1.0735
-        }
-      ]
+      "analysis": "Les annulations représentent 13 circulations sur 1 211, soit 1,07 %, en baisse par rapport à la veille et après le pic observé en début de matinée. Les retards d’au moins 30 minutes concernent 1,57 % des circulations et ceux d’au moins 60 minutes 0,58 %. Les 452 alertes de service actives sont toutes informationnelles ou non qualifiées, sans alerte opérationnelle ; elles restent donc contextuelles hors scoring. Plusieurs informations portent explicitement sur des travaux et adaptations programmés."
     }
   },
-  "territories": [
+  "intersectoral_dynamics": [
     {
-      "name": "Paris",
-      "value": 19.1489
-    },
-    {
-      "name": "Sarthe",
-      "value": 16.4948
-    },
-    {
-      "name": "Ille-et-Vilaine",
-      "value": 15.5405
-    },
-    {
-      "name": "Bas-Rhin",
-      "value": 13.6986
-    },
-    {
-      "name": "Meuse",
-      "value": 13.5135
+      "title": "Absence de dynamique intersectorielle caractérisée",
+      "analysis": "Les données disponibles ne caractérisent pas de concomitance intersectorielle au-delà de situations sectorielles distinctes. Les indisponibilités de carburants et la vigilance gazière doivent être suivies en parallèle, sans lien causal établi entre elles ni avec les autres secteurs.",
+      "status": "none"
     }
   ],
-  "correlations": [
+  "surveillance_points": [
     {
-      "from": "Risques & Menaces",
-      "to": "État opérationnel",
-      "status": "none",
-      "text": "Aucune concomitance intersectorielle n'est caractérisée dans le point InfraWatch courant."
+      "sector_id": "fuel",
+      "title": "Confirmation de la baisse des indisponibilités en stations",
+      "analysis": "Vérifier au prochain cycle si le recul observé depuis le point haut hebdomadaire se poursuit, se stabilise ou s’inverse, ainsi que l’évolution du nombre de départements concernés."
+    },
+    {
+      "sector_id": "gas",
+      "title": "Maintien ou évolution des deux limites orange",
+      "analysis": "Suivre le statut de NS3 et NS4 et l’éventuelle apparition de limites supplémentaires dans une autre vigilance."
+    },
+    {
+      "sector_id": "nuclear",
+      "title": "Stabilisation de la disponibilité du parc",
+      "analysis": "Contrôler si le repli récent de la capacité disponible se prolonge et suivre l’évolution des indisponibilités opérationnelles recensées."
+    },
+    {
+      "sector_id": "rail",
+      "title": "Consolidation du trafic après le pic matinal",
+      "analysis": "Vérifier si le taux d’annulations et les retards poursuivent leur décrue lors des prochaines plages de circulation."
+    },
+    {
+      "sector_id": "national",
+      "title": "Actualisation de la trajectoire nationale",
+      "analysis": "Réexaminer l’évolution conjointe des carburants et du gaz, sans inférer de relation causale, afin d’identifier toute modification objectivée de la situation d’ensemble."
     }
   ],
-  "risks_threats": {
-    "collected": 650,
-    "recent": 14,
-    "relevant": 2,
-    "impacts": 1,
-    "events_detail_available": false,
-    "events": [],
-    "interpretation_guard": "Les compteurs collected/recent/relevant/impacts peuvent être mentionnés comme des volumes uniquement. Si events_detail_available est false, la nature des événements, leur secteur, leur territoire, leur cause et leur impact précis sont inconnus et ne doivent jamais être inventés ou déduits."
+  "national_assessment": "La situation nationale demeure principalement contrainte par la disponibilité des carburants.\nLe facteur dimensionnant est en amélioration récente, avec un recul du ratio de stations concernées depuis la veille et depuis le pic hebdomadaire.\nCette évolution réduit la pression immédiate sur la continuité des mobilités et des activités dépendantes des approvisionnements, sous réserve de confirmation.\nLa persistance de deux limites gazières orange constitue la principale fragilité sectorielle complémentaire.\nLe système électrique présente un écart prévisionnel faible et en diminution.\nLa disponibilité nucléaire se tasse légèrement, sans rupture de tendance distincte au sein de la période observée.\nLes télécommunications affichent une situation stable.\nLe ferroviaire enregistre une amélioration des annulations après le pic du matin ; ses alertes actives demeurent contextuelles.\nLes données ne démontrent pas de propagation ni de mécanisme commun entre les situations sectorielles.\nLes marges de résilience apparaissent soutenues par la stabilité des infrastructures électriques, télécoms et ferroviaires.\nLa principale incertitude opérationnelle porte sur la consolidation de la décrue des indisponibilités de carburants.\nLe prochain cycle devra en priorité confirmer cette trajectoire et apprécier l’évolution du statut gazier.\nLa qualité des sources exploitées est déclarée pleinement utilisable par le backend.",
+  "doctrine": {
+    "scoring_authority": "InfraWatch backend only",
+    "llm_role": "qualitative analysis only",
+    "no_frontend_or_llm_scoring": true,
+    "no_automatic_causality": true
   }
 }
