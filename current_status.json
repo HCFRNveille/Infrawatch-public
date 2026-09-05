@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.8",
-  "generated_at": "2026-09-05T18:05:47.903254+00:00",
+  "generated_at": "2026-09-05T19:05:47.194892+00:00",
   "national": {
     "level": "N2",
     "label": "Dégradé"
@@ -12,11 +12,11 @@
       "confidence": "moyenne+",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 44175.0,
-        "forecast_error_pct": -0.17,
-        "forecast_error_abs_pct": 0.17,
-        "exchange_ratio_pct": -9.442,
-        "observation_time": "2026-09-05T17:45:00+00:00",
+        "consumption_mw": 43875.0,
+        "forecast_error_pct": 1.197,
+        "forecast_error_abs_pct": 1.197,
+        "exchange_ratio_pct": -10.042,
+        "observation_time": "2026-09-05T18:45:00+00:00",
         "slot": "evening",
         "statistical_z_score": null
       },
@@ -39,12 +39,12 @@
       "confidence": "moyenne+",
       "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
       "metrics": {
-        "fleet_availability_pct": 60.93,
-        "fleet_available_capacity_mw": 38378.0,
+        "fleet_availability_pct": 62.17,
+        "fleet_available_capacity_mw": 39160.0,
         "fleet_max_capacity_mw": 62990.0,
-        "planned_current_events": 26,
+        "planned_current_events": 25,
         "unplanned_current_events": 4,
-        "chronic_current_events": 198,
+        "chronic_current_events": 194,
         "slot": "evening",
         "availability_statistical_z_score": null,
         "unplanned_events_statistical_z_score": null
@@ -76,8 +76,8 @@
       "confidence": "élevée",
       "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal.",
       "metrics": {
-        "national_down_ratio_pct": 0.8791,
-        "unique_operator_sites_down": 1092,
+        "national_down_ratio_pct": 0.8775,
+        "unique_operator_sites_down": 1090,
         "active_operator_sites_reference": 124214,
         "four_operator_clusters": 4,
         "multi_operator_hotspots_20pct": 0,
@@ -94,9 +94,9 @@
           {
             "operator_code": "free",
             "operator": "Free",
-            "sites_down": 68,
+            "sites_down": 66,
             "active_sites_reference": 30636,
-            "down_ratio_pct": 0.222
+            "down_ratio_pct": 0.2154
           },
           {
             "operator_code": "orange",
@@ -166,10 +166,10 @@
       "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
       "metrics": {
         "eligible_stations": 9796,
-        "stations_with_any_shortage": 690,
-        "national_shortage_ratio_pct": 7.0437,
-        "diesel_shortage_ratio_pct": 1.5854,
-        "petrol_shortage_ratio_pct": 6.7917,
+        "stations_with_any_shortage": 706,
+        "national_shortage_ratio_pct": 7.207,
+        "diesel_shortage_ratio_pct": 1.6159,
+        "petrol_shortage_ratio_pct": 6.9434,
         "departments_with_shortage": 90,
         "slot": "evening",
         "statistical_z_score": null,
@@ -188,8 +188,8 @@
           },
           {
             "dept_code": "35",
-            "shortage_ratio_pct": 17.4497,
-            "stations_with_any_shortage": 26,
+            "shortage_ratio_pct": 18.1208,
+            "stations_with_any_shortage": 27,
             "eligible_stations": 149
           },
           {
@@ -215,6 +215,12 @@
             "shortage_ratio_pct": 13.5135,
             "stations_with_any_shortage": 5,
             "eligible_stations": 37
+          },
+          {
+            "dept_code": "91",
+            "shortage_ratio_pct": 13.1783,
+            "stations_with_any_shortage": 17,
+            "eligible_stations": 129
           },
           {
             "dept_code": "68",
@@ -257,12 +263,6 @@
             "shortage_ratio_pct": 11.9658,
             "stations_with_any_shortage": 14,
             "eligible_stations": 117
-          },
-          {
-            "dept_code": "91",
-            "shortage_ratio_pct": 11.6279,
-            "stations_with_any_shortage": 15,
-            "eligible_stations": 129
           },
           {
             "dept_code": "94",
@@ -310,8 +310,8 @@
           },
           {
             "dept_code": "35",
-            "shortage_ratio_pct": 17.4497,
-            "stations_with_any_shortage": 26,
+            "shortage_ratio_pct": 18.1208,
+            "stations_with_any_shortage": 27,
             "eligible_stations": 149
           },
           {
@@ -336,27 +336,27 @@
       }
     },
     "rail": {
-      "level": "N0",
-      "label": "Nominal",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "moyenne+",
-      "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
+      "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire.",
       "metrics": {
-        "collected_at": "2026-09-05T18:05:45.717718+00:00",
+        "collected_at": "2026-09-05T19:05:45.214067+00:00",
         "slot": "evening",
-        "trips_count": 956,
-        "scheduled_trips": 830,
-        "added_trips": 114,
-        "canceled_trips": 12,
-        "canceled_ratio_pct": 1.2552,
-        "trips_delay_ge_15min": 82,
-        "trips_delay_ge_15min_ratio_pct": 8.5774,
-        "trips_delay_ge_30min": 40,
-        "trips_delay_ge_30min_ratio_pct": 4.1841,
-        "trips_delay_ge_60min": 7,
-        "trips_delay_ge_60min_ratio_pct": 0.7322,
-        "average_max_delay_seconds": 205.4,
+        "trips_count": 669,
+        "scheduled_trips": 574,
+        "added_trips": 87,
+        "canceled_trips": 8,
+        "canceled_ratio_pct": 1.1958,
+        "trips_delay_ge_15min": 65,
+        "trips_delay_ge_15min_ratio_pct": 9.716,
+        "trips_delay_ge_30min": 34,
+        "trips_delay_ge_30min_ratio_pct": 5.0822,
+        "trips_delay_ge_60min": 6,
+        "trips_delay_ge_60min_ratio_pct": 0.8969,
+        "average_max_delay_seconds": 257.0,
         "maximum_delay_seconds": 10800,
-        "active_service_alerts": 454,
+        "active_service_alerts": 445,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": null,
         "delay_30_statistical_z_score": null,
