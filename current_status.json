@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.8",
-  "generated_at": "2026-09-05T15:05:40.097469+00:00",
+  "generated_at": "2026-09-05T16:05:37.187234+00:00",
   "national": {
     "level": "N2",
     "label": "Dégradé"
@@ -12,11 +12,11 @@
       "confidence": "moyenne+",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 41401.0,
-        "forecast_error_pct": -2.534,
-        "forecast_error_abs_pct": 2.534,
-        "exchange_ratio_pct": -23.383,
-        "observation_time": "2026-09-05T14:45:00+00:00",
+        "consumption_mw": 42563.0,
+        "forecast_error_pct": 0.97,
+        "forecast_error_abs_pct": 0.97,
+        "exchange_ratio_pct": -19.472,
+        "observation_time": "2026-09-05T15:45:00+00:00",
         "slot": "evening",
         "statistical_z_score": null
       },
@@ -76,8 +76,8 @@
       "confidence": "élevée",
       "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal.",
       "metrics": {
-        "national_down_ratio_pct": 0.8823,
-        "unique_operator_sites_down": 1096,
+        "national_down_ratio_pct": 0.8751,
+        "unique_operator_sites_down": 1087,
         "active_operator_sites_reference": 124214,
         "four_operator_clusters": 4,
         "multi_operator_hotspots_20pct": 0,
@@ -94,9 +94,9 @@
           {
             "operator_code": "free",
             "operator": "Free",
-            "sites_down": 72,
+            "sites_down": 63,
             "active_sites_reference": 30636,
-            "down_ratio_pct": 0.235
+            "down_ratio_pct": 0.2056
           },
           {
             "operator_code": "orange",
@@ -128,38 +128,26 @@
       }
     },
     "gas": {
-      "level": "N2",
-      "label": "Dégradé",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "élevée",
-      "rationale": "Au moins une limite du réseau NaTran présente une situation de congestion dégradée ou un mécanisme opérationnel équivalent.",
+      "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange.",
       "metrics": {
         "observation_date": "2026-09-05",
-        "operational_status": "RED",
+        "operational_status": "ORANGE",
         "data_quality": "OK",
         "limits_count": 10,
-        "green_limits_count": 8,
-        "orange_limits_count": 0,
-        "red_limits_count": 2,
+        "green_limits_count": 9,
+        "orange_limits_count": 1,
+        "red_limits_count": 0,
         "violet_limits_count": 0,
         "unknown_limits_count": 0,
         "alerts": [
           {
-            "limit": "NS3",
-            "vigilance": "RED",
-            "vigilance_rgb": "FFFF4D4D",
-            "detection_method": "congestion_mechanism_fallback",
-            "application_side": "Aval",
-            "small_impact_works_gwh_25c": 0,
-            "maintenance": "Oui",
-            "interruptible_uioli_sales_stop": "Oui",
-            "localized_spread": "Oui",
-            "mutualized_restriction": "Non"
-          },
-          {
             "limit": "NS4",
-            "vigilance": "RED",
-            "vigilance_rgb": "FFFF4D4D",
-            "detection_method": "congestion_mechanism_fallback",
+            "vigilance": "ORANGE",
+            "vigilance_rgb": "FFFF9933",
+            "detection_method": "validated_color",
             "application_side": "Aval",
             "small_impact_works_gwh_25c": 0,
             "maintenance": "Non",
@@ -178,10 +166,10 @@
       "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
       "metrics": {
         "eligible_stations": 9795,
-        "stations_with_any_shortage": 594,
-        "national_shortage_ratio_pct": 6.0643,
-        "diesel_shortage_ratio_pct": 1.5035,
-        "petrol_shortage_ratio_pct": 5.8314,
+        "stations_with_any_shortage": 612,
+        "national_shortage_ratio_pct": 6.2481,
+        "diesel_shortage_ratio_pct": 1.5241,
+        "petrol_shortage_ratio_pct": 5.9951,
         "departments_with_shortage": 89,
         "slot": "evening",
         "statistical_z_score": null,
@@ -194,9 +182,15 @@
           },
           {
             "dept_code": "67",
-            "shortage_ratio_pct": 17.1233,
-            "stations_with_any_shortage": 25,
+            "shortage_ratio_pct": 17.8082,
+            "stations_with_any_shortage": 26,
             "eligible_stations": 146
+          },
+          {
+            "dept_code": "35",
+            "shortage_ratio_pct": 15.4362,
+            "stations_with_any_shortage": 23,
+            "eligible_stations": 149
           },
           {
             "dept_code": "75",
@@ -221,12 +215,6 @@
             "shortage_ratio_pct": 13.5135,
             "stations_with_any_shortage": 5,
             "eligible_stations": 37
-          },
-          {
-            "dept_code": "35",
-            "shortage_ratio_pct": 13.4228,
-            "stations_with_any_shortage": 20,
-            "eligible_stations": 149
           },
           {
             "dept_code": "41",
@@ -274,9 +262,15 @@
           },
           {
             "dept_code": "67",
-            "shortage_ratio_pct": 17.1233,
-            "stations_with_any_shortage": 25,
+            "shortage_ratio_pct": 17.8082,
+            "stations_with_any_shortage": 26,
             "eligible_stations": 146
+          },
+          {
+            "dept_code": "35",
+            "shortage_ratio_pct": 15.4362,
+            "stations_with_any_shortage": 23,
+            "eligible_stations": 149
           }
         ]
       },
@@ -299,22 +293,22 @@
       "confidence": "moyenne+",
       "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
       "metrics": {
-        "collected_at": "2026-09-05T15:05:38.372268+00:00",
+        "collected_at": "2026-09-05T16:05:35.535719+00:00",
         "slot": "evening",
-        "trips_count": 1202,
-        "scheduled_trips": 1068,
-        "added_trips": 116,
-        "canceled_trips": 18,
-        "canceled_ratio_pct": 1.4975,
-        "trips_delay_ge_15min": 51,
-        "trips_delay_ge_15min_ratio_pct": 4.2429,
-        "trips_delay_ge_30min": 14,
-        "trips_delay_ge_30min_ratio_pct": 1.1647,
-        "trips_delay_ge_60min": 3,
-        "trips_delay_ge_60min_ratio_pct": 0.2496,
-        "average_max_delay_seconds": 92.1,
+        "trips_count": 1235,
+        "scheduled_trips": 1100,
+        "added_trips": 120,
+        "canceled_trips": 15,
+        "canceled_ratio_pct": 1.2146,
+        "trips_delay_ge_15min": 64,
+        "trips_delay_ge_15min_ratio_pct": 5.1822,
+        "trips_delay_ge_30min": 19,
+        "trips_delay_ge_30min_ratio_pct": 1.5385,
+        "trips_delay_ge_60min": 4,
+        "trips_delay_ge_60min_ratio_pct": 0.3239,
+        "average_max_delay_seconds": 115.2,
         "maximum_delay_seconds": 4200,
-        "active_service_alerts": 447,
+        "active_service_alerts": 461,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": null,
         "delay_30_statistical_z_score": null,
