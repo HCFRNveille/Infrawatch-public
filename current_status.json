@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.8",
-  "generated_at": "2026-09-05T23:05:48.179749+00:00",
+  "generated_at": "2026-09-06T00:05:36.732829+00:00",
   "national": {
     "level": "N2",
     "label": "Dégradé"
@@ -12,11 +12,11 @@
       "confidence": "moyenne+",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 38045.0,
-        "forecast_error_pct": -1.984,
-        "forecast_error_abs_pct": 1.984,
-        "exchange_ratio_pct": -21.07,
-        "observation_time": "2026-09-05T22:45:00+00:00",
+        "consumption_mw": 36761.0,
+        "forecast_error_pct": -0.922,
+        "forecast_error_abs_pct": 0.922,
+        "exchange_ratio_pct": -23.514,
+        "observation_time": "2026-09-05T23:45:00+00:00",
         "slot": "morning",
         "statistical_z_score": null
       },
@@ -39,12 +39,12 @@
       "confidence": "moyenne+",
       "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
       "metrics": {
-        "fleet_availability_pct": 64.0,
-        "fleet_available_capacity_mw": 40315.0,
+        "fleet_availability_pct": 62.26,
+        "fleet_available_capacity_mw": 39220.0,
         "fleet_max_capacity_mw": 62990.0,
-        "planned_current_events": 23,
-        "unplanned_current_events": 4,
-        "chronic_current_events": 198,
+        "planned_current_events": 24,
+        "unplanned_current_events": 3,
+        "chronic_current_events": 184,
         "slot": "morning",
         "availability_statistical_z_score": null,
         "unplanned_events_statistical_z_score": null
@@ -76,8 +76,8 @@
       "confidence": "élevée",
       "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal.",
       "metrics": {
-        "national_down_ratio_pct": 0.8767,
-        "unique_operator_sites_down": 1089,
+        "national_down_ratio_pct": 0.8751,
+        "unique_operator_sites_down": 1087,
         "active_operator_sites_reference": 124214,
         "four_operator_clusters": 4,
         "multi_operator_hotspots_20pct": 0,
@@ -94,9 +94,9 @@
           {
             "operator_code": "free",
             "operator": "Free",
-            "sites_down": 65,
+            "sites_down": 63,
             "active_sites_reference": 30636,
-            "down_ratio_pct": 0.2122
+            "down_ratio_pct": 0.2056
           },
           {
             "operator_code": "orange",
@@ -128,21 +128,46 @@
       }
     },
     "gas": {
-      "level": "N0",
-      "label": "Nominal",
+      "level": "N2",
+      "label": "Dégradé",
       "confidence": "élevée",
-      "rationale": "Les limites surveillées par Smart NaTran sont en situation nominale.",
+      "rationale": "Au moins une limite du réseau NaTran présente une situation de congestion dégradée ou un mécanisme opérationnel équivalent.",
       "metrics": {
-        "observation_date": "2026-09-05",
-        "operational_status": "GREEN",
+        "observation_date": "2026-09-06",
+        "operational_status": "RED",
         "data_quality": "OK",
         "limits_count": 10,
-        "green_limits_count": 10,
-        "orange_limits_count": 0,
-        "red_limits_count": 0,
+        "green_limits_count": 8,
+        "orange_limits_count": 1,
+        "red_limits_count": 1,
         "violet_limits_count": 0,
         "unknown_limits_count": 0,
-        "alerts": []
+        "alerts": [
+          {
+            "limit": "NS3",
+            "vigilance": "ORANGE",
+            "vigilance_rgb": "FFFF9933",
+            "detection_method": "validated_color",
+            "application_side": "Aval",
+            "small_impact_works_gwh_25c": 0,
+            "maintenance": "Oui",
+            "interruptible_uioli_sales_stop": "Non",
+            "localized_spread": "Non",
+            "mutualized_restriction": "Non"
+          },
+          {
+            "limit": "NS4",
+            "vigilance": "RED",
+            "vigilance_rgb": "FFFF4D4D",
+            "detection_method": "congestion_mechanism_fallback",
+            "application_side": "Aval",
+            "small_impact_works_gwh_25c": 0,
+            "maintenance": "Non",
+            "interruptible_uioli_sales_stop": "Oui",
+            "localized_spread": "Non",
+            "mutualized_restriction": "Non"
+          }
+        ]
       },
       "baseline": {}
     },
@@ -329,27 +354,27 @@
       }
     },
     "rail": {
-      "level": "N0",
-      "label": "Nominal",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "moyenne+",
-      "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
+      "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire.",
       "metrics": {
-        "collected_at": "2026-09-05T23:05:45.978251+00:00",
+        "collected_at": "2026-09-06T00:05:35.413512+00:00",
         "slot": "morning",
-        "trips_count": 55,
-        "scheduled_trips": 36,
-        "added_trips": 19,
-        "canceled_trips": 0,
-        "canceled_ratio_pct": 0.0,
-        "trips_delay_ge_15min": 5,
-        "trips_delay_ge_15min_ratio_pct": 9.0909,
-        "trips_delay_ge_30min": 1,
-        "trips_delay_ge_30min_ratio_pct": 1.8182,
+        "trips_count": 28,
+        "scheduled_trips": 22,
+        "added_trips": 5,
+        "canceled_trips": 1,
+        "canceled_ratio_pct": 3.5714,
+        "trips_delay_ge_15min": 3,
+        "trips_delay_ge_15min_ratio_pct": 10.7143,
+        "trips_delay_ge_30min": 2,
+        "trips_delay_ge_30min_ratio_pct": 7.1429,
         "trips_delay_ge_60min": 0,
         "trips_delay_ge_60min_ratio_pct": 0.0,
-        "average_max_delay_seconds": 248.7,
-        "maximum_delay_seconds": 1980,
-        "active_service_alerts": 335,
+        "average_max_delay_seconds": 336.4,
+        "maximum_delay_seconds": 3420,
+        "active_service_alerts": 343,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": null,
         "delay_30_statistical_z_score": null,
