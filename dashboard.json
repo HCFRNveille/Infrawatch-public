@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-dashboard-0.2",
   "mode": "LIVE",
-  "generated_at": "2026-09-06T19:05:46.266022+00:00",
-  "point_label": "ÉTAT COURANT NATIONAL · 21H05",
+  "generated_at": "2026-09-06T20:05:53.428900+00:00",
+  "point_label": "ÉTAT COURANT NATIONAL · 22H05",
   "location": "France",
   "last_consolidated_point": {
     "generated_at": "2026-09-06T15:06:13.761923+00:00",
@@ -21,8 +21,8 @@
     "freshness_minutes": 0
   },
   "national": {
-    "level": "N2",
-    "label": "DÉGRADÉ",
+    "level": "N3",
+    "label": "CRITIQUE",
     "confidence": "multi-source",
     "trend": "INDÉTERMINÉE",
     "trend_detail": "Comparaison historique insuffisante"
@@ -30,20 +30,20 @@
   "driver": {
     "sector": "CARBURANTS",
     "sector_id": "fuel",
-    "metric": "10,25 %",
-    "numerator": 1004,
+    "metric": "10,45 %",
+    "numerator": 1024,
     "denominator": 9796,
-    "delta": 4.18
+    "delta": 4.39
   },
   "sectors": [
     {
       "id": "electricity",
       "label": "Électricité",
       "short": "ÉLEC.",
-      "level": "N1",
-      "trend": "up",
-      "metric": "45,27 GW",
-      "detail": "écart prévision 5,13 %"
+      "level": "N0",
+      "trend": "down",
+      "metric": "43,19 GW",
+      "detail": "écart prévision -1,18 %"
     },
     {
       "id": "nuclear",
@@ -67,10 +67,10 @@
       "id": "fuel",
       "label": "Carburants",
       "short": "CARB.",
-      "level": "N2",
+      "level": "N3",
       "trend": "up",
-      "metric": "10,25 %",
-      "detail": "1004 stations"
+      "metric": "10,45 %",
+      "detail": "1024 stations"
     },
     {
       "id": "telecom",
@@ -78,31 +78,31 @@
       "short": "TÉL.",
       "level": "N0",
       "trend": "stable",
-      "metric": "0,84 %",
+      "metric": "0,85 %",
       "detail": "0 clusters"
     },
     {
       "id": "rail",
       "label": "Ferroviaire",
       "short": "RAIL",
-      "level": "N0",
+      "level": "N1",
       "trend": "down",
-      "metric": "1,36 %",
+      "metric": "0,72 %",
       "detail": "trains annulés"
     }
   ],
   "territories": [
     {
+      "name": "Paris",
+      "value": 25.5319
+    },
+    {
       "name": "Bas-Rhin",
-      "value": 24.6575
+      "value": 25.3425
     },
     {
       "name": "Yvelines",
-      "value": 24.4755
-    },
-    {
-      "name": "Paris",
-      "value": 23.4043
+      "value": 25.1748
     },
     {
       "name": "Essonne",
@@ -110,7 +110,7 @@
     },
     {
       "name": "Ille-et-Vilaine",
-      "value": 19.4631
+      "value": 20.1342
     }
   ],
   "history": [
@@ -338,16 +338,16 @@
     },
     {
       "label": "06/09",
-      "fuel": 10.2491,
-      "telecom": 0.8445,
+      "fuel": 10.4532,
+      "telecom": 0.8477,
       "electricity": {
-        "consumption_mw": 45272.0,
-        "forecast_j_mw": 42950.0,
-        "forecast_j1_mw": 43650.0,
-        "forecast_error_pct": 5.129,
-        "physical_exchanges_mw": -5884.0,
-        "exchange_ratio_pct": -12.997,
-        "production_total_mw": 50907.0
+        "consumption_mw": 43189.0,
+        "forecast_j_mw": 43700.0,
+        "forecast_j1_mw": 42800.0,
+        "forecast_error_pct": -1.183,
+        "physical_exchanges_mw": -7074.0,
+        "exchange_ratio_pct": -16.379,
+        "production_total_mw": 50475.0
       },
       "nuclear": {
         "fleet_availability_pct": 62.94,
@@ -364,56 +364,17 @@
         "violet_limits_count": 0
       },
       "rail": {
-        "trips_count": 884,
-        "canceled_trips": 12,
-        "canceled_ratio_pct": 1.3575,
-        "trips_delay_ge_30min": 30,
-        "trips_delay_ge_30min_ratio_pct": 3.3937,
-        "trips_delay_ge_60min": 9,
-        "trips_delay_ge_60min_ratio_pct": 1.0181
+        "trips_count": 559,
+        "canceled_trips": 4,
+        "canceled_ratio_pct": 0.7156,
+        "trips_delay_ge_30min": 36,
+        "trips_delay_ge_30min_ratio_pct": 6.4401,
+        "trips_delay_ge_60min": 8,
+        "trips_delay_ge_60min_ratio_pct": 1.4311
       }
     }
   ],
   "live_history": [
-    {
-      "generated_at": "2026-09-05T20:05:30.237234+00:00",
-      "label": "05/09 22:05",
-      "national_level": "N2",
-      "fuel": 7.3609,
-      "telecom": 0.8807,
-      "electricity": {
-        "consumption_mw": 41920.0,
-        "forecast_j_mw": 41950.0,
-        "forecast_j1_mw": 43100.0,
-        "forecast_error_pct": -0.072,
-        "physical_exchanges_mw": -7129.0,
-        "exchange_ratio_pct": -17.006,
-        "production_total_mw": 49269.0
-      },
-      "nuclear": {
-        "fleet_availability_pct": 62.34,
-        "fleet_unavailable_capacity_mw": 23723.0,
-        "unplanned_current_events": 4,
-        "planned_current_events": 24
-      },
-      "gas": {
-        "observation_date": "2026-09-05",
-        "operational_status": "ORANGE",
-        "data_quality": "OK",
-        "orange_limits_count": 1,
-        "red_limits_count": 0,
-        "violet_limits_count": 0
-      },
-      "rail": {
-        "trips_count": 417,
-        "canceled_trips": 2,
-        "canceled_ratio_pct": 0.4796,
-        "trips_delay_ge_30min": null,
-        "trips_delay_ge_30min_ratio_pct": 5.036,
-        "trips_delay_ge_60min": null,
-        "trips_delay_ge_60min_ratio_pct": 1.199
-      }
-    },
     {
       "generated_at": "2026-09-05T21:05:28.251153+00:00",
       "label": "05/09 23:05",
@@ -1310,6 +1271,45 @@
         "trips_delay_ge_60min": null,
         "trips_delay_ge_60min_ratio_pct": 1.0181
       }
+    },
+    {
+      "generated_at": "2026-09-06T20:05:35.738246+00:00",
+      "label": "06/09 22:05",
+      "national_level": "N3",
+      "fuel": 10.4532,
+      "telecom": 0.8477,
+      "electricity": {
+        "consumption_mw": 43189.0,
+        "forecast_j_mw": 43700.0,
+        "forecast_j1_mw": 42800.0,
+        "forecast_error_pct": -1.183,
+        "physical_exchanges_mw": -7074.0,
+        "exchange_ratio_pct": -16.379,
+        "production_total_mw": 50475.0
+      },
+      "nuclear": {
+        "fleet_availability_pct": 62.94,
+        "fleet_unavailable_capacity_mw": 23345.0,
+        "unplanned_current_events": 3,
+        "planned_current_events": 23
+      },
+      "gas": {
+        "observation_date": "2026-09-06",
+        "operational_status": "ORANGE",
+        "data_quality": "OK",
+        "orange_limits_count": 2,
+        "red_limits_count": 0,
+        "violet_limits_count": 0
+      },
+      "rail": {
+        "trips_count": 559,
+        "canceled_trips": 4,
+        "canceled_ratio_pct": 0.7156,
+        "trips_delay_ge_30min": null,
+        "trips_delay_ge_30min_ratio_pct": 6.4401,
+        "trips_delay_ge_60min": null,
+        "trips_delay_ge_60min_ratio_pct": 1.4311
+      }
     }
   ],
   "threats": {
@@ -1327,11 +1327,11 @@
       "text": "Aucune concomitance intersectorielle n'est caractérisée dans le point InfraWatch courant."
     }
   ],
-  "assessment": "Situation nationale N2 — Dégradé, en dégradation progressive à court terme ; en dégradation par rapport au dernier point comparable. Le niveau national demeure porté par les carburants, avec 10,25 % des stations éligibles signalant au moins une rupture (1004 sur 9796). Le taux progresse de 4,18 points par rapport au dernier point comparable. Les principales concentrations territoriales concernent Bas-Rhin, Yvelines, Paris, Essonne, Ille-et-Vilaine.\n\nLe socle énergétique présente une situation différenciée : électricité N1, nucléaire N0. Le gaz est classé N1 (Smart NaTran ORANGE). Les télécommunications demeurent N0, avec 0,84 % de sites opérateurs indisponibles et 0 clusters quatre-opérateurs. Le ferroviaire reste N0. Aucune dynamique de cascade intersectorielle n'est caractérisée.",
+  "assessment": "Situation nationale N3 — Critique, en dégradation progressive à court terme ; en dégradation par rapport au dernier point comparable. Le niveau national demeure porté par les carburants, avec 10,45 % des stations éligibles signalant au moins une rupture (1024 sur 9796). Le taux progresse de 4,39 points par rapport au dernier point comparable. Les principales concentrations territoriales concernent Paris, Bas-Rhin, Yvelines, Essonne, Ille-et-Vilaine.\n\nLe socle énergétique demeure robuste : électricité et nucléaire N0, avec une disponibilité nucléaire de 62,9 %. Le gaz est classé N1 (Smart NaTran ORANGE). Les télécommunications demeurent N0, avec 0,85 % de sites opérateurs indisponibles et 0 clusters quatre-opérateurs. Le ferroviaire reste N1. Aucune dynamique de cascade intersectorielle n'est caractérisée.",
   "watchlist": [
-    "Évolution du taux de ruptures carburants et des foyers Bas-Rhin/Yvelines/Paris/Essonne",
+    "Évolution du taux de ruptures carburants et des foyers Paris/Bas-Rhin/Yvelines/Essonne",
     "Maintien ou retour au vert du signal gaz Smart NaTran (ORANGE)",
-    "Évolution du secteur électricité actuellement N1"
+    "Évolution du secteur ferroviaire actuellement N1"
   ],
   "authority": {
     "current_n0_n4_source": "current_status.json",
