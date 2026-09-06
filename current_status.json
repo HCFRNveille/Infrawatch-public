@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.8",
-  "generated_at": "2026-09-06T22:05:49.430343+00:00",
+  "generated_at": "2026-09-06T23:05:47.578961+00:00",
   "national": {
     "level": "N3",
     "label": "Critique"
@@ -12,24 +12,24 @@
       "confidence": "moyenne+",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 42252.0,
-        "forecast_error_pct": -1.652,
-        "forecast_error_abs_pct": 1.652,
-        "exchange_ratio_pct": -14.397,
-        "observation_time": "2026-09-06T21:45:00+00:00",
-        "slot": "evening",
+        "consumption_mw": 38465.0,
+        "forecast_error_pct": -2.821,
+        "forecast_error_abs_pct": 2.821,
+        "exchange_ratio_pct": -22.088,
+        "observation_time": "2026-09-06T22:45:00+00:00",
+        "slot": "morning",
         "statistical_z_score": null
       },
       "baseline": {
-        "comparable_slot": "evening",
-        "comparable_count": 12,
+        "comparable_slot": "morning",
+        "comparable_count": 10,
         "forecast_error_abs_pct": {
-          "count": 12,
-          "median": 0.9265,
-          "mean": 1.1266,
-          "stdev": 0.8858,
-          "p90": 2.455,
-          "p95": 2.5686
+          "count": 10,
+          "median": 0.6015,
+          "mean": 0.8801,
+          "stdev": 0.8214,
+          "p90": 2.143,
+          "p95": 2.377
         }
       }
     },
@@ -128,18 +128,18 @@
       }
     },
     "gas": {
-      "level": "N2",
-      "label": "Dégradé",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "élevée",
-      "rationale": "Au moins une limite du réseau NaTran présente une situation de congestion dégradée ou un mécanisme opérationnel équivalent.",
+      "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange.",
       "metrics": {
         "observation_date": "2026-09-06",
-        "operational_status": "RED",
+        "operational_status": "ORANGE",
         "data_quality": "OK",
         "limits_count": 10,
         "green_limits_count": 8,
-        "orange_limits_count": 1,
-        "red_limits_count": 1,
+        "orange_limits_count": 2,
+        "red_limits_count": 0,
         "violet_limits_count": 0,
         "unknown_limits_count": 0,
         "alerts": [
@@ -157,9 +157,9 @@
           },
           {
             "limit": "NS4",
-            "vigilance": "RED",
-            "vigilance_rgb": "FFFF4D4D",
-            "detection_method": "congestion_mechanism_fallback",
+            "vigilance": "ORANGE",
+            "vigilance_rgb": "FFFF9933",
+            "detection_method": "validated_color",
             "application_side": "Aval",
             "small_impact_works_gwh_25c": 0,
             "maintenance": "Non",
@@ -178,10 +178,10 @@
       "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé. Une concentration territoriale critique accompagne une forte dégradation nationale.",
       "metrics": {
         "eligible_stations": 9796,
-        "stations_with_any_shortage": 1029,
-        "national_shortage_ratio_pct": 10.5043,
-        "diesel_shortage_ratio_pct": 2.0243,
-        "petrol_shortage_ratio_pct": 10.1367,
+        "stations_with_any_shortage": 1025,
+        "national_shortage_ratio_pct": 10.4635,
+        "diesel_shortage_ratio_pct": 2.0241,
+        "petrol_shortage_ratio_pct": 10.0956,
         "departments_with_shortage": 91,
         "slot": "morning",
         "statistical_z_score": null,
@@ -193,16 +193,16 @@
             "eligible_stations": 47
           },
           {
-            "dept_code": "67",
-            "shortage_ratio_pct": 25.3425,
-            "stations_with_any_shortage": 37,
-            "eligible_stations": 146
-          },
-          {
             "dept_code": "78",
             "shortage_ratio_pct": 25.1748,
             "stations_with_any_shortage": 36,
             "eligible_stations": 143
+          },
+          {
+            "dept_code": "67",
+            "shortage_ratio_pct": 24.6575,
+            "stations_with_any_shortage": 36,
+            "eligible_stations": 146
           },
           {
             "dept_code": "91",
@@ -315,16 +315,16 @@
             "eligible_stations": 47
           },
           {
-            "dept_code": "67",
-            "shortage_ratio_pct": 25.3425,
-            "stations_with_any_shortage": 37,
-            "eligible_stations": 146
-          },
-          {
             "dept_code": "78",
             "shortage_ratio_pct": 25.1748,
             "stations_with_any_shortage": 36,
             "eligible_stations": 143
+          },
+          {
+            "dept_code": "67",
+            "shortage_ratio_pct": 24.6575,
+            "stations_with_any_shortage": 36,
+            "eligible_stations": 146
           },
           {
             "dept_code": "91",
@@ -419,22 +419,22 @@
       "confidence": "moyenne+",
       "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire.",
       "metrics": {
-        "collected_at": "2026-09-06T22:05:47.481735+00:00",
+        "collected_at": "2026-09-06T23:05:46.057088+00:00",
         "slot": "morning",
-        "trips_count": 105,
-        "scheduled_trips": 67,
-        "added_trips": 38,
+        "trips_count": 43,
+        "scheduled_trips": 19,
+        "added_trips": 24,
         "canceled_trips": 0,
         "canceled_ratio_pct": 0.0,
-        "trips_delay_ge_15min": 12,
-        "trips_delay_ge_15min_ratio_pct": 11.4286,
-        "trips_delay_ge_30min": 6,
-        "trips_delay_ge_30min_ratio_pct": 5.7143,
+        "trips_delay_ge_15min": 4,
+        "trips_delay_ge_15min_ratio_pct": 9.3023,
+        "trips_delay_ge_30min": 3,
+        "trips_delay_ge_30min_ratio_pct": 6.9767,
         "trips_delay_ge_60min": 2,
-        "trips_delay_ge_60min_ratio_pct": 1.9048,
-        "average_max_delay_seconds": 322.9,
-        "maximum_delay_seconds": 3600,
-        "active_service_alerts": 352,
+        "trips_delay_ge_60min_ratio_pct": 4.6512,
+        "average_max_delay_seconds": 542.8,
+        "maximum_delay_seconds": 10740,
+        "active_service_alerts": 350,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": null,
         "delay_30_statistical_z_score": null,
