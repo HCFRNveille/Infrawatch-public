@@ -1,6 +1,6 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-09-08T13:02:43.441175+00:00",
+  "generated_at": "2026-09-08T15:07:05.529187+00:00",
   "operational_slot": "evening",
   "operational_cycle_id": "2026-09-08:evening",
   "report_posture": "VIGILANCE",
@@ -12,8 +12,8 @@
   },
   "source_alignment": {
     "status": "OK",
-    "operational_generated_at": "2026-09-08T13:02:32.052469+00:00",
-    "risks_threats_generated_at": "2026-09-08T13:02:32.079736+00:00",
+    "operational_generated_at": "2026-09-08T15:06:53.310277+00:00",
+    "risks_threats_generated_at": "2026-09-08T15:06:53.337224+00:00",
     "age_difference_seconds": 0.027,
     "operational_slot": "evening",
     "risks_threats_slot": "evening",
@@ -46,13 +46,6 @@
         "label": "Dégradé",
         "confidence": "moyenne+",
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
-      },
-      {
-        "sector": "rail",
-        "level": "N1",
-        "label": "Vigilance",
-        "confidence": "moyenne+",
-        "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire."
       }
     ],
     "nominal_sectors": [
@@ -62,6 +55,13 @@
         "label": "Nominal",
         "confidence": "moyenne+",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal."
+      },
+      {
+        "sector": "rail",
+        "level": "N0",
+        "label": "Nominal",
+        "confidence": "moyenne+",
+        "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution."
       }
     ],
     "unavailable_sectors": [
@@ -80,11 +80,11 @@
         "confidence": "moyenne+",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
         "metrics": {
-          "consumption_mw": 51985.0,
-          "forecast_error_pct": -0.125,
-          "forecast_error_abs_pct": 0.125,
-          "exchange_ratio_pct": -24.957,
-          "observation_time": "2026-09-08T12:45:00+00:00",
+          "consumption_mw": 49422.0,
+          "forecast_error_pct": 1.866,
+          "forecast_error_abs_pct": 1.866,
+          "exchange_ratio_pct": -28.433,
+          "observation_time": "2026-09-08T14:45:00+00:00",
           "slot": "evening",
           "statistical_z_score": null
         },
@@ -115,8 +115,8 @@
         "confidence": "élevée",
         "rationale": "Concentrations territoriales multi-opérateurs significatives.",
         "metrics": {
-          "national_down_ratio_pct": 1.4048,
-          "unique_operator_sites_down": 1745,
+          "national_down_ratio_pct": 1.3533,
+          "unique_operator_sites_down": 1681,
           "active_operator_sites_reference": 124214,
           "four_operator_clusters": 5,
           "multi_operator_hotspots_20pct": 0,
@@ -133,9 +133,9 @@
             {
               "operator_code": "free",
               "operator": "Free",
-              "sites_down": 364,
+              "sites_down": 300,
               "active_sites_reference": 30636,
-              "down_ratio_pct": 1.1881
+              "down_ratio_pct": 0.9792
             },
             {
               "operator_code": "orange",
@@ -189,7 +189,7 @@
               "detection_method": "validated_color",
               "application_side": "Aval",
               "small_impact_works_gwh_25c": 0,
-              "maintenance": "Non",
+              "maintenance": "Oui",
               "interruptible_uioli_sales_stop": "Non",
               "localized_spread": "Non",
               "mutualized_restriction": "Non"
@@ -216,19 +216,19 @@
         "confidence": "moyenne+",
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
-          "eligible_stations": 9788,
-          "stations_with_any_shortage": 760,
-          "national_shortage_ratio_pct": 7.7646,
-          "diesel_shortage_ratio_pct": 2.3041,
-          "petrol_shortage_ratio_pct": 7.2641,
-          "departments_with_shortage": 89,
+          "eligible_stations": 9787,
+          "stations_with_any_shortage": 707,
+          "national_shortage_ratio_pct": 7.2239,
+          "diesel_shortage_ratio_pct": 2.0312,
+          "petrol_shortage_ratio_pct": 6.855,
+          "departments_with_shortage": 90,
           "slot": "evening",
           "statistical_z_score": null,
           "significant_departments": [
             {
               "dept_code": "75",
-              "shortage_ratio_pct": 21.2766,
-              "stations_with_any_shortage": 10,
+              "shortage_ratio_pct": 23.4043,
+              "stations_with_any_shortage": 11,
               "eligible_stations": 47
             },
             {
@@ -239,57 +239,39 @@
             },
             {
               "dept_code": "60",
-              "shortage_ratio_pct": 18.1034,
-              "stations_with_any_shortage": 21,
-              "eligible_stations": 116
+              "shortage_ratio_pct": 18.8034,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 117
+            },
+            {
+              "dept_code": "68",
+              "shortage_ratio_pct": 16.6667,
+              "stations_with_any_shortage": 19,
+              "eligible_stations": 114
             },
             {
               "dept_code": "67",
-              "shortage_ratio_pct": 15.0685,
-              "stations_with_any_shortage": 22,
+              "shortage_ratio_pct": 13.6986,
+              "stations_with_any_shortage": 20,
               "eligible_stations": 146
             },
             {
               "dept_code": "72",
-              "shortage_ratio_pct": 14.433,
-              "stations_with_any_shortage": 14,
+              "shortage_ratio_pct": 13.4021,
+              "stations_with_any_shortage": 13,
               "eligible_stations": 97
             },
             {
-              "dept_code": "78",
-              "shortage_ratio_pct": 14.1844,
-              "stations_with_any_shortage": 20,
-              "eligible_stations": 141
-            },
-            {
-              "dept_code": "56",
-              "shortage_ratio_pct": 14.0845,
-              "stations_with_any_shortage": 20,
-              "eligible_stations": 142
-            },
-            {
-              "dept_code": "68",
-              "shortage_ratio_pct": 14.0351,
-              "stations_with_any_shortage": 16,
-              "eligible_stations": 114
-            },
-            {
-              "dept_code": "35",
-              "shortage_ratio_pct": 13.6054,
-              "stations_with_any_shortage": 20,
-              "eligible_stations": 147
+              "dept_code": "44",
+              "shortage_ratio_pct": 13.2948,
+              "stations_with_any_shortage": 23,
+              "eligible_stations": 173
             },
             {
               "dept_code": "28",
               "shortage_ratio_pct": 12.987,
               "stations_with_any_shortage": 10,
               "eligible_stations": 77
-            },
-            {
-              "dept_code": "53",
-              "shortage_ratio_pct": 12.963,
-              "stations_with_any_shortage": 7,
-              "eligible_stations": 54
             },
             {
               "dept_code": "70",
@@ -310,41 +292,59 @@
               "eligible_stations": 48
             },
             {
-              "dept_code": "95",
-              "shortage_ratio_pct": 12.037,
+              "dept_code": "78",
+              "shortage_ratio_pct": 12.1429,
+              "stations_with_any_shortage": 17,
+              "eligible_stations": 140
+            },
+            {
+              "dept_code": "49",
+              "shortage_ratio_pct": 11.9266,
               "stations_with_any_shortage": 13,
-              "eligible_stations": 108
-            },
-            {
-              "dept_code": "39",
-              "shortage_ratio_pct": 11.6883,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 77
-            },
-            {
-              "dept_code": "44",
-              "shortage_ratio_pct": 11.5607,
-              "stations_with_any_shortage": 20,
-              "eligible_stations": 173
-            },
-            {
-              "dept_code": "77",
-              "shortage_ratio_pct": 11.4943,
-              "stations_with_any_shortage": 20,
-              "eligible_stations": 174
+              "eligible_stations": 109
             },
             {
               "dept_code": "21",
-              "shortage_ratio_pct": 11.1111,
-              "stations_with_any_shortage": 14,
+              "shortage_ratio_pct": 11.9048,
+              "stations_with_any_shortage": 15,
               "eligible_stations": 126
+            },
+            {
+              "dept_code": "35",
+              "shortage_ratio_pct": 11.5646,
+              "stations_with_any_shortage": 17,
+              "eligible_stations": 147
+            },
+            {
+              "dept_code": "56",
+              "shortage_ratio_pct": 11.2676,
+              "stations_with_any_shortage": 16,
+              "eligible_stations": 142
+            },
+            {
+              "dept_code": "95",
+              "shortage_ratio_pct": 11.1111,
+              "stations_with_any_shortage": 12,
+              "eligible_stations": 108
+            },
+            {
+              "dept_code": "46",
+              "shortage_ratio_pct": 11.1111,
+              "stations_with_any_shortage": 7,
+              "eligible_stations": 63
+            },
+            {
+              "dept_code": "53",
+              "shortage_ratio_pct": 11.1111,
+              "stations_with_any_shortage": 6,
+              "eligible_stations": 54
             }
           ],
           "severe_departments": [
             {
               "dept_code": "75",
-              "shortage_ratio_pct": 21.2766,
-              "stations_with_any_shortage": 10,
+              "shortage_ratio_pct": 23.4043,
+              "stations_with_any_shortage": 11,
               "eligible_stations": 47
             },
             {
@@ -355,15 +355,15 @@
             },
             {
               "dept_code": "60",
-              "shortage_ratio_pct": 18.1034,
-              "stations_with_any_shortage": 21,
-              "eligible_stations": 116
+              "shortage_ratio_pct": 18.8034,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 117
             },
             {
-              "dept_code": "67",
-              "shortage_ratio_pct": 15.0685,
-              "stations_with_any_shortage": 22,
-              "eligible_stations": 146
+              "dept_code": "68",
+              "shortage_ratio_pct": 16.6667,
+              "stations_with_any_shortage": 19,
+              "eligible_stations": 114
             }
           ]
         },
@@ -381,27 +381,27 @@
         }
       },
       "rail": {
-        "level": "N1",
-        "label": "Vigilance",
+        "level": "N0",
+        "label": "Nominal",
         "confidence": "moyenne+",
-        "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire.",
+        "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
         "metrics": {
-          "collected_at": "2026-09-08T13:02:09.204335+00:00",
+          "collected_at": "2026-09-08T15:06:13.408865+00:00",
           "slot": "evening",
-          "trips_count": 1202,
-          "scheduled_trips": 1025,
-          "added_trips": 139,
-          "canceled_trips": 38,
-          "canceled_ratio_pct": 3.1614,
-          "trips_delay_ge_15min": 57,
-          "trips_delay_ge_15min_ratio_pct": 4.7421,
-          "trips_delay_ge_30min": 21,
-          "trips_delay_ge_30min_ratio_pct": 1.7471,
-          "trips_delay_ge_60min": 6,
-          "trips_delay_ge_60min_ratio_pct": 0.4992,
-          "average_max_delay_seconds": 126.9,
+          "trips_count": 2148,
+          "scheduled_trips": 1877,
+          "added_trips": 207,
+          "canceled_trips": 64,
+          "canceled_ratio_pct": 2.9795,
+          "trips_delay_ge_15min": 71,
+          "trips_delay_ge_15min_ratio_pct": 3.3054,
+          "trips_delay_ge_30min": 33,
+          "trips_delay_ge_30min_ratio_pct": 1.5363,
+          "trips_delay_ge_60min": 12,
+          "trips_delay_ge_60min_ratio_pct": 0.5587,
+          "average_max_delay_seconds": 103.7,
           "maximum_delay_seconds": 10800,
-          "active_service_alerts": 497,
+          "active_service_alerts": 518,
           "qualified_operational_alerts": 0,
           "canceled_statistical_z_score": null,
           "delay_30_statistical_z_score": null,
@@ -441,26 +441,116 @@
   "risks_threats": {
     "schema_version": "risks-threats-0.4",
     "source_health": "OK",
-    "new_signals": [],
+    "new_signals": [
+      {
+        "fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+        "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "link": "https://www.lavoixdunord.fr/1735218/article/2026-09-08/sncf-le-trafic-fortement-perturbe-ce-mardi-matin-sur-la-ligne-grande-vitesse",
+        "source_domain": "lavoixdunord.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-08T13:22:50+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
+        "sectors": [
+          "rail"
+        ],
+        "impacted_sectors": [
+          "rail"
+        ],
+        "first_seen_at": "2026-09-08T15:06:53.337224+00:00",
+        "last_seen_at": "2026-09-08T15:06:53.337224+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "carried_over_context": [],
-    "active_situation": [],
+    "active_situation": [
+      {
+        "fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+        "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "link": "https://www.lavoixdunord.fr/1735218/article/2026-09-08/sncf-le-trafic-fortement-perturbe-ce-mardi-matin-sur-la-ligne-grande-vitesse",
+        "source_domain": "lavoixdunord.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-08T13:22:50+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
+        "sectors": [
+          "rail"
+        ],
+        "impacted_sectors": [
+          "rail"
+        ],
+        "first_seen_at": "2026-09-08T15:06:53.337224+00:00",
+        "last_seen_at": "2026-09-08T15:06:53.337224+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "resolved_since_collection": [],
     "counts": {
-      "retained": 0,
-      "new": 0,
+      "retained": 1,
+      "new": 1,
       "carried_over": 0,
-      "active_situation": 0,
+      "active_situation": 1,
       "resolved": 0,
-      "impact_candidates": 0,
+      "impact_candidates": 1,
       "watch": 0,
       "context": 0
     }
   },
   "cross_sector_view": {
     "concomitant_signals": [],
-    "contextual_signals": [],
+    "contextual_signals": [
+      {
+        "sector": "rail",
+        "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "risk_title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "risk_fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+        "operational_level": "N0",
+        "operational_label": "Nominal",
+        "operational_rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
+        "risk_signal": {
+          "fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+          "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+          "link": "https://www.lavoixdunord.fr/1735218/article/2026-09-08/sncf-le-trafic-fortement-perturbe-ce-mardi-matin-sur-la-ligne-grande-vitesse",
+          "source_domain": "lavoixdunord.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-08T13:22:50+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "PLANNED",
+          "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+          "lifecycle": "NEW",
+          "sectors": [
+            "rail"
+          ],
+          "impacted_sectors": [
+            "rail"
+          ],
+          "first_seen_at": "2026-09-08T15:06:53.337224+00:00",
+          "last_seen_at": "2026-09-08T15:06:53.337224+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONTEXT_ONLY",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "concomitant_count": 0,
-    "contextual_count": 0,
+    "contextual_count": 1,
     "causality_rule": "Une concomitance temporelle ou sectorielle entre un signal de veille et une anomalie opérationnelle ne constitue pas un lien causal."
   },
   "report_sections": {
@@ -490,19 +580,76 @@
         "label": "Dégradé",
         "confidence": "moyenne+",
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
-      },
-      {
-        "sector": "rail",
-        "level": "N1",
-        "label": "Vigilance",
-        "confidence": "moyenne+",
-        "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire."
       }
     ],
-    "new_risk_signals": [],
+    "new_risk_signals": [
+      {
+        "fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+        "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "link": "https://www.lavoixdunord.fr/1735218/article/2026-09-08/sncf-le-trafic-fortement-perturbe-ce-mardi-matin-sur-la-ligne-grande-vitesse",
+        "source_domain": "lavoixdunord.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-08T13:22:50+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
+        "sectors": [
+          "rail"
+        ],
+        "impacted_sectors": [
+          "rail"
+        ],
+        "first_seen_at": "2026-09-08T15:06:53.337224+00:00",
+        "last_seen_at": "2026-09-08T15:06:53.337224+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
     "inherited_risk_context": [],
     "concomitant_signals": [],
-    "contextual_infrastructure_signals": []
+    "contextual_infrastructure_signals": [
+      {
+        "sector": "rail",
+        "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "risk_title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+        "risk_fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+        "operational_level": "N0",
+        "operational_label": "Nominal",
+        "operational_rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
+        "risk_signal": {
+          "fingerprint": "d83a1a3b87a357d6ed64c44dbc751dfa7164ff0c3bcf2d6558a48b00d23eac1d",
+          "title": "SNCF : le trafic fortement perturbé sur la ligne à grande vitesse, entre Paris et Lille, après un accident de personne",
+          "link": "https://www.lavoixdunord.fr/1735218/article/2026-09-08/sncf-le-trafic-fortement-perturbe-ce-mardi-matin-sur-la-ligne-grande-vitesse",
+          "source_domain": "lavoixdunord.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-08T13:22:50+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "PLANNED",
+          "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+          "lifecycle": "NEW",
+          "sectors": [
+            "rail"
+          ],
+          "impacted_sectors": [
+            "rail"
+          ],
+          "first_seen_at": "2026-09-08T15:06:53.337224+00:00",
+          "last_seen_at": "2026-09-08T15:06:53.337224+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONTEXT_ONLY",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ]
   },
   "doctrine": {
     "operational_priority": "Les niveaux N0-N4 et leurs justifications proviennent exclusivement du moteur analytique national_status.json.",
