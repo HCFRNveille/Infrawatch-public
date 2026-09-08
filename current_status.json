@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.8",
-  "generated_at": "2026-09-07T23:06:09.838666+00:00",
+  "generated_at": "2026-09-08T00:05:50.844304+00:00",
   "national": {
     "level": "N2",
     "label": "Dégradé"
@@ -12,11 +12,11 @@
       "confidence": "moyenne+",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 41171.0,
-        "forecast_error_pct": -0.07,
-        "forecast_error_abs_pct": 0.07,
-        "exchange_ratio_pct": -11.443,
-        "observation_time": "2026-09-07T22:45:00+00:00",
+        "consumption_mw": 40170.0,
+        "forecast_error_pct": -0.199,
+        "forecast_error_abs_pct": 0.199,
+        "exchange_ratio_pct": -13.057,
+        "observation_time": "2026-09-07T23:45:00+00:00",
         "slot": "morning",
         "statistical_z_score": null
       },
@@ -34,11 +34,41 @@
       }
     },
     "nuclear": {
-      "level": "ND",
-      "label": "Données insuffisantes",
-      "confidence": "faible",
-      "rationale": "Disponibilité nucléaire non calculable.",
-      "metrics": {}
+      "level": "N0",
+      "label": "Nominal",
+      "confidence": "moyenne+",
+      "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
+      "metrics": {
+        "fleet_availability_pct": 64.84,
+        "fleet_available_capacity_mw": 40845.0,
+        "fleet_max_capacity_mw": 62990.0,
+        "planned_current_events": 21,
+        "unplanned_current_events": 3,
+        "chronic_current_events": 189,
+        "slot": "morning",
+        "availability_statistical_z_score": null,
+        "unplanned_events_statistical_z_score": null
+      },
+      "baseline": {
+        "comparable_slot": "morning",
+        "comparable_count": 11,
+        "fleet_availability_pct": {
+          "count": 11,
+          "median": 62.03,
+          "mean": 61.6055,
+          "stdev": 1.6335,
+          "p90": 63.4,
+          "p95": 63.4
+        },
+        "unplanned_events": {
+          "count": 11,
+          "median": 4.0,
+          "mean": 4.3636,
+          "stdev": 1.1201,
+          "p90": 5.0,
+          "p95": 6.0
+        }
+      }
     },
     "telecom_mobile": {
       "level": "N0",
@@ -46,8 +76,8 @@
       "confidence": "élevée",
       "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal.",
       "metrics": {
-        "national_down_ratio_pct": 1.1657,
-        "unique_operator_sites_down": 1448,
+        "national_down_ratio_pct": 1.0176,
+        "unique_operator_sites_down": 1264,
         "active_operator_sites_reference": 124214,
         "four_operator_clusters": 4,
         "multi_operator_hotspots_20pct": 0,
@@ -64,9 +94,9 @@
           {
             "operator_code": "free",
             "operator": "Free",
-            "sites_down": 284,
+            "sites_down": 100,
             "active_sites_reference": 30636,
-            "down_ratio_pct": 0.927
+            "down_ratio_pct": 0.3264
           },
           {
             "operator_code": "orange",
@@ -103,7 +133,7 @@
       "confidence": "élevée",
       "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange.",
       "metrics": {
-        "observation_date": "2026-09-07",
+        "observation_date": "2026-09-08",
         "operational_status": "ORANGE",
         "data_quality": "OK",
         "limits_count": 10,
@@ -354,27 +384,27 @@
       }
     },
     "rail": {
-      "level": "N0",
-      "label": "Nominal",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "moyenne+",
-      "rationale": "Les taux d'annulation et de retard restent sous les seuils provisoires de vigilance. La baseline ferroviaire est en cours de constitution.",
+      "rationale": "Les annulations ou retards dépassent les seuils opérationnels de qualification ferroviaire.",
       "metrics": {
-        "collected_at": "2026-09-07T23:06:08.148416+00:00",
+        "collected_at": "2026-09-08T00:05:48.995262+00:00",
         "slot": "morning",
-        "trips_count": 67,
-        "scheduled_trips": 22,
-        "added_trips": 45,
+        "trips_count": 40,
+        "scheduled_trips": 14,
+        "added_trips": 26,
         "canceled_trips": 0,
         "canceled_ratio_pct": 0.0,
-        "trips_delay_ge_15min": 8,
-        "trips_delay_ge_15min_ratio_pct": 11.9403,
-        "trips_delay_ge_30min": 1,
-        "trips_delay_ge_30min_ratio_pct": 1.4925,
-        "trips_delay_ge_60min": 0,
-        "trips_delay_ge_60min_ratio_pct": 0.0,
-        "average_max_delay_seconds": 356.4,
-        "maximum_delay_seconds": 3300,
-        "active_service_alerts": 359,
+        "trips_delay_ge_15min": 6,
+        "trips_delay_ge_15min_ratio_pct": 15.0,
+        "trips_delay_ge_30min": 2,
+        "trips_delay_ge_30min_ratio_pct": 5.0,
+        "trips_delay_ge_60min": 1,
+        "trips_delay_ge_60min_ratio_pct": 2.5,
+        "average_max_delay_seconds": 573.0,
+        "maximum_delay_seconds": 7080,
+        "active_service_alerts": 361,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": null,
         "delay_30_statistical_z_score": null,
