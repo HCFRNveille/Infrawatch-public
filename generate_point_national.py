@@ -50,10 +50,10 @@ SECTOR_LABELS = {
     "road": "Routier",
 }
 LEVEL_LABELS = {
-    "N0": "Nominal",
+    "N0": "Rien à signaler",
     "N1": "Vigilance",
-    "N2": "Dégradé",
-    "N3": "Critique",
+    "N2": "Surveillance",
+    "N3": "Dégradé",
     "N4": "Rupture",
     "ND": "Données insuffisantes",
 }
