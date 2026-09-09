@@ -39,7 +39,7 @@ from reportlab.platypus import (
 )
 
 PARIS = ZoneInfo("Europe/Paris")
-SECTOR_ORDER = ["electricity", "nuclear", "gas", "fuel", "telecom", "rail"]
+SECTOR_ORDER = ["electricity", "nuclear", "gas", "fuel", "telecom", "rail", "road"]
 SECTOR_LABELS = {
     "electricity": "Électricité",
     "nuclear": "Nucléaire",
@@ -47,6 +47,7 @@ SECTOR_LABELS = {
     "fuel": "Carburants",
     "telecom": "Télécommunications",
     "rail": "Ferroviaire",
+    "road": "Routier",
 }
 LEVEL_LABELS = {
     "N0": "Nominal",
@@ -198,6 +199,8 @@ def _history_value(row: dict[str, Any], key: str) -> Any:
         return (row.get("gas") or {}).get("operational_status")
     if key == "rail":
         return (row.get("rail") or {}).get("canceled_ratio_pct")
+    if key == "road":
+        return (row.get("road") or {}).get("congestion_ratio_pct")
     return None
 
 
@@ -244,6 +247,80 @@ def current_metrics(latest: dict[str, Any], sid: str) -> dict[str, Any]:
             "trips_delay_ge_60min_ratio_pct": trip.get("trips_delay_ge_60min_ratio_pct"),
             "service_alerts": (latest.get("rail") or {}).get("service_alerts") or {},
         }
+    if sid == "road":
+        road_data = latest.get("road") or {}
+        events = road_data.get("events") or {}
+        traffic = road_data.get("traffic") or {}
+        enrichment = latest.get("road_enrichment") or {}
+        territorial = enrichment.get("territorialization") or {}
+        departments = territorial.get("departments") or []
+
+        closure_departments = sum(
+            1
+            for item in departments
+            if isinstance(item, dict)
+            and isinstance(item.get("unplanned_full_closure_count"), (int, float))
+            and item.get("unplanned_full_closure_count") > 0
+        )
+
+        restriction_departments = sum(
+            1
+            for item in departments
+            if isinstance(item, dict)
+            and isinstance(item.get("unplanned_capacity_restriction_count"), (int, float))
+            and item.get("unplanned_capacity_restriction_count") > 0
+        )
+
+        top_departments = [
+            {
+                "code": item.get("code"),
+                "name": item.get("name"),
+                "unplanned_situations_count": item.get("unplanned_situations_count"),
+                "unplanned_full_closure_count": item.get("unplanned_full_closure_count"),
+                "unplanned_capacity_restriction_count": item.get(
+                    "unplanned_capacity_restriction_count"
+                ),
+            }
+            for item in departments
+            if isinstance(item, dict)
+        ][:10]
+
+        return {
+            "congestion_ratio_pct": traffic.get("congestion_ratio_pct"),
+            "recognized_ratio_pct": traffic.get("recognized_ratio_pct"),
+            "unknown_ratio_pct": traffic.get("unknown_ratio_pct"),
+            "unplanned_situations_count": events.get("unplanned_situations_count"),
+            "unplanned_full_closure_locations_count": events.get(
+                "unplanned_full_closure_locations_count"
+            ),
+            "unplanned_capacity_restriction_locations_count": events.get(
+                "unplanned_capacity_restriction_locations_count"
+            ),
+            "departments_with_unplanned_full_closure": (
+                closure_departments if departments else None
+            ),
+            "departments_with_unplanned_capacity_restriction": (
+                restriction_departments if departments else None
+            ),
+            "department_coverage_ratio_pct": territorial.get(
+                "department_coverage_ratio_pct"
+            ),
+            "affected_departments_count": territorial.get(
+                "affected_departments_count"
+            ),
+            "affected_regions_count": territorial.get(
+                "affected_regions_count"
+            ),
+            "top_departments": top_departments,
+            "interpretation_guards": {
+                "raw_event_count_is_impact": False,
+                "qtv_used_for_scoring": False,
+                "tipi_context_only": True,
+                "traficolor_unknown_is_quality_only": True,
+                "n4_automatic": False,
+            },
+        }
+
     if sid == "electricity":
         e = latest.get("electricity") or {}
         return {
@@ -429,7 +506,7 @@ def build_fact_packet(sources: dict[str, Any], origins: dict[str, str], cycle: s
 
     generated_at = dashboard.get("generated_at") or latest.get("generated_at")
     packet = {
-        "schema_version": "point-national-facts-1.0",
+        "schema_version": "point-national-facts-1.1",
         "cycle": cycle,
         "generated_at": generated_at,
         "source_origins": origins,
@@ -637,6 +714,37 @@ def compact_current_for_document(sid: str, current: dict[str, Any]) -> dict[str,
         ][:10]
         return compact
 
+    if sid == "road":
+        keys = (
+            "congestion_ratio_pct",
+            "recognized_ratio_pct",
+            "unknown_ratio_pct",
+            "unplanned_situations_count",
+            "unplanned_full_closure_locations_count",
+            "unplanned_capacity_restriction_locations_count",
+            "departments_with_unplanned_full_closure",
+            "departments_with_unplanned_capacity_restriction",
+            "department_coverage_ratio_pct",
+            "affected_departments_count",
+            "affected_regions_count",
+            "interpretation_guards",
+        )
+        compact = {key: current.get(key) for key in keys}
+        compact["top_departments"] = [
+            {
+                "code": item.get("code"),
+                "name": item.get("name"),
+                "unplanned_situations_count": item.get("unplanned_situations_count"),
+                "unplanned_full_closure_count": item.get("unplanned_full_closure_count"),
+                "unplanned_capacity_restriction_count": item.get(
+                    "unplanned_capacity_restriction_count"
+                ),
+            }
+            for item in (current.get("top_departments") or [])
+            if isinstance(item, dict)
+        ][:10]
+        return compact
+
     if sid == "rail":
         alerts = current.get("service_alerts") or {}
         return {
@@ -661,7 +769,7 @@ def compact_current_for_document(sid: str, current: dict[str, Any]) -> dict[str,
 
 def build_final_document(facts: dict[str, Any], analysis: dict[str, Any]) -> dict[str, Any]:
     return {
-        "schema_version": "point-national-document-1.0",
+        "schema_version": "point-national-document-1.1",
         "cycle": facts["cycle"],
         "generated_at": facts["generated_at"],
         "national": facts["national"],
@@ -798,6 +906,13 @@ def _sector_metric_line(sid: str, current: dict[str, Any]) -> str:
         return (
             f"{_fmt_pct(current.get('canceled_ratio_pct'))} annulations · "
             f"{_fmt_pct(current.get('trips_delay_ge_30min_ratio_pct'))} retards ≥ 30 min"
+        )
+
+    if sid == "road":
+        return (
+            f"{_fmt_pct(current.get('congestion_ratio_pct'))} congestion · "
+            f"{_fmt_int(current.get('unplanned_capacity_restriction_locations_count'))} restrictions · "
+            f"{_fmt_int(current.get('unplanned_full_closure_locations_count'))} fermetures"
         )
 
     if sid == "electricity":
@@ -1312,12 +1427,16 @@ def render_pdf(
             )
         )
 
+    sector_rows = []
+    pending_sector_cards = list(sector_cards)
+
+    while pending_sector_cards:
+        first = pending_sector_cards.pop(0)
+        second = pending_sector_cards.pop(0) if pending_sector_cards else Spacer(1, 1)
+        sector_rows.append([first, second])
+
     sector_matrix = Table(
-        [
-            [sector_cards[0], sector_cards[1]],
-            [sector_cards[2], sector_cards[3]],
-            [sector_cards[4], sector_cards[5]],
-        ],
+        sector_rows,
         colWidths=[doc.width / 2, doc.width / 2],
     )
     sector_matrix.setStyle(TableStyle([
