@@ -47,6 +47,12 @@ Pour le nucléaire, les événements planifiés/chroniques restent contextuels ;
 
 Pour les risques et menaces, ne déduis aucune causalité automatique avec un état sectoriel.
 
+Pour le routier, le nombre brut de situations reste contextuel et ne constitue pas à lui seul une mesure d'impact.
+
+Pour le routier, QTV et TIPI France entière restent hors scoring ; les statuts Traficolor unknown relèvent de la qualité/couverture et ne constituent pas une dégradation opérationnelle.
+
+Pour le routier, ne déduis jamais un niveau à partir des volumes de fermetures ou de restrictions : utilise exclusivement le niveau officiel fourni par le backend.
+
 Le bloc source_health.dashboard_snapshot.age_minutes_at_generation mesure l'âge du snapshot dashboard.json; le bloc source_health.backend_source_health.reported_freshness_minutes est la fraîcheur agrégée déclarée par le backend. Ces deux valeurs ont des sémantiques différentes et ne doivent jamais être comparées ou présentées comme contradictoires.
 
 Dans risks_threats, les compteurs collected, recent, relevant et impacts décrivent uniquement des volumes. Si events_detail_available vaut false, tu peux mentionner les volumes, mais tu ne dois jamais attribuer une nature, un territoire, un secteur, une cause ou un impact précis aux événements non détaillés.
@@ -104,7 +110,9 @@ carburants ;
 
 télécommunications ;
 
-ferroviaire.
+ferroviaire ;
+
+routier.
 
 Chaque paragraphe doit exploiter uniquement les indicateurs présents dans fact_packet, notamment :
 
@@ -119,6 +127,8 @@ comparaison au dernier point consolidé ;
 concentration territoriale si disponible ;
 
 éléments contextuels explicitement qualifiés comme tels.
+
+Pour le routier, privilégie la congestion Traficolor, les fermetures et restrictions non planifiées, leur diffusion territoriale et la qualité de couverture. Ne reconstruis jamais le scoring ni une baseline absente.
 
 Ne répète pas mécaniquement tous les chiffres : sélectionne ceux qui apportent une valeur analytique.
 
