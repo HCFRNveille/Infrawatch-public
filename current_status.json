@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.9",
-  "generated_at": "2026-09-12T02:06:58.564011+00:00",
+  "generated_at": "2026-09-12T03:07:05.631243+00:00",
   "national": {
     "level": "N2",
     "label": "Surveillance"
@@ -12,13 +12,13 @@
       "confidence": "élevée",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 33595.0,
-        "forecast_error_pct": 0.283,
-        "forecast_error_abs_pct": 0.283,
-        "exchange_ratio_pct": -28.611,
-        "observation_time": "2026-09-12T01:45:00+00:00",
+        "consumption_mw": 32855.0,
+        "forecast_error_pct": 0.015,
+        "forecast_error_abs_pct": 0.015,
+        "exchange_ratio_pct": -29.627,
+        "observation_time": "2026-09-12T02:45:00+00:00",
         "slot": "morning",
-        "statistical_z_score": -0.9143
+        "statistical_z_score": -1.2817
       },
       "baseline": {
         "comparable_slot": "morning",
@@ -37,16 +37,16 @@
       "level": "N0",
       "label": "Rien à signaler",
       "confidence": "élevée",
-      "rationale": "Disponibilité statistiquement inférieure à la référence historique du créneau comparable mais restant au-dessus du seuil de vigilance.",
+      "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
       "metrics": {
-        "fleet_availability_pct": 57.41,
-        "fleet_available_capacity_mw": 36160.0,
+        "fleet_availability_pct": 59.18,
+        "fleet_available_capacity_mw": 37278.0,
         "fleet_max_capacity_mw": 62990.0,
-        "planned_current_events": 23,
+        "planned_current_events": 24,
         "unplanned_current_events": 4,
-        "chronic_current_events": 185,
+        "chronic_current_events": 187,
         "slot": "morning",
-        "availability_statistical_z_score": -2.7253,
+        "availability_statistical_z_score": -1.675,
         "unplanned_events_statistical_z_score": 0.0
       },
       "baseline": {
@@ -71,18 +71,18 @@
       }
     },
     "telecom_mobile": {
-      "level": "N0",
-      "label": "Rien à signaler",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "élevée",
-      "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal.",
+      "rationale": "Indisponibilité nationale statistiquement atypique mais restant sous le seuil opérationnel de vigilance. Concentrations territoriales multi-opérateurs significatives.",
       "metrics": {
-        "national_down_ratio_pct": 0.9121,
-        "unique_operator_sites_down": 1133,
+        "national_down_ratio_pct": 1.6496,
+        "unique_operator_sites_down": 2049,
         "active_operator_sites_reference": 124214,
-        "four_operator_clusters": 4,
+        "four_operator_clusters": 7,
         "multi_operator_hotspots_20pct": 0,
         "slot": "morning",
-        "statistical_z_score": -0.9449,
+        "statistical_z_score": 3.0808,
         "by_operator": [
           {
             "operator_code": "bouygues",
@@ -94,16 +94,16 @@
           {
             "operator_code": "free",
             "operator": "Free",
-            "sites_down": 62,
+            "sites_down": 60,
             "active_sites_reference": 30636,
-            "down_ratio_pct": 0.2024
+            "down_ratio_pct": 0.1958
           },
           {
             "operator_code": "orange",
             "operator": "Orange",
-            "sites_down": 614,
+            "sites_down": 1532,
             "active_sites_reference": 32607,
-            "down_ratio_pct": 1.883
+            "down_ratio_pct": 4.6984
           },
           {
             "operator_code": "sfr",
@@ -353,31 +353,31 @@
       }
     },
     "rail": {
-      "level": "N2",
-      "label": "Surveillance",
+      "level": "N0",
+      "label": "Rien à signaler",
       "confidence": "élevée",
-      "rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
+      "rationale": "Les annulations ou retards présentent une anomalie statistique mais restent sous les seuils opérationnels de vigilance.",
       "metrics": {
-        "collected_at": "2026-09-12T02:06:37.332783+00:00",
+        "collected_at": "2026-09-12T03:06:39.444345+00:00",
         "slot": "morning",
-        "trips_count": 47,
-        "scheduled_trips": 35,
-        "added_trips": 12,
-        "canceled_trips": 0,
-        "canceled_ratio_pct": 0.0,
+        "trips_count": 228,
+        "scheduled_trips": 173,
+        "added_trips": 54,
+        "canceled_trips": 1,
+        "canceled_ratio_pct": 0.4386,
         "trips_delay_ge_15min": 6,
-        "trips_delay_ge_15min_ratio_pct": 12.766,
+        "trips_delay_ge_15min_ratio_pct": 2.6316,
         "trips_delay_ge_30min": 4,
-        "trips_delay_ge_30min_ratio_pct": 8.5106,
+        "trips_delay_ge_30min_ratio_pct": 1.7544,
         "trips_delay_ge_60min": 3,
-        "trips_delay_ge_60min_ratio_pct": 6.383,
-        "average_max_delay_seconds": 427.7,
+        "trips_delay_ge_60min_ratio_pct": 1.3158,
+        "average_max_delay_seconds": 104.2,
         "maximum_delay_seconds": 6600,
         "active_service_alerts": 359,
         "qualified_operational_alerts": 0,
-        "canceled_statistical_z_score": -1.6391,
-        "delay_30_statistical_z_score": 12.1485,
-        "delay_60_statistical_z_score": 14.3907
+        "canceled_statistical_z_score": -1.2038,
+        "delay_30_statistical_z_score": 0.7089,
+        "delay_60_statistical_z_score": 2.1629
       },
       "baseline": {
         "comparable_slot": "morning",
@@ -414,22 +414,22 @@
       "confidence": "moyenne+",
       "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. La baseline routière du même créneau est en cours de constitution ; les seuils absolus restent provisoires.",
       "metrics": {
-        "collected_at": "2026-09-12T02:06:38.818662+00:00",
+        "collected_at": "2026-09-12T03:06:41.507844+00:00",
         "slot": "morning",
-        "congestion_ratio_pct": 1.1458,
-        "unplanned_situations_count_context_only": 97,
-        "unplanned_full_closure_locations_count": 11,
-        "unplanned_capacity_restriction_locations_count": 33,
-        "departments_with_unplanned_full_closure": 5,
-        "departments_with_unplanned_capacity_restriction": 22,
+        "congestion_ratio_pct": 1.125,
+        "unplanned_situations_count_context_only": 84,
+        "unplanned_full_closure_locations_count": 12,
+        "unplanned_capacity_restriction_locations_count": 32,
+        "departments_with_unplanned_full_closure": 6,
+        "departments_with_unplanned_capacity_restriction": 23,
         "department_coverage_ratio_pct": 100.0,
-        "affected_departments_count": 61,
+        "affected_departments_count": 62,
         "affected_regions_count": 12,
-        "recognized_ratio_pct": 85.7533,
-        "unknown_ratio_pct": 14.2467,
+        "recognized_ratio_pct": 87.3362,
+        "unknown_ratio_pct": 12.6638,
         "congestion_signal_level": 0,
         "closure_magnitude_signal_level": 1,
-        "closure_territorial_signal_level": 0,
+        "closure_territorial_signal_level": 1,
         "closure_family_level": 1,
         "restriction_magnitude_signal_level": 0,
         "restriction_territorial_signal_level": 1,
