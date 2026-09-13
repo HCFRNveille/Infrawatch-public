@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-09-13T06:07:14.257875+00:00",
-  "operational_slot": "morning",
-  "operational_cycle_id": "2026-09-13:morning",
+  "generated_at": "2026-09-13T15:07:32.803811+00:00",
+  "operational_slot": "evening",
+  "operational_cycle_id": "2026-09-13:evening",
   "report_posture": "VIGILANCE",
   "authority": {
     "n0_n4_source": "national_status.json",
@@ -12,11 +12,11 @@
   },
   "source_alignment": {
     "status": "OK",
-    "operational_generated_at": "2026-09-13T06:06:54.250838+00:00",
-    "risks_threats_generated_at": "2026-09-13T06:06:54.275964+00:00",
-    "age_difference_seconds": 0.025,
-    "operational_slot": "morning",
-    "risks_threats_slot": "morning",
+    "operational_generated_at": "2026-09-13T15:07:12.925156+00:00",
+    "risks_threats_generated_at": "2026-09-13T15:07:12.952009+00:00",
+    "age_difference_seconds": 0.027,
+    "operational_slot": "evening",
+    "risks_threats_slot": "evening",
     "same_operational_slot": true
   },
   "operational_status": {
@@ -26,13 +26,6 @@
       "label": "Surveillance"
     },
     "elevated_sectors": [
-      {
-        "sector": "telecom_mobile",
-        "level": "N1",
-        "label": "Vigilance",
-        "confidence": "élevée",
-        "rationale": "Concentrations territoriales multi-opérateurs significatives."
-      },
       {
         "sector": "gas",
         "level": "N1",
@@ -45,7 +38,7 @@
         "level": "N2",
         "label": "Surveillance",
         "confidence": "élevée",
-        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
+        "rationale": "Le taux national de stations en rupture dépasse un seuil opérationnel et sa référence historique du créneau comparable. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
       },
       {
         "sector": "road",
@@ -71,6 +64,13 @@
         "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal."
       },
       {
+        "sector": "telecom_mobile",
+        "level": "N0",
+        "label": "Rien à signaler",
+        "confidence": "élevée",
+        "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal."
+      },
+      {
         "sector": "rail",
         "level": "N0",
         "label": "Rien à signaler",
@@ -86,24 +86,24 @@
         "confidence": "élevée",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
         "metrics": {
-          "consumption_mw": 32156.0,
-          "forecast_error_pct": -0.759,
-          "forecast_error_abs_pct": 0.759,
-          "exchange_ratio_pct": -30.402,
-          "observation_time": "2026-09-13T05:45:00+00:00",
-          "slot": "morning",
-          "statistical_z_score": -0.1823
+          "consumption_mw": 38971.0,
+          "forecast_error_pct": 0.695,
+          "forecast_error_abs_pct": 0.695,
+          "exchange_ratio_pct": -29.165,
+          "observation_time": "2026-09-13T14:45:00+00:00",
+          "slot": "evening",
+          "statistical_z_score": -0.5675
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 16,
+          "comparable_slot": "evening",
+          "comparable_count": 18,
           "forecast_error_abs_pct": {
-            "count": 16,
-            "median": 0.6545,
-            "mean": 0.8939,
-            "stdev": 0.7399,
-            "p90": 1.9605,
-            "p95": 2.221
+            "count": 18,
+            "median": 1.106,
+            "mean": 1.2781,
+            "stdev": 1.0275,
+            "p90": 2.5571,
+            "p95": 2.8318
           }
         }
       },
@@ -113,64 +113,64 @@
         "confidence": "élevée",
         "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
         "metrics": {
-          "fleet_availability_pct": 59.35,
-          "fleet_available_capacity_mw": 37385.0,
+          "fleet_availability_pct": 63.03,
+          "fleet_available_capacity_mw": 39700.0,
           "fleet_max_capacity_mw": 62990.0,
-          "planned_current_events": 24,
-          "unplanned_current_events": 4,
-          "chronic_current_events": 184,
-          "slot": "morning",
-          "availability_statistical_z_score": -1.5655,
-          "unplanned_events_statistical_z_score": 0.0556
+          "planned_current_events": 22,
+          "unplanned_current_events": 2,
+          "chronic_current_events": 187,
+          "slot": "evening",
+          "availability_statistical_z_score": 0.1188,
+          "unplanned_events_statistical_z_score": -1.2812
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 16,
+          "comparable_slot": "evening",
+          "comparable_count": 14,
           "fleet_availability_pct": {
-            "count": 16,
-            "median": 62.09,
-            "mean": 61.9344,
-            "stdev": 1.6508,
-            "p90": 63.4,
-            "p95": 63.76
+            "count": 14,
+            "median": 61.235,
+            "mean": 62.2543,
+            "stdev": 6.5322,
+            "p90": 62.907,
+            "p95": 70.295
           },
           "unplanned_events": {
-            "count": 16,
-            "median": 4.0,
-            "mean": 3.9375,
-            "stdev": 1.1236,
-            "p90": 5.0,
-            "p95": 5.5
+            "count": 14,
+            "median": 4.5,
+            "mean": 4.5,
+            "stdev": 1.9513,
+            "p90": 6.0,
+            "p95": 7.05
           }
         }
       },
       "telecom_mobile": {
-        "level": "N1",
-        "label": "Vigilance",
+        "level": "N0",
+        "label": "Rien à signaler",
         "confidence": "élevée",
-        "rationale": "Concentrations territoriales multi-opérateurs significatives.",
+        "rationale": "Indisponibilité nationale et distribution territoriale compatibles avec un fonctionnement nominal.",
         "metrics": {
-          "national_down_ratio_pct": 0.8357,
-          "unique_operator_sites_down": 1038,
+          "national_down_ratio_pct": 0.8091,
+          "unique_operator_sites_down": 1005,
           "active_operator_sites_reference": 124214,
-          "four_operator_clusters": 7,
+          "four_operator_clusters": 0,
           "multi_operator_hotspots_20pct": 0,
-          "slot": "morning",
-          "statistical_z_score": -1.2611,
+          "slot": "evening",
+          "statistical_z_score": -1.4368,
           "by_operator": [
             {
               "operator_code": "bouygues",
               "operator": "Bouygues Telecom",
-              "sites_down": 255,
+              "sites_down": 150,
               "active_sites_reference": 30563,
-              "down_ratio_pct": 0.8343
+              "down_ratio_pct": 0.4908
             },
             {
               "operator_code": "free",
               "operator": "Free",
-              "sites_down": 58,
+              "sites_down": 59,
               "active_sites_reference": 30636,
-              "down_ratio_pct": 0.1893
+              "down_ratio_pct": 0.1926
             },
             {
               "operator_code": "orange",
@@ -182,22 +182,22 @@
             {
               "operator_code": "sfr",
               "operator": "SFR",
-              "sites_down": 138,
+              "sites_down": 209,
               "active_sites_reference": 30408,
-              "down_ratio_pct": 0.4538
+              "down_ratio_pct": 0.6873
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 16,
+          "comparable_slot": "evening",
+          "comparable_count": 18,
           "national_down_ratio_pct": {
-            "count": 16,
-            "median": 1.0647,
-            "mean": 1.1202,
-            "stdev": 0.2256,
-            "p90": 1.4318,
-            "p95": 1.5071
+            "count": 18,
+            "median": 1.0582,
+            "mean": 1.1502,
+            "stdev": 0.2374,
+            "p90": 1.4567,
+            "p95": 1.5182
           }
         }
       },
@@ -249,28 +249,28 @@
         "level": "N2",
         "label": "Surveillance",
         "confidence": "élevée",
-        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
+        "rationale": "Le taux national de stations en rupture dépasse un seuil opérationnel et sa référence historique du créneau comparable. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
           "eligible_stations": 9793,
-          "stations_with_any_shortage": 927,
-          "national_shortage_ratio_pct": 9.4659,
-          "diesel_shortage_ratio_pct": 3.5034,
-          "petrol_shortage_ratio_pct": 8.8326,
+          "stations_with_any_shortage": 1166,
+          "national_shortage_ratio_pct": 11.9065,
+          "diesel_shortage_ratio_pct": 3.8438,
+          "petrol_shortage_ratio_pct": 11.3241,
           "departments_with_shortage": 95,
-          "slot": "morning",
-          "statistical_z_score": 1.7213,
+          "slot": "evening",
+          "statistical_z_score": 3.2475,
           "significant_departments": [
             {
-              "dept_code": "68",
-              "shortage_ratio_pct": 23.0088,
-              "stations_with_any_shortage": 26,
-              "eligible_stations": 113
+              "dept_code": "67",
+              "shortage_ratio_pct": 23.9726,
+              "stations_with_any_shortage": 35,
+              "eligible_stations": 146
             },
             {
-              "dept_code": "67",
-              "shortage_ratio_pct": 22.6027,
-              "stations_with_any_shortage": 33,
-              "eligible_stations": 146
+              "dept_code": "68",
+              "shortage_ratio_pct": 23.8938,
+              "stations_with_any_shortage": 27,
+              "eligible_stations": 113
             },
             {
               "dept_code": "72",
@@ -279,9 +279,27 @@
               "eligible_stations": 97
             },
             {
+              "dept_code": "75",
+              "shortage_ratio_pct": 21.2766,
+              "stations_with_any_shortage": 10,
+              "eligible_stations": 47
+            },
+            {
+              "dept_code": "35",
+              "shortage_ratio_pct": 20.1342,
+              "stations_with_any_shortage": 30,
+              "eligible_stations": 149
+            },
+            {
+              "dept_code": "44",
+              "shortage_ratio_pct": 20.1149,
+              "stations_with_any_shortage": 35,
+              "eligible_stations": 174
+            },
+            {
               "dept_code": "31",
-              "shortage_ratio_pct": 19.2708,
-              "stations_with_any_shortage": 37,
+              "shortage_ratio_pct": 19.7917,
+              "stations_with_any_shortage": 38,
               "eligible_stations": 192
             },
             {
@@ -303,22 +321,10 @@
               "eligible_stations": 55
             },
             {
-              "dept_code": "75",
-              "shortage_ratio_pct": 17.0213,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 47
-            },
-            {
-              "dept_code": "35",
-              "shortage_ratio_pct": 16.7785,
-              "stations_with_any_shortage": 25,
-              "eligible_stations": 149
-            },
-            {
-              "dept_code": "44",
-              "shortage_ratio_pct": 16.092,
-              "stations_with_any_shortage": 28,
-              "eligible_stations": 174
+              "dept_code": "88",
+              "shortage_ratio_pct": 17.0732,
+              "stations_with_any_shortage": 14,
+              "eligible_stations": 82
             },
             {
               "dept_code": "41",
@@ -327,66 +333,60 @@
               "eligible_stations": 63
             },
             {
+              "dept_code": "27",
+              "shortage_ratio_pct": 15.7895,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 95
+            },
+            {
               "dept_code": "95",
               "shortage_ratio_pct": 15.7407,
               "stations_with_any_shortage": 17,
               "eligible_stations": 108
             },
             {
-              "dept_code": "53",
-              "shortage_ratio_pct": 14.8148,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 54
+              "dept_code": "60",
+              "shortage_ratio_pct": 15.5172,
+              "stations_with_any_shortage": 18,
+              "eligible_stations": 116
             },
             {
-              "dept_code": "46",
-              "shortage_ratio_pct": 14.2857,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 63
-            },
-            {
-              "dept_code": "29",
-              "shortage_ratio_pct": 13.986,
-              "stations_with_any_shortage": 20,
+              "dept_code": "56",
+              "shortage_ratio_pct": 15.3846,
+              "stations_with_any_shortage": 22,
               "eligible_stations": 143
             },
             {
-              "dept_code": "57",
-              "shortage_ratio_pct": 13.8462,
+              "dept_code": "14",
+              "shortage_ratio_pct": 15.1261,
               "stations_with_any_shortage": 18,
-              "eligible_stations": 130
+              "eligible_stations": 119
             },
             {
-              "dept_code": "27",
-              "shortage_ratio_pct": 13.6842,
-              "stations_with_any_shortage": 13,
-              "eligible_stations": 95
+              "dept_code": "53",
+              "shortage_ratio_pct": 15.0943,
+              "stations_with_any_shortage": 8,
+              "eligible_stations": 53
             },
             {
-              "dept_code": "37",
-              "shortage_ratio_pct": 13.1868,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 91
-            },
-            {
-              "dept_code": "60",
-              "shortage_ratio_pct": 12.8205,
-              "stations_with_any_shortage": 15,
-              "eligible_stations": 117
+              "dept_code": "54",
+              "shortage_ratio_pct": 14.8936,
+              "stations_with_any_shortage": 14,
+              "eligible_stations": 94
             }
           ],
           "severe_departments": [
             {
-              "dept_code": "68",
-              "shortage_ratio_pct": 23.0088,
-              "stations_with_any_shortage": 26,
-              "eligible_stations": 113
+              "dept_code": "67",
+              "shortage_ratio_pct": 23.9726,
+              "stations_with_any_shortage": 35,
+              "eligible_stations": 146
             },
             {
-              "dept_code": "67",
-              "shortage_ratio_pct": 22.6027,
-              "stations_with_any_shortage": 33,
-              "eligible_stations": 146
+              "dept_code": "68",
+              "shortage_ratio_pct": 23.8938,
+              "stations_with_any_shortage": 27,
+              "eligible_stations": 113
             },
             {
               "dept_code": "72",
@@ -395,9 +395,27 @@
               "eligible_stations": 97
             },
             {
+              "dept_code": "75",
+              "shortage_ratio_pct": 21.2766,
+              "stations_with_any_shortage": 10,
+              "eligible_stations": 47
+            },
+            {
+              "dept_code": "35",
+              "shortage_ratio_pct": 20.1342,
+              "stations_with_any_shortage": 30,
+              "eligible_stations": 149
+            },
+            {
+              "dept_code": "44",
+              "shortage_ratio_pct": 20.1149,
+              "stations_with_any_shortage": 35,
+              "eligible_stations": 174
+            },
+            {
               "dept_code": "31",
-              "shortage_ratio_pct": 19.2708,
-              "stations_with_any_shortage": 37,
+              "shortage_ratio_pct": 19.7917,
+              "stations_with_any_shortage": 38,
               "eligible_stations": 192
             },
             {
@@ -419,22 +437,10 @@
               "eligible_stations": 55
             },
             {
-              "dept_code": "75",
-              "shortage_ratio_pct": 17.0213,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 47
-            },
-            {
-              "dept_code": "35",
-              "shortage_ratio_pct": 16.7785,
-              "stations_with_any_shortage": 25,
-              "eligible_stations": 149
-            },
-            {
-              "dept_code": "44",
-              "shortage_ratio_pct": 16.092,
-              "stations_with_any_shortage": 28,
-              "eligible_stations": 174
+              "dept_code": "88",
+              "shortage_ratio_pct": 17.0732,
+              "stations_with_any_shortage": 14,
+              "eligible_stations": 82
             },
             {
               "dept_code": "41",
@@ -443,23 +449,53 @@
               "eligible_stations": 63
             },
             {
+              "dept_code": "27",
+              "shortage_ratio_pct": 15.7895,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 95
+            },
+            {
               "dept_code": "95",
               "shortage_ratio_pct": 15.7407,
               "stations_with_any_shortage": 17,
               "eligible_stations": 108
+            },
+            {
+              "dept_code": "60",
+              "shortage_ratio_pct": 15.5172,
+              "stations_with_any_shortage": 18,
+              "eligible_stations": 116
+            },
+            {
+              "dept_code": "56",
+              "shortage_ratio_pct": 15.3846,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 143
+            },
+            {
+              "dept_code": "14",
+              "shortage_ratio_pct": 15.1261,
+              "stations_with_any_shortage": 18,
+              "eligible_stations": 119
+            },
+            {
+              "dept_code": "53",
+              "shortage_ratio_pct": 15.0943,
+              "stations_with_any_shortage": 8,
+              "eligible_stations": 53
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 15,
+          "comparable_slot": "evening",
+          "comparable_count": 16,
           "national_shortage_ratio_pct": {
-            "count": 15,
-            "median": 6.2902,
-            "mean": 6.6067,
-            "stdev": 1.6611,
-            "p90": 8.3291,
-            "p95": 8.9316
+            "count": 16,
+            "median": 6.4215,
+            "mean": 6.4368,
+            "stdev": 1.6843,
+            "p90": 8.6212,
+            "p95": 9.1989
           }
         }
       },
@@ -469,53 +505,53 @@
         "confidence": "élevée",
         "rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
         "metrics": {
-          "collected_at": "2026-09-13T06:06:36.556703+00:00",
-          "slot": "morning",
-          "trips_count": 704,
-          "scheduled_trips": 616,
-          "added_trips": 83,
-          "canceled_trips": 5,
-          "canceled_ratio_pct": 0.7102,
-          "trips_delay_ge_15min": 9,
-          "trips_delay_ge_15min_ratio_pct": 1.2784,
-          "trips_delay_ge_30min": 6,
-          "trips_delay_ge_30min_ratio_pct": 0.8523,
+          "collected_at": "2026-09-13T15:06:43.342258+00:00",
+          "slot": "evening",
+          "trips_count": 1320,
+          "scheduled_trips": 1160,
+          "added_trips": 149,
+          "canceled_trips": 11,
+          "canceled_ratio_pct": 0.8333,
+          "trips_delay_ge_15min": 51,
+          "trips_delay_ge_15min_ratio_pct": 3.8636,
+          "trips_delay_ge_30min": 13,
+          "trips_delay_ge_30min_ratio_pct": 0.9848,
           "trips_delay_ge_60min": 2,
-          "trips_delay_ge_60min_ratio_pct": 0.2841,
-          "average_max_delay_seconds": 53.0,
-          "maximum_delay_seconds": 7200,
-          "active_service_alerts": 378,
+          "trips_delay_ge_60min_ratio_pct": 0.1515,
+          "average_max_delay_seconds": 98.7,
+          "maximum_delay_seconds": 9000,
+          "active_service_alerts": 418,
           "qualified_operational_alerts": 0,
-          "canceled_statistical_z_score": -0.8672,
-          "delay_30_statistical_z_score": -0.7817,
-          "delay_60_statistical_z_score": -0.2952
+          "canceled_statistical_z_score": -1.0746,
+          "delay_30_statistical_z_score": -1.0902,
+          "delay_60_statistical_z_score": -1.2517
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 15,
+          "comparable_slot": "evening",
+          "comparable_count": 16,
           "canceled_ratio_pct": {
-            "count": 15,
-            "median": 1.3395,
-            "mean": 1.5831,
-            "stdev": 1.0066,
-            "p90": 2.8561,
-            "p95": 3.1666
+            "count": 16,
+            "median": 1.4532,
+            "mean": 1.4353,
+            "stdev": 0.5602,
+            "p90": 1.9368,
+            "p95": 2.2225
           },
           "delay_ge_30min_ratio_pct": {
-            "count": 15,
-            "median": 1.255,
-            "mean": 1.3061,
-            "stdev": 0.5805,
-            "p90": 2.1129,
-            "p95": 2.3543
+            "count": 16,
+            "median": 1.3194,
+            "mean": 1.339,
+            "stdev": 0.3249,
+            "p90": 1.5871,
+            "p95": 1.7433
           },
           "delay_ge_60min_ratio_pct": {
-            "count": 15,
-            "median": 0.2762,
-            "mean": 0.4034,
-            "stdev": 0.4042,
-            "p90": 0.9571,
-            "p95": 1.2317
+            "count": 16,
+            "median": 0.3387,
+            "mean": 0.3589,
+            "stdev": 0.1657,
+            "p90": 0.5618,
+            "p95": 0.5886
           }
         }
       },
@@ -525,19 +561,19 @@
         "confidence": "moyenne+",
         "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. La baseline routière du même créneau est en cours de constitution ; les seuils absolus restent provisoires.",
         "metrics": {
-          "collected_at": "2026-09-13T06:06:37.862630+00:00",
-          "slot": "morning",
-          "congestion_ratio_pct": 1.0731,
-          "unplanned_situations_count_context_only": 86,
+          "collected_at": "2026-09-13T15:06:45.971723+00:00",
+          "slot": "evening",
+          "congestion_ratio_pct": 1.9817,
+          "unplanned_situations_count_context_only": 97,
           "unplanned_full_closure_locations_count": 11,
           "unplanned_capacity_restriction_locations_count": 30,
           "departments_with_unplanned_full_closure": 5,
-          "departments_with_unplanned_capacity_restriction": 22,
+          "departments_with_unplanned_capacity_restriction": 21,
           "department_coverage_ratio_pct": 100.0,
-          "affected_departments_count": 61,
+          "affected_departments_count": 63,
           "affected_regions_count": 12,
-          "recognized_ratio_pct": 89.4016,
-          "unknown_ratio_pct": 10.5984,
+          "recognized_ratio_pct": 89.9041,
+          "unknown_ratio_pct": 10.0959,
           "congestion_signal_level": 0,
           "closure_magnitude_signal_level": 1,
           "closure_territorial_signal_level": 0,
@@ -556,48 +592,48 @@
           "n4_automatic": false
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 4,
+          "comparable_slot": "evening",
+          "comparable_count": 5,
           "baseline_ready": false,
           "congestion_ratio_pct": {
-            "count": 4,
-            "median": 7.049,
-            "mean": 6.3865,
-            "stdev": 4.4032,
-            "p90": 10.1474,
-            "p95": 10.2646
+            "count": 5,
+            "median": 7.0344,
+            "mean": 6.7939,
+            "stdev": 3.5683,
+            "p90": 9.9528,
+            "p95": 10.7232
           },
           "unplanned_full_closure_locations_count": {
-            "count": 4,
-            "median": 5.5,
-            "mean": 6.25,
-            "stdev": 3.4034,
-            "p90": 9.5,
-            "p95": 10.25
+            "count": 5,
+            "median": 8.0,
+            "mean": 7.6,
+            "stdev": 3.5071,
+            "p90": 11.0,
+            "p95": 11.0
           },
           "unplanned_capacity_restriction_locations_count": {
-            "count": 4,
-            "median": 29.0,
-            "mean": 28.75,
-            "stdev": 1.2583,
-            "p90": 29.7,
-            "p95": 29.85
+            "count": 5,
+            "median": 34.0,
+            "mean": 35.6,
+            "stdev": 5.6833,
+            "p90": 41.6,
+            "p95": 41.8
           },
           "departments_with_unplanned_full_closure": {
-            "count": 4,
-            "median": 4.5,
-            "mean": 4.5,
-            "stdev": 1.291,
-            "p90": 5.7,
-            "p95": 5.85
+            "count": 5,
+            "median": 5.0,
+            "mean": 5.2,
+            "stdev": 1.6432,
+            "p90": 6.8,
+            "p95": 7.4
           },
           "departments_with_unplanned_capacity_restriction": {
-            "count": 4,
-            "median": 22.5,
-            "mean": 22.25,
-            "stdev": 0.9574,
-            "p90": 23.0,
-            "p95": 23.0
+            "count": 5,
+            "median": 26.0,
+            "mean": 25.0,
+            "stdev": 2.3452,
+            "p90": 26.6,
+            "p95": 26.8
           }
         }
       }
@@ -606,57 +642,51 @@
   "risks_threats": {
     "schema_version": "risks-threats-0.4",
     "source_health": "OK",
-    "new_signals": [],
-    "carried_over_context": [
+    "new_signals": [
       {
-        "fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-        "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "link": "https://www.franceinfo.fr/economie/transports/une-quarantaine-de-blesses-la-piste-d-un-acte-malveillant-le-trafic-perturbe-ce-que-l-on-sait-apres-le-deraillement-d-un-ter-reliant-rouen-a-caen_8189474.html",
-        "source_domain": "franceinfo.fr",
-        "category": "hybrid_threats",
-        "category_label": "Menaces hybrides",
-        "published_at": "2026-09-12T10:08:54+00:00",
-        "qualification": "IMPACT_CANDIDATE",
+        "fingerprint": "1975aa6a5647057088916c877f635fad143e525a9453f40126983000737da2d4",
+        "title": "La Réunion face au \"dou\", une drogue de synthèse qui gagne du terrain - Outre-mer La 1ère",
+        "link": "https://la1ere.franceinfo.fr/la-reunion-face-au-dou-une-drogue-de-synthese-qui-gagne-du-terrain-1737911.html",
+        "source_domain": "la1ere.franceinfo.fr",
+        "category": "defense_security",
+        "category_label": "Défense et sécurité",
+        "published_at": "2026-09-13T13:39:51+00:00",
+        "qualification": "CONTEXT",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
         "sectors": [
-          "rail",
-          "health"
+          "air"
         ],
-        "impacted_sectors": [
-          "rail"
-        ],
-        "first_seen_at": "2026-09-12T15:07:31.422938+00:00",
-        "last_seen_at": "2026-09-13T06:06:54.275964+00:00",
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-13T15:07:12.952009+00:00",
+        "last_seen_at": "2026-09-13T15:07:12.952009+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       }
     ],
+    "carried_over_context": [],
     "active_situation": [
       {
-        "fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-        "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "link": "https://www.franceinfo.fr/economie/transports/une-quarantaine-de-blesses-la-piste-d-un-acte-malveillant-le-trafic-perturbe-ce-que-l-on-sait-apres-le-deraillement-d-un-ter-reliant-rouen-a-caen_8189474.html",
-        "source_domain": "franceinfo.fr",
-        "category": "hybrid_threats",
-        "category_label": "Menaces hybrides",
-        "published_at": "2026-09-12T10:08:54+00:00",
-        "qualification": "IMPACT_CANDIDATE",
+        "fingerprint": "1975aa6a5647057088916c877f635fad143e525a9453f40126983000737da2d4",
+        "title": "La Réunion face au \"dou\", une drogue de synthèse qui gagne du terrain - Outre-mer La 1ère",
+        "link": "https://la1ere.franceinfo.fr/la-reunion-face-au-dou-une-drogue-de-synthese-qui-gagne-du-terrain-1737911.html",
+        "source_domain": "la1ere.franceinfo.fr",
+        "category": "defense_security",
+        "category_label": "Défense et sécurité",
+        "published_at": "2026-09-13T13:39:51+00:00",
+        "qualification": "CONTEXT",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
         "sectors": [
-          "rail",
-          "health"
+          "air"
         ],
-        "impacted_sectors": [
-          "rail"
-        ],
-        "first_seen_at": "2026-09-12T15:07:31.422938+00:00",
-        "last_seen_at": "2026-09-13T06:06:54.275964+00:00",
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-13T15:07:12.952009+00:00",
+        "last_seen_at": "2026-09-13T15:07:12.952009+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -666,59 +696,20 @@
     "resolved_since_collection": [],
     "counts": {
       "retained": 1,
-      "new": 0,
-      "carried_over": 1,
+      "new": 1,
+      "carried_over": 0,
       "active_situation": 1,
       "resolved": 0,
-      "impact_candidates": 1,
+      "impact_candidates": 0,
       "watch": 0,
-      "context": 0
+      "context": 1
     }
   },
   "cross_sector_view": {
     "concomitant_signals": [],
-    "contextual_signals": [
-      {
-        "sector": "rail",
-        "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "risk_title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "risk_fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-        "operational_level": "N0",
-        "operational_label": "Rien à signaler",
-        "operational_rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
-        "risk_signal": {
-          "fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-          "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-          "link": "https://www.franceinfo.fr/economie/transports/une-quarantaine-de-blesses-la-piste-d-un-acte-malveillant-le-trafic-perturbe-ce-que-l-on-sait-apres-le-deraillement-d-un-ter-reliant-rouen-a-caen_8189474.html",
-          "source_domain": "franceinfo.fr",
-          "category": "hybrid_threats",
-          "category_label": "Menaces hybrides",
-          "published_at": "2026-09-12T10:08:54+00:00",
-          "qualification": "IMPACT_CANDIDATE",
-          "event_state": "UNKNOWN",
-          "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
-          "sectors": [
-            "rail",
-            "health"
-          ],
-          "impacted_sectors": [
-            "rail"
-          ],
-          "first_seen_at": "2026-09-12T15:07:31.422938+00:00",
-          "last_seen_at": "2026-09-13T06:06:54.275964+00:00",
-          "carry_forward": true,
-          "operational_confirmation": "NOT_CHECKED",
-          "causality": "NOT_ESTABLISHED",
-          "affects_n0_n4": false
-        },
-        "relationship": "CONTEXT_ONLY",
-        "causality": "CAUSALITY_NOT_ESTABLISHED",
-        "affects_n0_n4": false
-      }
-    ],
+    "contextual_signals": [],
     "concomitant_count": 0,
-    "contextual_count": 1,
+    "contextual_count": 0,
     "causality_rule": "Une concomitance temporelle ou sectorielle entre un signal de veille et une anomalie opérationnelle ne constitue pas un lien causal."
   },
   "report_sections": {
@@ -728,13 +719,6 @@
       "source": "national_status.json"
     },
     "operational_attention": [
-      {
-        "sector": "telecom_mobile",
-        "level": "N1",
-        "label": "Vigilance",
-        "confidence": "élevée",
-        "rationale": "Concentrations territoriales multi-opérateurs significatives."
-      },
       {
         "sector": "gas",
         "level": "N1",
@@ -747,7 +731,7 @@
         "level": "N2",
         "label": "Surveillance",
         "confidence": "élevée",
-        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
+        "rationale": "Le taux national de stations en rupture dépasse un seuil opérationnel et sa référence historique du créneau comparable. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
       },
       {
         "sector": "road",
@@ -757,76 +741,34 @@
         "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. La baseline routière du même créneau est en cours de constitution ; les seuils absolus restent provisoires."
       }
     ],
-    "new_risk_signals": [],
-    "inherited_risk_context": [
+    "new_risk_signals": [
       {
-        "fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-        "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "link": "https://www.franceinfo.fr/economie/transports/une-quarantaine-de-blesses-la-piste-d-un-acte-malveillant-le-trafic-perturbe-ce-que-l-on-sait-apres-le-deraillement-d-un-ter-reliant-rouen-a-caen_8189474.html",
-        "source_domain": "franceinfo.fr",
-        "category": "hybrid_threats",
-        "category_label": "Menaces hybrides",
-        "published_at": "2026-09-12T10:08:54+00:00",
-        "qualification": "IMPACT_CANDIDATE",
+        "fingerprint": "1975aa6a5647057088916c877f635fad143e525a9453f40126983000737da2d4",
+        "title": "La Réunion face au \"dou\", une drogue de synthèse qui gagne du terrain - Outre-mer La 1ère",
+        "link": "https://la1ere.franceinfo.fr/la-reunion-face-au-dou-une-drogue-de-synthese-qui-gagne-du-terrain-1737911.html",
+        "source_domain": "la1ere.franceinfo.fr",
+        "category": "defense_security",
+        "category_label": "Défense et sécurité",
+        "published_at": "2026-09-13T13:39:51+00:00",
+        "qualification": "CONTEXT",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
         "sectors": [
-          "rail",
-          "health"
+          "air"
         ],
-        "impacted_sectors": [
-          "rail"
-        ],
-        "first_seen_at": "2026-09-12T15:07:31.422938+00:00",
-        "last_seen_at": "2026-09-13T06:06:54.275964+00:00",
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-13T15:07:12.952009+00:00",
+        "last_seen_at": "2026-09-13T15:07:12.952009+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       }
     ],
+    "inherited_risk_context": [],
     "concomitant_signals": [],
-    "contextual_infrastructure_signals": [
-      {
-        "sector": "rail",
-        "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "risk_title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-        "risk_fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-        "operational_level": "N0",
-        "operational_label": "Rien à signaler",
-        "operational_rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
-        "risk_signal": {
-          "fingerprint": "b07ae7f818cf66b459c5f10a5cb05a015b1d244bc36f2c47b75b0dd71dfd95c7",
-          "title": "Une quarantaine de blessés, un morceau de rail retrouvé sur les voies, le trafic perturbé... Ce que l'on sait après le déraillement d'un TER reliant Rouen à Caen",
-          "link": "https://www.franceinfo.fr/economie/transports/une-quarantaine-de-blesses-la-piste-d-un-acte-malveillant-le-trafic-perturbe-ce-que-l-on-sait-apres-le-deraillement-d-un-ter-reliant-rouen-a-caen_8189474.html",
-          "source_domain": "franceinfo.fr",
-          "category": "hybrid_threats",
-          "category_label": "Menaces hybrides",
-          "published_at": "2026-09-12T10:08:54+00:00",
-          "qualification": "IMPACT_CANDIDATE",
-          "event_state": "UNKNOWN",
-          "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
-          "sectors": [
-            "rail",
-            "health"
-          ],
-          "impacted_sectors": [
-            "rail"
-          ],
-          "first_seen_at": "2026-09-12T15:07:31.422938+00:00",
-          "last_seen_at": "2026-09-13T06:06:54.275964+00:00",
-          "carry_forward": true,
-          "operational_confirmation": "NOT_CHECKED",
-          "causality": "NOT_ESTABLISHED",
-          "affects_n0_n4": false
-        },
-        "relationship": "CONTEXT_ONLY",
-        "causality": "CAUSALITY_NOT_ESTABLISHED",
-        "affects_n0_n4": false
-      }
-    ]
+    "contextual_infrastructure_signals": []
   },
   "doctrine": {
     "operational_priority": "Les niveaux N0-N4 et leurs justifications proviennent exclusivement du moteur analytique national_status.json.",
