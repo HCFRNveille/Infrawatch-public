@@ -1,39 +1,39 @@
 {
   "schema_version": "0.9",
-  "generated_at": "2026-09-16T14:05:35.726441+00:00",
+  "generated_at": "2026-09-16T15:05:43.803027+00:00",
   "electricity": {
-    "generated_at": "2026-09-16T14:05:36.214344+00:00",
+    "generated_at": "2026-09-16T15:05:44.405973+00:00",
     "source": "RTE / ODRÉ éCO2mix national temps réel",
     "source_api": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records",
-    "observation_time": "2026-09-16T13:45:00+00:00",
-    "consumption_mw": 48606.0,
-    "forecast_j_mw": 48400.0,
-    "forecast_j1_mw": 46350.0,
-    "forecast_error_pct": 0.424,
-    "physical_exchanges_mw": -10734.0,
-    "exchange_ratio_pct": -22.084,
-    "production_total_mw": 60338.0,
+    "observation_time": "2026-09-16T14:45:00+00:00",
+    "consumption_mw": 46190.0,
+    "forecast_j_mw": 47100.0,
+    "forecast_j1_mw": 45400.0,
+    "forecast_error_pct": -1.97,
+    "physical_exchanges_mw": -10947.0,
+    "exchange_ratio_pct": -23.7,
+    "production_total_mw": 58313.0,
     "production_by_fuel_mw": {
-      "nucleaire": 36724.0,
-      "gaz": 165.0,
+      "nucleaire": 37329.0,
+      "gaz": 219.0,
       "fioul": 36.0,
       "charbon": 0.0,
-      "eolien": 5222.0,
-      "solaire": 14428.0,
-      "hydraulique": 2794.0,
-      "bioenergies": 969.0
+      "eolien": 5285.0,
+      "solaire": 10806.0,
+      "hydraulique": 3681.0,
+      "bioenergies": 957.0
     }
   },
   "nuclear": {},
   "telecom_mobile": {
-    "generated_at": "2026-09-16T14:05:43.902708+00:00",
-    "rows_source_total": 1370,
-    "unique_operator_sites_down": 1369,
+    "generated_at": "2026-09-16T15:05:54.407081+00:00",
+    "rows_source_total": 1352,
+    "unique_operator_sites_down": 1351,
     "operators_ok": 4,
     "operators_expected": 4,
     "collection_complete": true,
     "active_operator_sites_reference": 124214,
-    "national_down_ratio_pct": 1.1021,
+    "national_down_ratio_pct": 1.0876,
     "by_operator": [
       {
         "operator_code": "bouygues",
@@ -45,9 +45,9 @@
       {
         "operator_code": "free",
         "operator": "Free",
-        "sites_down": 137,
+        "sites_down": 119,
         "active_sites_reference": 30636,
-        "down_ratio_pct": 0.4472
+        "down_ratio_pct": 0.3884
       },
       {
         "operator_code": "orange",
@@ -143,15 +143,15 @@
         "down_ratio_pct": 3.7288
       },
       {
-        "operator_code": "sfr",
-        "dept_code": "48",
+        "operator_code": "orange",
+        "dept_code": "2A",
         "sites_down": 6,
         "active_sites": 165.0,
         "down_ratio_pct": 3.6364
       },
       {
-        "operator_code": "orange",
-        "dept_code": "2A",
+        "operator_code": "sfr",
+        "dept_code": "48",
         "sites_down": 6,
         "active_sites": 165.0,
         "down_ratio_pct": 3.6364
@@ -286,12 +286,6 @@
         "rows": 3
       },
       {
-        "lat_r": 42.354,
-        "lon_r": 2.613,
-        "operators": 3,
-        "rows": 3
-      },
-      {
         "lat_r": 42.812,
         "lon_r": 2.28,
         "operators": 3,
@@ -412,6 +406,12 @@
         "rows": 2
       },
       {
+        "lat_r": 42.354,
+        "lon_r": 2.613,
+        "operators": 2,
+        "rows": 2
+      },
+      {
         "lat_r": 42.374,
         "lon_r": 9.53,
         "operators": 2,
@@ -517,15 +517,40 @@
       "source": "Smart NaTran",
       "dataset": "infovigilance",
       "observation_date": "2026-09-16",
-      "operational_status": "GREEN",
+      "operational_status": "ORANGE",
       "data_quality": "OK",
       "limits_count": 10,
-      "green_limits_count": 10,
-      "orange_limits_count": 0,
+      "green_limits_count": 8,
+      "orange_limits_count": 2,
       "red_limits_count": 0,
       "violet_limits_count": 0,
       "unknown_limits_count": 0,
-      "alerts": [],
+      "alerts": [
+        {
+          "limit": "NS3",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Aval",
+          "small_impact_works_gwh_25c": 0,
+          "maintenance": "Oui",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        },
+        {
+          "limit": "NS4",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Aval",
+          "small_impact_works_gwh_25c": 100,
+          "maintenance": "Non",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        }
+      ],
       "limits": [
         {
           "limit": "NS1",
@@ -537,11 +562,11 @@
         },
         {
           "limit": "NS3",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "NS4",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "EO2",
@@ -572,7 +597,7 @@
         "FF98BF57": "GREEN",
         "FFFF9933": "ORANGE"
       },
-      "collected_at": "2026-09-16T14:06:04.513102+00:00",
+      "collected_at": "2026-09-16T15:06:15.235766+00:00",
       "source_url": "https://www.smart.natrangroupe.com/api/v1/fr/infovigilance/export.xls"
     },
     "consumption_reference": {
@@ -584,163 +609,155 @@
       "terega_mw": 695,
       "france_total_mw": 20062
     },
-    "collected_at": "2026-09-16T14:06:04.513098+00:00"
+    "collected_at": "2026-09-16T15:06:15.235761+00:00"
   },
   "fuels": {
     "source": "Prix des carburants - Ministère de l'Économie",
     "dataset": "instantane_ruptures",
     "source_url": "https://donnees.roulez-eco.fr/opendata/instantane_ruptures",
-    "collected_at": "2026-09-16T14:06:05.613102+00:00",
+    "collected_at": "2026-09-16T15:06:16.583196+00:00",
     "stations_source_total": 9802,
     "stations_temporarily_closed": 0,
-    "eligible_stations": 9742,
-    "stations_with_any_shortage": 800,
-    "national_shortage_ratio_pct": 8.2119,
+    "eligible_stations": 9738,
+    "stations_with_any_shortage": 804,
+    "national_shortage_ratio_pct": 8.2563,
     "diesel": {
-      "stations": 9656,
-      "stations_in_shortage": 428,
-      "shortage_ratio_pct": 4.4325
+      "stations": 9649,
+      "stations_in_shortage": 426,
+      "shortage_ratio_pct": 4.415
     },
     "petrol": {
-      "stations": 9586,
-      "stations_in_shortage": 707,
-      "shortage_ratio_pct": 7.3753
+      "stations": 9580,
+      "stations_in_shortage": 712,
+      "shortage_ratio_pct": 7.4322
     },
     "departments_with_shortage": 93,
     "top_departments_by_shortage_ratio": [
       {
         "dept_code": "90",
-        "eligible_stations": 18,
-        "stations_with_any_shortage": 5,
-        "stations_with_diesel_shortage": 4,
-        "stations_with_petrol_shortage": 4,
-        "shortage_ratio_pct": 27.7778
+        "eligible_stations": 17,
+        "stations_with_any_shortage": 4,
+        "stations_with_diesel_shortage": 3,
+        "stations_with_petrol_shortage": 3,
+        "shortage_ratio_pct": 23.5294
       },
       {
         "dept_code": "75",
         "eligible_stations": 47,
-        "stations_with_any_shortage": 10,
+        "stations_with_any_shortage": 9,
         "stations_with_diesel_shortage": 6,
-        "stations_with_petrol_shortage": 8,
-        "shortage_ratio_pct": 21.2766
+        "stations_with_petrol_shortage": 7,
+        "shortage_ratio_pct": 19.1489
       },
       {
         "dept_code": "68",
         "eligible_stations": 112,
-        "stations_with_any_shortage": 19,
-        "stations_with_diesel_shortage": 15,
-        "stations_with_petrol_shortage": 18,
-        "shortage_ratio_pct": 16.9643
+        "stations_with_any_shortage": 20,
+        "stations_with_diesel_shortage": 16,
+        "stations_with_petrol_shortage": 19,
+        "shortage_ratio_pct": 17.8571
       },
       {
         "dept_code": "31",
         "eligible_stations": 191,
-        "stations_with_any_shortage": 32,
+        "stations_with_any_shortage": 34,
         "stations_with_diesel_shortage": 23,
-        "stations_with_petrol_shortage": 28,
-        "shortage_ratio_pct": 16.7539
+        "stations_with_petrol_shortage": 30,
+        "shortage_ratio_pct": 17.801
       },
       {
         "dept_code": "41",
         "eligible_stations": 63,
-        "stations_with_any_shortage": 10,
+        "stations_with_any_shortage": 11,
         "stations_with_diesel_shortage": 6,
-        "stations_with_petrol_shortage": 9,
-        "shortage_ratio_pct": 15.873
+        "stations_with_petrol_shortage": 10,
+        "shortage_ratio_pct": 17.4603
+      },
+      {
+        "dept_code": "66",
+        "eligible_stations": 72,
+        "stations_with_any_shortage": 12,
+        "stations_with_diesel_shortage": 3,
+        "stations_with_petrol_shortage": 12,
+        "shortage_ratio_pct": 16.6667
+      },
+      {
+        "dept_code": "11",
+        "eligible_stations": 86,
+        "stations_with_any_shortage": 14,
+        "stations_with_diesel_shortage": 9,
+        "stations_with_petrol_shortage": 13,
+        "shortage_ratio_pct": 16.2791
+      },
+      {
+        "dept_code": "67",
+        "eligible_stations": 145,
+        "stations_with_any_shortage": 23,
+        "stations_with_diesel_shortage": 11,
+        "stations_with_petrol_shortage": 22,
+        "shortage_ratio_pct": 15.8621
       },
       {
         "dept_code": "82",
         "eligible_stations": 64,
         "stations_with_any_shortage": 10,
         "stations_with_diesel_shortage": 5,
-        "stations_with_petrol_shortage": 8,
+        "stations_with_petrol_shortage": 9,
         "shortage_ratio_pct": 15.625
-      },
-      {
-        "dept_code": "66",
-        "eligible_stations": 72,
-        "stations_with_any_shortage": 11,
-        "stations_with_diesel_shortage": 3,
-        "stations_with_petrol_shortage": 11,
-        "shortage_ratio_pct": 15.2778
-      },
-      {
-        "dept_code": "36",
-        "eligible_stations": 46,
-        "stations_with_any_shortage": 7,
-        "stations_with_diesel_shortage": 5,
-        "stations_with_petrol_shortage": 5,
-        "shortage_ratio_pct": 15.2174
-      },
-      {
-        "dept_code": "11",
-        "eligible_stations": 86,
-        "stations_with_any_shortage": 13,
-        "stations_with_diesel_shortage": 10,
-        "stations_with_petrol_shortage": 12,
-        "shortage_ratio_pct": 15.1163
-      },
-      {
-        "dept_code": "67",
-        "eligible_stations": 144,
-        "stations_with_any_shortage": 21,
-        "stations_with_diesel_shortage": 10,
-        "stations_with_petrol_shortage": 21,
-        "shortage_ratio_pct": 14.5833
-      },
-      {
-        "dept_code": "70",
-        "eligible_stations": 55,
-        "stations_with_any_shortage": 8,
-        "stations_with_diesel_shortage": 5,
-        "stations_with_petrol_shortage": 5,
-        "shortage_ratio_pct": 14.5455
-      },
-      {
-        "dept_code": "30",
-        "eligible_stations": 138,
-        "stations_with_any_shortage": 20,
-        "stations_with_diesel_shortage": 17,
-        "stations_with_petrol_shortage": 17,
-        "shortage_ratio_pct": 14.4928
-      },
-      {
-        "dept_code": "34",
-        "eligible_stations": 161,
-        "stations_with_any_shortage": 22,
-        "stations_with_diesel_shortage": 14,
-        "stations_with_petrol_shortage": 20,
-        "shortage_ratio_pct": 13.6646
-      },
-      {
-        "dept_code": "53",
-        "eligible_stations": 54,
-        "stations_with_any_shortage": 7,
-        "stations_with_diesel_shortage": 7,
-        "stations_with_petrol_shortage": 3,
-        "shortage_ratio_pct": 12.963
       },
       {
         "dept_code": "46",
         "eligible_stations": 63,
-        "stations_with_any_shortage": 8,
+        "stations_with_any_shortage": 9,
         "stations_with_diesel_shortage": 4,
-        "stations_with_petrol_shortage": 8,
-        "shortage_ratio_pct": 12.6984
+        "stations_with_petrol_shortage": 9,
+        "shortage_ratio_pct": 14.2857
       },
       {
-        "dept_code": "57",
-        "eligible_stations": 130,
-        "stations_with_any_shortage": 16,
-        "stations_with_diesel_shortage": 7,
+        "dept_code": "30",
+        "eligible_stations": 136,
+        "stations_with_any_shortage": 18,
+        "stations_with_diesel_shortage": 15,
         "stations_with_petrol_shortage": 15,
-        "shortage_ratio_pct": 12.3077
+        "shortage_ratio_pct": 13.2353
+      },
+      {
+        "dept_code": "34",
+        "eligible_stations": 161,
+        "stations_with_any_shortage": 21,
+        "stations_with_diesel_shortage": 13,
+        "stations_with_petrol_shortage": 19,
+        "shortage_ratio_pct": 13.0435
+      },
+      {
+        "dept_code": "36",
+        "eligible_stations": 46,
+        "stations_with_any_shortage": 6,
+        "stations_with_diesel_shortage": 4,
+        "stations_with_petrol_shortage": 5,
+        "shortage_ratio_pct": 13.0435
+      },
+      {
+        "dept_code": "70",
+        "eligible_stations": 55,
+        "stations_with_any_shortage": 7,
+        "stations_with_diesel_shortage": 4,
+        "stations_with_petrol_shortage": 5,
+        "shortage_ratio_pct": 12.7273
+      },
+      {
+        "dept_code": "08",
+        "eligible_stations": 49,
+        "stations_with_any_shortage": 6,
+        "stations_with_diesel_shortage": 5,
+        "stations_with_petrol_shortage": 5,
+        "shortage_ratio_pct": 12.2449
       },
       {
         "dept_code": "37",
         "eligible_stations": 90,
         "stations_with_any_shortage": 11,
-        "stations_with_diesel_shortage": 4,
+        "stations_with_diesel_shortage": 7,
         "stations_with_petrol_shortage": 10,
         "shortage_ratio_pct": 12.2222
       },
@@ -748,7 +765,7 @@
         "dept_code": "15",
         "eligible_stations": 51,
         "stations_with_any_shortage": 6,
-        "stations_with_diesel_shortage": 5,
+        "stations_with_diesel_shortage": 4,
         "stations_with_petrol_shortage": 6,
         "shortage_ratio_pct": 11.7647
       },
@@ -756,38 +773,46 @@
         "dept_code": "09",
         "eligible_stations": 34,
         "stations_with_any_shortage": 4,
-        "stations_with_diesel_shortage": 2,
+        "stations_with_diesel_shortage": 3,
         "stations_with_petrol_shortage": 4,
         "shortage_ratio_pct": 11.7647
       },
       {
-        "dept_code": "60",
-        "eligible_stations": 116,
-        "stations_with_any_shortage": 13,
+        "dept_code": "57",
+        "eligible_stations": 130,
+        "stations_with_any_shortage": 15,
         "stations_with_diesel_shortage": 7,
-        "stations_with_petrol_shortage": 9,
-        "shortage_ratio_pct": 11.2069
+        "stations_with_petrol_shortage": 14,
+        "shortage_ratio_pct": 11.5385
+      },
+      {
+        "dept_code": "35",
+        "eligible_stations": 149,
+        "stations_with_any_shortage": 17,
+        "stations_with_diesel_shortage": 7,
+        "stations_with_petrol_shortage": 14,
+        "shortage_ratio_pct": 11.4094
       }
     ],
-    "active_temporary_rupture_events": 3621,
-    "definitive_rupture_records": 19311,
+    "active_temporary_rupture_events": 3592,
+    "definitive_rupture_records": 19314,
     "method_note": "Flux XML officiel instantané. Seules les ruptures temporaires actives sont traitées comme des indisponibilités opérationnelles. Une rupture temporaire reste active tant que sa date de fin est absente ou future. Les ruptures définitives sont interprétées comme des carburants non distribués et ne constituent pas une pénurie. Les stations faisant l'objet d'une fermeture temporaire active sont exclues du dénominateur. Une station est en rupture gazole lorsqu'elle distribue normalement du gazole et qu'une rupture temporaire active concerne ce carburant. Elle est en rupture essence lorsque toutes les essences SP95, SP98 et/ou E10 qu'elle distribue normalement sont en rupture temporaire active."
   },
   "rail": {
     "source": "SNCF / transport.data.gouv.fr",
     "scope": "TGV, Intercités et TER",
-    "collected_at": "2026-09-16T14:06:07.384848+00:00",
+    "collected_at": "2026-09-16T15:06:17.721926+00:00",
     "service_alerts": {
-      "active_alerts_count": 513,
+      "active_alerts_count": 556,
       "operational_alerts_count": 0,
-      "informational_or_unqualified_alerts_count": 513,
+      "informational_or_unqualified_alerts_count": 556,
       "effects": {
-        "UNKNOWN_EFFECT": 513
+        "UNKNOWN_EFFECT": 556
       },
       "causes": {
-        "UNKNOWN_CAUSE": 163,
+        "UNKNOWN_CAUSE": 166,
         "MAINTENANCE": 179,
-        "OTHER_CAUSE": 171
+        "OTHER_CAUSE": 211
       },
       "sample_active_alerts": [
         {
@@ -5404,29 +5429,29 @@
       "operational_alerts": []
     },
     "trip_updates": {
-      "trips_count": 1657,
+      "trips_count": 2131,
       "schedule_relationships": {
-        "SCHEDULED": 1453,
-        "CANCELED": 42,
-        "ADDED": 162
+        "SCHEDULED": 1861,
+        "CANCELED": 58,
+        "ADDED": 212
       },
-      "canceled_trips": 42,
-      "canceled_ratio_pct": 2.5347,
-      "trips_delay_ge_15min": 64,
-      "trips_delay_ge_15min_ratio_pct": 3.8624,
-      "trips_delay_ge_30min": 22,
-      "trips_delay_ge_30min_ratio_pct": 1.3277,
-      "trips_delay_ge_60min": 4,
-      "trips_delay_ge_60min_ratio_pct": 0.2414,
-      "average_max_delay_seconds": 97.2,
-      "maximum_delay_seconds": 10800
+      "canceled_trips": 58,
+      "canceled_ratio_pct": 2.7217,
+      "trips_delay_ge_15min": 70,
+      "trips_delay_ge_15min_ratio_pct": 3.2848,
+      "trips_delay_ge_30min": 25,
+      "trips_delay_ge_30min_ratio_pct": 1.1732,
+      "trips_delay_ge_60min": 9,
+      "trips_delay_ge_60min_ratio_pct": 0.4223,
+      "average_max_delay_seconds": 96.7,
+      "maximum_delay_seconds": 12000
     }
   },
   "road": {
     "schema_version": "road-observation-1.4.2b",
     "source": "Bison Futé / transport.data.gouv.fr",
     "scope": "RRN non concédé — événements, Traficolor, vitesses et débits",
-    "collected_at": "2026-09-16T14:06:08.901548+00:00",
+    "collected_at": "2026-09-16T15:06:20.027442+00:00",
     "observation_mode": true,
     "scoring_enabled": true,
     "integration_enabled": true,
@@ -5436,23 +5461,23 @@
       "extended_context_for_scoring": false
     },
     "events": {
-      "situations_count": 389,
-      "situation_records_count": 835,
-      "planned_situations_count": 267,
-      "unplanned_situations_count": 122,
+      "situations_count": 382,
+      "situation_records_count": 826,
+      "planned_situations_count": 261,
+      "unplanned_situations_count": 121,
       "full_closure_records_count": 61,
-      "capacity_restriction_records_count": 284,
+      "capacity_restriction_records_count": 279,
       "planned_full_closure_records_count": 39,
       "unplanned_full_closure_records_count": 22,
-      "planned_capacity_restriction_records_count": 233,
-      "unplanned_capacity_restriction_records_count": 51,
+      "planned_capacity_restriction_records_count": 222,
+      "unplanned_capacity_restriction_records_count": 57,
       "unique_full_closure_locations_count": 31,
-      "unique_capacity_restriction_locations_count": 185,
+      "unique_capacity_restriction_locations_count": 184,
       "planned_full_closure_locations_count": 24,
       "unplanned_full_closure_locations_count": 7,
-      "planned_capacity_restriction_locations_count": 153,
-      "unplanned_capacity_restriction_locations_count": 32,
-      "affected_axes_count": 107,
+      "planned_capacity_restriction_locations_count": 146,
+      "unplanned_capacity_restriction_locations_count": 38,
+      "affected_axes_count": 111,
       "affected_axes": [
         "75000C02",
         "A0001",
@@ -5465,21 +5490,24 @@
         "A0022",
         "A0025",
         "A0028",
-        "A0030",
+        "A0031",
         "A0033",
         "A0034",
+        "A0042",
         "A0047",
         "A0050",
         "A0051",
         "A0055",
         "A0062",
         "A0068",
+        "A0072",
         "A0075",
         "A0077",
         "A0083",
         "A0084",
         "A0086",
         "A0103",
+        "A0104",
         "A0131",
         "A0216",
         "A0507",
@@ -5516,6 +5544,8 @@
         "N0080",
         "N0083",
         "N0085",
+        "N0086",
+        "N0087",
         "N0088",
         "N0090",
         "N0094",
@@ -5523,10 +5553,10 @@
         "N0102",
         "N0106",
         "N0113",
+        "N0118",
         "N0122",
         "N0124",
         "N0125",
-        "N0126",
         "N0134",
         "N0136",
         "N0137",
@@ -5548,30 +5578,25 @@
         "N0202",
         "N0225",
         "N0230",
-        "N0249",
-        "N0296",
-        "N0306",
-        "N0320",
-        "N0338",
-        "N0356"
+        "N0249"
       ],
       "affected_departments_count": null,
       "affected_departments": [],
       "department_coverage": "not_available_from_source",
       "situation_categories": {
         "other": 212,
-        "weather": 25,
-        "roadworks": 267,
-        "obstruction": 60,
-        "accident": 9,
-        "abnormal_traffic": 1
+        "weather": 26,
+        "roadworks": 261,
+        "obstruction": 53,
+        "accident": 6,
+        "abnormal_traffic": 9
       },
       "record_types": {
-        "RoadOrCarriagewayOrLaneManagement": 219,
+        "RoadOrCarriagewayOrLaneManagement": 216,
         "WeatherRelatedRoadConditions": 1,
-        "ReroutingManagement": 131,
-        "MaintenanceWorks": 278,
-        "GeneralObstruction": 13,
+        "ReroutingManagement": 133,
+        "MaintenanceWorks": 272,
+        "GeneralObstruction": 11,
         "GeneralNetworkManagement": 39,
         "EnvironmentalObstruction": 4,
         "SpeedManagement": 39,
@@ -5580,9 +5605,9 @@
         "GeneralInstructionOrMessageToRoadUsers": 19,
         "InfrastructureDamageObstruction": 5,
         "OperatorAction": 2,
-        "AbnormalTraffic": 3,
-        "VehicleObstruction": 40,
-        "Accident": 9,
+        "AbnormalTraffic": 11,
+        "VehicleObstruction": 35,
+        "Accident": 6,
         "PublicEvent": 2
       },
       "critical_events_sample": [
@@ -6054,31 +6079,31 @@
       "interpretation_guard": "Les situations DATEX II constituent l'unité événementielle. Les situationRecords sont des enregistrements techniques et ne doivent pas être assimilés à autant d'événements. Les impacts planifiés et non planifiés sont séparés explicitement. Les clusters spatiaux restent diagnostiques et ne sont pas encore des métriques de scoring."
     },
     "traffic": {
-      "published_segments_count": 2189,
-      "recognized_segments_count": 1935,
-      "valid_segments_count": 1935,
-      "fluid_segments_count": 1828,
-      "dense_segments_count": 65,
-      "congested_segments_count": 39,
+      "published_segments_count": 2165,
+      "recognized_segments_count": 1920,
+      "valid_segments_count": 1920,
+      "fluid_segments_count": 1709,
+      "dense_segments_count": 124,
+      "congested_segments_count": 84,
       "impossible_segments_count": 3,
-      "unknown_segments_count": 254,
-      "recognized_ratio_pct": 88.3965,
-      "unknown_ratio_pct": 11.6035,
-      "congestion_ratio_pct": 2.1705,
+      "unknown_segments_count": 245,
+      "recognized_ratio_pct": 88.6836,
+      "unknown_ratio_pct": 11.3164,
+      "congestion_ratio_pct": 4.5312,
       "status_values_found": {
-        "fluid": 1828,
-        "dense": 65,
-        "congested": 39,
+        "fluid": 1709,
+        "dense": 124,
+        "congested": 84,
         "impossible": 3,
-        "unknown": 254
+        "unknown": 245
       },
       "parser_mode": "multi_directory_xml",
       "xml_parse_error": null,
       "interpretation_guard": "Le ratio de congestion est calculé uniquement sur les segments explicitement qualifiés fluide, dense, congestionné ou impossible. Les états inconnus sont exclus du dénominateur de congestion et constituent un indicateur de qualité/couverture, jamais une dégradation opérationnelle. L'agrégation nationale repose uniquement sur le dernier snapshot de chaque producteur. La qualité doit être appréciée à la fois au niveau national et par producteur afin qu'une anomalie locale de couverture ne soit pas masquée par une bonne couverture globale.",
       "producers_discovered_count": 15,
-      "producers_collected_count": 15,
+      "producers_collected_count": 14,
       "xml_files_attempted": 15,
-      "xml_files_collected": 15,
+      "xml_files_collected": 14,
       "producer_results": [
         {
           "producer": "TRAFIC_TraficStBrieuc",
@@ -6088,71 +6113,71 @@
           "xml_files_collected": 1,
           "valid_segments_count": 91,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficStBrieuc/TraficStBrieuc_DataTRT_20260916_160400.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficStBrieuc/TraficStBrieuc_DataTRT_20260916_170400.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:04:00+02:00",
-            "age_minutes": 2.22
+            "timestamp": "2026-09-16T17:04:00+02:00",
+            "age_minutes": 2.41
           }
         },
         {
           "producer": "TRAFIC_TraficTriskell56",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/",
           "status": "OK",
-          "xml_files_count": 80,
+          "xml_files_count": 81,
           "xml_files_collected": 1,
           "valid_segments_count": 153,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/TraficTriskell56_DataTRT_20260916_160320.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/TraficTriskell56_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:03:20+02:00",
-            "age_minutes": 2.89
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.09
           }
         },
         {
           "producer": "TraficBreizhNantes",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/",
           "status": "OK",
-          "xml_files_count": 80,
+          "xml_files_count": 81,
           "xml_files_collected": 1,
           "valid_segments_count": 193,
           "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/TraficBreizhNantes_DataTRT_20260916_160320.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/TraficBreizhNantes_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:03:20+02:00",
-            "age_minutes": 2.9
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.1
           }
         },
         {
           "producer": "TraficBreizhRennes",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/",
           "status": "OK",
-          "xml_files_count": 80,
+          "xml_files_count": 81,
           "xml_files_collected": 1,
           "valid_segments_count": 177,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/TraficBreizhRennes_DataTRT_20260916_160320.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/TraficBreizhRennes_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:03:20+02:00",
-            "age_minutes": 2.91
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.11
           }
         },
         {
           "producer": "TraficCaen",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/",
           "status": "OK",
-          "xml_files_count": 120,
+          "xml_files_count": 121,
           "xml_files_collected": 1,
           "valid_segments_count": 54,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/TraficCaen_DataTRT_20260916_160420.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/TraficCaen_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:04:20+02:00",
-            "age_minutes": 1.92
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.12
           }
         },
         {
@@ -6161,44 +6186,45 @@
           "status": "OK",
           "xml_files_count": 40,
           "xml_files_collected": 1,
-          "valid_segments_count": 14,
-          "unknown_segments_count": 2,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficDirmc/TraficDirmc_DataTRT_20260916_160130.xml",
+          "valid_segments_count": 12,
+          "unknown_segments_count": 4,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficDirmc/TraficDirmc_DataTRT_20260916_170130.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:01:30+02:00",
-            "age_minutes": 4.76
+            "timestamp": "2026-09-16T17:01:30+02:00",
+            "age_minutes": 4.97
           }
         },
         {
           "producer": "TraficErato",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/",
           "status": "OK",
-          "xml_files_count": 240,
+          "xml_files_count": 241,
           "xml_files_collected": 1,
           "valid_segments_count": 129,
           "unknown_segments_count": 30,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/TraficErato_DataTRT_20260916_160520.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/TraficErato_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:05:20+02:00",
-            "age_minutes": 0.94
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.14
           }
         },
         {
           "producer": "TraficGentiane",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/",
-          "status": "OK",
-          "xml_files_count": 80,
-          "xml_files_collected": 1,
-          "valid_segments_count": 25,
-          "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20260916_160320.xml",
+          "status": "ERROR",
+          "xml_files_count": 81,
+          "xml_files_collected": 0,
+          "valid_segments_count": 0,
+          "unknown_segments_count": 0,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:03:20+02:00",
-            "age_minutes": 2.95
-          }
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.16
+          },
+          "error": "HTTPError: 404 Client Error: Not Found for url: http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20260916_170620.xml"
         },
         {
           "producer": "TraficHyrondelle",
@@ -6206,13 +6232,13 @@
           "status": "OK",
           "xml_files_count": 40,
           "xml_files_collected": 1,
-          "valid_segments_count": 90,
+          "valid_segments_count": 92,
           "unknown_segments_count": 18,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficHyrondelle/TraficHyrondelle_1_DataTRT_20260916_160040.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficHyrondelle/TraficHyrondelle_1_DataTRT_20260916_170040.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:00:40+02:00",
-            "age_minutes": 5.63
+            "timestamp": "2026-09-16T17:00:40+02:00",
+            "age_minutes": 5.83
           }
         },
         {
@@ -6223,26 +6249,26 @@
           "xml_files_collected": 1,
           "valid_segments_count": 356,
           "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLille/TraficLille_DataTRT_20260916_160325.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLille/TraficLille_DataTRT_20260916_170326.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:03:25+02:00",
-            "age_minutes": 2.88
+            "timestamp": "2026-09-16T17:03:26+02:00",
+            "age_minutes": 3.08
           }
         },
         {
           "producer": "TraficLimoges",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/",
           "status": "OK",
-          "xml_files_count": 236,
+          "xml_files_count": 237,
           "xml_files_collected": 1,
-          "valid_segments_count": 111,
-          "unknown_segments_count": 22,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/TraficLimoges_DataTRT_20260916_160520.xml",
+          "valid_segments_count": 113,
+          "unknown_segments_count": 20,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/TraficLimoges_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:05:20+02:00",
-            "age_minutes": 0.98
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.19
           }
         },
         {
@@ -6251,13 +6277,13 @@
           "status": "OK",
           "xml_files_count": 242,
           "xml_files_collected": 1,
-          "valid_segments_count": 199,
-          "unknown_segments_count": 155,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/TraficLyon_DataTRT_20260916_160615.xml",
+          "valid_segments_count": 207,
+          "unknown_segments_count": 147,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/TraficLyon_DataTRT_20260916_170617.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:06:15+02:00",
-            "age_minutes": 0.07
+            "timestamp": "2026-09-16T17:06:17+02:00",
+            "age_minutes": 0.25
           }
         },
         {
@@ -6268,97 +6294,97 @@
           "xml_files_collected": 1,
           "valid_segments_count": 182,
           "unknown_segments_count": 13,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMarius/TraficMarius_DataTRT_20260916_160000.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMarius/TraficMarius_DataTRT_20260916_170000.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:00:00+02:00",
-            "age_minutes": 6.33
+            "timestamp": "2026-09-16T17:00:00+02:00",
+            "age_minutes": 6.54
           }
         },
         {
           "producer": "TraficMyrabel",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/",
           "status": "OK",
-          "xml_files_count": 80,
+          "xml_files_count": 81,
           "xml_files_collected": 1,
           "valid_segments_count": 65,
           "unknown_segments_count": 9,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/TraficMyrabel_DataTRT_20260916_160330.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/TraficMyrabel_DataTRT_20260916_170630.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:03:30+02:00",
-            "age_minutes": 2.84
+            "timestamp": "2026-09-16T17:06:30+02:00",
+            "age_minutes": 0.06
           }
         },
         {
           "producer": "TraficRouen",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/",
           "status": "OK",
-          "xml_files_count": 120,
+          "xml_files_count": 121,
           "xml_files_collected": 1,
           "valid_segments_count": 96,
           "unknown_segments_count": 2,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/TraficRouen_DataTRT_20260916_160420.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/TraficRouen_DataTRT_20260916_170620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-09-16T16:04:20+02:00",
-            "age_minutes": 2.01
+            "timestamp": "2026-09-16T17:06:20+02:00",
+            "age_minutes": 0.23
           }
         }
       ],
       "freshness": {
         "basis": "latest_filename_timestamp_per_producer",
         "producers_with_age_count": 15,
-        "min_age_minutes": 0.07,
-        "median_age_minutes": 2.88,
-        "max_age_minutes": 6.33,
+        "min_age_minutes": 0.06,
+        "median_age_minutes": 0.19,
+        "max_age_minutes": 6.54,
         "threshold_applied": false,
         "freshness_status": "OBSERVED"
       }
     },
     "flow": {
-      "measurement_sites_count": 1196,
+      "measurement_sites_count": 1200,
       "measurement_times": {
         "distinct_count": 1,
         "most_common": [
           {
-            "time": "2026-09-16T16:00:00.000+02:00",
-            "sites_count": 1196
+            "time": "2026-09-16T17:00:00.000+02:00",
+            "sites_count": 1200
           }
         ]
       },
       "speed": {
-        "raw_values_count": 1196,
+        "raw_values_count": 1200,
         "invalid_values_count": 1,
-        "sites_with_single_value": 1195,
+        "sites_with_single_value": 1199,
         "sites_with_multiple_values": 0,
         "sites_without_value": 1,
         "singleton_distribution_diagnostic": {
-          "count": 1195,
-          "median": 85.6667,
-          "p10": 13.4,
-          "p90": 104.0,
+          "count": 1199,
+          "median": 83.8333,
+          "p10": 7.6,
+          "p90": 105.0,
           "min": 0.0,
-          "max": 150.0,
-          "mean": 77.8791
+          "max": 154.0,
+          "mean": 74.2522
         },
         "unit": "km/h",
         "unit_basis": "DATEX II speed / source documentation, diagnostic only",
         "national_mean_for_scoring": false
       },
       "flow": {
-        "raw_values_count": 1196,
+        "raw_values_count": 1200,
         "invalid_values_count": 0,
-        "sites_with_single_value": 1196,
+        "sites_with_single_value": 1200,
         "sites_with_multiple_values": 0,
         "sites_without_value": 0,
         "singleton_distribution_diagnostic": {
-          "count": 1196,
-          "median": 2280.0,
-          "p10": 340.0,
-          "p90": 13700.0,
+          "count": 1200,
+          "median": 2570.0,
+          "p10": 353.3,
+          "p90": 14106.7,
           "min": 0.0,
-          "max": 50550.0
+          "max": 49283.0
         },
         "unit": "veh/h",
         "unit_validated": true,
@@ -6370,284 +6396,284 @@
       "station_measurements_sample": [
         {
           "measurement_site_reference": "MUM76.h1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 102.0,
+          "speed_kmh_candidate": 108.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 760.0
+          "vehicle_flow_rate_candidate": 590.0
         },
         {
           "measurement_site_reference": "A0001011200",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 76.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 3870.0
+          "vehicle_flow_rate_candidate": 4130.0
         },
         {
           "measurement_site_reference": "A0027010102",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 86.0,
+          "speed_kmh_candidate": 88.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2580.0
+          "vehicle_flow_rate_candidate": 2800.0
         },
         {
           "measurement_site_reference": "MB631.B8",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 76.0,
+          "speed_kmh_candidate": 57.166668,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 5680.0
+          "vehicle_flow_rate_candidate": 5880.0
         },
         {
           "measurement_site_reference": "MWO56.J1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 101.0,
+          "speed_kmh_candidate": 102.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2130.0
+          "vehicle_flow_rate_candidate": 2200.0
         },
         {
           "measurement_site_reference": "MUM76.h2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 105.0,
+          "speed_kmh_candidate": 104.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1020.0
+          "vehicle_flow_rate_candidate": 1660.0
         },
         {
           "measurement_site_reference": "N0041010100",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 84.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 760.0
-        },
-        {
-          "measurement_site_reference": "MYL42.R1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 85.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1080.0
+          "vehicle_flow_rate_candidate": 920.0
+        },
+        {
+          "measurement_site_reference": "MYL42.R1",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 87.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1740.0
         },
         {
           "measurement_site_reference": "A0027010101",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 86.0,
+          "speed_kmh_candidate": 88.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2580.0
+          "vehicle_flow_rate_candidate": 2800.0
         },
         {
           "measurement_site_reference": "MM313.k2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 84.57166,
+          "speed_kmh_candidate": 72.1079,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 4980.0
+          "vehicle_flow_rate_candidate": 5350.0
         },
         {
           "measurement_site_reference": "MYP69.H3",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 65.833336,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 17467.0
+          "vehicle_flow_rate_candidate": 17950.0
         },
         {
           "measurement_site_reference": "A9022010250",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 84.0,
+          "speed_kmh_candidate": 81.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 540.0
+          "vehicle_flow_rate_candidate": 750.0
         },
         {
           "measurement_site_reference": "MRC14.T2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 88.666664,
+          "speed_kmh_candidate": 91.666664,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2560.0
+          "vehicle_flow_rate_candidate": 2183.0
         },
         {
           "measurement_site_reference": "MRC14.T1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 87.666664,
+          "speed_kmh_candidate": 71.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2820.0
+          "vehicle_flow_rate_candidate": 3543.0
         },
         {
           "measurement_site_reference": "A0001020150",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 101.0,
+          "speed_kmh_candidate": 82.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 4310.0
+          "vehicle_flow_rate_candidate": 5270.0
         },
         {
           "measurement_site_reference": "MM313.l2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 83.62072,
+          "speed_kmh_candidate": 69.98003,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 4710.0
+          "vehicle_flow_rate_candidate": 5260.0
         },
         {
           "measurement_site_reference": "MY269.D1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 81.166664,
+          "speed_kmh_candidate": 76.666664,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 25017.0
+          "vehicle_flow_rate_candidate": 28083.0
         },
         {
           "measurement_site_reference": "MY269.D2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 80.666664,
+          "speed_kmh_candidate": 77.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 17083.0
+          "vehicle_flow_rate_candidate": 21767.0
         },
         {
           "measurement_site_reference": "MYL42.R2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 84.0,
+          "speed_kmh_candidate": 85.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1260.0
+          "vehicle_flow_rate_candidate": 1190.0
         },
         {
           "measurement_site_reference": "MWO56.J2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 93.0,
+          "speed_kmh_candidate": 96.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2470.0
+          "vehicle_flow_rate_candidate": 2860.0
         },
         {
           "measurement_site_reference": "MWN44.C2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 64.0,
+          "speed_kmh_candidate": 39.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2540.0
+          "vehicle_flow_rate_candidate": 2890.0
         },
         {
           "measurement_site_reference": "MY269.D3",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 79.333336,
+          "speed_kmh_candidate": 83.666664,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 9817.0
+          "vehicle_flow_rate_candidate": 7833.0
         },
         {
           "measurement_site_reference": "MWN44.C1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 64.0,
+          "speed_kmh_candidate": 50.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2490.0
+          "vehicle_flow_rate_candidate": 2400.0
         },
         {
           "measurement_site_reference": "MB631.A7",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 82.666664,
+          "speed_kmh_candidate": 60.5,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 4180.0
+          "vehicle_flow_rate_candidate": 5250.0
         },
         {
           "measurement_site_reference": "MB831.U6",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 85.333336,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 950.0
-        },
-        {
-          "measurement_site_reference": "MWO56.K1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 104.0,
+          "speed_kmh_candidate": 92.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 1110.0
         },
         {
-          "measurement_site_reference": "MB831.U5",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_site_reference": "MWO56.K1",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 90.666664,
+          "speed_kmh_candidate": 107.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2170.0
+          "vehicle_flow_rate_candidate": 2000.0
+        },
+        {
+          "measurement_site_reference": "MB831.U5",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 83.833336,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 2990.0
         },
         {
           "measurement_site_reference": "MM713.N1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 93.423256,
+          "speed_kmh_candidate": 98.86167,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2430.0
+          "vehicle_flow_rate_candidate": 1790.0
         },
         {
           "measurement_site_reference": "MA311.T1",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 103.0,
+          "speed_kmh_candidate": 104.5,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2300.0
+          "vehicle_flow_rate_candidate": 2120.0
         },
         {
           "measurement_site_reference": "MA311.T2",
-          "measurement_time": "2026-09-16T16:00:00.000+02:00",
+          "measurement_time": "2026-09-16T17:00:00.000+02:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 81.5,
+          "speed_kmh_candidate": 81.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1340.0
+          "vehicle_flow_rate_candidate": 1400.0
         }
       ],
       "structure_diagnostic": {
         "tag_counts": {
-          "measuredValue": 4784,
-          "averageVehicleSpeed": 1196,
-          "measurementSiteReference": 1196,
-          "measurementTimeDefault": 1196,
-          "siteMeasurements": 1196,
-          "speed": 1196,
-          "vehicleFlow": 1196,
-          "vehicleFlowRate": 1196,
+          "measuredValue": 4800,
+          "averageVehicleSpeed": 1200,
+          "measurementSiteReference": 1200,
+          "measurementTimeDefault": 1200,
+          "siteMeasurements": 1200,
+          "speed": 1200,
+          "vehicleFlow": 1200,
+          "vehicleFlowRate": 1200,
           "measurementSiteTableReference": 1
         },
         "value_samples": {
           "measurementTimeDefault": [
-            "2026-09-16T16:00:00.000+02:00"
+            "2026-09-16T17:00:00.000+02:00"
           ],
           "speed": [
-            "102.0",
+            "108.0",
             "76.0",
-            "86.0",
-            "101.0",
-            "105.0",
-            "84.0",
+            "88.0",
+            "57.166668",
+            "102.0",
+            "104.0",
             "85.0",
-            "84.57166",
-            "65.833336",
-            "88.666664"
+            "87.0",
+            "72.1079",
+            "65.833336"
           ],
           "vehicleFlowRate": [
-            "760",
-            "3870",
-            "2580",
-            "5680",
-            "2130",
-            "1020",
-            "1080",
-            "4980",
-            "17467",
-            "540"
+            "590",
+            "4130",
+            "2800",
+            "5880",
+            "2200",
+            "1660",
+            "920",
+            "1740",
+            "5350",
+            "17950"
           ]
         }
       },
@@ -6658,16 +6684,16 @@
     "extended_context": {
       "diagnostic_only": true,
       "not_for_scoring": true,
-      "text_length": 80850,
+      "text_length": 84813,
       "sca_producer_mentions": {
-        "ASF": 65,
-        "COFIROUTE": 21,
-        "ESCOTA": 13,
-        "APRR": 42,
-        "AREA": 6,
-        "SANEF": 12,
-        "SAPN": 12,
-        "ATMB": 2
+        "ASF": 71,
+        "COFIROUTE": 19,
+        "ESCOTA": 19,
+        "APRR": 41,
+        "AREA": 4,
+        "SANEF": 11,
+        "SAPN": 11,
+        "ATMB": 1
       },
       "interpretation_guard": "TIPI France entière confirme la présence de producteurs SCA mais les occurrences textuelles ne sont ni des événements uniques ni des métriques d'impact. Aucun compteur fermeture/restriction issu du HTML n'est utilisé."
     },
@@ -6700,13 +6726,13 @@
   },
   "road_enrichment": {
     "schema_version": "road-enrichment-1.1-cache-final2",
-    "collected_at": "2026-09-16T14:06:22.570947+00:00",
+    "collected_at": "2026-09-16T15:06:36.026734+00:00",
     "observation_mode": true,
     "scoring_enabled": true,
     "integration_enabled": true,
     "normalization": {
-      "raw_axes_count": 107,
-      "display_axes_count": 107,
+      "raw_axes_count": 111,
+      "display_axes_count": 111,
       "axis_display_map": {
         "75000C02": "75000C02",
         "A0001": "A1",
@@ -6719,21 +6745,24 @@
         "A0022": "A22",
         "A0025": "A25",
         "A0028": "A28",
-        "A0030": "A30",
+        "A0031": "A31",
         "A0033": "A33",
         "A0034": "A34",
+        "A0042": "A42",
         "A0047": "A47",
         "A0050": "A50",
         "A0051": "A51",
         "A0055": "A55",
         "A0062": "A62",
         "A0068": "A68",
+        "A0072": "A72",
         "A0075": "A75",
         "A0077": "A77",
         "A0083": "A83",
         "A0084": "A84",
         "A0086": "A86",
         "A0103": "A103",
+        "A0104": "A104",
         "A0131": "A131",
         "A0216": "A216",
         "A0507": "A507",
@@ -6770,6 +6799,8 @@
         "N0080": "N80",
         "N0083": "N83",
         "N0085": "N85",
+        "N0086": "N86",
+        "N0087": "N87",
         "N0088": "N88",
         "N0090": "N90",
         "N0094": "N94",
@@ -6777,10 +6808,10 @@
         "N0102": "N102",
         "N0106": "N106",
         "N0113": "N113",
+        "N0118": "N118",
         "N0122": "N122",
         "N0124": "N124",
         "N0125": "N125",
-        "N0126": "N126",
         "N0134": "N134",
         "N0136": "N136",
         "N0137": "N137",
@@ -6806,11 +6837,10 @@
         "N0296": "N296",
         "N0306": "N306",
         "N0320": "N320",
-        "N0338": "N338",
+        "N0346": "N346",
         "N0356": "N356",
         "N0444": "N444",
         "N0569": "N569",
-        "N0814": "N814",
         "N0844": "N844",
         "N1134": "N1134",
         "N1154": "N1154",
@@ -14386,39 +14416,6 @@
         }
       },
       {
-        "situation_id": "260914-001105",
-        "axes_raw": [
-          "N0019"
-        ],
-        "axes_display": [
-          "N19"
-        ],
-        "coordinates": {
-          "latitude": 47.66622,
-          "longitude": 6.1019874
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "roadworks",
-          "weather"
-        ],
-        "territorialization": {
-          "commune_code": "70136",
-          "commune_name": "Charmoille",
-          "department_code": "70",
-          "department_name": "Haute-Saône",
-          "region_code": "27",
-          "region_name": "Bourgogne-Franche-Comté"
-        }
-      },
-      {
         "situation_id": "260915-003004",
         "axes_raw": [
           "N1154"
@@ -15157,37 +15154,6 @@
         }
       },
       {
-        "situation_id": "260916-003666",
-        "axes_raw": [
-          "A0084"
-        ],
-        "axes_display": [
-          "A84"
-        ],
-        "coordinates": {
-          "latitude": 49.143517,
-          "longitude": -0.5323751
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "14311",
-          "commune_name": "Grainville-sur-Odon",
-          "department_code": "14",
-          "department_name": "Calvados",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
         "situation_id": "260916-003664",
         "axes_raw": [
           "A0051"
@@ -15340,37 +15306,6 @@
         "territorialization": {
           "commune_code": "13097",
           "commune_name": "Saint-Martin-de-Crau",
-          "department_code": "13",
-          "department_name": "Bouches-du-Rhône",
-          "region_code": "93",
-          "region_name": "Provence-Alpes-Côte d'Azur"
-        }
-      },
-      {
-        "situation_id": "260916-003743",
-        "axes_raw": [
-          "N0113"
-        ],
-        "axes_display": [
-          "N113"
-        ],
-        "coordinates": {
-          "latitude": 43.63099,
-          "longitude": 4.7478266
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "13004",
-          "commune_name": "Arles",
           "department_code": "13",
           "department_name": "Bouches-du-Rhône",
           "region_code": "93",
@@ -15601,39 +15536,6 @@
         }
       },
       {
-        "situation_id": "260916-003832",
-        "axes_raw": [
-          "N0031"
-        ],
-        "axes_display": [
-          "N31"
-        ],
-        "coordinates": {
-          "latitude": 49.48459,
-          "longitude": 1.7319657
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "other",
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "76312",
-          "commune_name": "Gournay-en-Bray",
-          "department_code": "76",
-          "department_name": "Seine-Maritime",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
         "situation_id": "260916-003848",
         "axes_raw": [
           "A0055"
@@ -15698,99 +15600,6 @@
         }
       },
       {
-        "situation_id": "260916-003863",
-        "axes_raw": [
-          "A0507"
-        ],
-        "axes_display": [
-          "A507"
-        ],
-        "coordinates": {
-          "latitude": 43.29766,
-          "longitude": 5.4247203
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident",
-          "ReroutingManagement"
-        ],
-        "categories": [
-          "accident",
-          "other"
-        ],
-        "territorialization": {
-          "commune_code": "13055",
-          "commune_name": "Marseille",
-          "department_code": "13",
-          "department_name": "Bouches-du-Rhône",
-          "region_code": "93",
-          "region_name": "Provence-Alpes-Côte d'Azur"
-        }
-      },
-      {
-        "situation_id": "260916-003927",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 50.473705,
-          "longitude": 3.2233806
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "59449",
-          "commune_name": "Orchies",
-          "department_code": "59",
-          "department_name": "Nord",
-          "region_code": "32",
-          "region_name": "Hauts-de-France"
-        }
-      },
-      {
-        "situation_id": "260910-012702",
-        "axes_raw": [
-          "N0007"
-        ],
-        "axes_display": [
-          "N7"
-        ],
-        "coordinates": {
-          "latitude": 45.98681,
-          "longitude": 4.1170354
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "other",
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "42161",
-          "commune_name": "Notre-Dame-de-Boisset",
-          "department_code": "42",
-          "department_name": "Loire",
-          "region_code": "84",
-          "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
         "situation_id": "260916-003935",
         "axes_raw": [
           "A0007"
@@ -15852,35 +15661,6 @@
           "department_name": "Ille-et-Vilaine",
           "region_code": "53",
           "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "260916-003973",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 43.58237,
-          "longitude": 1.2136762
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "other",
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "31291",
-          "commune_name": "Léguevin",
-          "department_code": "31",
-          "department_name": "Haute-Garonne",
-          "region_code": "76",
-          "region_name": "Occitanie"
         }
       },
       {
@@ -16588,37 +16368,6 @@
         }
       },
       {
-        "situation_id": "260916-004214",
-        "axes_raw": [
-          "A0075"
-        ],
-        "axes_display": [
-          "A75"
-        ],
-        "coordinates": {
-          "latitude": 43.941288,
-          "longitude": 3.2246168
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "12077",
-          "commune_name": "Cornus",
-          "department_code": "12",
-          "department_name": "Aveyron",
-          "region_code": "76",
-          "region_name": "Occitanie"
-        }
-      },
-      {
         "situation_id": "260916-004140",
         "axes_raw": [
           "A0021"
@@ -16678,39 +16427,6 @@
           "department_name": "Pyrénées-Atlantiques",
           "region_code": "75",
           "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
-        "situation_id": "260916-004309",
-        "axes_raw": [
-          "A0020"
-        ],
-        "axes_display": [
-          "A20"
-        ],
-        "coordinates": {
-          "latitude": 46.84504,
-          "longitude": 1.6863655
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "other",
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "36063",
-          "commune_name": "Déols",
-          "department_code": "36",
-          "department_name": "Indre",
-          "region_code": "24",
-          "region_name": "Centre-Val de Loire"
         }
       },
       {
@@ -16894,72 +16610,6 @@
           "department_name": "Cantal",
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "260916-003997",
-        "axes_raw": [
-          "A0020"
-        ],
-        "axes_display": [
-          "A20"
-        ],
-        "coordinates": {
-          "latitude": 46.300053,
-          "longitude": 1.4149771
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "roadworks",
-          "weather"
-        ],
-        "territorialization": {
-          "commune_code": "87182",
-          "commune_name": "Saint-Sulpice-les-Feuilles",
-          "department_code": "87",
-          "department_name": "Haute-Vienne",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
-        "situation_id": "260916-004374",
-        "axes_raw": [
-          "N0176"
-        ],
-        "axes_display": [
-          "N176"
-        ],
-        "coordinates": {
-          "latitude": 48.41279,
-          "longitude": -2.3939216
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "other",
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "22193",
-          "commune_name": "Plestan",
-          "department_code": "22",
-          "department_name": "Côtes-d'Armor",
-          "region_code": "53",
-          "region_name": "Bretagne"
         }
       },
       {
@@ -17188,39 +16838,6 @@
         }
       },
       {
-        "situation_id": "260914-000851",
-        "axes_raw": [
-          "N0004"
-        ],
-        "axes_display": [
-          "N4"
-        ],
-        "coordinates": {
-          "latitude": 48.669228,
-          "longitude": 4.781458
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "roadworks",
-          "weather"
-        ],
-        "territorialization": {
-          "commune_code": "52386",
-          "commune_name": "Perthes",
-          "department_code": "52",
-          "department_name": "Haute-Marne",
-          "region_code": "44",
-          "region_name": "Grand Est"
-        }
-      },
-      {
         "situation_id": "260916-004492",
         "axes_raw": [
           "N0007"
@@ -17252,37 +16869,6 @@
           "department_name": "Loire",
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "260916-004493",
-        "axes_raw": [
-          "N0059"
-        ],
-        "axes_display": [
-          "N59"
-        ],
-        "coordinates": {
-          "latitude": 48.292084,
-          "longitude": 6.930854
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "88413",
-          "commune_name": "Saint-Dié-des-Vosges",
-          "department_code": "88",
-          "department_name": "Vosges",
-          "region_code": "44",
-          "region_name": "Grand Est"
         }
       },
       {
@@ -17381,37 +16967,6 @@
         }
       },
       {
-        "situation_id": "260916-004555",
-        "axes_raw": [
-          "A0084"
-        ],
-        "axes_display": [
-          "A84"
-        ],
-        "coordinates": {
-          "latitude": 49.154984,
-          "longitude": -0.4877139
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "14454",
-          "commune_name": "Mouen",
-          "department_code": "14",
-          "department_name": "Calvados",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
         "situation_id": "260915-003035",
         "axes_raw": [
           "A0001",
@@ -17475,37 +17030,6 @@
           "department_name": "Meuse",
           "region_code": "44",
           "region_name": "Grand Est"
-        }
-      },
-      {
-        "situation_id": "260916-003954",
-        "axes_raw": [
-          "A0021"
-        ],
-        "axes_display": [
-          "A21"
-        ],
-        "coordinates": {
-          "latitude": 50.382557,
-          "longitude": 3.200093
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "59456",
-          "commune_name": "Pecquencourt",
-          "department_code": "59",
-          "department_name": "Nord",
-          "region_code": "32",
-          "region_name": "Hauts-de-France"
         }
       },
       {
@@ -17573,64 +17097,6 @@
         }
       },
       {
-        "situation_id": "260916-004630",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 49.439774,
-          "longitude": 5.905088
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "54096",
-          "commune_name": "Bréhain-la-Ville",
-          "department_code": "54",
-          "department_name": "Meurthe-et-Moselle",
-          "region_code": "44",
-          "region_name": "Grand Est"
-        }
-      },
-      {
-        "situation_id": "260916-004017",
-        "axes_raw": [
-          "A0030"
-        ],
-        "axes_display": [
-          "A30"
-        ],
-        "coordinates": {
-          "latitude": 49.325375,
-          "longitude": 6.0657854
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "57306",
-          "commune_name": "Hayange",
-          "department_code": "57",
-          "department_name": "Moselle",
-          "region_code": "44",
-          "region_name": "Grand Est"
-        }
-      },
-      {
         "situation_id": "260916-004640",
         "axes_raw": [
           "N0165"
@@ -17692,33 +17158,6 @@
           "department_name": "Allier",
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "260916-004654",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 48.7494,
-          "longitude": 6.1611743
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "54090",
-          "commune_name": "Bouxières-aux-Dames",
-          "department_code": "54",
-          "department_name": "Meurthe-et-Moselle",
-          "region_code": "44",
-          "region_name": "Grand Est"
         }
       },
       {
@@ -17819,37 +17258,6 @@
         }
       },
       {
-        "situation_id": "260916-004679",
-        "axes_raw": [
-          "N0057"
-        ],
-        "axes_display": [
-          "N57"
-        ],
-        "coordinates": {
-          "latitude": 48.500877,
-          "longitude": 6.2348776
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "54411",
-          "commune_name": "Ormes-et-Ville",
-          "department_code": "54",
-          "department_name": "Meurthe-et-Moselle",
-          "region_code": "44",
-          "region_name": "Grand Est"
-        }
-      },
-      {
         "situation_id": "260916-003975",
         "axes_raw": [
           "A0083"
@@ -17880,68 +17288,6 @@
           "department_name": "Loire-Atlantique",
           "region_code": "52",
           "region_name": "Pays de la Loire"
-        }
-      },
-      {
-        "situation_id": "260916-003949",
-        "axes_raw": [
-          "A0021"
-        ],
-        "axes_display": [
-          "A21"
-        ],
-        "coordinates": {
-          "latitude": 50.435078,
-          "longitude": 2.7208781
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "62186",
-          "commune_name": "Bully-les-Mines",
-          "department_code": "62",
-          "department_name": "Pas-de-Calais",
-          "region_code": "32",
-          "region_name": "Hauts-de-France"
-        }
-      },
-      {
-        "situation_id": "260916-004690",
-        "axes_raw": [
-          "N0814"
-        ],
-        "axes_display": [
-          "N814"
-        ],
-        "coordinates": {
-          "latitude": 49.17946,
-          "longitude": -0.3222014
-        },
-        "source_departments": [],
-        "planned": true,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "MaintenanceWorks"
-        ],
-        "categories": [
-          "roadworks"
-        ],
-        "territorialization": {
-          "commune_code": "14437",
-          "commune_name": "Mondeville",
-          "department_code": "14",
-          "department_name": "Calvados",
-          "region_code": "28",
-          "region_name": "Normandie"
         }
       },
       {
@@ -18065,37 +17411,6 @@
         }
       },
       {
-        "situation_id": "260916-004702",
-        "axes_raw": [
-          "A0075"
-        ],
-        "axes_display": [
-          "A75"
-        ],
-        "coordinates": {
-          "latitude": 43.46026,
-          "longitude": 3.432023
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "34199",
-          "commune_name": "Pézenas",
-          "department_code": "34",
-          "department_name": "Hérault",
-          "region_code": "76",
-          "region_name": "Occitanie"
-        }
-      },
-      {
         "situation_id": "260916-004711",
         "axes_raw": [
           "N0444"
@@ -18157,37 +17472,6 @@
           "department_name": "Bouches-du-Rhône",
           "region_code": "93",
           "region_name": "Provence-Alpes-Côte d'Azur"
-        }
-      },
-      {
-        "situation_id": "260916-004730",
-        "axes_raw": [
-          "75000C02"
-        ],
-        "axes_display": [
-          "75000C02"
-        ],
-        "coordinates": {
-          "latitude": 48.8276,
-          "longitude": 2.393354
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "75056",
-          "commune_name": "Paris",
-          "department_code": "75",
-          "department_name": "Paris",
-          "region_code": "11",
-          "region_name": "Île-de-France"
         }
       },
       {
@@ -18284,64 +17568,6 @@
         }
       },
       {
-        "situation_id": "260916-004760",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 48.843464,
-          "longitude": 2.0933304
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "78043",
-          "commune_name": "Bailly",
-          "department_code": "78",
-          "department_name": "Yvelines",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "260916-004761",
-        "axes_raw": [
-          "A0013"
-        ],
-        "axes_display": [
-          "A13"
-        ],
-        "coordinates": {
-          "latitude": 48.879616,
-          "longitude": 2.0175765
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "78233",
-          "commune_name": "Feucherolles",
-          "department_code": "78",
-          "department_name": "Yvelines",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
         "situation_id": "260916-004765",
         "axes_raw": [
           "A0006A"
@@ -18397,99 +17623,6 @@
           "department_name": "Haute-Garonne",
           "region_code": "76",
           "region_name": "Occitanie"
-        }
-      },
-      {
-        "situation_id": "260916-004686",
-        "axes_raw": [
-          "A0021"
-        ],
-        "axes_display": [
-          "A21"
-        ],
-        "coordinates": {
-          "latitude": 50.434998,
-          "longitude": 2.722364
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "62186",
-          "commune_name": "Bully-les-Mines",
-          "department_code": "62",
-          "department_name": "Pas-de-Calais",
-          "region_code": "32",
-          "region_name": "Hauts-de-France"
-        }
-      },
-      {
-        "situation_id": "260916-004778",
-        "axes_raw": [
-          "N0137"
-        ],
-        "axes_display": [
-          "N137"
-        ],
-        "coordinates": {
-          "latitude": 47.42147,
-          "longitude": -1.6394209
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "44073",
-          "commune_name": "Héric",
-          "department_code": "44",
-          "department_name": "Loire-Atlantique",
-          "region_code": "52",
-          "region_name": "Pays de la Loire"
-        }
-      },
-      {
-        "situation_id": "260916-004782",
-        "axes_raw": [
-          "N0080"
-        ],
-        "axes_display": [
-          "N80"
-        ],
-        "coordinates": {
-          "latitude": 46.749454,
-          "longitude": 4.65492
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "71324",
-          "commune_name": "Moroges",
-          "department_code": "71",
-          "department_name": "Saône-et-Loire",
-          "region_code": "27",
-          "region_name": "Bourgogne-Franche-Comté"
         }
       },
       {
@@ -18557,126 +17690,6 @@
         }
       },
       {
-        "situation_id": "260916-004793",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 49.153423,
-          "longitude": -0.41656703
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "14254",
-          "commune_name": "Éterville",
-          "department_code": "14",
-          "department_name": "Calvados",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
-        "situation_id": "260916-004795",
-        "axes_raw": [
-          "A0013"
-        ],
-        "axes_display": [
-          "A13"
-        ],
-        "coordinates": {
-          "latitude": 48.8347,
-          "longitude": 2.1714447
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "92047",
-          "commune_name": "Marnes-la-Coquette",
-          "department_code": "92",
-          "department_name": "Hauts-de-Seine",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "260916-004799",
-        "axes_raw": [
-          "A0075"
-        ],
-        "axes_display": [
-          "A75"
-        ],
-        "coordinates": {
-          "latitude": 43.61708,
-          "longitude": 3.4591985
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "34079",
-          "commune_name": "Clermont-l'Hérault",
-          "department_code": "34",
-          "department_name": "Hérault",
-          "region_code": "76",
-          "region_name": "Occitanie"
-        }
-      },
-      {
-        "situation_id": "260916-004812",
-        "axes_raw": [
-          "N0126"
-        ],
-        "axes_display": [
-          "N126"
-        ],
-        "coordinates": {
-          "latitude": 43.557594,
-          "longitude": 2.0945592
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "81251",
-          "commune_name": "Saint-Germain-des-Prés",
-          "department_code": "81",
-          "department_name": "Tarn",
-          "region_code": "76",
-          "region_name": "Occitanie"
-        }
-      },
-      {
         "situation_id": "260916-004817",
         "axes_raw": [
           "N0113"
@@ -18705,68 +17718,6 @@
           "department_name": "Hérault",
           "region_code": "76",
           "region_name": "Occitanie"
-        }
-      },
-      {
-        "situation_id": "260916-004828",
-        "axes_raw": [
-          "N0012"
-        ],
-        "axes_display": [
-          "N12"
-        ],
-        "coordinates": {
-          "latitude": 48.798626,
-          "longitude": 1.7073717
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "78263",
-          "commune_name": "Gambais",
-          "department_code": "78",
-          "department_name": "Yvelines",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "260916-004815",
-        "axes_raw": [
-          "A0084"
-        ],
-        "axes_display": [
-          "A84"
-        ],
-        "coordinates": {
-          "latitude": 48.948162,
-          "longitude": -1.0145488
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "50592",
-          "commune_name": "Tessy-Bocage",
-          "department_code": "50",
-          "department_name": "Manche",
-          "region_code": "28",
-          "region_name": "Normandie"
         }
       },
       {
@@ -18803,99 +17754,6 @@
         }
       },
       {
-        "situation_id": "260916-004766",
-        "axes_raw": [
-          "N0010"
-        ],
-        "axes_display": [
-          "N10"
-        ],
-        "coordinates": {
-          "latitude": 47.78744,
-          "longitude": 1.082562
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "41269",
-          "commune_name": "Vendôme",
-          "department_code": "41",
-          "department_name": "Loir-et-Cher",
-          "region_code": "24",
-          "region_name": "Centre-Val de Loire"
-        }
-      },
-      {
-        "situation_id": "260916-004837",
-        "axes_raw": [
-          "N0024"
-        ],
-        "axes_display": [
-          "N24"
-        ],
-        "coordinates": {
-          "latitude": 47.905876,
-          "longitude": -2.77204
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "56017",
-          "commune_name": "Bignan",
-          "department_code": "56",
-          "department_name": "Morbihan",
-          "region_code": "53",
-          "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "260916-004839",
-        "axes_raw": [
-          "A0055"
-        ],
-        "axes_display": [
-          "A55"
-        ],
-        "coordinates": {
-          "latitude": 43.394466,
-          "longitude": 5.052053
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "13056",
-          "commune_name": "Martigues",
-          "department_code": "13",
-          "department_name": "Bouches-du-Rhône",
-          "region_code": "93",
-          "region_name": "Provence-Alpes-Côte d'Azur"
-        }
-      },
-      {
         "situation_id": "260916-004841",
         "axes_raw": [
           "N0113"
@@ -18927,99 +17785,6 @@
         }
       },
       {
-        "situation_id": "260916-004848",
-        "axes_raw": [
-          "N0165"
-        ],
-        "axes_display": [
-          "N165"
-        ],
-        "coordinates": {
-          "latitude": 48.02961,
-          "longitude": -4.0859356
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "29232",
-          "commune_name": "Quimper",
-          "department_code": "29",
-          "department_name": "Finistère",
-          "region_code": "53",
-          "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "260916-004813",
-        "axes_raw": [
-          "A0075"
-        ],
-        "axes_display": [
-          "A75"
-        ],
-        "coordinates": {
-          "latitude": 45.139854,
-          "longitude": 3.1442382
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "15259",
-          "commune_name": "Vieillespesse",
-          "department_code": "15",
-          "department_name": "Cantal",
-          "region_code": "84",
-          "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "260916-004853",
-        "axes_raw": [
-          "A0630"
-        ],
-        "axes_display": [
-          "A630"
-        ],
-        "coordinates": {
-          "latitude": 44.88408,
-          "longitude": -0.5587264
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "33063",
-          "commune_name": "Bordeaux",
-          "department_code": "33",
-          "department_name": "Gironde",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
         "situation_id": "260916-003930",
         "axes_raw": [
           "N0102"
@@ -19048,68 +17813,6 @@
           "commune_name": "Mayres",
           "department_code": "07",
           "department_name": "Ardèche",
-          "region_code": "84",
-          "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "260916-004798",
-        "axes_raw": [
-          "N0338"
-        ],
-        "axes_display": [
-          "N338"
-        ],
-        "coordinates": {
-          "latitude": 49.43064,
-          "longitude": 1.0574775
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "76498",
-          "commune_name": "Le Petit-Quevilly",
-          "department_code": "76",
-          "department_name": "Seine-Maritime",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
-        "situation_id": "260916-004860",
-        "axes_raw": [
-          "A0047"
-        ],
-        "axes_display": [
-          "A47"
-        ],
-        "coordinates": {
-          "latitude": 45.47204,
-          "longitude": 4.4977765
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "AbnormalTraffic"
-        ],
-        "categories": [
-          "abnormal_traffic"
-        ],
-        "territorialization": {
-          "commune_code": "42207",
-          "commune_name": "Saint-Chamond",
-          "department_code": "42",
-          "department_name": "Loire",
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
         }
@@ -19175,55 +17878,1173 @@
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
         }
+      },
+      {
+        "situation_id": "260916-004879",
+        "axes_raw": [
+          "N0028"
+        ],
+        "axes_display": [
+          "N28"
+        ],
+        "coordinates": {
+          "latitude": 49.437775,
+          "longitude": 1.1276621
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "ReroutingManagement",
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction",
+          "other"
+        ],
+        "territorialization": {
+          "commune_code": "76540",
+          "commune_name": "Rouen",
+          "department_code": "76",
+          "department_name": "Seine-Maritime",
+          "region_code": "28",
+          "region_name": "Normandie"
+        }
+      },
+      {
+        "situation_id": "260910-012702",
+        "axes_raw": [
+          "N0007"
+        ],
+        "axes_display": [
+          "N7"
+        ],
+        "coordinates": {
+          "latitude": 45.99557,
+          "longitude": 4.114703
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "other"
+        ],
+        "territorialization": {
+          "commune_code": "42161",
+          "commune_name": "Notre-Dame-de-Boisset",
+          "department_code": "42",
+          "department_name": "Loire",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-004902",
+        "axes_raw": [
+          "A0020"
+        ],
+        "axes_display": [
+          "A20"
+        ],
+        "coordinates": {
+          "latitude": 46.24988,
+          "longitude": 1.3909584
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "MaintenanceWorks",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "roadworks",
+          "weather"
+        ],
+        "territorialization": {
+          "commune_code": "87003",
+          "commune_name": "Arnac-la-Poste",
+          "department_code": "87",
+          "department_name": "Haute-Vienne",
+          "region_code": "75",
+          "region_name": "Nouvelle-Aquitaine"
+        }
+      },
+      {
+        "situation_id": "260914-001105",
+        "axes_raw": [
+          "N0019"
+        ],
+        "axes_display": [
+          "N19"
+        ],
+        "coordinates": {
+          "latitude": 47.66622,
+          "longitude": 6.1019874
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "MaintenanceWorks",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "roadworks",
+          "weather"
+        ],
+        "territorialization": {
+          "commune_code": "70136",
+          "commune_name": "Charmoille",
+          "department_code": "70",
+          "department_name": "Haute-Saône",
+          "region_code": "27",
+          "region_name": "Bourgogne-Franche-Comté"
+        }
+      },
+      {
+        "situation_id": "260916-004911",
+        "axes_raw": [
+          "A0020"
+        ],
+        "axes_display": [
+          "A20"
+        ],
+        "coordinates": {
+          "latitude": 46.353195,
+          "longitude": 1.4267318
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "MaintenanceWorks",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "roadworks",
+          "weather"
+        ],
+        "territorialization": {
+          "commune_code": "36134",
+          "commune_name": "Mouhet",
+          "department_code": "36",
+          "department_name": "Indre",
+          "region_code": "24",
+          "region_name": "Centre-Val de Loire"
+        }
+      },
+      {
+        "situation_id": "260916-004927",
+        "axes_raw": [
+          "75000C02"
+        ],
+        "axes_display": [
+          "75000C02"
+        ],
+        "coordinates": {
+          "latitude": 48.822186,
+          "longitude": 2.3157673
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "75056",
+          "commune_name": "Paris",
+          "department_code": "75",
+          "department_name": "Paris",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-004948",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 48.80228,
+          "longitude": 2.0472894
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "78073",
+          "commune_name": "Bois-d'Arcy",
+          "department_code": "78",
+          "department_name": "Yvelines",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-004960",
+        "axes_raw": [
+          "N0012"
+        ],
+        "axes_display": [
+          "N12"
+        ],
+        "coordinates": {
+          "latitude": 48.742874,
+          "longitude": 0.96526515
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "27679",
+          "commune_name": "Verneuil d'Avre et d'Iton",
+          "department_code": "27",
+          "department_name": "Eure",
+          "region_code": "28",
+          "region_name": "Normandie"
+        }
+      },
+      {
+        "situation_id": "260916-004965",
+        "axes_raw": [
+          "N0137"
+        ],
+        "axes_display": [
+          "N137"
+        ],
+        "coordinates": {
+          "latitude": 47.58145,
+          "longitude": -1.6282858
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "MaintenanceWorks",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "other",
+          "roadworks"
+        ],
+        "territorialization": {
+          "commune_code": "44113",
+          "commune_name": "Nozay",
+          "department_code": "44",
+          "department_name": "Loire-Atlantique",
+          "region_code": "52",
+          "region_name": "Pays de la Loire"
+        }
+      },
+      {
+        "situation_id": "260916-004974",
+        "axes_raw": [
+          "N0844"
+        ],
+        "axes_display": [
+          "N844"
+        ],
+        "coordinates": {
+          "latitude": 47.230648,
+          "longitude": -1.470383
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "44009",
+          "commune_name": "Basse-Goulaine",
+          "department_code": "44",
+          "department_name": "Loire-Atlantique",
+          "region_code": "52",
+          "region_name": "Pays de la Loire"
+        }
+      },
+      {
+        "situation_id": "260916-004979",
+        "axes_raw": [
+          "N0086"
+        ],
+        "axes_display": [
+          "N86"
+        ],
+        "coordinates": {
+          "latitude": 44.18595,
+          "longitude": 4.621895
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "MaintenanceWorks"
+        ],
+        "categories": [
+          "roadworks"
+        ],
+        "territorialization": {
+          "commune_code": "30028",
+          "commune_name": "Bagnols-sur-Cèze",
+          "department_code": "30",
+          "department_name": "Gard",
+          "region_code": "76",
+          "region_name": "Occitanie"
+        }
+      },
+      {
+        "situation_id": "260916-004983",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 43.58556,
+          "longitude": 1.1773081
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "MaintenanceWorks",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "other",
+          "roadworks"
+        ],
+        "territorialization": {
+          "commune_code": "32334",
+          "commune_name": "Pujaudran",
+          "department_code": "32",
+          "department_name": "Gers",
+          "region_code": "76",
+          "region_name": "Occitanie"
+        }
+      },
+      {
+        "situation_id": "260916-004985",
+        "axes_raw": [
+          "N0004"
+        ],
+        "axes_display": [
+          "N4"
+        ],
+        "coordinates": {
+          "latitude": 48.73889,
+          "longitude": 4.598857
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "51649",
+          "commune_name": "Vitry-le-François",
+          "department_code": "51",
+          "department_name": "Marne",
+          "region_code": "44",
+          "region_name": "Grand Est"
+        }
+      },
+      {
+        "situation_id": "260916-004988",
+        "axes_raw": [
+          "N0012"
+        ],
+        "axes_display": [
+          "N12"
+        ],
+        "coordinates": {
+          "latitude": 48.796913,
+          "longitude": 2.022223
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "78073",
+          "commune_name": "Bois-d'Arcy",
+          "department_code": "78",
+          "department_name": "Yvelines",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-004991",
+        "axes_raw": [
+          "N0007"
+        ],
+        "axes_display": [
+          "N7"
+        ],
+        "coordinates": {
+          "latitude": 45.340057,
+          "longitude": 4.8043256
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "38468",
+          "commune_name": "Salaise-sur-Sanne",
+          "department_code": "38",
+          "department_name": "Isère",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-004992",
+        "axes_raw": [
+          "N0102"
+        ],
+        "axes_display": [
+          "N102"
+        ],
+        "coordinates": {
+          "latitude": 44.639496,
+          "longitude": 4.3722825
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "07116",
+          "commune_name": "Labégude",
+          "department_code": "07",
+          "department_name": "Ardèche",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-004993",
+        "axes_raw": [
+          "N0141"
+        ],
+        "axes_display": [
+          "N141"
+        ],
+        "coordinates": {
+          "latitude": 45.693714,
+          "longitude": 0.0954498
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "16138",
+          "commune_name": "Fléac",
+          "department_code": "16",
+          "department_name": "Charente",
+          "region_code": "75",
+          "region_name": "Nouvelle-Aquitaine"
+        }
+      },
+      {
+        "situation_id": "260916-005000",
+        "axes_raw": [
+          "A0006A"
+        ],
+        "axes_display": [
+          "A6A"
+        ],
+        "coordinates": {
+          "latitude": 48.794514,
+          "longitude": 2.344874
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "94016",
+          "commune_name": "Cachan",
+          "department_code": "94",
+          "department_name": "Val-de-Marne",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-005004",
+        "axes_raw": [
+          "N0102"
+        ],
+        "axes_display": [
+          "N102"
+        ],
+        "coordinates": {
+          "latitude": 44.672108,
+          "longitude": 4.206853
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "07322",
+          "commune_name": "Thueyts",
+          "department_code": "07",
+          "department_name": "Ardèche",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-005006",
+        "axes_raw": [
+          "A0031"
+        ],
+        "axes_display": [
+          "A31"
+        ],
+        "coordinates": {
+          "latitude": 49.317024,
+          "longitude": 6.1826963
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "57067",
+          "commune_name": "Bertrange",
+          "department_code": "57",
+          "department_name": "Moselle",
+          "region_code": "44",
+          "region_name": "Grand Est"
+        }
+      },
+      {
+        "situation_id": "260916-004949",
+        "axes_raw": [
+          "A0042"
+        ],
+        "axes_display": [
+          "A42"
+        ],
+        "coordinates": {
+          "latitude": 45.791634,
+          "longitude": 4.912531
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "69256",
+          "commune_name": "Vaulx-en-Velin",
+          "department_code": "69",
+          "department_name": "Rhône",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-004970",
+        "axes_raw": [
+          "A0001"
+        ],
+        "axes_display": [
+          "A1"
+        ],
+        "coordinates": {
+          "latitude": 50.4515,
+          "longitude": 2.9710531
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "62427",
+          "commune_name": "Hénin-Beaumont",
+          "department_code": "62",
+          "department_name": "Pas-de-Calais",
+          "region_code": "32",
+          "region_name": "Hauts-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-005013",
+        "axes_raw": [
+          "N0346"
+        ],
+        "axes_display": [
+          "N346"
+        ],
+        "coordinates": {
+          "latitude": 45.74238,
+          "longitude": 4.987599
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "69271",
+          "commune_name": "Chassieu",
+          "department_code": "69",
+          "department_name": "Rhône",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-005015",
+        "axes_raw": [
+          "N0118"
+        ],
+        "axes_display": [
+          "N118"
+        ],
+        "coordinates": {
+          "latitude": 48.82197,
+          "longitude": 2.221726
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "92072",
+          "commune_name": "Sèvres",
+          "department_code": "92",
+          "department_name": "Hauts-de-Seine",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-005017",
+        "axes_raw": [
+          "A0104"
+        ],
+        "axes_display": [
+          "A104"
+        ],
+        "coordinates": {
+          "latitude": 48.969288,
+          "longitude": 2.567647
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "93073",
+          "commune_name": "Tremblay-en-France",
+          "department_code": "93",
+          "department_name": "Seine-Saint-Denis",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-005018",
+        "axes_raw": [
+          "N0118"
+        ],
+        "axes_display": [
+          "N118"
+        ],
+        "coordinates": {
+          "latitude": 48.814835,
+          "longitude": 2.2145672
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "92072",
+          "commune_name": "Sèvres",
+          "department_code": "92",
+          "department_name": "Hauts-de-Seine",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-004951",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.15886,
+          "longitude": 5.7030587
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "38185",
+          "commune_name": "Grenoble",
+          "department_code": "38",
+          "department_name": "Isère",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260914-000851",
+        "axes_raw": [
+          "N0004"
+        ],
+        "axes_display": [
+          "N4"
+        ],
+        "coordinates": {
+          "latitude": 48.669228,
+          "longitude": 4.781458
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "MaintenanceWorks",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "roadworks",
+          "weather"
+        ],
+        "territorialization": {
+          "commune_code": "52386",
+          "commune_name": "Perthes",
+          "department_code": "52",
+          "department_name": "Haute-Marne",
+          "region_code": "44",
+          "region_name": "Grand Est"
+        }
+      },
+      {
+        "situation_id": "260916-005023",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 47.78812,
+          "longitude": -3.279307
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "MaintenanceWorks",
+          "ReroutingManagement"
+        ],
+        "categories": [
+          "other",
+          "roadworks"
+        ],
+        "territorialization": {
+          "commune_code": "56083",
+          "commune_name": "Hennebont",
+          "department_code": "56",
+          "department_name": "Morbihan",
+          "region_code": "53",
+          "region_name": "Bretagne"
+        }
+      },
+      {
+        "situation_id": "260916-005031",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 47.78812,
+          "longitude": -3.279307
+        },
+        "source_departments": [],
+        "planned": true,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "MaintenanceWorks",
+          "ReroutingManagement"
+        ],
+        "categories": [
+          "other",
+          "roadworks"
+        ],
+        "territorialization": {
+          "commune_code": "56083",
+          "commune_name": "Hennebont",
+          "department_code": "56",
+          "department_name": "Morbihan",
+          "region_code": "53",
+          "region_name": "Bretagne"
+        }
+      },
+      {
+        "situation_id": "260916-005039",
+        "axes_raw": [
+          "A0001"
+        ],
+        "axes_display": [
+          "A1"
+        ],
+        "coordinates": {
+          "latitude": 48.90448,
+          "longitude": 2.3584723
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "93066",
+          "commune_name": "Saint-Denis",
+          "department_code": "93",
+          "department_name": "Seine-Saint-Denis",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "260916-005043",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.529026,
+          "longitude": 4.285894
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "42005",
+          "commune_name": "Andrézieux-Bouthéon",
+          "department_code": "42",
+          "department_name": "Loire",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-004977",
+        "axes_raw": [
+          "N0087"
+        ],
+        "axes_display": [
+          "N87"
+        ],
+        "coordinates": {
+          "latitude": 45.161636,
+          "longitude": 5.75295
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "38158",
+          "commune_name": "Eybens",
+          "department_code": "38",
+          "department_name": "Isère",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-005049",
+        "axes_raw": [
+          "A0072"
+        ],
+        "axes_display": [
+          "A72"
+        ],
+        "coordinates": {
+          "latitude": 45.449368,
+          "longitude": 4.4216027
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "42218",
+          "commune_name": "Saint-Étienne",
+          "department_code": "42",
+          "department_name": "Loire",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "260916-005048",
+        "axes_raw": [
+          "A0084"
+        ],
+        "axes_display": [
+          "A84"
+        ],
+        "coordinates": {
+          "latitude": 48.243435,
+          "longitude": -1.4484152
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "35121",
+          "commune_name": "Gosné",
+          "department_code": "35",
+          "department_name": "Ille-et-Vilaine",
+          "region_code": "53",
+          "region_name": "Bretagne"
+        }
+      },
+      {
+        "situation_id": "260916-005053",
+        "axes_raw": [
+          "N0136"
+        ],
+        "axes_display": [
+          "N136"
+        ],
+        "coordinates": {
+          "latitude": 48.08155,
+          "longitude": -1.6537393
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "AbnormalTraffic"
+        ],
+        "categories": [
+          "abnormal_traffic"
+        ],
+        "territorialization": {
+          "commune_code": "35206",
+          "commune_name": "Noyal-Châtillon-sur-Seiche",
+          "department_code": "35",
+          "department_name": "Ille-et-Vilaine",
+          "region_code": "53",
+          "region_name": "Bretagne"
+        }
       }
     ],
     "territorialization": {
       "source": "API Découpage administratif / geo.api.gouv.fr",
       "method": "Recherche géographique commune par latitude/longitude",
-      "situations_total": 389,
-      "situations_with_coordinates": 389,
-      "geocoded_situations_count": 389,
+      "situations_total": 382,
+      "situations_with_coordinates": 382,
+      "geocoded_situations_count": 382,
       "unresolved_situations_count": 0,
       "coordinate_coverage_ratio_pct": 100.0,
       "geocoding_success_ratio_pct": 100.0,
       "department_coverage_ratio_pct": 100.0,
-      "affected_departments_count": 69,
+      "affected_departments_count": 71,
       "affected_regions_count": 12,
       "departments": [
         {
           "code": "33",
           "name": "Gironde",
-          "situations_count": 6,
-          "unplanned_situations_count": 5,
+          "situations_count": 5,
+          "unplanned_situations_count": 4,
           "full_closure_count": 4,
           "unplanned_full_closure_count": 4,
           "capacity_restriction_count": 4,
           "unplanned_capacity_restriction_count": 4
         },
         {
+          "code": "78",
+          "name": "Yvelines",
+          "situations_count": 4,
+          "unplanned_situations_count": 3,
+          "full_closure_count": 1,
+          "unplanned_full_closure_count": 1,
+          "capacity_restriction_count": 4,
+          "unplanned_capacity_restriction_count": 3
+        },
+        {
           "code": "35",
           "name": "Ille-et-Vilaine",
-          "situations_count": 17,
-          "unplanned_situations_count": 3,
+          "situations_count": 19,
+          "unplanned_situations_count": 5,
           "capacity_restriction_count": 8,
           "unplanned_capacity_restriction_count": 3,
           "full_closure_count": 1
         },
         {
-          "code": "78",
-          "name": "Yvelines",
-          "situations_count": 5,
-          "unplanned_situations_count": 4,
-          "full_closure_count": 1,
-          "unplanned_full_closure_count": 1,
-          "capacity_restriction_count": 3,
+          "code": "92",
+          "name": "Hauts-de-Seine",
+          "situations_count": 6,
+          "unplanned_situations_count": 5,
+          "capacity_restriction_count": 2,
           "unplanned_capacity_restriction_count": 2
         },
         {
           "code": "15",
           "name": "Cantal",
-          "situations_count": 7,
-          "unplanned_situations_count": 3,
+          "situations_count": 6,
+          "unplanned_situations_count": 2,
           "capacity_restriction_count": 5,
           "unplanned_capacity_restriction_count": 2,
           "full_closure_count": 1
@@ -19245,6 +19066,16 @@
           "unplanned_capacity_restriction_count": 2
         },
         {
+          "code": "38",
+          "name": "Isère",
+          "situations_count": 5,
+          "unplanned_situations_count": 5,
+          "full_closure_count": 1,
+          "unplanned_full_closure_count": 1,
+          "capacity_restriction_count": 1,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
           "code": "08",
           "name": "Ardennes",
           "situations_count": 4,
@@ -19252,16 +19083,6 @@
           "capacity_restriction_count": 2,
           "full_closure_count": 1,
           "unplanned_full_closure_count": 1,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "38",
-          "name": "Isère",
-          "situations_count": 2,
-          "unplanned_situations_count": 2,
-          "full_closure_count": 1,
-          "unplanned_full_closure_count": 1,
-          "capacity_restriction_count": 1,
           "unplanned_capacity_restriction_count": 1
         },
         {
@@ -19277,8 +19098,8 @@
         {
           "code": "13",
           "name": "Bouches-du-Rhône",
-          "situations_count": 23,
-          "unplanned_situations_count": 13,
+          "situations_count": 20,
+          "unplanned_situations_count": 10,
           "capacity_restriction_count": 8,
           "unplanned_capacity_restriction_count": 1,
           "full_closure_count": 3
@@ -19286,18 +19107,19 @@
         {
           "code": "16",
           "name": "Charente",
-          "situations_count": 9,
-          "unplanned_situations_count": 5,
+          "situations_count": 10,
+          "unplanned_situations_count": 6,
           "capacity_restriction_count": 4,
           "unplanned_capacity_restriction_count": 1,
           "full_closure_count": 2
         },
         {
-          "code": "34",
-          "name": "Hérault",
-          "situations_count": 8,
-          "unplanned_situations_count": 4,
-          "capacity_restriction_count": 2,
+          "code": "42",
+          "name": "Loire",
+          "situations_count": 10,
+          "capacity_restriction_count": 6,
+          "full_closure_count": 2,
+          "unplanned_situations_count": 3,
           "unplanned_capacity_restriction_count": 1
         },
         {
@@ -19311,8 +19133,8 @@
         {
           "code": "22",
           "name": "Côtes-d'Armor",
-          "situations_count": 13,
-          "capacity_restriction_count": 11,
+          "situations_count": 12,
+          "capacity_restriction_count": 10,
           "unplanned_situations_count": 2,
           "full_closure_count": 4,
           "unplanned_capacity_restriction_count": 1
@@ -19326,27 +19148,19 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
-          "code": "71",
-          "name": "Saône-et-Loire",
-          "situations_count": 8,
+          "code": "34",
+          "name": "Hérault",
+          "situations_count": 6,
           "unplanned_situations_count": 2,
-          "capacity_restriction_count": 7,
+          "capacity_restriction_count": 2,
           "unplanned_capacity_restriction_count": 1
         },
         {
           "code": "76",
           "name": "Seine-Maritime",
-          "situations_count": 6,
-          "capacity_restriction_count": 4,
-          "unplanned_situations_count": 2,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "62",
-          "name": "Pas-de-Calais",
-          "situations_count": 4,
-          "unplanned_situations_count": 2,
+          "situations_count": 5,
           "capacity_restriction_count": 3,
+          "unplanned_situations_count": 2,
           "unplanned_capacity_restriction_count": 1
         },
         {
@@ -19357,6 +19171,23 @@
           "capacity_restriction_count": 2,
           "unplanned_capacity_restriction_count": 1,
           "full_closure_count": 1
+        },
+        {
+          "code": "62",
+          "name": "Pas-de-Calais",
+          "situations_count": 3,
+          "unplanned_situations_count": 2,
+          "capacity_restriction_count": 2,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
+          "code": "93",
+          "name": "Seine-Saint-Denis",
+          "situations_count": 3,
+          "full_closure_count": 1,
+          "capacity_restriction_count": 2,
+          "unplanned_situations_count": 2,
+          "unplanned_capacity_restriction_count": 1
         },
         {
           "code": "86",
@@ -19383,6 +19214,22 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
+          "code": "71",
+          "name": "Saône-et-Loire",
+          "situations_count": 7,
+          "unplanned_situations_count": 1,
+          "capacity_restriction_count": 7,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
+          "code": "94",
+          "name": "Val-de-Marne",
+          "situations_count": 5,
+          "capacity_restriction_count": 5,
+          "unplanned_situations_count": 1,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
           "code": "52",
           "name": "Haute-Marne",
           "situations_count": 4,
@@ -19405,45 +19252,10 @@
           "unplanned_situations_count": 14
         },
         {
-          "code": "14",
-          "name": "Calvados",
-          "situations_count": 8,
-          "capacity_restriction_count": 4,
-          "unplanned_situations_count": 4
-        },
-        {
-          "code": "92",
-          "name": "Hauts-de-Seine",
-          "situations_count": 5,
-          "unplanned_situations_count": 4
-        },
-        {
-          "code": "56",
-          "name": "Morbihan",
-          "situations_count": 9,
-          "unplanned_situations_count": 3,
-          "capacity_restriction_count": 2
-        },
-        {
-          "code": "29",
-          "name": "Finistère",
-          "situations_count": 8,
-          "full_closure_count": 1,
-          "capacity_restriction_count": 5,
-          "unplanned_situations_count": 3
-        },
-        {
-          "code": "50",
-          "name": "Manche",
-          "situations_count": 4,
-          "unplanned_situations_count": 3,
-          "capacity_restriction_count": 1
-        },
-        {
           "code": "44",
           "name": "Loire-Atlantique",
-          "situations_count": 19,
-          "capacity_restriction_count": 6,
+          "situations_count": 20,
+          "capacity_restriction_count": 7,
           "unplanned_situations_count": 2
         },
         {
@@ -19455,19 +19267,41 @@
           "capacity_restriction_count": 10
         },
         {
+          "code": "56",
+          "name": "Morbihan",
+          "situations_count": 10,
+          "unplanned_situations_count": 2,
+          "capacity_restriction_count": 2
+        },
+        {
           "code": "31",
           "name": "Haute-Garonne",
-          "situations_count": 10,
+          "situations_count": 9,
           "full_closure_count": 3,
-          "capacity_restriction_count": 6,
+          "capacity_restriction_count": 5,
           "unplanned_situations_count": 2
         },
         {
-          "code": "54",
-          "name": "Meurthe-et-Moselle",
+          "code": "29",
+          "name": "Finistère",
           "situations_count": 7,
-          "capacity_restriction_count": 4,
+          "full_closure_count": 1,
+          "capacity_restriction_count": 5,
           "unplanned_situations_count": 2
+        },
+        {
+          "code": "07",
+          "name": "Ardèche",
+          "situations_count": 4,
+          "capacity_restriction_count": 2,
+          "unplanned_situations_count": 2
+        },
+        {
+          "code": "50",
+          "name": "Manche",
+          "situations_count": 3,
+          "unplanned_situations_count": 2,
+          "capacity_restriction_count": 1
         },
         {
           "code": "23",
@@ -19476,25 +19310,23 @@
           "unplanned_situations_count": 2
         },
         {
+          "code": "69",
+          "name": "Rhône",
+          "situations_count": 2,
+          "unplanned_situations_count": 2
+        },
+        {
           "code": "30",
           "name": "Gard",
-          "situations_count": 10,
+          "situations_count": 11,
           "unplanned_situations_count": 1
         },
         {
           "code": "59",
           "name": "Nord",
-          "situations_count": 10,
+          "situations_count": 8,
           "unplanned_situations_count": 1,
-          "capacity_restriction_count": 5
-        },
-        {
-          "code": "42",
-          "name": "Loire",
-          "situations_count": 9,
-          "capacity_restriction_count": 6,
-          "full_closure_count": 2,
-          "unplanned_situations_count": 1
+          "capacity_restriction_count": 4
         },
         {
           "code": "70",
@@ -19518,6 +19350,13 @@
           "capacity_restriction_count": 3
         },
         {
+          "code": "14",
+          "name": "Calvados",
+          "situations_count": 4,
+          "capacity_restriction_count": 3,
+          "unplanned_situations_count": 1
+        },
+        {
           "code": "19",
           "name": "Corrèze",
           "situations_count": 4,
@@ -19532,30 +19371,30 @@
           "unplanned_situations_count": 1
         },
         {
-          "code": "81",
-          "name": "Tarn",
+          "code": "27",
+          "name": "Eure",
           "situations_count": 3,
+          "capacity_restriction_count": 2,
+          "unplanned_situations_count": 1
+        },
+        {
+          "code": "51",
+          "name": "Marne",
+          "situations_count": 2,
+          "capacity_restriction_count": 1,
           "unplanned_situations_count": 1
         },
         {
           "code": "88",
           "name": "Vosges",
-          "situations_count": 3,
-          "unplanned_situations_count": 1,
-          "capacity_restriction_count": 2
-        },
-        {
-          "code": "12",
-          "name": "Aveyron",
           "situations_count": 2,
           "unplanned_situations_count": 1,
           "capacity_restriction_count": 1
         },
         {
-          "code": "41",
-          "name": "Loir-et-Cher",
-          "situations_count": 2,
-          "capacity_restriction_count": 1,
+          "code": "57",
+          "name": "Moselle",
+          "situations_count": 1,
           "unplanned_situations_count": 1
         },
         {
@@ -19572,8 +19411,8 @@
           "capacity_restriction_count": 3
         },
         {
-          "code": "94",
-          "name": "Val-de-Marne",
+          "code": "54",
+          "name": "Meurthe-et-Moselle",
           "situations_count": 4,
           "capacity_restriction_count": 4
         },
@@ -19604,23 +19443,11 @@
           "capacity_restriction_count": 2
         },
         {
-          "code": "07",
-          "name": "Ardèche",
-          "situations_count": 2,
-          "capacity_restriction_count": 2
-        },
-        {
           "code": "10",
           "name": "Aube",
           "situations_count": 2,
           "capacity_restriction_count": 2,
           "full_closure_count": 1
-        },
-        {
-          "code": "27",
-          "name": "Eure",
-          "situations_count": 2,
-          "capacity_restriction_count": 2
         },
         {
           "code": "28",
@@ -19640,6 +19467,11 @@
           "capacity_restriction_count": 2
         },
         {
+          "code": "81",
+          "name": "Tarn",
+          "situations_count": 2
+        },
+        {
           "code": "87",
           "name": "Haute-Vienne",
           "situations_count": 2,
@@ -19653,26 +19485,32 @@
           "capacity_restriction_count": 2
         },
         {
+          "code": "12",
+          "name": "Aveyron",
+          "situations_count": 1,
+          "capacity_restriction_count": 1
+        },
+        {
           "code": "24",
           "name": "Dordogne",
           "situations_count": 1,
           "capacity_restriction_count": 1
         },
         {
+          "code": "32",
+          "name": "Gers",
+          "situations_count": 1,
+          "capacity_restriction_count": 1
+        },
+        {
+          "code": "41",
+          "name": "Loir-et-Cher",
+          "situations_count": 1,
+          "capacity_restriction_count": 1
+        },
+        {
           "code": "49",
           "name": "Maine-et-Loire",
-          "situations_count": 1,
-          "capacity_restriction_count": 1
-        },
-        {
-          "code": "51",
-          "name": "Marne",
-          "situations_count": 1,
-          "capacity_restriction_count": 1
-        },
-        {
-          "code": "57",
-          "name": "Moselle",
           "situations_count": 1,
           "capacity_restriction_count": 1
         },
@@ -19685,21 +19523,14 @@
           "code": "91",
           "name": "Essonne",
           "situations_count": 1
-        },
-        {
-          "code": "93",
-          "name": "Seine-Saint-Denis",
-          "situations_count": 1,
-          "full_closure_count": 1,
-          "capacity_restriction_count": 1
         }
       ],
       "regions": [
         {
           "code": "84",
           "name": "Auvergne-Rhône-Alpes",
-          "situations_count": 47,
-          "unplanned_situations_count": 22
+          "situations_count": 54,
+          "unplanned_situations_count": 30
         },
         {
           "code": "75",
@@ -19708,84 +19539,84 @@
           "unplanned_situations_count": 20
         },
         {
-          "code": "76",
-          "name": "Occitanie",
-          "situations_count": 65,
-          "unplanned_situations_count": 14
-        },
-        {
-          "code": "93",
-          "name": "Provence-Alpes-Côte d'Azur",
-          "situations_count": 48,
-          "unplanned_situations_count": 14
+          "code": "11",
+          "name": "Île-de-France",
+          "situations_count": 24,
+          "unplanned_situations_count": 13
         },
         {
           "code": "53",
           "name": "Bretagne",
-          "situations_count": 47,
+          "situations_count": 48,
           "unplanned_situations_count": 11
         },
         {
-          "code": "11",
-          "name": "Île-de-France",
-          "situations_count": 21,
-          "unplanned_situations_count": 10
+          "code": "93",
+          "name": "Provence-Alpes-Côte d'Azur",
+          "situations_count": 45,
+          "unplanned_situations_count": 11
         },
         {
-          "code": "28",
-          "name": "Normandie",
-          "situations_count": 20,
-          "unplanned_situations_count": 9
+          "code": "76",
+          "name": "Occitanie",
+          "situations_count": 62,
+          "unplanned_situations_count": 10
         },
         {
           "code": "44",
           "name": "Grand Est",
-          "situations_count": 26,
+          "situations_count": 23,
           "unplanned_situations_count": 8
         },
         {
-          "code": "27",
-          "name": "Bourgogne-Franche-Comté",
-          "situations_count": 30,
-          "unplanned_situations_count": 5
+          "code": "28",
+          "name": "Normandie",
+          "situations_count": 15,
+          "unplanned_situations_count": 6
         },
         {
           "code": "32",
           "name": "Hauts-de-France",
-          "situations_count": 19,
+          "situations_count": 16,
           "unplanned_situations_count": 5
+        },
+        {
+          "code": "27",
+          "name": "Bourgogne-Franche-Comté",
+          "situations_count": 29,
+          "unplanned_situations_count": 4
         },
         {
           "code": "52",
           "name": "Pays de la Loire",
-          "situations_count": 20,
+          "situations_count": 21,
           "unplanned_situations_count": 2
         },
         {
           "code": "24",
           "name": "Centre-Val de Loire",
-          "situations_count": 7,
-          "unplanned_situations_count": 2
+          "situations_count": 6,
+          "unplanned_situations_count": 1
         }
       ],
       "resolver_stats": {
-        "persistent_entries_loaded": 4913,
-        "persistent_cache_hits": 364,
-        "unique_queries": 25,
-        "api_queries": 25,
-        "resolved": 25,
-        "persistent_entries_added": 25
+        "persistent_entries_loaded": 4938,
+        "persistent_cache_hits": 360,
+        "unique_queries": 22,
+        "api_queries": 22,
+        "resolved": 22,
+        "persistent_entries_added": 22
       },
       "interpretation_guard": "La territorialisation repose uniquement sur les coordonnées explicitement présentes dans le flux DATEX II. Une situation sans coordonnées ou non résolue reste ND ; aucun département n'est inféré artificiellement. Les agrégats territoriaux qualifiés peuvent désormais être utilisés par score_road() comme corroboration territoriale, sous réserve de la couverture observée."
     },
     "geocache": {
       "path": "data/road_geocache.json",
-      "entries_loaded": 4913,
-      "entries_after_run": 4938,
+      "entries_loaded": 4938,
+      "entries_after_run": 4960,
       "entries_loaded_reporting_basis": "cache_size_before_enrichment",
-      "entries_added_this_run": 25,
-      "persistent_cache_hits": 364,
-      "api_queries": 25,
+      "entries_added_this_run": 22,
+      "persistent_cache_hits": 360,
+      "api_queries": 22,
       "interpretation_guard": "Le cache persistant mémorise uniquement les résolutions positives coordonnées→territoire. Les échecs temporaires ne sont pas persistés."
     },
     "health": {
@@ -19794,14 +19625,14 @@
         "url": "https://www.data.gouv.fr/api/1/datasets/r/5f814261-10d8-4b46-bcc1-e847b28a473f",
         "http_status": 200,
         "content_type": "application/xml",
-        "content_bytes": 4689930,
+        "content_bytes": 4640330,
         "final_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/Evenementiel-DIR/grt/RRN/content.xml",
-        "etag": "\"47900a-65b996ef871c5-gzip\"",
-        "last_modified": "Wed, 16 Sep 2026 13:13:30 GMT",
+        "etag": "\"46ce4a-65b9a458d48c4-gzip\"",
+        "last_modified": "Wed, 16 Sep 2026 14:13:30 GMT",
         "freshness": {
           "basis": "http_last_modified",
-          "timestamp": "2026-09-16T13:13:30+00:00",
-          "age_minutes": 52.89,
+          "timestamp": "2026-09-16T14:13:30+00:00",
+          "age_minutes": 53.12,
           "threshold_applied": false,
           "freshness_status": "OBSERVED"
         },
@@ -19812,12 +19643,12 @@
         "source": "API Découpage administratif / geo.api.gouv.fr",
         "url": "https://geo.api.gouv.fr/communes",
         "resolver_stats": {
-          "persistent_entries_loaded": 4913,
-          "persistent_cache_hits": 364,
-          "unique_queries": 25,
-          "api_queries": 25,
-          "resolved": 25,
-          "persistent_entries_added": 25
+          "persistent_entries_loaded": 4938,
+          "persistent_cache_hits": 360,
+          "unique_queries": 22,
+          "api_queries": 22,
+          "resolved": 22,
+          "persistent_entries_added": 22
         }
       }
     },

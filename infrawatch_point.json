@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-09-16T06:06:25.068774+00:00",
-  "operational_slot": "morning",
-  "operational_cycle_id": "2026-09-16:morning",
+  "generated_at": "2026-09-16T15:07:05.239355+00:00",
+  "operational_slot": "evening",
+  "operational_cycle_id": "2026-09-16:evening",
   "report_posture": "VIGILANCE",
   "authority": {
     "n0_n4_source": "national_status.json",
@@ -12,11 +12,11 @@
   },
   "source_alignment": {
     "status": "OK",
-    "operational_generated_at": "2026-09-16T06:06:08.413725+00:00",
-    "risks_threats_generated_at": "2026-09-16T06:06:08.436415+00:00",
-    "age_difference_seconds": 0.023,
-    "operational_slot": "morning",
-    "risks_threats_slot": "morning",
+    "operational_generated_at": "2026-09-16T15:06:49.407081+00:00",
+    "risks_threats_generated_at": "2026-09-16T15:06:49.437297+00:00",
+    "age_difference_seconds": 0.03,
+    "operational_slot": "evening",
+    "risks_threats_slot": "evening",
     "same_operational_slot": true
   },
   "operational_status": {
@@ -64,21 +64,22 @@
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal."
       },
       {
-        "sector": "nuclear",
-        "level": "N0",
-        "label": "Rien à signaler",
-        "confidence": "élevée",
-        "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal."
-      },
-      {
         "sector": "rail",
         "level": "N0",
         "label": "Rien à signaler",
         "confidence": "élevée",
-        "rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable."
+        "rationale": "Les annulations ou retards présentent une anomalie statistique mais restent sous les seuils opérationnels de vigilance."
       }
     ],
-    "unavailable_sectors": [],
+    "unavailable_sectors": [
+      {
+        "sector": "nuclear",
+        "level": "ND",
+        "label": "Données insuffisantes",
+        "confidence": "faible",
+        "rationale": "Disponibilité nucléaire non calculable."
+      }
+    ],
     "sectors": {
       "electricity": {
         "level": "N0",
@@ -86,63 +87,34 @@
         "confidence": "élevée",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
         "metrics": {
-          "consumption_mw": 43300.0,
-          "forecast_error_pct": -0.732,
-          "forecast_error_abs_pct": 0.732,
-          "exchange_ratio_pct": -17.497,
-          "observation_time": "2026-09-16T05:45:00+00:00",
-          "slot": "morning",
-          "statistical_z_score": -0.2391
+          "consumption_mw": 46190.0,
+          "forecast_error_pct": -1.97,
+          "forecast_error_abs_pct": 1.97,
+          "exchange_ratio_pct": -23.7,
+          "observation_time": "2026-09-16T14:45:00+00:00",
+          "slot": "evening",
+          "statistical_z_score": 0.7776
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 19,
+          "comparable_slot": "evening",
+          "comparable_count": 21,
           "forecast_error_abs_pct": {
-            "count": 19,
-            "median": 0.667,
-            "mean": 0.8976,
-            "stdev": 0.6926,
-            "p90": 1.8822,
-            "p95": 2.143
+            "count": 21,
+            "median": 1.052,
+            "mean": 1.2229,
+            "stdev": 0.9608,
+            "p90": 2.534,
+            "p95": 2.611
           }
         }
       },
       "nuclear": {
-        "level": "N0",
-        "label": "Rien à signaler",
-        "confidence": "élevée",
-        "rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
-        "metrics": {
-          "fleet_availability_pct": 61.63,
-          "fleet_available_capacity_mw": 38820.0,
-          "fleet_max_capacity_mw": 62990.0,
-          "planned_current_events": 24,
-          "unplanned_current_events": 4,
-          "chronic_current_events": 187,
-          "slot": "morning",
-          "availability_statistical_z_score": 0.046,
-          "unplanned_events_statistical_z_score": -0.0747
-        },
-        "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 19,
-          "fleet_availability_pct": {
-            "count": 19,
-            "median": 62.03,
-            "mean": 61.5389,
-            "stdev": 1.98,
-            "p90": 63.4,
-            "p95": 63.544
-          },
-          "unplanned_events": {
-            "count": 19,
-            "median": 4.0,
-            "mean": 4.1053,
-            "stdev": 1.4101,
-            "p90": 5.4,
-            "p95": 7.1
-          }
-        }
+        "level": "ND",
+        "label": "Données insuffisantes",
+        "confidence": "faible",
+        "rationale": "Disponibilité nucléaire non calculable.",
+        "metrics": {},
+        "baseline": {}
       },
       "telecom_mobile": {
         "level": "N1",
@@ -150,27 +122,27 @@
         "confidence": "élevée",
         "rationale": "Concentrations territoriales multi-opérateurs significatives.",
         "metrics": {
-          "national_down_ratio_pct": 1.0055,
-          "unique_operator_sites_down": 1249,
+          "national_down_ratio_pct": 1.0876,
+          "unique_operator_sites_down": 1351,
           "active_operator_sites_reference": 124214,
           "four_operator_clusters": 11,
           "multi_operator_hotspots_20pct": 0,
-          "slot": "morning",
-          "statistical_z_score": -0.3559,
+          "slot": "evening",
+          "statistical_z_score": -0.1465,
           "by_operator": [
             {
               "operator_code": "bouygues",
               "operator": "Bouygues Telecom",
-              "sites_down": 305,
+              "sites_down": 325,
               "active_sites_reference": 30563,
-              "down_ratio_pct": 0.9979
+              "down_ratio_pct": 1.0634
             },
             {
               "operator_code": "free",
               "operator": "Free",
-              "sites_down": 98,
+              "sites_down": 119,
               "active_sites_reference": 30636,
-              "down_ratio_pct": 0.3199
+              "down_ratio_pct": 0.3884
             },
             {
               "operator_code": "orange",
@@ -182,22 +154,22 @@
             {
               "operator_code": "sfr",
               "operator": "SFR",
-              "sites_down": 186,
+              "sites_down": 247,
               "active_sites_reference": 30408,
-              "down_ratio_pct": 0.6117
+              "down_ratio_pct": 0.8123
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 19,
+          "comparable_slot": "evening",
+          "comparable_count": 21,
           "national_down_ratio_pct": {
-            "count": 19,
-            "median": 1.0273,
-            "mean": 1.0855,
-            "stdev": 0.2248,
-            "p90": 1.4142,
-            "p95": 1.4795
+            "count": 21,
+            "median": 1.0248,
+            "mean": 1.1218,
+            "stdev": 0.2335,
+            "p90": 1.4362,
+            "p95": 1.5047
           }
         }
       },
@@ -211,8 +183,8 @@
           "operational_status": "ORANGE",
           "data_quality": "OK",
           "limits_count": 10,
-          "green_limits_count": 9,
-          "orange_limits_count": 1,
+          "green_limits_count": 8,
+          "orange_limits_count": 2,
           "red_limits_count": 0,
           "violet_limits_count": 0,
           "unknown_limits_count": 0,
@@ -228,6 +200,18 @@
               "interruptible_uioli_sales_stop": "Non",
               "localized_spread": "Non",
               "mutualized_restriction": "Non"
+            },
+            {
+              "limit": "NS4",
+              "vigilance": "ORANGE",
+              "vigilance_rgb": "FFFF9933",
+              "detection_method": "validated_color",
+              "application_side": "Aval",
+              "small_impact_works_gwh_25c": 100,
+              "maintenance": "Non",
+              "interruptible_uioli_sales_stop": "Non",
+              "localized_spread": "Non",
+              "mutualized_restriction": "Non"
             }
           ]
         },
@@ -239,21 +223,15 @@
         "confidence": "élevée",
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
-          "eligible_stations": 9762,
-          "stations_with_any_shortage": 823,
-          "national_shortage_ratio_pct": 8.4306,
-          "diesel_shortage_ratio_pct": 4.1976,
-          "petrol_shortage_ratio_pct": 7.6477,
-          "departments_with_shortage": 94,
-          "slot": "morning",
-          "statistical_z_score": 0.4705,
+          "eligible_stations": 9738,
+          "stations_with_any_shortage": 804,
+          "national_shortage_ratio_pct": 8.2563,
+          "diesel_shortage_ratio_pct": 4.415,
+          "petrol_shortage_ratio_pct": 7.4322,
+          "departments_with_shortage": 93,
+          "slot": "evening",
+          "statistical_z_score": 0.5094,
           "significant_departments": [
-            {
-              "dept_code": "68",
-              "shortage_ratio_pct": 19.6429,
-              "stations_with_any_shortage": 22,
-              "eligible_stations": 112
-            },
             {
               "dept_code": "75",
               "shortage_ratio_pct": 19.1489,
@@ -261,46 +239,70 @@
               "eligible_stations": 47
             },
             {
-              "dept_code": "82",
-              "shortage_ratio_pct": 18.75,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 64
-            },
-            {
-              "dept_code": "36",
-              "shortage_ratio_pct": 18.75,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 48
+              "dept_code": "68",
+              "shortage_ratio_pct": 17.8571,
+              "stations_with_any_shortage": 20,
+              "eligible_stations": 112
             },
             {
               "dept_code": "31",
-              "shortage_ratio_pct": 18.2292,
-              "stations_with_any_shortage": 35,
-              "eligible_stations": 192
+              "shortage_ratio_pct": 17.801,
+              "stations_with_any_shortage": 34,
+              "eligible_stations": 191
             },
             {
-              "dept_code": "35",
-              "shortage_ratio_pct": 14.8649,
-              "stations_with_any_shortage": 22,
-              "eligible_stations": 148
+              "dept_code": "41",
+              "shortage_ratio_pct": 17.4603,
+              "stations_with_any_shortage": 11,
+              "eligible_stations": 63
             },
             {
-              "dept_code": "44",
-              "shortage_ratio_pct": 14.4509,
-              "stations_with_any_shortage": 25,
-              "eligible_stations": 173
+              "dept_code": "66",
+              "shortage_ratio_pct": 16.6667,
+              "stations_with_any_shortage": 12,
+              "eligible_stations": 72
             },
             {
               "dept_code": "11",
-              "shortage_ratio_pct": 13.9535,
-              "stations_with_any_shortage": 12,
+              "shortage_ratio_pct": 16.2791,
+              "stations_with_any_shortage": 14,
               "eligible_stations": 86
             },
             {
-              "dept_code": "25",
-              "shortage_ratio_pct": 13.7255,
-              "stations_with_any_shortage": 14,
-              "eligible_stations": 102
+              "dept_code": "67",
+              "shortage_ratio_pct": 15.8621,
+              "stations_with_any_shortage": 23,
+              "eligible_stations": 145
+            },
+            {
+              "dept_code": "82",
+              "shortage_ratio_pct": 15.625,
+              "stations_with_any_shortage": 10,
+              "eligible_stations": 64
+            },
+            {
+              "dept_code": "46",
+              "shortage_ratio_pct": 14.2857,
+              "stations_with_any_shortage": 9,
+              "eligible_stations": 63
+            },
+            {
+              "dept_code": "30",
+              "shortage_ratio_pct": 13.2353,
+              "stations_with_any_shortage": 18,
+              "eligible_stations": 136
+            },
+            {
+              "dept_code": "34",
+              "shortage_ratio_pct": 13.0435,
+              "stations_with_any_shortage": 21,
+              "eligible_stations": 161
+            },
+            {
+              "dept_code": "36",
+              "shortage_ratio_pct": 13.0435,
+              "stations_with_any_shortage": 6,
+              "eligible_stations": 46
             },
             {
               "dept_code": "70",
@@ -309,40 +311,16 @@
               "eligible_stations": 55
             },
             {
-              "dept_code": "41",
-              "shortage_ratio_pct": 12.6984,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 63
+              "dept_code": "08",
+              "shortage_ratio_pct": 12.2449,
+              "stations_with_any_shortage": 6,
+              "eligible_stations": 49
             },
             {
-              "dept_code": "03",
-              "shortage_ratio_pct": 12.5,
-              "stations_with_any_shortage": 10,
-              "eligible_stations": 80
-            },
-            {
-              "dept_code": "67",
-              "shortage_ratio_pct": 12.4138,
-              "stations_with_any_shortage": 18,
-              "eligible_stations": 145
-            },
-            {
-              "dept_code": "61",
-              "shortage_ratio_pct": 12.069,
-              "stations_with_any_shortage": 7,
-              "eligible_stations": 58
-            },
-            {
-              "dept_code": "49",
-              "shortage_ratio_pct": 12.037,
-              "stations_with_any_shortage": 13,
-              "eligible_stations": 108
-            },
-            {
-              "dept_code": "54",
-              "shortage_ratio_pct": 11.9565,
+              "dept_code": "37",
+              "shortage_ratio_pct": 12.2222,
               "stations_with_any_shortage": 11,
-              "eligible_stations": 92
+              "eligible_stations": 90
             },
             {
               "dept_code": "15",
@@ -357,19 +335,19 @@
               "eligible_stations": 34
             },
             {
-              "dept_code": "37",
-              "shortage_ratio_pct": 11.1111,
-              "stations_with_any_shortage": 10,
-              "eligible_stations": 90
+              "dept_code": "57",
+              "shortage_ratio_pct": 11.5385,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 130
+            },
+            {
+              "dept_code": "35",
+              "shortage_ratio_pct": 11.4094,
+              "stations_with_any_shortage": 17,
+              "eligible_stations": 149
             }
           ],
           "severe_departments": [
-            {
-              "dept_code": "68",
-              "shortage_ratio_pct": 19.6429,
-              "stations_with_any_shortage": 22,
-              "eligible_stations": 112
-            },
             {
               "dept_code": "75",
               "shortage_ratio_pct": 19.1489,
@@ -377,35 +355,59 @@
               "eligible_stations": 47
             },
             {
-              "dept_code": "82",
-              "shortage_ratio_pct": 18.75,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 64
-            },
-            {
-              "dept_code": "36",
-              "shortage_ratio_pct": 18.75,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 48
+              "dept_code": "68",
+              "shortage_ratio_pct": 17.8571,
+              "stations_with_any_shortage": 20,
+              "eligible_stations": 112
             },
             {
               "dept_code": "31",
-              "shortage_ratio_pct": 18.2292,
-              "stations_with_any_shortage": 35,
-              "eligible_stations": 192
+              "shortage_ratio_pct": 17.801,
+              "stations_with_any_shortage": 34,
+              "eligible_stations": 191
+            },
+            {
+              "dept_code": "41",
+              "shortage_ratio_pct": 17.4603,
+              "stations_with_any_shortage": 11,
+              "eligible_stations": 63
+            },
+            {
+              "dept_code": "66",
+              "shortage_ratio_pct": 16.6667,
+              "stations_with_any_shortage": 12,
+              "eligible_stations": 72
+            },
+            {
+              "dept_code": "11",
+              "shortage_ratio_pct": 16.2791,
+              "stations_with_any_shortage": 14,
+              "eligible_stations": 86
+            },
+            {
+              "dept_code": "67",
+              "shortage_ratio_pct": 15.8621,
+              "stations_with_any_shortage": 23,
+              "eligible_stations": 145
+            },
+            {
+              "dept_code": "82",
+              "shortage_ratio_pct": 15.625,
+              "stations_with_any_shortage": 10,
+              "eligible_stations": 64
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 18,
+          "comparable_slot": "evening",
+          "comparable_count": 19,
           "national_shortage_ratio_pct": {
-            "count": 18,
-            "median": 7.0862,
-            "mean": 7.3359,
-            "stdev": 2.3265,
-            "p90": 10.1435,
-            "p95": 11.0252
+            "count": 19,
+            "median": 6.6796,
+            "mean": 7.1037,
+            "stdev": 2.2626,
+            "p90": 9.675,
+            "p95": 11.168
           }
         }
       },
@@ -413,55 +415,55 @@
         "level": "N0",
         "label": "Rien à signaler",
         "confidence": "élevée",
-        "rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
+        "rationale": "Les annulations ou retards présentent une anomalie statistique mais restent sous les seuils opérationnels de vigilance.",
         "metrics": {
-          "collected_at": "2026-09-16T06:05:42.739150+00:00",
-          "slot": "morning",
-          "trips_count": 1973,
-          "scheduled_trips": 1722,
-          "added_trips": 198,
-          "canceled_trips": 53,
-          "canceled_ratio_pct": 2.6863,
-          "trips_delay_ge_15min": 104,
-          "trips_delay_ge_15min_ratio_pct": 5.2712,
-          "trips_delay_ge_30min": 45,
-          "trips_delay_ge_30min_ratio_pct": 2.2808,
-          "trips_delay_ge_60min": 20,
-          "trips_delay_ge_60min_ratio_pct": 1.0137,
-          "average_max_delay_seconds": 161.9,
-          "maximum_delay_seconds": 10800,
-          "active_service_alerts": 528,
+          "collected_at": "2026-09-16T15:06:17.721926+00:00",
+          "slot": "evening",
+          "trips_count": 2131,
+          "scheduled_trips": 1861,
+          "added_trips": 212,
+          "canceled_trips": 58,
+          "canceled_ratio_pct": 2.7217,
+          "trips_delay_ge_15min": 70,
+          "trips_delay_ge_15min_ratio_pct": 3.2848,
+          "trips_delay_ge_30min": 25,
+          "trips_delay_ge_30min_ratio_pct": 1.1732,
+          "trips_delay_ge_60min": 9,
+          "trips_delay_ge_60min_ratio_pct": 0.4223,
+          "average_max_delay_seconds": 96.7,
+          "maximum_delay_seconds": 12000,
+          "active_service_alerts": 556,
           "qualified_operational_alerts": 0,
-          "canceled_statistical_z_score": 1.2766,
-          "delay_30_statistical_z_score": 1.6334,
-          "delay_60_statistical_z_score": 1.6617
+          "canceled_statistical_z_score": 2.0783,
+          "delay_30_statistical_z_score": -0.5737,
+          "delay_60_statistical_z_score": 0.0911
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 18,
+          "comparable_slot": "evening",
+          "comparable_count": 19,
           "canceled_ratio_pct": {
-            "count": 18,
-            "median": 1.1724,
-            "mean": 1.4724,
-            "stdev": 0.9509,
-            "p90": 2.8337,
-            "p95": 3.0263
+            "count": 19,
+            "median": 1.4571,
+            "mean": 1.4693,
+            "stdev": 0.6026,
+            "p90": 2.1071,
+            "p95": 2.6874
           },
           "delay_ge_30min_ratio_pct": {
-            "count": 18,
-            "median": 1.257,
-            "mean": 1.3408,
-            "stdev": 0.5755,
-            "p90": 2.1747,
-            "p95": 2.3335
+            "count": 19,
+            "median": 1.3451,
+            "mean": 1.4088,
+            "stdev": 0.4107,
+            "p90": 2.1035,
+            "p95": 2.1348
           },
           "delay_ge_60min_ratio_pct": {
-            "count": 18,
-            "median": 0.2802,
-            "mean": 0.3806,
-            "stdev": 0.381,
-            "p90": 0.8076,
-            "p95": 1.194
+            "count": 19,
+            "median": 0.3873,
+            "mean": 0.4015,
+            "stdev": 0.2283,
+            "p90": 0.6974,
+            "p95": 0.853
           }
         }
       },
@@ -471,24 +473,24 @@
         "confidence": "moyenne+",
         "rationale": "Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. La baseline routière du même créneau est en cours de constitution ; les seuils absolus restent provisoires.",
         "metrics": {
-          "collected_at": "2026-09-16T06:05:45.495308+00:00",
-          "slot": "morning",
-          "congestion_ratio_pct": 7.6611,
-          "unplanned_situations_count_context_only": 95,
+          "collected_at": "2026-09-16T15:06:20.027442+00:00",
+          "slot": "evening",
+          "congestion_ratio_pct": 4.5312,
+          "unplanned_situations_count_context_only": 121,
           "unplanned_full_closure_locations_count": 7,
-          "unplanned_capacity_restriction_locations_count": 32,
+          "unplanned_capacity_restriction_locations_count": 38,
           "departments_with_unplanned_full_closure": 5,
-          "departments_with_unplanned_capacity_restriction": 24,
+          "departments_with_unplanned_capacity_restriction": 28,
           "department_coverage_ratio_pct": 100.0,
-          "affected_departments_count": 68,
+          "affected_departments_count": 71,
           "affected_regions_count": 12,
-          "recognized_ratio_pct": 90.0411,
-          "unknown_ratio_pct": 9.9589,
+          "recognized_ratio_pct": 88.6836,
+          "unknown_ratio_pct": 11.3164,
           "congestion_signal_level": 0,
           "closure_magnitude_signal_level": 0,
           "closure_territorial_signal_level": 0,
           "closure_family_level": 0,
-          "restriction_magnitude_signal_level": 0,
+          "restriction_magnitude_signal_level": 1,
           "restriction_territorial_signal_level": 1,
           "restriction_family_level": 1,
           "congestion_statistical_z_score": null,
@@ -502,48 +504,48 @@
           "n4_automatic": false
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 7,
+          "comparable_slot": "evening",
+          "comparable_count": 8,
           "baseline_ready": false,
           "congestion_ratio_pct": {
-            "count": 7,
-            "median": 9.6008,
-            "mean": 7.5416,
-            "stdev": 5.3043,
-            "p90": 12.8866,
-            "p95": 13.4849
+            "count": 8,
+            "median": 6.7322,
+            "mean": 6.4041,
+            "stdev": 3.3218,
+            "p90": 9.6444,
+            "p95": 10.569
           },
           "unplanned_full_closure_locations_count": {
-            "count": 7,
-            "median": 10.0,
-            "mean": 8.1429,
-            "stdev": 3.3877,
-            "p90": 11.0,
-            "p95": 11.0
+            "count": 8,
+            "median": 10.5,
+            "mean": 8.875,
+            "stdev": 3.2266,
+            "p90": 11.3,
+            "p95": 11.65
           },
           "unplanned_capacity_restriction_locations_count": {
-            "count": 7,
-            "median": 30.0,
-            "mean": 31.7143,
-            "stdev": 4.7509,
-            "p90": 38.4,
-            "p95": 38.7
+            "count": 8,
+            "median": 37.5,
+            "mean": 37.125,
+            "stdev": 6.5561,
+            "p90": 44.3,
+            "p95": 44.65
           },
           "departments_with_unplanned_full_closure": {
-            "count": 7,
+            "count": 8,
             "median": 5.0,
-            "mean": 4.8571,
-            "stdev": 1.069,
-            "p90": 6.0,
-            "p95": 6.0
+            "mean": 5.25,
+            "stdev": 1.2817,
+            "p90": 6.6,
+            "p95": 7.3
           },
           "departments_with_unplanned_capacity_restriction": {
-            "count": 7,
-            "median": 23.0,
-            "mean": 23.0,
-            "stdev": 1.9149,
-            "p90": 24.6,
-            "p95": 25.8
+            "count": 8,
+            "median": 26.0,
+            "mean": 24.875,
+            "stdev": 2.4749,
+            "p90": 27.0,
+            "p95": 27.0
           }
         }
       }
@@ -552,97 +554,251 @@
   "risks_threats": {
     "schema_version": "risks-threats-0.4",
     "source_health": "OK",
-    "new_signals": [],
-    "carried_over_context": [
+    "new_signals": [
       {
-        "fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-        "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "link": "https://www.lefigaro.fr/flash-eco/tarif-agent-pres-de-60-de-grevistes-chez-edf-hors-filiales-a-la-mi-journee-annonce-la-direction-20260915",
-        "source_domain": "lefigaro.fr",
+        "fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+        "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "link": "https://actu.fr/economie/penurie-de-carburants-pres-de-10-des-stations-service-en-difficulte-d-approvisionnement-reconnait-le-gouvernement_64796667.html",
+        "source_domain": "actu.fr",
         "category": "societal",
         "category_label": "Risques sociétaux",
-        "published_at": "2026-09-15T12:56:34+00:00",
-        "qualification": "WATCH",
+        "published_at": "2026-09-16T14:04:06+00:00",
+        "qualification": "IMPACT_CANDIDATE",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
         "sectors": [
-          "nuclear"
+          "fuels"
         ],
-        "impacted_sectors": [],
-        "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-        "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+        "impacted_sectors": [
+          "fuels"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       },
       {
-        "fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
-        "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "link": "https://www.leparisien.fr/faits-divers/150-pistolets-glock-saisis-et-sept-membres-dun-reseau-turc-daltonlar-arretes-14-09-2026-B7GOEBVGCVAWHF6PAFSYT2V3YE.php",
-        "source_domain": "leparisien.fr",
-        "category": "defense_security",
-        "category_label": "Défense et sécurité",
-        "published_at": "2026-09-15T09:55:26+00:00",
-        "qualification": "CONTEXT",
+        "fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+        "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "link": "https://www.ici.fr/occitanie/herault-34/mobilisation-des-pecheurs-les-blocages-se-poursuivent-dans-l-herault-et-l-aude-3799990",
+        "source_domain": "ici.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:42:33+00:00",
+        "qualification": "WATCH",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
+        "sectors": [
+          "fuels"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+        "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "link": "https://www.lefigaro.fr/conjoncture/230-000-foyers-touches-transports-perturbes-ce-que-l-on-sait-de-la-coupure-d-electricite-qui-a-touche-paris-ce-mercredi-20260916",
+        "source_domain": "lefigaro.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:33:41+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "electricity"
+        ],
+        "impacted_sectors": [
+          "electricity"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
+        "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "link": "https://actu.fr/hauts-de-france/calais_62193/grosse-perturbation-ce-mercredi-la-circulation-des-trains-completement-interrompue-entre-boulogne-sur-mer-et-calais_64794864.html",
+        "source_domain": "actu.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:04:56+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
         "sectors": [
           "rail"
         ],
-        "impacted_sectors": [],
-        "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-        "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+        "impacted_sectors": [
+          "rail"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+        "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "link": "https://actu.fr/normandie/flamanville_50184/greve-a-flamanville-les-acces-a-la-centrale-nucleaire-perturbes_64789180.html",
+        "source_domain": "actu.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:03:30+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "ACTIVE",
+        "event_state_reason": "EXPLICIT_ACTIVE_STATE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "nuclear"
+        ],
+        "impacted_sectors": [
+          "nuclear"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       }
     ],
+    "carried_over_context": [],
     "active_situation": [
       {
-        "fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-        "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "link": "https://www.lefigaro.fr/flash-eco/tarif-agent-pres-de-60-de-grevistes-chez-edf-hors-filiales-a-la-mi-journee-annonce-la-direction-20260915",
-        "source_domain": "lefigaro.fr",
+        "fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+        "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "link": "https://actu.fr/economie/penurie-de-carburants-pres-de-10-des-stations-service-en-difficulte-d-approvisionnement-reconnait-le-gouvernement_64796667.html",
+        "source_domain": "actu.fr",
         "category": "societal",
         "category_label": "Risques sociétaux",
-        "published_at": "2026-09-15T12:56:34+00:00",
-        "qualification": "WATCH",
+        "published_at": "2026-09-16T14:04:06+00:00",
+        "qualification": "IMPACT_CANDIDATE",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
         "sectors": [
-          "nuclear"
+          "fuels"
         ],
-        "impacted_sectors": [],
-        "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-        "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+        "impacted_sectors": [
+          "fuels"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       },
       {
-        "fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
-        "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "link": "https://www.leparisien.fr/faits-divers/150-pistolets-glock-saisis-et-sept-membres-dun-reseau-turc-daltonlar-arretes-14-09-2026-B7GOEBVGCVAWHF6PAFSYT2V3YE.php",
-        "source_domain": "leparisien.fr",
-        "category": "defense_security",
-        "category_label": "Défense et sécurité",
-        "published_at": "2026-09-15T09:55:26+00:00",
-        "qualification": "CONTEXT",
+        "fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+        "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "link": "https://www.ici.fr/occitanie/herault-34/mobilisation-des-pecheurs-les-blocages-se-poursuivent-dans-l-herault-et-l-aude-3799990",
+        "source_domain": "ici.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:42:33+00:00",
+        "qualification": "WATCH",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
+        "sectors": [
+          "fuels"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+        "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "link": "https://www.lefigaro.fr/conjoncture/230-000-foyers-touches-transports-perturbes-ce-que-l-on-sait-de-la-coupure-d-electricite-qui-a-touche-paris-ce-mercredi-20260916",
+        "source_domain": "lefigaro.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:33:41+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "electricity"
+        ],
+        "impacted_sectors": [
+          "electricity"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
+        "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "link": "https://actu.fr/hauts-de-france/calais_62193/grosse-perturbation-ce-mercredi-la-circulation-des-trains-completement-interrompue-entre-boulogne-sur-mer-et-calais_64794864.html",
+        "source_domain": "actu.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:04:56+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
         "sectors": [
           "rail"
         ],
-        "impacted_sectors": [],
-        "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-        "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+        "impacted_sectors": [
+          "rail"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+        "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "link": "https://actu.fr/normandie/flamanville_50184/greve-a-flamanville-les-acces-a-la-centrale-nucleaire-perturbes_64789180.html",
+        "source_domain": "actu.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:03:30+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "ACTIVE",
+        "event_state_reason": "EXPLICIT_ACTIVE_STATE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "nuclear"
+        ],
+        "impacted_sectors": [
+          "nuclear"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -651,45 +807,120 @@
     ],
     "resolved_since_collection": [],
     "counts": {
-      "retained": 2,
-      "new": 0,
-      "carried_over": 2,
-      "active_situation": 2,
+      "retained": 5,
+      "new": 5,
+      "carried_over": 0,
+      "active_situation": 5,
       "resolved": 0,
-      "impact_candidates": 0,
+      "impact_candidates": 4,
       "watch": 1,
-      "context": 1
+      "context": 0
     }
   },
   "cross_sector_view": {
-    "concomitant_signals": [],
-    "contextual_signals": [
+    "concomitant_signals": [
       {
-        "sector": "nuclear",
-        "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "risk_title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "risk_fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-        "operational_level": "N0",
-        "operational_label": "Rien à signaler",
-        "operational_rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
+        "sector": "fuels",
+        "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "risk_title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "risk_fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+        "operational_level": "N2",
+        "operational_label": "Surveillance",
+        "operational_rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "risk_signal": {
-          "fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-          "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-          "link": "https://www.lefigaro.fr/flash-eco/tarif-agent-pres-de-60-de-grevistes-chez-edf-hors-filiales-a-la-mi-journee-annonce-la-direction-20260915",
-          "source_domain": "lefigaro.fr",
+          "fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+          "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+          "link": "https://actu.fr/economie/penurie-de-carburants-pres-de-10-des-stations-service-en-difficulte-d-approvisionnement-reconnait-le-gouvernement_64796667.html",
+          "source_domain": "actu.fr",
           "category": "societal",
           "category_label": "Risques sociétaux",
-          "published_at": "2026-09-15T12:56:34+00:00",
+          "published_at": "2026-09-16T14:04:06+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "UNKNOWN",
+          "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "lifecycle": "NEW",
+          "sectors": [
+            "fuels"
+          ],
+          "impacted_sectors": [
+            "fuels"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONCOMITANT",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "sector": "fuels",
+        "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "risk_title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "risk_fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+        "operational_level": "N2",
+        "operational_label": "Surveillance",
+        "operational_rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
+        "risk_signal": {
+          "fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+          "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+          "link": "https://www.ici.fr/occitanie/herault-34/mobilisation-des-pecheurs-les-blocages-se-poursuivent-dans-l-herault-et-l-aude-3799990",
+          "source_domain": "ici.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:42:33+00:00",
           "qualification": "WATCH",
           "event_state": "UNKNOWN",
           "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
+          "lifecycle": "NEW",
           "sectors": [
-            "nuclear"
+            "fuels"
           ],
           "impacted_sectors": [],
-          "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-          "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONCOMITANT",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
+    "contextual_signals": [
+      {
+        "sector": "electricity",
+        "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "risk_title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "risk_fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+        "operational_level": "N0",
+        "operational_label": "Rien à signaler",
+        "operational_rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
+        "risk_signal": {
+          "fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+          "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+          "link": "https://www.lefigaro.fr/conjoncture/230-000-foyers-touches-transports-perturbes-ce-que-l-on-sait-de-la-coupure-d-electricite-qui-a-touche-paris-ce-mercredi-20260916",
+          "source_domain": "lefigaro.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:33:41+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "UNKNOWN",
+          "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
+          "lifecycle": "NEW",
+          "sectors": [
+            "electricity"
+          ],
+          "impacted_sectors": [
+            "electricity"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
@@ -701,30 +932,69 @@
       },
       {
         "sector": "rail",
-        "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "risk_title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "risk_fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
+        "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "risk_title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "risk_fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
         "operational_level": "N0",
         "operational_label": "Rien à signaler",
-        "operational_rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
+        "operational_rationale": "Les annulations ou retards présentent une anomalie statistique mais restent sous les seuils opérationnels de vigilance.",
         "risk_signal": {
-          "fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
-          "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-          "link": "https://www.leparisien.fr/faits-divers/150-pistolets-glock-saisis-et-sept-membres-dun-reseau-turc-daltonlar-arretes-14-09-2026-B7GOEBVGCVAWHF6PAFSYT2V3YE.php",
-          "source_domain": "leparisien.fr",
-          "category": "defense_security",
-          "category_label": "Défense et sécurité",
-          "published_at": "2026-09-15T09:55:26+00:00",
-          "qualification": "CONTEXT",
+          "fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
+          "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+          "link": "https://actu.fr/hauts-de-france/calais_62193/grosse-perturbation-ce-mercredi-la-circulation-des-trains-completement-interrompue-entre-boulogne-sur-mer-et-calais_64794864.html",
+          "source_domain": "actu.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:04:56+00:00",
+          "qualification": "IMPACT_CANDIDATE",
           "event_state": "UNKNOWN",
           "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
+          "lifecycle": "NEW",
           "sectors": [
             "rail"
           ],
-          "impacted_sectors": [],
-          "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-          "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+          "impacted_sectors": [
+            "rail"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONTEXT_ONLY",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "sector": "nuclear",
+        "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "risk_title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "risk_fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+        "operational_level": "ND",
+        "operational_label": "Données insuffisantes",
+        "operational_rationale": "Disponibilité nucléaire non calculable.",
+        "risk_signal": {
+          "fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+          "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+          "link": "https://actu.fr/normandie/flamanville_50184/greve-a-flamanville-les-acces-a-la-centrale-nucleaire-perturbes_64789180.html",
+          "source_domain": "actu.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:03:30+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "ACTIVE",
+          "event_state_reason": "EXPLICIT_ACTIVE_STATE",
+          "lifecycle": "NEW",
+          "sectors": [
+            "nuclear"
+          ],
+          "impacted_sectors": [
+            "nuclear"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
@@ -735,8 +1005,8 @@
         "affects_n0_n4": false
       }
     ],
-    "concomitant_count": 0,
-    "contextual_count": 2,
+    "concomitant_count": 2,
+    "contextual_count": 3,
     "causality_rule": "Une concomitance temporelle ou sectorielle entre un signal de veille et une anomalie opérationnelle ne constitue pas un lien causal."
   },
   "report_sections": {
@@ -775,83 +1045,235 @@
         "rationale": "Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. La baseline routière du même créneau est en cours de constitution ; les seuils absolus restent provisoires."
       }
     ],
-    "new_risk_signals": [],
-    "inherited_risk_context": [
+    "new_risk_signals": [
       {
-        "fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-        "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "link": "https://www.lefigaro.fr/flash-eco/tarif-agent-pres-de-60-de-grevistes-chez-edf-hors-filiales-a-la-mi-journee-annonce-la-direction-20260915",
-        "source_domain": "lefigaro.fr",
+        "fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+        "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "link": "https://actu.fr/economie/penurie-de-carburants-pres-de-10-des-stations-service-en-difficulte-d-approvisionnement-reconnait-le-gouvernement_64796667.html",
+        "source_domain": "actu.fr",
         "category": "societal",
         "category_label": "Risques sociétaux",
-        "published_at": "2026-09-15T12:56:34+00:00",
-        "qualification": "WATCH",
+        "published_at": "2026-09-16T14:04:06+00:00",
+        "qualification": "IMPACT_CANDIDATE",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
         "sectors": [
-          "nuclear"
+          "fuels"
         ],
-        "impacted_sectors": [],
-        "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-        "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+        "impacted_sectors": [
+          "fuels"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       },
       {
-        "fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
-        "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "link": "https://www.leparisien.fr/faits-divers/150-pistolets-glock-saisis-et-sept-membres-dun-reseau-turc-daltonlar-arretes-14-09-2026-B7GOEBVGCVAWHF6PAFSYT2V3YE.php",
-        "source_domain": "leparisien.fr",
-        "category": "defense_security",
-        "category_label": "Défense et sécurité",
-        "published_at": "2026-09-15T09:55:26+00:00",
-        "qualification": "CONTEXT",
+        "fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+        "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "link": "https://www.ici.fr/occitanie/herault-34/mobilisation-des-pecheurs-les-blocages-se-poursuivent-dans-l-herault-et-l-aude-3799990",
+        "source_domain": "ici.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:42:33+00:00",
+        "qualification": "WATCH",
         "event_state": "UNKNOWN",
         "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
+        "lifecycle": "NEW",
+        "sectors": [
+          "fuels"
+        ],
+        "impacted_sectors": [],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+        "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "link": "https://www.lefigaro.fr/conjoncture/230-000-foyers-touches-transports-perturbes-ce-que-l-on-sait-de-la-coupure-d-electricite-qui-a-touche-paris-ce-mercredi-20260916",
+        "source_domain": "lefigaro.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:33:41+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "electricity"
+        ],
+        "impacted_sectors": [
+          "electricity"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
+        "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "link": "https://actu.fr/hauts-de-france/calais_62193/grosse-perturbation-ce-mercredi-la-circulation-des-trains-completement-interrompue-entre-boulogne-sur-mer-et-calais_64794864.html",
+        "source_domain": "actu.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:04:56+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "lifecycle": "NEW",
         "sectors": [
           "rail"
         ],
-        "impacted_sectors": [],
-        "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-        "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+        "impacted_sectors": [
+          "rail"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "carry_forward": true,
+        "operational_confirmation": "NOT_CHECKED",
+        "causality": "NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+        "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "link": "https://actu.fr/normandie/flamanville_50184/greve-a-flamanville-les-acces-a-la-centrale-nucleaire-perturbes_64789180.html",
+        "source_domain": "actu.fr",
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "published_at": "2026-09-16T13:03:30+00:00",
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "ACTIVE",
+        "event_state_reason": "EXPLICIT_ACTIVE_STATE",
+        "lifecycle": "NEW",
+        "sectors": [
+          "nuclear"
+        ],
+        "impacted_sectors": [
+          "nuclear"
+        ],
+        "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+        "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       }
     ],
-    "concomitant_signals": [],
-    "contextual_infrastructure_signals": [
+    "inherited_risk_context": [],
+    "concomitant_signals": [
       {
-        "sector": "nuclear",
-        "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "risk_title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-        "risk_fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-        "operational_level": "N0",
-        "operational_label": "Rien à signaler",
-        "operational_rationale": "Disponibilité et événements fortuits compatibles avec un fonctionnement national nominal.",
+        "sector": "fuels",
+        "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "risk_title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+        "risk_fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+        "operational_level": "N2",
+        "operational_label": "Surveillance",
+        "operational_rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "risk_signal": {
-          "fingerprint": "3d30cc1ea86c43ef878f213958e4027d40d2518c2487dfe26cdccfdf68255163",
-          "title": "Près de 60% de grévistes chez EDF hors filiales à la mi-journée ce mardi, selon la direction",
-          "link": "https://www.lefigaro.fr/flash-eco/tarif-agent-pres-de-60-de-grevistes-chez-edf-hors-filiales-a-la-mi-journee-annonce-la-direction-20260915",
-          "source_domain": "lefigaro.fr",
+          "fingerprint": "bb24a186e71860103ce50c2b1780cc152b56e0ed1006c6c9afb44c6d71544373",
+          "title": "Pénurie de carburants : près de 10 % des stations-service en \"difficulté d'approvisionnement\", reconnaît le gouvernement",
+          "link": "https://actu.fr/economie/penurie-de-carburants-pres-de-10-des-stations-service-en-difficulte-d-approvisionnement-reconnait-le-gouvernement_64796667.html",
+          "source_domain": "actu.fr",
           "category": "societal",
           "category_label": "Risques sociétaux",
-          "published_at": "2026-09-15T12:56:34+00:00",
+          "published_at": "2026-09-16T14:04:06+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "UNKNOWN",
+          "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "lifecycle": "NEW",
+          "sectors": [
+            "fuels"
+          ],
+          "impacted_sectors": [
+            "fuels"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONCOMITANT",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "sector": "fuels",
+        "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "risk_title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+        "risk_fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+        "operational_level": "N2",
+        "operational_label": "Surveillance",
+        "operational_rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
+        "risk_signal": {
+          "fingerprint": "80b3c48d312801217e8c97feb259e23d33ab2297752ec079d05574c77ef2dfb8",
+          "title": "Mobilisation des pêcheurs : l'accès au port de Port-la-Nouvelle dans l'Aude toujours bloqué",
+          "link": "https://www.ici.fr/occitanie/herault-34/mobilisation-des-pecheurs-les-blocages-se-poursuivent-dans-l-herault-et-l-aude-3799990",
+          "source_domain": "ici.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:42:33+00:00",
           "qualification": "WATCH",
           "event_state": "UNKNOWN",
           "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
+          "lifecycle": "NEW",
           "sectors": [
-            "nuclear"
+            "fuels"
           ],
           "impacted_sectors": [],
-          "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-          "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONCOMITANT",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      }
+    ],
+    "contextual_infrastructure_signals": [
+      {
+        "sector": "electricity",
+        "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "risk_title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+        "risk_fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+        "operational_level": "N0",
+        "operational_label": "Rien à signaler",
+        "operational_rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
+        "risk_signal": {
+          "fingerprint": "7c184cdff37f58fe9bca89dd55004e92ccf89e5226b59679677ab688ac1fc798",
+          "title": "230.000 foyers touchés, transports perturbés : ce que l’on sait de la coupure d’électricité qui a touché Paris ce mercredi",
+          "link": "https://www.lefigaro.fr/conjoncture/230-000-foyers-touches-transports-perturbes-ce-que-l-on-sait-de-la-coupure-d-electricite-qui-a-touche-paris-ce-mercredi-20260916",
+          "source_domain": "lefigaro.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:33:41+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "UNKNOWN",
+          "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
+          "lifecycle": "NEW",
+          "sectors": [
+            "electricity"
+          ],
+          "impacted_sectors": [
+            "electricity"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
@@ -863,30 +1285,69 @@
       },
       {
         "sector": "rail",
-        "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "risk_title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-        "risk_fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
+        "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "risk_title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+        "risk_fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
         "operational_level": "N0",
         "operational_label": "Rien à signaler",
-        "operational_rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
+        "operational_rationale": "Les annulations ou retards présentent une anomalie statistique mais restent sous les seuils opérationnels de vigilance.",
         "risk_signal": {
-          "fingerprint": "8c438754fd66e8f4cbe5f16362d623a07308efa0de31cda6e823b465c7428e84",
-          "title": "150 pistolets Glock saisis et sept membres d’un réseau turc, « Daltonlar », arrêtés",
-          "link": "https://www.leparisien.fr/faits-divers/150-pistolets-glock-saisis-et-sept-membres-dun-reseau-turc-daltonlar-arretes-14-09-2026-B7GOEBVGCVAWHF6PAFSYT2V3YE.php",
-          "source_domain": "leparisien.fr",
-          "category": "defense_security",
-          "category_label": "Défense et sécurité",
-          "published_at": "2026-09-15T09:55:26+00:00",
-          "qualification": "CONTEXT",
+          "fingerprint": "37ecf3a6d029823f3f36aa69c4caad775f4722c8cabbba442bba808ea2670133",
+          "title": "Grosse perturbation ce mercredi : la circulation des trains complètement interrompue entre Boulogne-sur-Mer et Calais",
+          "link": "https://actu.fr/hauts-de-france/calais_62193/grosse-perturbation-ce-mercredi-la-circulation-des-trains-completement-interrompue-entre-boulogne-sur-mer-et-calais_64794864.html",
+          "source_domain": "actu.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:04:56+00:00",
+          "qualification": "IMPACT_CANDIDATE",
           "event_state": "UNKNOWN",
           "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
+          "lifecycle": "NEW",
           "sectors": [
             "rail"
           ],
-          "impacted_sectors": [],
-          "first_seen_at": "2026-09-15T15:06:16.150903+00:00",
-          "last_seen_at": "2026-09-16T06:06:08.436415+00:00",
+          "impacted_sectors": [
+            "rail"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "carry_forward": true,
+          "operational_confirmation": "NOT_CHECKED",
+          "causality": "NOT_ESTABLISHED",
+          "affects_n0_n4": false
+        },
+        "relationship": "CONTEXT_ONLY",
+        "causality": "CAUSALITY_NOT_ESTABLISHED",
+        "affects_n0_n4": false
+      },
+      {
+        "sector": "nuclear",
+        "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "risk_title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+        "risk_fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+        "operational_level": "ND",
+        "operational_label": "Données insuffisantes",
+        "operational_rationale": "Disponibilité nucléaire non calculable.",
+        "risk_signal": {
+          "fingerprint": "efa4027334546c2c71b704e14a62747200925a670afdcbe41d372e6d3e6ca138",
+          "title": "Grève à Flamanville : les accès à la centrale nucléaire perturbés",
+          "link": "https://actu.fr/normandie/flamanville_50184/greve-a-flamanville-les-acces-a-la-centrale-nucleaire-perturbes_64789180.html",
+          "source_domain": "actu.fr",
+          "category": "societal",
+          "category_label": "Risques sociétaux",
+          "published_at": "2026-09-16T13:03:30+00:00",
+          "qualification": "IMPACT_CANDIDATE",
+          "event_state": "ACTIVE",
+          "event_state_reason": "EXPLICIT_ACTIVE_STATE",
+          "lifecycle": "NEW",
+          "sectors": [
+            "nuclear"
+          ],
+          "impacted_sectors": [
+            "nuclear"
+          ],
+          "first_seen_at": "2026-09-16T15:06:49.437297+00:00",
+          "last_seen_at": "2026-09-16T15:06:49.437297+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
