@@ -335,15 +335,92 @@ def current_metrics(latest: dict[str, Any], sid: str) -> dict[str, Any]:
         }
     if sid == "nuclear":
         n = latest.get("nuclear") or {}
+
+        # Compatibilité ascendante : l'ancien champ est conservé comme
+        # alias du volume documentaire de publications REMIT fortuites.
+        unplanned_publications = n.get(
+            "unplanned_publications_count"
+        )
+        if unplanned_publications is None:
+            unplanned_publications = n.get(
+                "unplanned_current_events"
+            )
+
+        # Corroboration indépendante par RTE éCO2mix. Une production
+        # inférieure à la capacité disponible peut relever de la modulation
+        # du parc et ne constitue donc jamais, seule, une indisponibilité.
+        electricity = latest.get("electricity") or {}
+        production_by_fuel = (
+            electricity.get("production_by_fuel_mw")
+            or {}
+        )
+        nuclear_production_mw = production_by_fuel.get(
+            "nucleaire"
+        )
+
+        available_capacity_mw = n.get(
+            "fleet_available_capacity_mw"
+        )
+        production_to_available_ratio_pct = None
+
+        if (
+            isinstance(nuclear_production_mw, (int, float))
+            and isinstance(available_capacity_mw, (int, float))
+            and available_capacity_mw > 0
+        ):
+            production_to_available_ratio_pct = round(
+                100
+                * float(nuclear_production_mw)
+                / float(available_capacity_mw),
+                4,
+            )
+
         return {
             "fleet_max_capacity_mw": n.get("fleet_max_capacity_mw"),
-            "fleet_available_capacity_mw": n.get("fleet_available_capacity_mw"),
+            "fleet_available_capacity_mw": available_capacity_mw,
             "fleet_unavailable_capacity_mw": n.get("fleet_unavailable_capacity_mw"),
             "fleet_availability_pct": n.get("fleet_availability_pct"),
+
+            # Publications planifiées : contexte opérationnel.
             "planned_current_events": n.get("planned_current_events"),
-            "unplanned_current_events": n.get("unplanned_current_events"),
+
+            # Signal documentaire REMIT.
+            "unplanned_current_events": unplanned_publications,
+            "unplanned_publications_count": unplanned_publications,
+
+            # Impact physique fortuit consolidé.
+            "unplanned_unique_assets_count": n.get(
+                "unplanned_unique_assets_count"
+            ),
+            "unplanned_impactful_assets_count": n.get(
+                "unplanned_impactful_assets_count"
+            ),
+            "unplanned_unavailable_capacity_mw": n.get(
+                "unplanned_unavailable_capacity_mw"
+            ),
+            "unplanned_unavailable_capacity_ratio_pct": n.get(
+                "unplanned_unavailable_capacity_ratio_pct"
+            ),
+
             "chronic_current_events": n.get("chronic_current_events"),
-            "current_operational_unavailability_events": n.get("current_operational_unavailability_events"),
+            "current_operational_unavailability_events": n.get(
+                "current_operational_unavailability_events"
+            ),
+
+            # Corroboration RTE / REMIT.
+            "nuclear_production_mw": nuclear_production_mw,
+            "production_to_available_capacity_ratio_pct": (
+                production_to_available_ratio_pct
+            ),
+
+            "interpretation_guards": {
+                "remit_publication_count_is_incident_count": False,
+                "remit_publication_count_can_alone_exceed_n1": False,
+                "physical_availability_is_primary": True,
+                "unplanned_physical_metrics_calibrating": True,
+                "rte_generation_proves_unavailability": False,
+                "automatic_causality": False,
+            },
         }
     if sid == "gas":
         g = latest.get("gas") or {}
@@ -515,6 +592,15 @@ def build_fact_packet(sources: dict[str, Any], origins: dict[str, str], cycle: s
             "llm_role": "qualitative analysis only",
             "no_frontend_or_llm_scoring": True,
             "no_automatic_causality": True,
+            "nuclear": {
+                "physical_availability_is_primary": True,
+                "remit_unplanned_publications_are_documentary": True,
+                "remit_publication_volume_can_alone_exceed_n1": False,
+                "unplanned_physical_metrics_are_separate": True,
+                "unplanned_physical_metrics_thresholds_calibrating": True,
+                "rte_nuclear_generation_is_corroboration_only": True,
+                "rte_generation_proves_unavailability": False,
+            },
         },
         "national": dashboard.get("national") or {},
         "driver": dashboard.get("driver") or {},
@@ -647,9 +733,25 @@ def compact_current_for_document(sid: str, current: dict[str, Any]) -> dict[str,
             "fleet_unavailable_capacity_mw",
             "fleet_availability_pct",
             "planned_current_events",
+
+            # Compatibilité + signal documentaire REMIT.
             "unplanned_current_events",
+            "unplanned_publications_count",
+
+            # Impact physique fortuit.
+            "unplanned_unique_assets_count",
+            "unplanned_impactful_assets_count",
+            "unplanned_unavailable_capacity_mw",
+            "unplanned_unavailable_capacity_ratio_pct",
+
             "chronic_current_events",
             "current_operational_unavailability_events",
+
+            # Corroboration RTE / REMIT.
+            "nuclear_production_mw",
+            "production_to_available_capacity_ratio_pct",
+
+            "interpretation_guards",
         )
         return {key: current.get(key) for key in keys}
 
@@ -924,9 +1026,42 @@ def _sector_metric_line(sid: str, current: dict[str, Any]) -> str:
         )
 
     if sid == "nuclear":
+        publications = current.get(
+            "unplanned_publications_count"
+        )
+        if publications is None:
+            publications = current.get(
+                "unplanned_current_events"
+            )
+
+        physical_loss = current.get(
+            "unplanned_unavailable_capacity_mw"
+        )
+        physical_ratio = current.get(
+            "unplanned_unavailable_capacity_ratio_pct"
+        )
+
+        physical_text = ""
+        if physical_loss is not None:
+            physical_text = (
+                f" · fortuit physique {_fmt_gw(physical_loss)}"
+            )
+            if physical_ratio is not None:
+                physical_text += (
+                    f" ({_fmt_pct(physical_ratio)})"
+                )
+
+        remit_text = ""
+        if publications is not None:
+            remit_text = (
+                f" · {_fmt_int(publications)} publication(s) REMIT"
+            )
+
         return (
             f"Disponibilité {_fmt_pct(current.get('fleet_availability_pct'))} · "
             f"{_fmt_gw(current.get('fleet_available_capacity_mw'))} disponibles"
+            f"{physical_text}"
+            f"{remit_text}"
         )
 
     return ""
