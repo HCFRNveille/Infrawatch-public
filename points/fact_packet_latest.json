@@ -1,7 +1,7 @@
 {
   "schema_version": "point-national-facts-1.1",
-  "cycle": "08H00",
-  "generated_at": "2026-09-23T06:06:54.772046+00:00",
+  "cycle": "17H00",
+  "generated_at": "2026-09-23T15:06:58.958536+00:00",
   "source_origins": {
     "dashboard.json": "local",
     "latest.json": "local",
@@ -14,27 +14,36 @@
     "scoring_authority": "InfraWatch backend only",
     "llm_role": "qualitative analysis only",
     "no_frontend_or_llm_scoring": true,
-    "no_automatic_causality": true
+    "no_automatic_causality": true,
+    "nuclear": {
+      "physical_availability_is_primary": true,
+      "remit_unplanned_publications_are_documentary": true,
+      "remit_publication_volume_can_alone_exceed_n1": false,
+      "unplanned_physical_metrics_are_separate": true,
+      "unplanned_physical_metrics_thresholds_calibrating": true,
+      "rte_nuclear_generation_is_corroboration_only": true,
+      "rte_generation_proves_unavailability": false
+    }
   },
   "national": {
-    "level": "N3",
-    "label": "DÉGRADÉ",
+    "level": "N2",
+    "label": "SURVEILLANCE",
     "confidence": "multi-source",
     "trend": "INDÉTERMINÉE",
     "trend_detail": "Comparaison historique insuffisante"
   },
   "driver": {
-    "sector": "NUCLÉAIRE",
-    "sector_id": "nuclear",
-    "metric": "62,34 %",
-    "numerator": 39271,
-    "denominator": 62990,
-    "delta": 0.0
+    "sector": "CARBURANTS",
+    "sector_id": "fuel",
+    "metric": "10,31 %",
+    "numerator": 1000,
+    "denominator": 9703,
+    "delta": -1.81
   },
   "source_health": {
     "dashboard_snapshot": {
-      "generated_at": "2026-09-23T06:06:54.772046+00:00",
-      "age_minutes_at_generation": 16,
+      "generated_at": "2026-09-23T15:06:58.958536+00:00",
+      "age_minutes_at_generation": 10,
       "meaning": "Âge du dashboard.json utilisé pour construire ce point. Ce n'est pas une mesure de fraîcheur individuelle des sources."
     },
     "backend_source_health": {
@@ -52,98 +61,58 @@
       "label": "Électricité",
       "official_level": "N0",
       "backend_trend": "up",
-      "backend_metric": "43,66 GW",
-      "backend_detail": "écart prévision 1,27 %",
+      "backend_metric": "46,62 GW",
+      "backend_detail": "écart prévision 2,18 %",
       "current": {
-        "consumption_mw": 43656.0,
-        "forecast_j_mw": 43100.0,
-        "forecast_j1_mw": 43050.0,
-        "forecast_error_pct": 1.274,
-        "physical_exchanges_mw": -9616.0,
-        "exchange_ratio_pct": -22.027,
-        "production_total_mw": 52920.0,
+        "consumption_mw": 46616.0,
+        "forecast_j_mw": 45600.0,
+        "forecast_j1_mw": 45200.0,
+        "forecast_error_pct": 2.18,
+        "physical_exchanges_mw": -9714.0,
+        "exchange_ratio_pct": -20.838,
+        "production_total_mw": 58324.0,
         "production_by_fuel_mw": {
-          "nucleaire": 38544.0,
-          "gaz": 3853.0,
-          "fioul": 37.0,
+          "nucleaire": 36587.0,
+          "gaz": 704.0,
+          "fioul": 35.0,
           "charbon": 0.0,
-          "eolien": 2018.0,
-          "solaire": 274.0,
-          "hydraulique": 7197.0,
-          "bioenergies": 997.0
+          "eolien": 1883.0,
+          "solaire": 14631.0,
+          "hydraulique": 3477.0,
+          "bioenergies": 1007.0
         }
       },
       "history_7d": [
         {
           "label": "17/09",
-          "value": 1.198
+          "value": 3.624
         },
         {
           "label": "18/09",
-          "value": 0.39
+          "value": 0.468
         },
         {
           "label": "19/09",
-          "value": 1.095
+          "value": 0.005
         },
         {
           "label": "20/09",
-          "value": 0.082
+          "value": 3.125
         },
         {
           "label": "21/09",
-          "value": 0.28
+          "value": 0.964
         },
         {
           "label": "22/09",
-          "value": 0.324
-        },
-        {
-          "label": "23/09",
-          "value": 1.274
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": 0.044
-        },
-        {
-          "label": "22/09 10:06",
-          "value": 0.007
-        },
-        {
-          "label": "22/09 11:06",
-          "value": 0.295
-        },
-        {
-          "label": "22/09 12:06",
-          "value": 0.342
-        },
-        {
-          "label": "22/09 13:06",
-          "value": 0.429
-        },
-        {
-          "label": "22/09 14:06",
-          "value": 0.417
-        },
-        {
-          "label": "22/09 15:06",
-          "value": 1.868
-        },
-        {
-          "label": "22/09 16:06",
-          "value": 0.472
-        },
-        {
-          "label": "22/09 17:06",
           "value": 0.587
         },
         {
-          "label": "22/09 18:06",
-          "value": 0.459
-        },
+          "label": "23/09",
+          "value": 2.18
+        }
+      ],
+      "history_24h": [
         {
           "label": "22/09 19:06",
           "value": 0.49
@@ -199,12 +168,52 @@
         {
           "label": "23/09 08:06",
           "value": 1.274
+        },
+        {
+          "label": "23/09 09:06",
+          "value": 0.712
+        },
+        {
+          "label": "23/09 10:06",
+          "value": 0.281
+        },
+        {
+          "label": "23/09 10:24",
+          "value": 1.347
+        },
+        {
+          "label": "23/09 11:06",
+          "value": 0.002
+        },
+        {
+          "label": "23/09 12:06",
+          "value": 0.686
+        },
+        {
+          "label": "23/09 13:06",
+          "value": 1.066
+        },
+        {
+          "label": "23/09 14:06",
+          "value": 1.274
+        },
+        {
+          "label": "23/09 15:06",
+          "value": 0.088
+        },
+        {
+          "label": "23/09 16:06",
+          "value": 1.299
+        },
+        {
+          "label": "23/09 17:06",
+          "value": 2.18
         }
       ]
     },
     "nuclear": {
       "label": "Nucléaire",
-      "official_level": "N3",
+      "official_level": "N0",
       "backend_trend": "stable",
       "backend_metric": "39,27 GW",
       "backend_detail": "62,34 % du parc",
@@ -215,17 +224,32 @@
         "fleet_availability_pct": 62.34,
         "planned_current_events": 54,
         "unplanned_current_events": 24,
+        "unplanned_publications_count": 24,
+        "unplanned_unique_assets_count": 17,
+        "unplanned_impactful_assets_count": 6,
+        "unplanned_unavailable_capacity_mw": 2075.0,
+        "unplanned_unavailable_capacity_ratio_pct": 3.29,
         "chronic_current_events": 1010,
-        "current_operational_unavailability_events": 78
+        "current_operational_unavailability_events": 78,
+        "nuclear_production_mw": 36587.0,
+        "production_to_available_capacity_ratio_pct": 93.1654,
+        "interpretation_guards": {
+          "remit_publication_count_is_incident_count": false,
+          "remit_publication_count_can_alone_exceed_n1": false,
+          "physical_availability_is_primary": true,
+          "unplanned_physical_metrics_calibrating": true,
+          "rte_generation_proves_unavailability": false,
+          "automatic_causality": false
+        }
       },
       "history_7d": [
         {
           "label": "17/09",
-          "value": 62.88
+          "value": null
         },
         {
           "label": "18/09",
-          "value": 64.59
+          "value": 65.85
         },
         {
           "label": "19/09",
@@ -233,7 +257,7 @@
         },
         {
           "label": "20/09",
-          "value": 62.34
+          "value": 85.24
         },
         {
           "label": "21/09",
@@ -249,46 +273,6 @@
         }
       ],
       "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 10:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 11:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 12:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 13:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 14:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 15:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 16:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 17:06",
-          "value": 62.34
-        },
-        {
-          "label": "22/09 18:06",
-          "value": 62.34
-        },
         {
           "label": "22/09 19:06",
           "value": 62.34
@@ -344,25 +328,78 @@
         {
           "label": "23/09 08:06",
           "value": 62.34
+        },
+        {
+          "label": "23/09 09:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 10:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 10:24",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 11:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 12:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 13:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 14:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 15:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 16:06",
+          "value": 62.34
+        },
+        {
+          "label": "23/09 17:06",
+          "value": 62.34
         }
       ]
     },
     "gas": {
       "label": "Gaz",
-      "official_level": "N0",
+      "official_level": "N1",
       "backend_trend": "unknown",
-      "backend_metric": "10/10 vertes",
-      "backend_detail": "Smart NaTran GREEN",
+      "backend_metric": "9/10 vertes",
+      "backend_detail": "Smart NaTran ORANGE",
       "current": {
-        "operational_status": "GREEN",
+        "operational_status": "ORANGE",
         "data_quality": "OK",
         "limits_count": 10,
-        "green_limits_count": 10,
-        "orange_limits_count": 0,
+        "green_limits_count": 9,
+        "orange_limits_count": 1,
         "red_limits_count": 0,
         "violet_limits_count": 0,
         "unknown_limits_count": 0,
-        "alerts": [],
+        "alerts": [
+          {
+            "limit": "NS4",
+            "vigilance": "ORANGE",
+            "vigilance_rgb": "FFFF9933",
+            "detection_method": "validated_color",
+            "application_side": "Aval",
+            "small_impact_works_gwh_25c": 0,
+            "maintenance": "Non",
+            "interruptible_uioli_sales_stop": "Non",
+            "localized_spread": "Non",
+            "mutualized_restriction": "Non"
+          }
+        ],
         "limits": [
           {
             "limit": "NS1",
@@ -378,7 +415,7 @@
           },
           {
             "limit": "NS4",
-            "vigilance": "GREEN"
+            "vigilance": "ORANGE"
           },
           {
             "limit": "EO2",
@@ -415,15 +452,15 @@
       "history_7d": [
         {
           "label": "17/09",
-          "value": "GREEN"
-        },
-        {
-          "label": "18/09",
           "value": "ORANGE"
         },
         {
+          "label": "18/09",
+          "value": "RED"
+        },
+        {
           "label": "19/09",
-          "value": "GREEN"
+          "value": "ORANGE"
         },
         {
           "label": "20/09",
@@ -439,50 +476,10 @@
         },
         {
           "label": "23/09",
-          "value": "GREEN"
+          "value": "ORANGE"
         }
       ],
       "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 10:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 11:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 12:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 13:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 14:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 15:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 16:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 17:06",
-          "value": "GREEN"
-        },
-        {
-          "label": "22/09 18:06",
-          "value": "GREEN"
-        },
         {
           "label": "22/09 19:06",
           "value": "GREEN"
@@ -538,6 +535,46 @@
         {
           "label": "23/09 08:06",
           "value": "GREEN"
+        },
+        {
+          "label": "23/09 09:06",
+          "value": "GREEN"
+        },
+        {
+          "label": "23/09 10:06",
+          "value": "GREEN"
+        },
+        {
+          "label": "23/09 10:24",
+          "value": "GREEN"
+        },
+        {
+          "label": "23/09 11:06",
+          "value": "GREEN"
+        },
+        {
+          "label": "23/09 12:06",
+          "value": "GREEN"
+        },
+        {
+          "label": "23/09 13:06",
+          "value": "ORANGE"
+        },
+        {
+          "label": "23/09 14:06",
+          "value": "GREEN"
+        },
+        {
+          "label": "23/09 15:06",
+          "value": "ORANGE"
+        },
+        {
+          "label": "23/09 16:06",
+          "value": "ORANGE"
+        },
+        {
+          "label": "23/09 17:06",
+          "value": "ORANGE"
         }
       ]
     },
@@ -545,86 +582,46 @@
       "label": "Carburants",
       "official_level": "N2",
       "backend_trend": "down",
-      "backend_metric": "11,40 %",
-      "backend_detail": "1108 stations",
+      "backend_metric": "10,31 %",
+      "backend_detail": "1000 stations",
       "current": {
-        "eligible_stations": 9719,
-        "stations_with_any_shortage": 1108,
-        "national_shortage_ratio_pct": 11.4003,
-        "departments_with_shortage": 94,
+        "eligible_stations": 9703,
+        "stations_with_any_shortage": 1000,
+        "national_shortage_ratio_pct": 10.3061,
+        "departments_with_shortage": 93,
         "top_departments": []
       },
       "history_7d": [
         {
           "label": "17/09",
-          "value": 9.2342
+          "value": 9.8288
         },
         {
           "label": "18/09",
-          "value": 10.6002
+          "value": 11.094
         },
         {
           "label": "19/09",
-          "value": 11.6749
+          "value": 12.622
         },
         {
           "label": "20/09",
-          "value": 14.4101
+          "value": 16.5967
         },
         {
           "label": "21/09",
-          "value": 15.9856
+          "value": 14.0422
         },
         {
           "label": "22/09",
-          "value": 13.9406
-        },
-        {
-          "label": "23/09",
-          "value": 11.4003
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": 13.8349
-        },
-        {
-          "label": "22/09 10:06",
-          "value": 13.1473
-        },
-        {
-          "label": "22/09 11:06",
-          "value": 12.8052
-        },
-        {
-          "label": "22/09 12:06",
-          "value": 12.7023
-        },
-        {
-          "label": "22/09 13:06",
-          "value": 12.6907
-        },
-        {
-          "label": "22/09 14:06",
-          "value": 12.862
-        },
-        {
-          "label": "22/09 15:06",
-          "value": 12.7901
-        },
-        {
-          "label": "22/09 16:06",
-          "value": 11.842
-        },
-        {
-          "label": "22/09 17:06",
           "value": 12.1124
         },
         {
-          "label": "22/09 18:06",
-          "value": 11.7172
-        },
+          "label": "23/09",
+          "value": 10.3061
+        }
+      ],
+      "history_24h": [
         {
           "label": "22/09 19:06",
           "value": 11.8609
@@ -680,6 +677,46 @@
         {
           "label": "23/09 08:06",
           "value": 11.4003
+        },
+        {
+          "label": "23/09 09:06",
+          "value": 12.0029
+        },
+        {
+          "label": "23/09 10:06",
+          "value": 10.9303
+        },
+        {
+          "label": "23/09 10:24",
+          "value": 11.198
+        },
+        {
+          "label": "23/09 11:06",
+          "value": 10.51
+        },
+        {
+          "label": "23/09 12:06",
+          "value": 10.3587
+        },
+        {
+          "label": "23/09 13:06",
+          "value": 10.3658
+        },
+        {
+          "label": "23/09 14:06",
+          "value": 10.7014
+        },
+        {
+          "label": "23/09 15:06",
+          "value": 10.1104
+        },
+        {
+          "label": "23/09 16:06",
+          "value": 9.9794
+        },
+        {
+          "label": "23/09 17:06",
+          "value": 10.3061
         }
       ]
     },
@@ -687,12 +724,12 @@
       "label": "Télécommunications",
       "official_level": "N1",
       "backend_trend": "up",
-      "backend_metric": "1,21 %",
-      "backend_detail": "12 clusters",
+      "backend_metric": "1,30 %",
+      "backend_detail": "10 clusters",
       "current": {
-        "national_down_ratio_pct": 1.21,
-        "unique_operator_sites_down": 1503,
-        "four_operator_clusters": 12,
+        "national_down_ratio_pct": 1.305,
+        "unique_operator_sites_down": 1621,
+        "four_operator_clusters": 10,
         "top_departments": [
           {
             "operator_code": "orange",
@@ -702,11 +739,18 @@
             "down_ratio_pct": 46.0526
           },
           {
+            "operator_code": "free",
+            "dept_code": "60",
+            "sites_down": 57,
+            "active_sites": 369.0,
+            "down_ratio_pct": 15.4472
+          },
+          {
             "operator_code": "sfr",
-            "dept_code": "66",
-            "sites_down": 32,
-            "active_sites": 274.0,
-            "down_ratio_pct": 11.6788
+            "dept_code": "23",
+            "sites_down": 19,
+            "active_sites": 151.0,
+            "down_ratio_pct": 12.5828
           },
           {
             "operator_code": "orange",
@@ -779,6 +823,13 @@
             "down_ratio_pct": 4.3689
           },
           {
+            "operator_code": "bouygues",
+            "dept_code": "84",
+            "sites_down": 12,
+            "active_sites": 275.0,
+            "down_ratio_pct": 4.3636
+          },
+          {
             "operator_code": "orange",
             "dept_code": "94",
             "sites_down": 13,
@@ -793,6 +844,13 @@
             "down_ratio_pct": 4.2424
           },
           {
+            "operator_code": "sfr",
+            "dept_code": "55",
+            "sites_down": 10,
+            "active_sites": 247.0,
+            "down_ratio_pct": 4.0486
+          },
+          {
             "operator_code": "orange",
             "dept_code": "64",
             "sites_down": 14,
@@ -800,113 +858,52 @@
             "down_ratio_pct": 4.0346
           },
           {
-            "operator_code": "bouygues",
-            "dept_code": "90",
-            "sites_down": 2,
-            "active_sites": 54.0,
-            "down_ratio_pct": 3.7037
-          },
-          {
-            "operator_code": "orange",
-            "dept_code": "65",
-            "sites_down": 7,
-            "active_sites": 189.0,
-            "down_ratio_pct": 3.7037
-          },
-          {
-            "operator_code": "orange",
-            "dept_code": "02",
-            "sites_down": 13,
-            "active_sites": 357.0,
-            "down_ratio_pct": 3.6415
-          },
-          {
-            "operator_code": "bouygues",
-            "dept_code": "84",
-            "sites_down": 10,
-            "active_sites": 275.0,
-            "down_ratio_pct": 3.6364
+            "operator_code": "free",
+            "dept_code": "40",
+            "sites_down": 12,
+            "active_sites": 316.0,
+            "down_ratio_pct": 3.7975
           },
           {
             "operator_code": "sfr",
-            "dept_code": "90",
-            "sites_down": 2,
-            "active_sites": 57.0,
-            "down_ratio_pct": 3.5088
+            "dept_code": "21",
+            "sites_down": 15,
+            "active_sites": 398.0,
+            "down_ratio_pct": 3.7688
           }
         ]
       },
       "history_7d": [
         {
           "label": "17/09",
-          "value": 1.169
+          "value": 1.1995
         },
         {
           "label": "18/09",
-          "value": 0.9757
+          "value": 0.9749
         },
         {
           "label": "19/09",
-          "value": 1.6464
+          "value": 1.6391
         },
         {
           "label": "20/09",
-          "value": 0.8823
+          "value": 0.8147
         },
         {
           "label": "21/09",
-          "value": 1.1045
+          "value": 0.9459
         },
         {
           "label": "22/09",
-          "value": 0.95
-        },
-        {
-          "label": "23/09",
-          "value": 1.21
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": 1.0385
-        },
-        {
-          "label": "22/09 10:06",
-          "value": 1.0442
-        },
-        {
-          "label": "22/09 11:06",
-          "value": 1.0458
-        },
-        {
-          "label": "22/09 12:06",
-          "value": 1.1287
-        },
-        {
-          "label": "22/09 13:06",
-          "value": 1.2076
-        },
-        {
-          "label": "22/09 14:06",
-          "value": 1.0136
-        },
-        {
-          "label": "22/09 15:06",
-          "value": 0.9902
-        },
-        {
-          "label": "22/09 16:06",
-          "value": 0.9685
-        },
-        {
-          "label": "22/09 17:06",
           "value": 0.9677
         },
         {
-          "label": "22/09 18:06",
-          "value": 0.9629
-        },
+          "label": "23/09",
+          "value": 1.305
+        }
+      ],
+      "history_24h": [
         {
           "label": "22/09 19:06",
           "value": 0.962
@@ -962,6 +959,46 @@
         {
           "label": "23/09 08:06",
           "value": 1.21
+        },
+        {
+          "label": "23/09 09:06",
+          "value": 1.28
+        },
+        {
+          "label": "23/09 10:06",
+          "value": 1.2728
+        },
+        {
+          "label": "23/09 10:24",
+          "value": 1.3171
+        },
+        {
+          "label": "23/09 11:06",
+          "value": 1.3227
+        },
+        {
+          "label": "23/09 12:06",
+          "value": 1.3131
+        },
+        {
+          "label": "23/09 13:06",
+          "value": 1.2913
+        },
+        {
+          "label": "23/09 14:06",
+          "value": 1.2833
+        },
+        {
+          "label": "23/09 15:06",
+          "value": 1.2583
+        },
+        {
+          "label": "23/09 16:06",
+          "value": 1.2551
+        },
+        {
+          "label": "23/09 17:06",
+          "value": 1.305
         }
       ]
     },
@@ -969,25 +1006,25 @@
       "label": "Ferroviaire",
       "official_level": "N1",
       "backend_trend": "up",
-      "backend_metric": "3,30 %",
+      "backend_metric": "3,03 %",
       "backend_detail": "trains annulés",
       "current": {
-        "trips_count": 1969,
+        "trips_count": 2148,
         "canceled_trips": 65,
-        "canceled_ratio_pct": 3.3012,
-        "trips_delay_ge_30min_ratio_pct": 1.5236,
-        "trips_delay_ge_60min_ratio_pct": 0.4571,
+        "canceled_ratio_pct": 3.0261,
+        "trips_delay_ge_30min_ratio_pct": 1.0708,
+        "trips_delay_ge_60min_ratio_pct": 0.3259,
         "service_alerts": {
-          "active_alerts_count": 501,
+          "active_alerts_count": 528,
           "operational_alerts_count": 0,
-          "informational_or_unqualified_alerts_count": 501,
+          "informational_or_unqualified_alerts_count": 528,
           "effects": {
-            "UNKNOWN_EFFECT": 501
+            "UNKNOWN_EFFECT": 528
           },
           "causes": {
-            "UNKNOWN_CAUSE": 166,
-            "MAINTENANCE": 183,
-            "OTHER_CAUSE": 152
+            "UNKNOWN_CAUSE": 170,
+            "MAINTENANCE": 184,
+            "OTHER_CAUSE": 174
           },
           "sample_active_alerts": [
             {
@@ -5302,74 +5339,34 @@
       "history_7d": [
         {
           "label": "17/09",
-          "value": 4.1159
+          "value": 4.0129
         },
         {
           "label": "18/09",
-          "value": 1.9757
+          "value": 1.086
         },
         {
           "label": "19/09",
-          "value": 0.7414
+          "value": 0.8584
         },
         {
           "label": "20/09",
-          "value": 1.0606
+          "value": 0.6944
         },
         {
           "label": "21/09",
-          "value": 3.3283
+          "value": 2.8024
         },
         {
           "label": "22/09",
-          "value": 1.6377
-        },
-        {
-          "label": "23/09",
-          "value": 3.3012
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": 1.5638
-        },
-        {
-          "label": "22/09 10:06",
-          "value": 1.7766
-        },
-        {
-          "label": "22/09 11:06",
-          "value": 1.5385
-        },
-        {
-          "label": "22/09 12:06",
-          "value": 1.5351
-        },
-        {
-          "label": "22/09 13:06",
-          "value": 1.3838
-        },
-        {
-          "label": "22/09 14:06",
-          "value": 0.815
-        },
-        {
-          "label": "22/09 15:06",
-          "value": 1.0744
-        },
-        {
-          "label": "22/09 16:06",
-          "value": 1.3822
-        },
-        {
-          "label": "22/09 17:06",
           "value": 1.8475
         },
         {
-          "label": "22/09 18:06",
-          "value": 1.978
-        },
+          "label": "23/09",
+          "value": 3.0261
+        }
+      ],
+      "history_24h": [
         {
           "label": "22/09 19:06",
           "value": 2.4304
@@ -5425,6 +5422,46 @@
         {
           "label": "23/09 08:06",
           "value": 3.3012
+        },
+        {
+          "label": "23/09 09:06",
+          "value": 2.7684
+        },
+        {
+          "label": "23/09 10:06",
+          "value": 2.5084
+        },
+        {
+          "label": "23/09 10:24",
+          "value": 2.0764
+        },
+        {
+          "label": "23/09 11:06",
+          "value": 2.1133
+        },
+        {
+          "label": "23/09 12:06",
+          "value": 2.0759
+        },
+        {
+          "label": "23/09 13:06",
+          "value": 1.4265
+        },
+        {
+          "label": "23/09 14:06",
+          "value": 2.0064
+        },
+        {
+          "label": "23/09 15:06",
+          "value": 1.793
+        },
+        {
+          "label": "23/09 16:06",
+          "value": 2.8043
+        },
+        {
+          "label": "23/09 17:06",
+          "value": 3.0261
         }
       ]
     },
@@ -5432,19 +5469,19 @@
       "label": "Routier",
       "official_level": "N1",
       "backend_trend": "unknown",
-      "backend_metric": "8,33 %",
-      "backend_detail": "36 restrictions · 11 fermetures",
+      "backend_metric": "5,32 %",
+      "backend_detail": "38 restrictions · 9 fermetures",
       "current": {
-        "congestion_ratio_pct": 8.3333,
-        "recognized_ratio_pct": 90.3697,
-        "unknown_ratio_pct": 9.6303,
-        "unplanned_situations_count": 111,
-        "unplanned_full_closure_locations_count": 11,
-        "unplanned_capacity_restriction_locations_count": 36,
-        "departments_with_unplanned_full_closure": 7,
-        "departments_with_unplanned_capacity_restriction": 22,
+        "congestion_ratio_pct": 5.323,
+        "recognized_ratio_pct": 88.3158,
+        "unknown_ratio_pct": 11.6842,
+        "unplanned_situations_count": 120,
+        "unplanned_full_closure_locations_count": 9,
+        "unplanned_capacity_restriction_locations_count": 38,
+        "departments_with_unplanned_full_closure": 6,
+        "departments_with_unplanned_capacity_restriction": 26,
         "department_coverage_ratio_pct": 100.0,
-        "affected_departments_count": 65,
+        "affected_departments_count": 69,
         "affected_regions_count": 12,
         "top_departments": [
           {
@@ -5462,50 +5499,29 @@
             "unplanned_capacity_restriction_count": 3
           },
           {
-            "code": "78",
-            "name": "Yvelines",
-            "unplanned_situations_count": 4,
-            "unplanned_full_closure_count": 1,
-            "unplanned_capacity_restriction_count": 3
-          },
-          {
-            "code": "38",
-            "name": "Isère",
-            "unplanned_situations_count": 2,
-            "unplanned_full_closure_count": 2,
-            "unplanned_capacity_restriction_count": 2
-          },
-          {
-            "code": "75",
-            "name": "Paris",
-            "unplanned_situations_count": 2,
-            "unplanned_full_closure_count": 1,
-            "unplanned_capacity_restriction_count": 2
-          },
-          {
-            "code": "92",
-            "name": "Hauts-de-Seine",
+            "code": "44",
+            "name": "Loire-Atlantique",
             "unplanned_situations_count": 5,
             "unplanned_full_closure_count": null,
-            "unplanned_capacity_restriction_count": 2
-          },
-          {
-            "code": "58",
-            "name": "Nièvre",
-            "unplanned_situations_count": 3,
-            "unplanned_full_closure_count": null,
-            "unplanned_capacity_restriction_count": 2
+            "unplanned_capacity_restriction_count": 3
           },
           {
             "code": "15",
             "name": "Cantal",
             "unplanned_situations_count": 3,
             "unplanned_full_closure_count": null,
-            "unplanned_capacity_restriction_count": 2
+            "unplanned_capacity_restriction_count": 3
           },
           {
             "code": "64",
             "name": "Pyrénées-Atlantiques",
+            "unplanned_situations_count": 2,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 2
+          },
+          {
+            "code": "58",
+            "name": "Nièvre",
             "unplanned_situations_count": 2,
             "unplanned_full_closure_count": null,
             "unplanned_capacity_restriction_count": 2
@@ -5516,6 +5532,27 @@
             "unplanned_situations_count": 2,
             "unplanned_full_closure_count": null,
             "unplanned_capacity_restriction_count": 2
+          },
+          {
+            "code": "08",
+            "name": "Ardennes",
+            "unplanned_situations_count": 3,
+            "unplanned_full_closure_count": 1,
+            "unplanned_capacity_restriction_count": 1
+          },
+          {
+            "code": "78",
+            "name": "Yvelines",
+            "unplanned_situations_count": 3,
+            "unplanned_full_closure_count": 1,
+            "unplanned_capacity_restriction_count": 1
+          },
+          {
+            "code": "38",
+            "name": "Isère",
+            "unplanned_situations_count": 2,
+            "unplanned_full_closure_count": 1,
+            "unplanned_capacity_restriction_count": 1
           }
         ],
         "interpretation_guards": {
@@ -5529,74 +5566,34 @@
       "history_7d": [
         {
           "label": "17/09",
-          "value": 11.6667
+          "value": 8.4514
         },
         {
           "label": "18/09",
-          "value": 4.5063
+          "value": 10.6076
         },
         {
           "label": "19/09",
-          "value": 0.8256
+          "value": 1.4426
         },
         {
           "label": "20/09",
-          "value": 0.7392
+          "value": 2.4239
         },
         {
           "label": "21/09",
-          "value": 11.5344
+          "value": 4.8608
         },
         {
           "label": "22/09",
-          "value": 12.557
-        },
-        {
-          "label": "23/09",
-          "value": 8.3333
-        }
-      ],
-      "history_24h": [
-        {
-          "label": "22/09 09:55",
-          "value": 3.6999
-        },
-        {
-          "label": "22/09 10:06",
-          "value": 2.8311
-        },
-        {
-          "label": "22/09 11:06",
-          "value": 2.0707
-        },
-        {
-          "label": "22/09 12:06",
-          "value": 1.4639
-        },
-        {
-          "label": "22/09 13:06",
-          "value": 1.4127
-        },
-        {
-          "label": "22/09 14:06",
-          "value": 1.9211
-        },
-        {
-          "label": "22/09 15:06",
-          "value": 1.568
-        },
-        {
-          "label": "22/09 16:06",
-          "value": 2.5245
-        },
-        {
-          "label": "22/09 17:06",
           "value": 7.1826
         },
         {
-          "label": "22/09 18:06",
-          "value": 9.4082
-        },
+          "label": "23/09",
+          "value": 5.323
+        }
+      ],
+      "history_24h": [
         {
           "label": "22/09 19:06",
           "value": 2.4279
@@ -5652,6 +5649,46 @@
         {
           "label": "23/09 08:06",
           "value": 8.3333
+        },
+        {
+          "label": "23/09 09:06",
+          "value": 4.0404
+        },
+        {
+          "label": "23/09 10:06",
+          "value": 1.6427
+        },
+        {
+          "label": "23/09 10:24",
+          "value": 1.5657
+        },
+        {
+          "label": "23/09 11:06",
+          "value": 1.3138
+        },
+        {
+          "label": "23/09 12:06",
+          "value": 2.0212
+        },
+        {
+          "label": "23/09 13:06",
+          "value": 1.5664
+        },
+        {
+          "label": "23/09 14:06",
+          "value": 1.7224
+        },
+        {
+          "label": "23/09 15:06",
+          "value": 1.9687
+        },
+        {
+          "label": "23/09 16:06",
+          "value": 1.5641
+        },
+        {
+          "label": "23/09 17:06",
+          "value": 5.323
         }
       ]
     }
@@ -5659,23 +5696,23 @@
   "territories": [
     {
       "name": "Paris",
-      "value": 25.5319
-    },
-    {
-      "name": "Ille-et-Vilaine",
-      "value": 21.2329
+      "value": 29.7872
     },
     {
       "name": "Mayenne",
       "value": 20.7547
     },
     {
-      "name": "Bas-Rhin",
-      "value": 20.6897
+      "name": "Haut-Rhin",
+      "value": 20.1754
     },
     {
-      "name": "Haut-Rhin",
-      "value": 18.75
+      "name": "Meurthe-et-Moselle",
+      "value": 19.3548
+    },
+    {
+      "name": "Sarthe",
+      "value": 17.5258
     }
   ],
   "correlations": [
@@ -5688,18 +5725,11 @@
   ],
   "risks_threats": {
     "collected": 650,
-    "recent": 14,
-    "relevant": 1,
+    "recent": 12,
+    "relevant": 0,
     "impacts": 0,
-    "events_detail_available": true,
-    "events": [
-      {
-        "icon": "water",
-        "title": "La gestion de l’eau en France percutée par une sécheresse historique : « Il faut sérieusement repenser nos organisations et nos comportements »",
-        "tag": "VIGILANCE · REPORT",
-        "summary": "La sécheresse historique qui frappe la France depuis l’été a mis en lumière des tensions majeures sur l’eau, avec 62 % des points de suivi du BRGM en dessous des normales mensue..."
-      }
-    ],
+    "events_detail_available": false,
+    "events": [],
     "interpretation_guard": "Les compteurs collected/recent/relevant/impacts peuvent être mentionnés comme des volumes uniquement. Si events_detail_available est false, la nature des événements, leur secteur, leur territoire, leur cause et leur impact précis sont inconnus et ne doivent jamais être inventés ou déduits."
   }
 }
