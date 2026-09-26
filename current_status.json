@@ -1,9 +1,9 @@
 {
   "schema_version": "analytics-0.9",
-  "generated_at": "2026-09-26T01:07:14.219307+00:00",
+  "generated_at": "2026-09-26T02:06:49.605749+00:00",
   "national": {
-    "level": "N3",
-    "label": "Dégradé"
+    "level": "N2",
+    "label": "Surveillance"
   },
   "sectors": {
     "electricity": {
@@ -12,13 +12,13 @@
       "confidence": "élevée",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 35188.0,
-        "forecast_error_pct": -0.318,
-        "forecast_error_abs_pct": 0.318,
-        "exchange_ratio_pct": -26.469,
-        "observation_time": "2026-09-26T00:45:00+00:00",
+        "consumption_mw": 33413.0,
+        "forecast_error_pct": -0.56,
+        "forecast_error_abs_pct": 0.56,
+        "exchange_ratio_pct": -31.221,
+        "observation_time": "2026-09-26T01:45:00+00:00",
         "slot": "morning",
-        "statistical_z_score": -0.8077
+        "statistical_z_score": -0.4197
       },
       "baseline": {
         "comparable_slot": "morning",
@@ -56,8 +56,8 @@
         "availability_delta_h1_points": 0.0,
         "availability_delta_h6_points": -2.38,
         "availability_delta_h24_points": -2.38,
-        "nuclear_production_mw": 33833.0,
-        "production_to_available_capacity_ratio_pct": 89.574,
+        "nuclear_production_mw": 33919.0,
+        "production_to_available_capacity_ratio_pct": 89.8017,
         "slot": "morning",
         "availability_statistical_z_score": -1.1215,
         "unplanned_publications_statistical_z_score": 1.7265,
@@ -119,46 +119,21 @@
       "metrics": {}
     },
     "gas": {
-      "level": "N1",
-      "label": "Vigilance",
+      "level": "N0",
+      "label": "Rien à signaler",
       "confidence": "élevée",
-      "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange.",
+      "rationale": "Les limites surveillées par Smart NaTran sont en situation nominale.",
       "metrics": {
         "observation_date": "2026-09-26",
-        "operational_status": "ORANGE",
+        "operational_status": "GREEN",
         "data_quality": "OK",
         "limits_count": 10,
-        "green_limits_count": 8,
-        "orange_limits_count": 2,
+        "green_limits_count": 10,
+        "orange_limits_count": 0,
         "red_limits_count": 0,
         "violet_limits_count": 0,
         "unknown_limits_count": 0,
-        "alerts": [
-          {
-            "limit": "EO2",
-            "vigilance": "ORANGE",
-            "vigilance_rgb": "FFFF9933",
-            "detection_method": "validated_color",
-            "application_side": "Aval",
-            "small_impact_works_gwh_25c": 0,
-            "maintenance": "Oui",
-            "interruptible_uioli_sales_stop": "Non",
-            "localized_spread": "Non",
-            "mutualized_restriction": "Non"
-          },
-          {
-            "limit": "S1",
-            "vigilance": "ORANGE",
-            "vigilance_rgb": "FFFF9933",
-            "detection_method": "validated_color",
-            "application_side": "Aval",
-            "small_impact_works_gwh_25c": 0,
-            "maintenance": "Oui",
-            "interruptible_uioli_sales_stop": "Non",
-            "localized_spread": "Non",
-            "mutualized_restriction": "Non"
-          }
-        ]
+        "alerts": []
       },
       "baseline": {}
     },
@@ -423,31 +398,31 @@
       }
     },
     "rail": {
-      "level": "N3",
-      "label": "Dégradé",
+      "level": "N1",
+      "label": "Vigilance",
       "confidence": "élevée",
       "rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
       "metrics": {
-        "collected_at": "2026-09-26T01:06:51.868874+00:00",
+        "collected_at": "2026-09-26T02:06:28.152578+00:00",
         "slot": "morning",
-        "trips_count": 29,
-        "scheduled_trips": 23,
-        "added_trips": 6,
+        "trips_count": 49,
+        "scheduled_trips": 38,
+        "added_trips": 11,
         "canceled_trips": 0,
         "canceled_ratio_pct": 0.0,
-        "trips_delay_ge_15min": 5,
-        "trips_delay_ge_15min_ratio_pct": 17.2414,
-        "trips_delay_ge_30min": 4,
-        "trips_delay_ge_30min_ratio_pct": 13.7931,
-        "trips_delay_ge_60min": 3,
-        "trips_delay_ge_60min_ratio_pct": 10.3448,
-        "average_max_delay_seconds": 699.3,
+        "trips_delay_ge_15min": 4,
+        "trips_delay_ge_15min_ratio_pct": 8.1633,
+        "trips_delay_ge_30min": 3,
+        "trips_delay_ge_30min_ratio_pct": 6.1224,
+        "trips_delay_ge_60min": 2,
+        "trips_delay_ge_60min_ratio_pct": 4.0816,
+        "average_max_delay_seconds": 300.0,
         "maximum_delay_seconds": 6000,
         "active_service_alerts": 386,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": -1.7039,
-        "delay_30_statistical_z_score": 16.4455,
-        "delay_60_statistical_z_score": 20.7511
+        "delay_30_statistical_z_score": 6.1243,
+        "delay_60_statistical_z_score": 7.6069
       },
       "baseline": {
         "comparable_slot": "morning",
@@ -484,19 +459,19 @@
       "confidence": "élevée",
       "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure.",
       "metrics": {
-        "collected_at": "2026-09-26T01:06:53.946498+00:00",
+        "collected_at": "2026-09-26T02:06:30.005703+00:00",
         "slot": "morning",
-        "congestion_ratio_pct": 0.9622,
-        "unplanned_situations_count_context_only": 86,
+        "congestion_ratio_pct": 1.2583,
+        "unplanned_situations_count_context_only": 77,
         "unplanned_full_closure_locations_count": 8,
-        "unplanned_capacity_restriction_locations_count": 29,
+        "unplanned_capacity_restriction_locations_count": 28,
         "departments_with_unplanned_full_closure": 6,
         "departments_with_unplanned_capacity_restriction": 20,
         "department_coverage_ratio_pct": 100.0,
-        "affected_departments_count": 59,
+        "affected_departments_count": 57,
         "affected_regions_count": 12,
-        "recognized_ratio_pct": 84.9129,
-        "unknown_ratio_pct": 15.0871,
+        "recognized_ratio_pct": 82.244,
+        "unknown_ratio_pct": 17.756,
         "congestion_signal_level": 0,
         "closure_magnitude_signal_level": 1,
         "closure_territorial_signal_level": 1,
@@ -504,9 +479,9 @@
         "restriction_magnitude_signal_level": 0,
         "restriction_territorial_signal_level": 1,
         "restriction_family_level": 1,
-        "congestion_statistical_z_score": -1.2578,
+        "congestion_statistical_z_score": -1.1981,
         "closures_statistical_z_score": 0.0239,
-        "restrictions_statistical_z_score": -0.9738,
+        "restrictions_statistical_z_score": -1.1538,
         "closure_departments_statistical_z_score": 0.586,
         "restriction_departments_statistical_z_score": -1.649,
         "raw_event_count_is_impact": false,
