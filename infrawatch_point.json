@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-09-29T06:07:37.983753+00:00",
-  "operational_slot": "morning",
-  "operational_cycle_id": "2026-09-29:morning",
+  "generated_at": "2026-09-29T15:07:06.186384+00:00",
+  "operational_slot": "evening",
+  "operational_cycle_id": "2026-09-29:evening",
   "report_posture": "VIGILANCE",
   "authority": {
     "n0_n4_source": "national_status.json",
@@ -12,18 +12,18 @@
   },
   "source_alignment": {
     "status": "OK",
-    "operational_generated_at": "2026-09-29T06:07:21.316876+00:00",
-    "risks_threats_generated_at": "2026-09-29T06:07:21.334032+00:00",
-    "age_difference_seconds": 0.017,
-    "operational_slot": "morning",
-    "risks_threats_slot": "morning",
+    "operational_generated_at": "2026-09-29T15:06:52.794971+00:00",
+    "risks_threats_generated_at": "2026-09-29T15:06:52.828494+00:00",
+    "age_difference_seconds": 0.034,
+    "operational_slot": "evening",
+    "risks_threats_slot": "evening",
     "same_operational_slot": true
   },
   "operational_status": {
     "schema_version": "analytics-0.9",
     "national": {
-      "level": "N3",
-      "label": "Dégradé"
+      "level": "N2",
+      "label": "Surveillance"
     },
     "elevated_sectors": [
       {
@@ -35,10 +35,10 @@
       },
       {
         "sector": "fuels",
-        "level": "N3",
-        "label": "Dégradé",
+        "level": "N2",
+        "label": "Surveillance",
         "confidence": "élevée",
-        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé. Une concentration territoriale critique accompagne une forte dégradation nationale."
+        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
       },
       {
         "sector": "rail",
@@ -46,6 +46,13 @@
         "label": "Vigilance",
         "confidence": "élevée",
         "rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable."
+      },
+      {
+        "sector": "road",
+        "level": "N1",
+        "label": "Vigilance",
+        "confidence": "élevée",
+        "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure."
       }
     ],
     "nominal_sectors": [
@@ -71,13 +78,6 @@
         "label": "Données insuffisantes",
         "confidence": "faible",
         "rationale": "Ratio national télécom non calculable."
-      },
-      {
-        "sector": "road",
-        "level": "ND",
-        "label": "Données insuffisantes",
-        "confidence": "faible",
-        "rationale": "Données routières indisponibles."
       }
     ],
     "sectors": {
@@ -87,24 +87,24 @@
         "confidence": "élevée",
         "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
         "metrics": {
-          "consumption_mw": 44456.0,
-          "forecast_error_pct": 0.126,
-          "forecast_error_abs_pct": 0.126,
-          "exchange_ratio_pct": -14.309,
-          "observation_time": "2026-09-29T05:45:00+00:00",
-          "slot": "morning",
-          "statistical_z_score": -1.1201
+          "consumption_mw": 47114.0,
+          "forecast_error_pct": -0.183,
+          "forecast_error_abs_pct": 0.183,
+          "exchange_ratio_pct": -18.96,
+          "observation_time": "2026-09-29T14:45:00+00:00",
+          "slot": "evening",
+          "statistical_z_score": -1.1212
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 32,
+          "comparable_slot": "evening",
+          "comparable_count": 34,
           "forecast_error_abs_pct": {
-            "count": 32,
-            "median": 0.6995,
-            "mean": 0.8225,
-            "stdev": 0.6218,
-            "p90": 1.5368,
-            "p95": 1.9474
+            "count": 34,
+            "median": 1.166,
+            "mean": 1.4097,
+            "stdev": 1.0941,
+            "p90": 3.1154,
+            "p95": 3.4452
           }
         }
       },
@@ -131,31 +131,31 @@
           "availability_delta_h1_points": 0.0,
           "availability_delta_h6_points": 0.0,
           "availability_delta_h24_points": 0.0,
-          "nuclear_production_mw": 34232.0,
-          "production_to_available_capacity_ratio_pct": 90.6304,
-          "slot": "morning",
-          "availability_statistical_z_score": -1.0095,
-          "unplanned_publications_statistical_z_score": 1.4499,
+          "nuclear_production_mw": 33919.0,
+          "production_to_available_capacity_ratio_pct": 89.8017,
+          "slot": "evening",
+          "availability_statistical_z_score": -0.4304,
+          "unplanned_publications_statistical_z_score": 1.2924,
           "unplanned_unique_assets_statistical_z_score": null,
           "unplanned_impactful_assets_statistical_z_score": null,
           "unplanned_capacity_ratio_statistical_z_score": null
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 32,
+          "comparable_slot": "evening",
+          "comparable_count": 28,
           "fleet_availability_pct": {
-            "count": 32,
+            "count": 28,
             "median": 62.245,
-            "mean": 61.7062,
-            "stdev": 1.7298,
-            "p90": 63.376,
-            "p95": 63.9355
+            "mean": 62.7804,
+            "stdev": 6.5535,
+            "p90": 64.086,
+            "p95": 77.654
           },
           "unplanned_publications_count": {
-            "count": 32,
-            "median": 4.5,
-            "mean": 10.3125,
-            "stdev": 9.4406,
+            "count": 28,
+            "median": 6.0,
+            "mean": 11.6071,
+            "stdev": 9.5891,
             "p90": 24.0,
             "p95": 24.0
           },
@@ -227,43 +227,37 @@
         "baseline": {}
       },
       "fuels": {
-        "level": "N3",
-        "label": "Dégradé",
+        "level": "N2",
+        "label": "Surveillance",
         "confidence": "élevée",
-        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé. Une concentration territoriale critique accompagne une forte dégradation nationale.",
+        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
-          "eligible_stations": 9732,
-          "stations_with_any_shortage": 1108,
-          "national_shortage_ratio_pct": 11.3851,
-          "diesel_shortage_ratio_pct": 7.988,
-          "petrol_shortage_ratio_pct": 10.2641,
+          "eligible_stations": 9709,
+          "stations_with_any_shortage": 961,
+          "national_shortage_ratio_pct": 9.898,
+          "diesel_shortage_ratio_pct": 6.1574,
+          "petrol_shortage_ratio_pct": 8.934,
           "departments_with_shortage": 94,
-          "slot": "morning",
-          "statistical_z_score": 0.6682,
+          "slot": "evening",
+          "statistical_z_score": 0.288,
           "significant_departments": [
             {
-              "dept_code": "75",
-              "shortage_ratio_pct": 27.6596,
-              "stations_with_any_shortage": 13,
-              "eligible_stations": 47
-            },
-            {
               "dept_code": "67",
-              "shortage_ratio_pct": 26.7123,
-              "stations_with_any_shortage": 39,
+              "shortage_ratio_pct": 26.0274,
+              "stations_with_any_shortage": 38,
               "eligible_stations": 146
             },
             {
-              "dept_code": "68",
-              "shortage_ratio_pct": 24.5614,
-              "stations_with_any_shortage": 28,
-              "eligible_stations": 114
+              "dept_code": "75",
+              "shortage_ratio_pct": 25.5319,
+              "stations_with_any_shortage": 12,
+              "eligible_stations": 47
             },
             {
-              "dept_code": "49",
-              "shortage_ratio_pct": 19.2661,
-              "stations_with_any_shortage": 21,
-              "eligible_stations": 109
+              "dept_code": "68",
+              "shortage_ratio_pct": 22.1239,
+              "stations_with_any_shortage": 25,
+              "eligible_stations": 113
             },
             {
               "dept_code": "44",
@@ -272,114 +266,114 @@
               "eligible_stations": 172
             },
             {
-              "dept_code": "31",
-              "shortage_ratio_pct": 19.0476,
-              "stations_with_any_shortage": 36,
-              "eligible_stations": 189
-            },
-            {
-              "dept_code": "46",
-              "shortage_ratio_pct": 19.0476,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 63
-            },
-            {
-              "dept_code": "72",
-              "shortage_ratio_pct": 18.75,
-              "stations_with_any_shortage": 18,
-              "eligible_stations": 96
-            },
-            {
-              "dept_code": "53",
-              "shortage_ratio_pct": 18.5185,
-              "stations_with_any_shortage": 10,
-              "eligible_stations": 54
-            },
-            {
-              "dept_code": "54",
-              "shortage_ratio_pct": 18.2796,
-              "stations_with_any_shortage": 17,
-              "eligible_stations": 93
-            },
-            {
-              "dept_code": "88",
-              "shortage_ratio_pct": 18.0723,
-              "stations_with_any_shortage": 15,
-              "eligible_stations": 83
-            },
-            {
-              "dept_code": "57",
-              "shortage_ratio_pct": 17.6923,
-              "stations_with_any_shortage": 23,
-              "eligible_stations": 130
-            },
-            {
-              "dept_code": "82",
-              "shortage_ratio_pct": 17.1875,
-              "stations_with_any_shortage": 11,
-              "eligible_stations": 64
-            },
-            {
-              "dept_code": "85",
-              "shortage_ratio_pct": 15.7025,
-              "stations_with_any_shortage": 19,
-              "eligible_stations": 121
-            },
-            {
-              "dept_code": "15",
-              "shortage_ratio_pct": 15.6863,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 51
-            },
-            {
-              "dept_code": "41",
-              "shortage_ratio_pct": 15.625,
-              "stations_with_any_shortage": 10,
-              "eligible_stations": 64
-            },
-            {
               "dept_code": "91",
-              "shortage_ratio_pct": 15.5039,
-              "stations_with_any_shortage": 20,
+              "shortage_ratio_pct": 17.0543,
+              "stations_with_any_shortage": 22,
               "eligible_stations": 129
             },
             {
-              "dept_code": "03",
-              "shortage_ratio_pct": 15.1899,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 79
+              "dept_code": "31",
+              "shortage_ratio_pct": 16.3158,
+              "stations_with_any_shortage": 31,
+              "eligible_stations": 190
             },
             {
-              "dept_code": "81",
-              "shortage_ratio_pct": 15.0685,
+              "dept_code": "54",
+              "shortage_ratio_pct": 16.129,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 93
+            },
+            {
+              "dept_code": "82",
+              "shortage_ratio_pct": 15.873,
+              "stations_with_any_shortage": 10,
+              "eligible_stations": 63
+            },
+            {
+              "dept_code": "57",
+              "shortage_ratio_pct": 15.3846,
+              "stations_with_any_shortage": 20,
+              "eligible_stations": 130
+            },
+            {
+              "dept_code": "72",
+              "shortage_ratio_pct": 14.7368,
+              "stations_with_any_shortage": 14,
+              "eligible_stations": 95
+            },
+            {
+              "dept_code": "93",
+              "shortage_ratio_pct": 14.6341,
+              "stations_with_any_shortage": 12,
+              "eligible_stations": 82
+            },
+            {
+              "dept_code": "46",
+              "shortage_ratio_pct": 14.2857,
+              "stations_with_any_shortage": 9,
+              "eligible_stations": 63
+            },
+            {
+              "dept_code": "03",
+              "shortage_ratio_pct": 14.1026,
               "stations_with_any_shortage": 11,
-              "eligible_stations": 73
+              "eligible_stations": 78
+            },
+            {
+              "dept_code": "92",
+              "shortage_ratio_pct": 13.8462,
+              "stations_with_any_shortage": 9,
+              "eligible_stations": 65
+            },
+            {
+              "dept_code": "35",
+              "shortage_ratio_pct": 13.6986,
+              "stations_with_any_shortage": 20,
+              "eligible_stations": 146
+            },
+            {
+              "dept_code": "60",
+              "shortage_ratio_pct": 13.6752,
+              "stations_with_any_shortage": 16,
+              "eligible_stations": 117
+            },
+            {
+              "dept_code": "78",
+              "shortage_ratio_pct": 13.4752,
+              "stations_with_any_shortage": 19,
+              "eligible_stations": 141
+            },
+            {
+              "dept_code": "88",
+              "shortage_ratio_pct": 13.4146,
+              "stations_with_any_shortage": 11,
+              "eligible_stations": 82
+            },
+            {
+              "dept_code": "95",
+              "shortage_ratio_pct": 13.2075,
+              "stations_with_any_shortage": 14,
+              "eligible_stations": 106
             }
           ],
           "severe_departments": [
             {
-              "dept_code": "75",
-              "shortage_ratio_pct": 27.6596,
-              "stations_with_any_shortage": 13,
-              "eligible_stations": 47
-            },
-            {
               "dept_code": "67",
-              "shortage_ratio_pct": 26.7123,
-              "stations_with_any_shortage": 39,
+              "shortage_ratio_pct": 26.0274,
+              "stations_with_any_shortage": 38,
               "eligible_stations": 146
             },
             {
-              "dept_code": "68",
-              "shortage_ratio_pct": 24.5614,
-              "stations_with_any_shortage": 28,
-              "eligible_stations": 114
+              "dept_code": "75",
+              "shortage_ratio_pct": 25.5319,
+              "stations_with_any_shortage": 12,
+              "eligible_stations": 47
             },
             {
-              "dept_code": "49",
-              "shortage_ratio_pct": 19.2661,
-              "stations_with_any_shortage": 21,
-              "eligible_stations": 109
+              "dept_code": "68",
+              "shortage_ratio_pct": 22.1239,
+              "stations_with_any_shortage": 25,
+              "eligible_stations": 113
             },
             {
               "dept_code": "44",
@@ -388,101 +382,47 @@
               "eligible_stations": 172
             },
             {
-              "dept_code": "31",
-              "shortage_ratio_pct": 19.0476,
-              "stations_with_any_shortage": 36,
-              "eligible_stations": 189
-            },
-            {
-              "dept_code": "46",
-              "shortage_ratio_pct": 19.0476,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 63
-            },
-            {
-              "dept_code": "72",
-              "shortage_ratio_pct": 18.75,
-              "stations_with_any_shortage": 18,
-              "eligible_stations": 96
-            },
-            {
-              "dept_code": "53",
-              "shortage_ratio_pct": 18.5185,
-              "stations_with_any_shortage": 10,
-              "eligible_stations": 54
-            },
-            {
-              "dept_code": "54",
-              "shortage_ratio_pct": 18.2796,
-              "stations_with_any_shortage": 17,
-              "eligible_stations": 93
-            },
-            {
-              "dept_code": "88",
-              "shortage_ratio_pct": 18.0723,
-              "stations_with_any_shortage": 15,
-              "eligible_stations": 83
-            },
-            {
-              "dept_code": "57",
-              "shortage_ratio_pct": 17.6923,
-              "stations_with_any_shortage": 23,
-              "eligible_stations": 130
-            },
-            {
-              "dept_code": "82",
-              "shortage_ratio_pct": 17.1875,
-              "stations_with_any_shortage": 11,
-              "eligible_stations": 64
-            },
-            {
-              "dept_code": "85",
-              "shortage_ratio_pct": 15.7025,
-              "stations_with_any_shortage": 19,
-              "eligible_stations": 121
-            },
-            {
-              "dept_code": "15",
-              "shortage_ratio_pct": 15.6863,
-              "stations_with_any_shortage": 8,
-              "eligible_stations": 51
-            },
-            {
-              "dept_code": "41",
-              "shortage_ratio_pct": 15.625,
-              "stations_with_any_shortage": 10,
-              "eligible_stations": 64
-            },
-            {
               "dept_code": "91",
-              "shortage_ratio_pct": 15.5039,
-              "stations_with_any_shortage": 20,
+              "shortage_ratio_pct": 17.0543,
+              "stations_with_any_shortage": 22,
               "eligible_stations": 129
             },
             {
-              "dept_code": "03",
-              "shortage_ratio_pct": 15.1899,
-              "stations_with_any_shortage": 12,
-              "eligible_stations": 79
+              "dept_code": "31",
+              "shortage_ratio_pct": 16.3158,
+              "stations_with_any_shortage": 31,
+              "eligible_stations": 190
             },
             {
-              "dept_code": "81",
-              "shortage_ratio_pct": 15.0685,
-              "stations_with_any_shortage": 11,
-              "eligible_stations": 73
+              "dept_code": "54",
+              "shortage_ratio_pct": 16.129,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 93
+            },
+            {
+              "dept_code": "82",
+              "shortage_ratio_pct": 15.873,
+              "stations_with_any_shortage": 10,
+              "eligible_stations": 63
+            },
+            {
+              "dept_code": "57",
+              "shortage_ratio_pct": 15.3846,
+              "stations_with_any_shortage": 20,
+              "eligible_stations": 130
             }
           ]
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 31,
+          "comparable_slot": "evening",
+          "comparable_count": 32,
           "national_shortage_ratio_pct": {
-            "count": 31,
-            "median": 9.2342,
-            "mean": 9.2357,
-            "stdev": 3.2169,
-            "p90": 13.9406,
-            "p95": 14.5128
+            "count": 32,
+            "median": 9.0735,
+            "mean": 8.9746,
+            "stdev": 3.2064,
+            "p90": 12.571,
+            "p95": 14.2051
           }
         }
       },
@@ -492,168 +432,196 @@
         "confidence": "élevée",
         "rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
         "metrics": {
-          "collected_at": "2026-09-29T06:06:27.431684+00:00",
-          "slot": "morning",
-          "trips_count": 1993,
-          "scheduled_trips": 1697,
-          "added_trips": 207,
-          "canceled_trips": 89,
-          "canceled_ratio_pct": 4.4656,
-          "trips_delay_ge_15min": 108,
-          "trips_delay_ge_15min_ratio_pct": 5.419,
-          "trips_delay_ge_30min": 30,
-          "trips_delay_ge_30min_ratio_pct": 1.5053,
-          "trips_delay_ge_60min": 6,
-          "trips_delay_ge_60min_ratio_pct": 0.3011,
-          "average_max_delay_seconds": 126.4,
-          "maximum_delay_seconds": 5400,
-          "active_service_alerts": 590,
+          "collected_at": "2026-09-29T15:06:27.638472+00:00",
+          "slot": "evening",
+          "trips_count": 2166,
+          "scheduled_trips": 1860,
+          "added_trips": 220,
+          "canceled_trips": 86,
+          "canceled_ratio_pct": 3.9705,
+          "trips_delay_ge_15min": 92,
+          "trips_delay_ge_15min_ratio_pct": 4.2475,
+          "trips_delay_ge_30min": 21,
+          "trips_delay_ge_30min_ratio_pct": 0.9695,
+          "trips_delay_ge_60min": 5,
+          "trips_delay_ge_60min_ratio_pct": 0.2308,
+          "average_max_delay_seconds": 95.1,
+          "maximum_delay_seconds": 4800,
+          "active_service_alerts": 611,
           "qualified_operational_alerts": 0,
-          "canceled_statistical_z_score": 2.7446,
-          "delay_30_statistical_z_score": -0.0867,
-          "delay_60_statistical_z_score": -0.3149
+          "canceled_statistical_z_score": 2.8861,
+          "delay_30_statistical_z_score": -1.0974,
+          "delay_60_statistical_z_score": -0.8074
         },
         "baseline": {
-          "comparable_slot": "morning",
-          "comparable_count": 31,
+          "comparable_slot": "evening",
+          "comparable_count": 32,
           "canceled_ratio_pct": {
-            "count": 31,
-            "median": 1.4872,
-            "mean": 1.6853,
-            "stdev": 1.013,
-            "p90": 2.8861,
-            "p95": 3.5747
+            "count": 32,
+            "median": 1.4803,
+            "mean": 1.6299,
+            "stdev": 0.811,
+            "p90": 2.7943,
+            "p95": 3.0005
           },
           "delay_ge_30min_ratio_pct": {
-            "count": 31,
-            "median": 1.4127,
-            "mean": 1.5699,
-            "stdev": 0.7453,
-            "p90": 2.4514,
-            "p95": 2.65
+            "count": 32,
+            "median": 1.3431,
+            "mean": 1.4451,
+            "stdev": 0.4334,
+            "p90": 2.0935,
+            "p95": 2.174
           },
           "delay_ge_60min_ratio_pct": {
-            "count": 31,
-            "median": 0.2963,
-            "mean": 0.4476,
-            "stdev": 0.4653,
-            "p90": 1.0137,
-            "p95": 1.282
+            "count": 32,
+            "median": 0.3445,
+            "mean": 0.406,
+            "stdev": 0.217,
+            "p90": 0.654,
+            "p95": 0.8655
           }
         }
       },
       "road": {
-        "level": "ND",
-        "label": "Données insuffisantes",
-        "confidence": "faible",
-        "rationale": "Données routières indisponibles.",
-        "metrics": {},
-        "baseline": {}
+        "level": "N1",
+        "label": "Vigilance",
+        "confidence": "élevée",
+        "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure.",
+        "metrics": {
+          "collected_at": "2026-09-29T15:06:29.513639+00:00",
+          "slot": "evening",
+          "congestion_ratio_pct": 7.2552,
+          "unplanned_situations_count_context_only": 129,
+          "unplanned_full_closure_locations_count": 9,
+          "unplanned_capacity_restriction_locations_count": 34,
+          "departments_with_unplanned_full_closure": 7,
+          "departments_with_unplanned_capacity_restriction": 25,
+          "department_coverage_ratio_pct": 100.0,
+          "affected_departments_count": 70,
+          "affected_regions_count": 12,
+          "recognized_ratio_pct": 89.8769,
+          "unknown_ratio_pct": 10.1231,
+          "congestion_signal_level": 0,
+          "closure_magnitude_signal_level": 1,
+          "closure_territorial_signal_level": 1,
+          "closure_family_level": 1,
+          "restriction_magnitude_signal_level": 0,
+          "restriction_territorial_signal_level": 1,
+          "restriction_family_level": 1,
+          "congestion_statistical_z_score": 0.4567,
+          "closures_statistical_z_score": 0.2903,
+          "restrictions_statistical_z_score": -0.554,
+          "closure_departments_statistical_z_score": 1.0487,
+          "restriction_departments_statistical_z_score": -0.3277,
+          "raw_event_count_is_impact": false,
+          "qtv_national_mean_used_for_scoring": false,
+          "unknown_traffic_status_affects_level": false,
+          "n4_automatic": false
+        },
+        "baseline": {
+          "comparable_slot": "evening",
+          "comparable_count": 21,
+          "baseline_ready": true,
+          "congestion_ratio_pct": {
+            "count": 21,
+            "median": 6.2785,
+            "mean": 5.7936,
+            "stdev": 3.2007,
+            "p90": 10.2422,
+            "p95": 10.6076
+          },
+          "unplanned_full_closure_locations_count": {
+            "count": 21,
+            "median": 9.0,
+            "mean": 8.381,
+            "stdev": 2.1325,
+            "p90": 11.0,
+            "p95": 11.0
+          },
+          "unplanned_capacity_restriction_locations_count": {
+            "count": 21,
+            "median": 38.0,
+            "mean": 37.1905,
+            "stdev": 5.7586,
+            "p90": 45.0,
+            "p95": 46.0
+          },
+          "departments_with_unplanned_full_closure": {
+            "count": 21,
+            "median": 6.0,
+            "mean": 5.9048,
+            "stdev": 1.0443,
+            "p90": 7.0,
+            "p95": 7.0
+          },
+          "departments_with_unplanned_capacity_restriction": {
+            "count": 21,
+            "median": 26.0,
+            "mean": 25.9524,
+            "stdev": 2.9065,
+            "p90": 29.0,
+            "p95": 30.0
+          }
+        }
       }
     }
   },
   "risks_threats": {
     "schema_version": "risks-threats-0.4",
     "source_health": "OK",
-    "new_signals": [],
-    "carried_over_context": [
+    "new_signals": [
       {
-        "fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
-        "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "link": "https://www.ici.fr/hauts-de-france/aisne-02/frieres-faillouel/aisne-trois-personnes-interpellees-apres-avoir-vole-600-metres-de-cables-sncf-pour-un-prejudice-de-100-000-euros-2389981",
-        "source_domain": "ici.fr",
-        "category": "defense_security",
-        "category_label": "Défense et sécurité",
-        "published_at": "2026-09-28T12:00:00+00:00",
-        "qualification": "IMPACT_CANDIDATE",
-        "event_state": "UNKNOWN",
-        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
-        "sectors": [
-          "rail"
-        ],
-        "impacted_sectors": [
-          "rail"
-        ],
-        "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-        "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
-        "carry_forward": true,
-        "operational_confirmation": "NOT_CHECKED",
-        "causality": "NOT_ESTABLISHED",
-        "affects_n0_n4": false
-      },
-      {
-        "fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-        "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "link": "https://france3-regions.franceinfo.fr/hauts-de-france/aisne/le-trafic-interrompu-sur-plusieurs-axes-entre-amiens-saint-quentin-et-tergnier-a-la-suite-de-vols-de-cables-trois-personnes-interpellees-3424361.html",
-        "source_domain": "france3-regions.franceinfo.fr",
+        "fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
+        "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "link": "https://www.lemonde.fr/economie/article/2026/09/29/greve-du-29-septembre-de-fortes-perturbations-a-prevoir-dans-les-transports-d-ile-de-france_6785107_3235.html",
+        "source_domain": "lemonde.fr",
         "category": "societal",
         "category_label": "Risques sociétaux",
-        "published_at": "2026-09-28T11:51:51+00:00",
+        "published_at": "2026-09-29T12:44:16+00:00",
         "qualification": "IMPACT_CANDIDATE",
-        "event_state": "UNKNOWN",
-        "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
-        "lifecycle": "CARRIED_OVER",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
         "sectors": [
-          "rail"
+          "rail",
+          "air"
         ],
         "impacted_sectors": [
-          "rail"
+          "rail",
+          "air"
         ],
-        "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-        "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
+        "first_seen_at": "2026-09-29T15:06:52.828494+00:00",
+        "last_seen_at": "2026-09-29T15:06:52.828494+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       }
     ],
+    "carried_over_context": [],
     "active_situation": [
       {
-        "fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
-        "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "link": "https://www.ici.fr/hauts-de-france/aisne-02/frieres-faillouel/aisne-trois-personnes-interpellees-apres-avoir-vole-600-metres-de-cables-sncf-pour-un-prejudice-de-100-000-euros-2389981",
-        "source_domain": "ici.fr",
-        "category": "defense_security",
-        "category_label": "Défense et sécurité",
-        "published_at": "2026-09-28T12:00:00+00:00",
-        "qualification": "IMPACT_CANDIDATE",
-        "event_state": "UNKNOWN",
-        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
-        "sectors": [
-          "rail"
-        ],
-        "impacted_sectors": [
-          "rail"
-        ],
-        "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-        "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
-        "carry_forward": true,
-        "operational_confirmation": "NOT_CHECKED",
-        "causality": "NOT_ESTABLISHED",
-        "affects_n0_n4": false
-      },
-      {
-        "fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-        "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "link": "https://france3-regions.franceinfo.fr/hauts-de-france/aisne/le-trafic-interrompu-sur-plusieurs-axes-entre-amiens-saint-quentin-et-tergnier-a-la-suite-de-vols-de-cables-trois-personnes-interpellees-3424361.html",
-        "source_domain": "france3-regions.franceinfo.fr",
+        "fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
+        "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "link": "https://www.lemonde.fr/economie/article/2026/09/29/greve-du-29-septembre-de-fortes-perturbations-a-prevoir-dans-les-transports-d-ile-de-france_6785107_3235.html",
+        "source_domain": "lemonde.fr",
         "category": "societal",
         "category_label": "Risques sociétaux",
-        "published_at": "2026-09-28T11:51:51+00:00",
+        "published_at": "2026-09-29T12:44:16+00:00",
         "qualification": "IMPACT_CANDIDATE",
-        "event_state": "UNKNOWN",
-        "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
-        "lifecycle": "CARRIED_OVER",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
         "sectors": [
-          "rail"
+          "rail",
+          "air"
         ],
         "impacted_sectors": [
-          "rail"
+          "rail",
+          "air"
         ],
-        "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-        "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
+        "first_seen_at": "2026-09-29T15:06:52.828494+00:00",
+        "last_seen_at": "2026-09-29T15:06:52.828494+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -662,12 +630,12 @@
     ],
     "resolved_since_collection": [],
     "counts": {
-      "retained": 2,
-      "new": 0,
-      "carried_over": 2,
-      "active_situation": 2,
+      "retained": 1,
+      "new": 1,
+      "carried_over": 0,
+      "active_situation": 1,
       "resolved": 0,
-      "impact_candidates": 2,
+      "impact_candidates": 1,
       "watch": 0,
       "context": 0
     }
@@ -676,69 +644,34 @@
     "concomitant_signals": [
       {
         "sector": "rail",
-        "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "risk_title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "risk_fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
+        "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "risk_title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "risk_fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
         "operational_level": "N1",
         "operational_label": "Vigilance",
         "operational_rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
         "risk_signal": {
-          "fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
-          "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-          "link": "https://www.ici.fr/hauts-de-france/aisne-02/frieres-faillouel/aisne-trois-personnes-interpellees-apres-avoir-vole-600-metres-de-cables-sncf-pour-un-prejudice-de-100-000-euros-2389981",
-          "source_domain": "ici.fr",
-          "category": "defense_security",
-          "category_label": "Défense et sécurité",
-          "published_at": "2026-09-28T12:00:00+00:00",
-          "qualification": "IMPACT_CANDIDATE",
-          "event_state": "UNKNOWN",
-          "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
-          "sectors": [
-            "rail"
-          ],
-          "impacted_sectors": [
-            "rail"
-          ],
-          "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-          "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
-          "carry_forward": true,
-          "operational_confirmation": "NOT_CHECKED",
-          "causality": "NOT_ESTABLISHED",
-          "affects_n0_n4": false
-        },
-        "relationship": "CONCOMITANT",
-        "causality": "CAUSALITY_NOT_ESTABLISHED",
-        "affects_n0_n4": false
-      },
-      {
-        "sector": "rail",
-        "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "risk_title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "risk_fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-        "operational_level": "N1",
-        "operational_label": "Vigilance",
-        "operational_rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
-        "risk_signal": {
-          "fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-          "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-          "link": "https://france3-regions.franceinfo.fr/hauts-de-france/aisne/le-trafic-interrompu-sur-plusieurs-axes-entre-amiens-saint-quentin-et-tergnier-a-la-suite-de-vols-de-cables-trois-personnes-interpellees-3424361.html",
-          "source_domain": "france3-regions.franceinfo.fr",
+          "fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
+          "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+          "link": "https://www.lemonde.fr/economie/article/2026/09/29/greve-du-29-septembre-de-fortes-perturbations-a-prevoir-dans-les-transports-d-ile-de-france_6785107_3235.html",
+          "source_domain": "lemonde.fr",
           "category": "societal",
           "category_label": "Risques sociétaux",
-          "published_at": "2026-09-28T11:51:51+00:00",
+          "published_at": "2026-09-29T12:44:16+00:00",
           "qualification": "IMPACT_CANDIDATE",
-          "event_state": "UNKNOWN",
-          "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
-          "lifecycle": "CARRIED_OVER",
+          "event_state": "PLANNED",
+          "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+          "lifecycle": "NEW",
           "sectors": [
-            "rail"
+            "rail",
+            "air"
           ],
           "impacted_sectors": [
-            "rail"
+            "rail",
+            "air"
           ],
-          "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-          "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
+          "first_seen_at": "2026-09-29T15:06:52.828494+00:00",
+          "last_seen_at": "2026-09-29T15:06:52.828494+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
@@ -750,14 +683,14 @@
       }
     ],
     "contextual_signals": [],
-    "concomitant_count": 2,
+    "concomitant_count": 1,
     "contextual_count": 0,
     "causality_rule": "Une concomitance temporelle ou sectorielle entre un signal de veille et une anomalie opérationnelle ne constitue pas un lien causal."
   },
   "report_sections": {
     "national_level": {
-      "level": "N3",
-      "label": "Dégradé",
+      "level": "N2",
+      "label": "Surveillance",
       "source": "national_status.json"
     },
     "operational_attention": [
@@ -770,10 +703,10 @@
       },
       {
         "sector": "fuels",
-        "level": "N3",
-        "label": "Dégradé",
+        "level": "N2",
+        "label": "Surveillance",
         "confidence": "élevée",
-        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé. Une concentration territoriale critique accompagne une forte dégradation nationale."
+        "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé."
       },
       {
         "sector": "rail",
@@ -781,127 +714,76 @@
         "label": "Vigilance",
         "confidence": "élevée",
         "rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable."
-      }
-    ],
-    "new_risk_signals": [],
-    "inherited_risk_context": [
-      {
-        "fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
-        "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "link": "https://www.ici.fr/hauts-de-france/aisne-02/frieres-faillouel/aisne-trois-personnes-interpellees-apres-avoir-vole-600-metres-de-cables-sncf-pour-un-prejudice-de-100-000-euros-2389981",
-        "source_domain": "ici.fr",
-        "category": "defense_security",
-        "category_label": "Défense et sécurité",
-        "published_at": "2026-09-28T12:00:00+00:00",
-        "qualification": "IMPACT_CANDIDATE",
-        "event_state": "UNKNOWN",
-        "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-        "lifecycle": "CARRIED_OVER",
-        "sectors": [
-          "rail"
-        ],
-        "impacted_sectors": [
-          "rail"
-        ],
-        "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-        "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
-        "carry_forward": true,
-        "operational_confirmation": "NOT_CHECKED",
-        "causality": "NOT_ESTABLISHED",
-        "affects_n0_n4": false
       },
       {
-        "fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-        "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "link": "https://france3-regions.franceinfo.fr/hauts-de-france/aisne/le-trafic-interrompu-sur-plusieurs-axes-entre-amiens-saint-quentin-et-tergnier-a-la-suite-de-vols-de-cables-trois-personnes-interpellees-3424361.html",
-        "source_domain": "france3-regions.franceinfo.fr",
+        "sector": "road",
+        "level": "N1",
+        "label": "Vigilance",
+        "confidence": "élevée",
+        "rationale": "Les fermetures complètes non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure. Les restrictions de capacité non planifiées atteignent un niveau de vigilance, sans corroboration suffisante pour une qualification supérieure."
+      }
+    ],
+    "new_risk_signals": [
+      {
+        "fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
+        "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "link": "https://www.lemonde.fr/economie/article/2026/09/29/greve-du-29-septembre-de-fortes-perturbations-a-prevoir-dans-les-transports-d-ile-de-france_6785107_3235.html",
+        "source_domain": "lemonde.fr",
         "category": "societal",
         "category_label": "Risques sociétaux",
-        "published_at": "2026-09-28T11:51:51+00:00",
+        "published_at": "2026-09-29T12:44:16+00:00",
         "qualification": "IMPACT_CANDIDATE",
-        "event_state": "UNKNOWN",
-        "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
-        "lifecycle": "CARRIED_OVER",
+        "event_state": "PLANNED",
+        "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+        "lifecycle": "NEW",
         "sectors": [
-          "rail"
+          "rail",
+          "air"
         ],
         "impacted_sectors": [
-          "rail"
+          "rail",
+          "air"
         ],
-        "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-        "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
+        "first_seen_at": "2026-09-29T15:06:52.828494+00:00",
+        "last_seen_at": "2026-09-29T15:06:52.828494+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
         "affects_n0_n4": false
       }
     ],
+    "inherited_risk_context": [],
     "concomitant_signals": [
       {
         "sector": "rail",
-        "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "risk_title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-        "risk_fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
+        "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "risk_title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+        "risk_fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
         "operational_level": "N1",
         "operational_label": "Vigilance",
         "operational_rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
         "risk_signal": {
-          "fingerprint": "722ac461a2b10efb1622d7620793377cd0dbc5c2203d77369d7a691ac1ddd4c4",
-          "title": "Aisne : trois personnes interpellées après avoir volé 600 mètres de câbles SNCF, pour un préjudice de 100.000 euros",
-          "link": "https://www.ici.fr/hauts-de-france/aisne-02/frieres-faillouel/aisne-trois-personnes-interpellees-apres-avoir-vole-600-metres-de-cables-sncf-pour-un-prejudice-de-100-000-euros-2389981",
-          "source_domain": "ici.fr",
-          "category": "defense_security",
-          "category_label": "Défense et sécurité",
-          "published_at": "2026-09-28T12:00:00+00:00",
-          "qualification": "IMPACT_CANDIDATE",
-          "event_state": "UNKNOWN",
-          "event_state_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
-          "lifecycle": "CARRIED_OVER",
-          "sectors": [
-            "rail"
-          ],
-          "impacted_sectors": [
-            "rail"
-          ],
-          "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-          "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
-          "carry_forward": true,
-          "operational_confirmation": "NOT_CHECKED",
-          "causality": "NOT_ESTABLISHED",
-          "affects_n0_n4": false
-        },
-        "relationship": "CONCOMITANT",
-        "causality": "CAUSALITY_NOT_ESTABLISHED",
-        "affects_n0_n4": false
-      },
-      {
-        "sector": "rail",
-        "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "risk_title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-        "risk_fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-        "operational_level": "N1",
-        "operational_label": "Vigilance",
-        "operational_rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
-        "risk_signal": {
-          "fingerprint": "c0c4edbe48c8bfa25fa464b6d99253b663ad8c1492a57f77b7bdd54ec0908ad4",
-          "title": "Le trafic interrompu sur plusieurs axes entre Amiens, Saint-Quentin et Tergnier à la suite de vols de câbles, trois personnes interpellées",
-          "link": "https://france3-regions.franceinfo.fr/hauts-de-france/aisne/le-trafic-interrompu-sur-plusieurs-axes-entre-amiens-saint-quentin-et-tergnier-a-la-suite-de-vols-de-cables-trois-personnes-interpellees-3424361.html",
-          "source_domain": "france3-regions.franceinfo.fr",
+          "fingerprint": "fb4ce2986271798024bedd2b5a3ca09ac57884586389a3f5b31dd55261586c61",
+          "title": "Grève du 29 septembre : de « fortes perturbations » prévues ce mardi dans les transports publics d’Ile-de-France",
+          "link": "https://www.lemonde.fr/economie/article/2026/09/29/greve-du-29-septembre-de-fortes-perturbations-a-prevoir-dans-les-transports-d-ile-de-france_6785107_3235.html",
+          "source_domain": "lemonde.fr",
           "category": "societal",
           "category_label": "Risques sociétaux",
-          "published_at": "2026-09-28T11:51:51+00:00",
+          "published_at": "2026-09-29T12:44:16+00:00",
           "qualification": "IMPACT_CANDIDATE",
-          "event_state": "UNKNOWN",
-          "event_state_reason": "PROJECTED_RESOLUTION_WITHOUT_CURRENT_STATE",
-          "lifecycle": "CARRIED_OVER",
+          "event_state": "PLANNED",
+          "event_state_reason": "EXPLICIT_PLANNED_EVENT",
+          "lifecycle": "NEW",
           "sectors": [
-            "rail"
+            "rail",
+            "air"
           ],
           "impacted_sectors": [
-            "rail"
+            "rail",
+            "air"
           ],
-          "first_seen_at": "2026-09-28T15:07:05.942523+00:00",
-          "last_seen_at": "2026-09-29T06:07:21.334032+00:00",
+          "first_seen_at": "2026-09-29T15:06:52.828494+00:00",
+          "last_seen_at": "2026-09-29T15:06:52.828494+00:00",
           "carry_forward": true,
           "operational_confirmation": "NOT_CHECKED",
           "causality": "NOT_ESTABLISHED",
