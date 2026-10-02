@@ -1,16 +1,16 @@
 {
   "schema_version": "risks-threats-0.4",
-  "generated_at": "2026-10-02T06:06:54.588475+00:00",
-  "generated_at_paris": "2026-10-02T08:06:54.588475+02:00",
-  "operational_slot": "morning",
-  "operational_cycle_id": "2026-10-02:morning",
+  "generated_at": "2026-10-02T15:07:31.561094+00:00",
+  "generated_at_paris": "2026-10-02T17:07:31.561094+02:00",
+  "operational_slot": "evening",
+  "operational_cycle_id": "2026-10-02:evening",
   "source_health": "OK",
   "previous_state": {
     "available": true,
     "schema_version": "risks-threats-0.4",
-    "generated_at": "2026-10-01T15:07:15.034247+00:00",
-    "operational_slot": "evening",
-    "operational_cycle_id": "2026-10-01:evening",
+    "generated_at": "2026-10-02T06:06:54.588475+00:00",
+    "operational_slot": "morning",
+    "operational_cycle_id": "2026-10-02:morning",
     "same_operational_cycle": false
   },
   "doctrine": {
@@ -48,32 +48,36 @@
   "window": {
     "lookback_hours": 24,
     "max_carry_hours": 36,
-    "start_utc": "2026-10-01T06:06:54.588475+00:00",
-    "end_utc": "2026-10-02T06:06:54.588475+00:00"
+    "start_utc": "2026-10-01T15:07:31.561094+00:00",
+    "end_utc": "2026-10-02T15:07:31.561094+00:00"
   },
   "summary": {
     "feeds_configured": 7,
     "feeds_ok": 7,
     "feeds_error": 0,
     "raw_items_total": 650,
-    "recent_items_before_dedup": 16,
-    "recent_items_after_dedup": 15,
-    "excluded_no_infrastructure": 15,
-    "retained_infrastructure_relevant": 0,
+    "recent_items_before_dedup": 12,
+    "recent_items_after_dedup": 12,
+    "excluded_no_infrastructure": 11,
+    "retained_infrastructure_relevant": 1,
     "context": 0,
     "watch": 0,
-    "impact_candidates": 0,
-    "new": 0,
+    "impact_candidates": 1,
+    "new": 1,
     "carried_over": 0,
     "event_states": {
       "active": 0,
       "resolved": 0,
       "planned": 0,
-      "unknown": 0
+      "unknown": 1
     },
-    "eligible_for_next_carry": 0,
-    "sector_counts": {},
-    "impacted_sector_counts": {}
+    "eligible_for_next_carry": 1,
+    "sector_counts": {
+      "fuels": 1
+    },
+    "impacted_sector_counts": {
+      "fuels": 1
+    }
   },
   "feeds": {
     "cyber": {
@@ -154,14 +158,374 @@
       "items_count": 100
     }
   },
-  "items": [],
+  "items": [
+    {
+      "category": "societal",
+      "category_label": "Risques sociétaux",
+      "title": "Le Bas-Rhin est le département le plus touché par la pénurie de carburant",
+      "link": "https://www.20minutes.fr/economie/4250693-20261002-bas-rhin-departements-plus-touches-penuries-carburant",
+      "source_domain": "20minutes.fr",
+      "guid": null,
+      "published_at": "2026-10-02T12:54:51+00:00",
+      "published_raw": "Fri, 02 Oct 2026 14:54:51 +0200",
+      "source": "HCFDC",
+      "description": "Le Bas-Rhin est le département français le plus touché par la pénurie de carburant, en raison d'une baisse du niveau du Rhin due à une sécheresse prolongée, rendant l'acheminement des hydrocarbures par bateau impossible. Le 30 avril, plus d’un tiers des stations essence du département étaient en rupture de stock d’au moins un carburant, avec 37,4 % des stations concernées. Le SP98 est le carburant le plus difficile à trouver, avec 43 stations sans approvisionnement. D'autres départements comme la Gironde, les Yvelines et la Haute-Garonne connaissent également des difficultés similaires.",
+      "fingerprint": "fad0121fc955c29add1fd6690ec407b601480c98c2b9eb6936e9540dd3955acc",
+      "feed_categories": [
+        "societal"
+      ],
+      "feed_category_labels": [
+        "Risques sociétaux"
+      ],
+      "qualification": "IMPACT_CANDIDATE",
+      "event_state": "UNKNOWN",
+      "event_state_evidence": {
+        "title_resolved_matches": [],
+        "resolved_matches": [],
+        "projected_resolution_matches": [],
+        "active_matches": [],
+        "planned_matches": [],
+        "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "state_confidence": "UNDETERMINED",
+        "qualification_context": "IMPACT_CANDIDATE"
+      },
+      "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+      "geographic_scope": "FRANCE",
+      "geographic_evidence": {
+        "scope": "FRANCE",
+        "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+        "france_matches": [
+          "\\bfrancais\\b"
+        ],
+        "france_specific_matches": [],
+        "foreign_matches": [],
+        "explicit_operational_effect_in_france": false,
+        "france_effect_matches": []
+      },
+      "sectors": [
+        "fuels"
+      ],
+      "title_sectors": [
+        "fuels"
+      ],
+      "impacted_sectors": [
+        "fuels"
+      ],
+      "sector_detection": {
+        "fuels": {
+          "title_match": true,
+          "description_match": true,
+          "title_patterns": [
+            "\\bpenurie de carburant\\b"
+          ],
+          "description_patterns": [
+            "\\bstations essence\\b",
+            "\\bpenurie de carburant\\b"
+          ]
+        }
+      },
+      "sector_impacts": {
+        "fuels": {
+          "explicit_pattern": true,
+          "local_relation": false,
+          "impact_candidate": true
+        }
+      },
+      "signals": {
+        "infrastructure_match": true,
+        "threat_signal": true,
+        "prospective_signal": false,
+        "explicit_operational_impact": true
+      },
+      "causality": "NOT_ASSESSED",
+      "operational_confirmation": "NOT_CHECKED",
+      "affects_n0_n4": false,
+      "lifecycle": "NEW",
+      "first_seen_at": "2026-10-02T15:07:31.561094+00:00",
+      "first_seen_cycle_id": "2026-10-02:evening",
+      "current_cycle_id": "2026-10-02:evening",
+      "seen_count": 1,
+      "last_seen_at": "2026-10-02T15:07:31.561094+00:00",
+      "carry_forward": true
+    }
+  ],
   "presentation": {
-    "new_items": [],
+    "new_items": [
+      {
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "title": "Le Bas-Rhin est le département le plus touché par la pénurie de carburant",
+        "link": "https://www.20minutes.fr/economie/4250693-20261002-bas-rhin-departements-plus-touches-penuries-carburant",
+        "source_domain": "20minutes.fr",
+        "guid": null,
+        "published_at": "2026-10-02T12:54:51+00:00",
+        "published_raw": "Fri, 02 Oct 2026 14:54:51 +0200",
+        "source": "HCFDC",
+        "description": "Le Bas-Rhin est le département français le plus touché par la pénurie de carburant, en raison d'une baisse du niveau du Rhin due à une sécheresse prolongée, rendant l'acheminement des hydrocarbures par bateau impossible. Le 30 avril, plus d’un tiers des stations essence du département étaient en rupture de stock d’au moins un carburant, avec 37,4 % des stations concernées. Le SP98 est le carburant le plus difficile à trouver, avec 43 stations sans approvisionnement. D'autres départements comme la Gironde, les Yvelines et la Haute-Garonne connaissent également des difficultés similaires.",
+        "fingerprint": "fad0121fc955c29add1fd6690ec407b601480c98c2b9eb6936e9540dd3955acc",
+        "feed_categories": [
+          "societal"
+        ],
+        "feed_category_labels": [
+          "Risques sociétaux"
+        ],
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [],
+          "planned_matches": [],
+          "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "state_confidence": "UNDETERMINED",
+          "qualification_context": "IMPACT_CANDIDATE"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrancais\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "fuels"
+        ],
+        "title_sectors": [
+          "fuels"
+        ],
+        "impacted_sectors": [
+          "fuels"
+        ],
+        "sector_detection": {
+          "fuels": {
+            "title_match": true,
+            "description_match": true,
+            "title_patterns": [
+              "\\bpenurie de carburant\\b"
+            ],
+            "description_patterns": [
+              "\\bstations essence\\b",
+              "\\bpenurie de carburant\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "fuels": {
+            "explicit_pattern": true,
+            "local_relation": false,
+            "impact_candidate": true
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": true,
+          "prospective_signal": false,
+          "explicit_operational_impact": true
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-02T15:07:31.561094+00:00",
+        "first_seen_cycle_id": "2026-10-02:evening",
+        "current_cycle_id": "2026-10-02:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-02T15:07:31.561094+00:00",
+        "carry_forward": true
+      }
+    ],
     "carried_over_items": [],
     "active_items": [],
     "planned_items": [],
     "resolved_items": [],
-    "unknown_items": [],
-    "carry_forward_items": []
+    "unknown_items": [
+      {
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "title": "Le Bas-Rhin est le département le plus touché par la pénurie de carburant",
+        "link": "https://www.20minutes.fr/economie/4250693-20261002-bas-rhin-departements-plus-touches-penuries-carburant",
+        "source_domain": "20minutes.fr",
+        "guid": null,
+        "published_at": "2026-10-02T12:54:51+00:00",
+        "published_raw": "Fri, 02 Oct 2026 14:54:51 +0200",
+        "source": "HCFDC",
+        "description": "Le Bas-Rhin est le département français le plus touché par la pénurie de carburant, en raison d'une baisse du niveau du Rhin due à une sécheresse prolongée, rendant l'acheminement des hydrocarbures par bateau impossible. Le 30 avril, plus d’un tiers des stations essence du département étaient en rupture de stock d’au moins un carburant, avec 37,4 % des stations concernées. Le SP98 est le carburant le plus difficile à trouver, avec 43 stations sans approvisionnement. D'autres départements comme la Gironde, les Yvelines et la Haute-Garonne connaissent également des difficultés similaires.",
+        "fingerprint": "fad0121fc955c29add1fd6690ec407b601480c98c2b9eb6936e9540dd3955acc",
+        "feed_categories": [
+          "societal"
+        ],
+        "feed_category_labels": [
+          "Risques sociétaux"
+        ],
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [],
+          "planned_matches": [],
+          "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "state_confidence": "UNDETERMINED",
+          "qualification_context": "IMPACT_CANDIDATE"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrancais\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "fuels"
+        ],
+        "title_sectors": [
+          "fuels"
+        ],
+        "impacted_sectors": [
+          "fuels"
+        ],
+        "sector_detection": {
+          "fuels": {
+            "title_match": true,
+            "description_match": true,
+            "title_patterns": [
+              "\\bpenurie de carburant\\b"
+            ],
+            "description_patterns": [
+              "\\bstations essence\\b",
+              "\\bpenurie de carburant\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "fuels": {
+            "explicit_pattern": true,
+            "local_relation": false,
+            "impact_candidate": true
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": true,
+          "prospective_signal": false,
+          "explicit_operational_impact": true
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-02T15:07:31.561094+00:00",
+        "first_seen_cycle_id": "2026-10-02:evening",
+        "current_cycle_id": "2026-10-02:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-02T15:07:31.561094+00:00",
+        "carry_forward": true
+      }
+    ],
+    "carry_forward_items": [
+      {
+        "category": "societal",
+        "category_label": "Risques sociétaux",
+        "title": "Le Bas-Rhin est le département le plus touché par la pénurie de carburant",
+        "link": "https://www.20minutes.fr/economie/4250693-20261002-bas-rhin-departements-plus-touches-penuries-carburant",
+        "source_domain": "20minutes.fr",
+        "guid": null,
+        "published_at": "2026-10-02T12:54:51+00:00",
+        "published_raw": "Fri, 02 Oct 2026 14:54:51 +0200",
+        "source": "HCFDC",
+        "description": "Le Bas-Rhin est le département français le plus touché par la pénurie de carburant, en raison d'une baisse du niveau du Rhin due à une sécheresse prolongée, rendant l'acheminement des hydrocarbures par bateau impossible. Le 30 avril, plus d’un tiers des stations essence du département étaient en rupture de stock d’au moins un carburant, avec 37,4 % des stations concernées. Le SP98 est le carburant le plus difficile à trouver, avec 43 stations sans approvisionnement. D'autres départements comme la Gironde, les Yvelines et la Haute-Garonne connaissent également des difficultés similaires.",
+        "fingerprint": "fad0121fc955c29add1fd6690ec407b601480c98c2b9eb6936e9540dd3955acc",
+        "feed_categories": [
+          "societal"
+        ],
+        "feed_category_labels": [
+          "Risques sociétaux"
+        ],
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [],
+          "planned_matches": [],
+          "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "state_confidence": "UNDETERMINED",
+          "qualification_context": "IMPACT_CANDIDATE"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrancais\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "fuels"
+        ],
+        "title_sectors": [
+          "fuels"
+        ],
+        "impacted_sectors": [
+          "fuels"
+        ],
+        "sector_detection": {
+          "fuels": {
+            "title_match": true,
+            "description_match": true,
+            "title_patterns": [
+              "\\bpenurie de carburant\\b"
+            ],
+            "description_patterns": [
+              "\\bstations essence\\b",
+              "\\bpenurie de carburant\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "fuels": {
+            "explicit_pattern": true,
+            "local_relation": false,
+            "impact_candidate": true
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": true,
+          "prospective_signal": false,
+          "explicit_operational_impact": true
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-02T15:07:31.561094+00:00",
+        "first_seen_cycle_id": "2026-10-02:evening",
+        "current_cycle_id": "2026-10-02:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-02T15:07:31.561094+00:00",
+        "carry_forward": true
+      }
+    ]
   }
 }
