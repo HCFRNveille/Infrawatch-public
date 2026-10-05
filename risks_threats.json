@@ -1,16 +1,16 @@
 {
   "schema_version": "risks-threats-0.4",
-  "generated_at": "2026-10-05T06:07:22.818318+00:00",
-  "generated_at_paris": "2026-10-05T08:07:22.818318+02:00",
-  "operational_slot": "morning",
-  "operational_cycle_id": "2026-10-05:morning",
+  "generated_at": "2026-10-05T15:07:05.386538+00:00",
+  "generated_at_paris": "2026-10-05T17:07:05.386538+02:00",
+  "operational_slot": "evening",
+  "operational_cycle_id": "2026-10-05:evening",
   "source_health": "OK",
   "previous_state": {
     "available": true,
     "schema_version": "risks-threats-0.4",
-    "generated_at": "2026-10-04T15:07:23.623603+00:00",
-    "operational_slot": "evening",
-    "operational_cycle_id": "2026-10-04:evening",
+    "generated_at": "2026-10-05T06:07:22.818318+00:00",
+    "operational_slot": "morning",
+    "operational_cycle_id": "2026-10-05:morning",
     "same_operational_cycle": false
   },
   "doctrine": {
@@ -48,32 +48,37 @@
   "window": {
     "lookback_hours": 24,
     "max_carry_hours": 36,
-    "start_utc": "2026-10-04T06:07:22.818318+00:00",
-    "end_utc": "2026-10-05T06:07:22.818318+00:00"
+    "start_utc": "2026-10-04T15:07:05.386538+00:00",
+    "end_utc": "2026-10-05T15:07:05.386538+00:00"
   },
   "summary": {
     "feeds_configured": 7,
     "feeds_ok": 7,
     "feeds_error": 0,
     "raw_items_total": 650,
-    "recent_items_before_dedup": 6,
-    "recent_items_after_dedup": 6,
-    "excluded_no_infrastructure": 6,
-    "retained_infrastructure_relevant": 0,
-    "context": 0,
+    "recent_items_before_dedup": 15,
+    "recent_items_after_dedup": 15,
+    "excluded_no_infrastructure": 13,
+    "retained_infrastructure_relevant": 2,
+    "context": 1,
     "watch": 0,
-    "impact_candidates": 0,
-    "new": 0,
+    "impact_candidates": 1,
+    "new": 2,
     "carried_over": 0,
     "event_states": {
-      "active": 0,
+      "active": 1,
       "resolved": 0,
       "planned": 0,
-      "unknown": 0
+      "unknown": 1
     },
-    "eligible_for_next_carry": 0,
-    "sector_counts": {},
-    "impacted_sector_counts": {}
+    "eligible_for_next_carry": 2,
+    "sector_counts": {
+      "water": 1,
+      "air": 1
+    },
+    "impacted_sector_counts": {
+      "water": 1
+    }
   },
   "feeds": {
     "cyber": {
@@ -154,14 +159,695 @@
       "items_count": 100
     }
   },
-  "items": [],
+  "items": [
+    {
+      "category": "natural",
+      "category_label": "Risques naturels",
+      "title": "Sécheresse en Martinique : deux fois moins de pluie que la normale en septembre",
+      "link": "https://rci.fm/martinique/infos/Risques-naturels/Secheresse-en-Martinique-deux-fois-moins-de-pluie-que-la-normale-en",
+      "source_domain": "rci.fm",
+      "guid": null,
+      "published_at": "2026-10-05T12:46:17+00:00",
+      "published_raw": "Mon, 05 Oct 2026 14:46:17 +0200",
+      "source": "HCFDC",
+      "description": "De nombreux foyers de Fort-de-France, Schœlcher et du Lamentin ont de nouveau subi des coupures d'eau potable ce week-end, alors que la Martinique reste en alerte sécheresse depuis juillet, après un mois de septembre marqué par un déficit pluviométrique exceptionnel, avec seulement 50 % de la normale sur l'ensemble de l'île. À la station du Lamentin, seuls 100 millimètres de pluie ont été enregistrés, contre plus de 200 millimètres habituellement, et 28 millimètres au Vauclin, soit 20 % du niveau normal. Ce déficit s'étend à tous les mois de l'année, depuis avril, exacerbé par des températures élevées (jusqu'à 35 °C) et un El Niño exceptionnel dans l'océan Pacifique, combiné à une hausse de la température de l'Atlantique. La sécheresse pourrait persister plusieurs mois, avec un pic d'El Niño prévu entre décembre et janvier, mettant en péril le Carême 2027. Les prochaines pluies ne compenseront pas durablement le manque d'eau.",
+      "fingerprint": "db6212589ba0790c3336fe488f6eee18600f31cd4f0b7e7e77a865ec76f1d66f",
+      "feed_categories": [
+        "natural"
+      ],
+      "feed_category_labels": [
+        "Risques naturels"
+      ],
+      "qualification": "IMPACT_CANDIDATE",
+      "event_state": "UNKNOWN",
+      "event_state_evidence": {
+        "title_resolved_matches": [],
+        "resolved_matches": [],
+        "projected_resolution_matches": [],
+        "active_matches": [],
+        "planned_matches": [],
+        "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+        "state_confidence": "UNDETERMINED",
+        "qualification_context": "IMPACT_CANDIDATE"
+      },
+      "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+      "geographic_scope": "FRANCE",
+      "geographic_evidence": {
+        "scope": "FRANCE",
+        "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+        "france_matches": [
+          "\\bfrance\\b",
+          "\\bmartinique\\b"
+        ],
+        "france_specific_matches": [],
+        "foreign_matches": [],
+        "explicit_operational_effect_in_france": false,
+        "france_effect_matches": []
+      },
+      "sectors": [
+        "water"
+      ],
+      "title_sectors": [],
+      "impacted_sectors": [
+        "water"
+      ],
+      "sector_detection": {
+        "water": {
+          "title_match": false,
+          "description_match": true,
+          "title_patterns": [],
+          "description_patterns": [
+            "\\bcoupures d eau\\b"
+          ]
+        }
+      },
+      "sector_impacts": {
+        "water": {
+          "explicit_pattern": true,
+          "local_relation": false,
+          "impact_candidate": true
+        }
+      },
+      "signals": {
+        "infrastructure_match": true,
+        "threat_signal": true,
+        "prospective_signal": true,
+        "explicit_operational_impact": true
+      },
+      "causality": "NOT_ASSESSED",
+      "operational_confirmation": "NOT_CHECKED",
+      "affects_n0_n4": false,
+      "lifecycle": "NEW",
+      "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+      "first_seen_cycle_id": "2026-10-05:evening",
+      "current_cycle_id": "2026-10-05:evening",
+      "seen_count": 1,
+      "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+      "carry_forward": true
+    },
+    {
+      "category": "defense_security",
+      "category_label": "Défense et sécurité",
+      "title": "Polynésie française : plus de 8 kilos d’ice saisis dans les valises de deux Américains",
+      "link": "https://www.lnc.nc/article/polynesie-francaise-plus-de-8-kilos-d-ice-saisis-dans-les-valises-de-deux-americains",
+      "source_domain": "lnc.nc",
+      "guid": null,
+      "published_at": "2026-10-05T12:45:04+00:00",
+      "published_raw": "Mon, 05 Oct 2026 14:45:04 +0200",
+      "source": "HCFDC",
+      "description": "Deux Américains ont été interpellés à l’aéroport de Polynésie française, chacun transportant plus de 4 kilos de méthamphétamine dissimulés dans leurs valises, ce qui soulève des questions sur une éventuelle organisation criminelle commune. Le premier, un homme de 28 ans, a été arrêté samedi dernier avec 4,3 kilos d’ice, découverts lors d’une fouille filmée en direct, et placé en retenue douanière avant d’être présenté à la procureure. L’autre, un jeune de 21 ans, avait été arrêté le 13 septembre avec 4,13 kilos d’ice cachés dans une housse de tapis, après avoir déclaré avoir été rémunéré 2 000 dollars pour transporter 200 000 doses, ce qui lui a valu sept ans de prison et une amende de 300 millions de francs. Une enquête est en cours pour vérifier les liens possibles entre les deux affaires.",
+      "fingerprint": "d14033cd707340b05ed1a67e6be275daf0bcf2596788f7141eed36a213fa7648",
+      "feed_categories": [
+        "defense_security"
+      ],
+      "feed_category_labels": [
+        "Défense et sécurité"
+      ],
+      "qualification": "CONTEXT",
+      "event_state": "ACTIVE",
+      "event_state_evidence": {
+        "title_resolved_matches": [],
+        "resolved_matches": [],
+        "projected_resolution_matches": [],
+        "active_matches": [
+          "\\ben cours\\b"
+        ],
+        "planned_matches": [],
+        "decision_reason": "EXPLICIT_ACTIVE_STATE",
+        "state_confidence": "EXPLICIT",
+        "qualification_context": "CONTEXT"
+      },
+      "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+      "geographic_scope": "FRANCE",
+      "geographic_evidence": {
+        "scope": "FRANCE",
+        "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+        "france_matches": [
+          "\\bfrancaise\\b"
+        ],
+        "france_specific_matches": [],
+        "foreign_matches": [],
+        "explicit_operational_effect_in_france": false,
+        "france_effect_matches": []
+      },
+      "sectors": [
+        "air"
+      ],
+      "title_sectors": [],
+      "impacted_sectors": [],
+      "sector_detection": {
+        "air": {
+          "title_match": false,
+          "description_match": true,
+          "title_patterns": [],
+          "description_patterns": [
+            "\\baeroport\\b"
+          ]
+        }
+      },
+      "sector_impacts": {
+        "air": {
+          "explicit_pattern": false,
+          "local_relation": false,
+          "impact_candidate": false
+        }
+      },
+      "signals": {
+        "infrastructure_match": true,
+        "threat_signal": false,
+        "prospective_signal": false,
+        "explicit_operational_impact": false
+      },
+      "causality": "NOT_ASSESSED",
+      "operational_confirmation": "NOT_CHECKED",
+      "affects_n0_n4": false,
+      "lifecycle": "NEW",
+      "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+      "first_seen_cycle_id": "2026-10-05:evening",
+      "current_cycle_id": "2026-10-05:evening",
+      "seen_count": 1,
+      "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+      "carry_forward": true
+    }
+  ],
   "presentation": {
-    "new_items": [],
+    "new_items": [
+      {
+        "category": "natural",
+        "category_label": "Risques naturels",
+        "title": "Sécheresse en Martinique : deux fois moins de pluie que la normale en septembre",
+        "link": "https://rci.fm/martinique/infos/Risques-naturels/Secheresse-en-Martinique-deux-fois-moins-de-pluie-que-la-normale-en",
+        "source_domain": "rci.fm",
+        "guid": null,
+        "published_at": "2026-10-05T12:46:17+00:00",
+        "published_raw": "Mon, 05 Oct 2026 14:46:17 +0200",
+        "source": "HCFDC",
+        "description": "De nombreux foyers de Fort-de-France, Schœlcher et du Lamentin ont de nouveau subi des coupures d'eau potable ce week-end, alors que la Martinique reste en alerte sécheresse depuis juillet, après un mois de septembre marqué par un déficit pluviométrique exceptionnel, avec seulement 50 % de la normale sur l'ensemble de l'île. À la station du Lamentin, seuls 100 millimètres de pluie ont été enregistrés, contre plus de 200 millimètres habituellement, et 28 millimètres au Vauclin, soit 20 % du niveau normal. Ce déficit s'étend à tous les mois de l'année, depuis avril, exacerbé par des températures élevées (jusqu'à 35 °C) et un El Niño exceptionnel dans l'océan Pacifique, combiné à une hausse de la température de l'Atlantique. La sécheresse pourrait persister plusieurs mois, avec un pic d'El Niño prévu entre décembre et janvier, mettant en péril le Carême 2027. Les prochaines pluies ne compenseront pas durablement le manque d'eau.",
+        "fingerprint": "db6212589ba0790c3336fe488f6eee18600f31cd4f0b7e7e77a865ec76f1d66f",
+        "feed_categories": [
+          "natural"
+        ],
+        "feed_category_labels": [
+          "Risques naturels"
+        ],
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [],
+          "planned_matches": [],
+          "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "state_confidence": "UNDETERMINED",
+          "qualification_context": "IMPACT_CANDIDATE"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrance\\b",
+            "\\bmartinique\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "water"
+        ],
+        "title_sectors": [],
+        "impacted_sectors": [
+          "water"
+        ],
+        "sector_detection": {
+          "water": {
+            "title_match": false,
+            "description_match": true,
+            "title_patterns": [],
+            "description_patterns": [
+              "\\bcoupures d eau\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "water": {
+            "explicit_pattern": true,
+            "local_relation": false,
+            "impact_candidate": true
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": true,
+          "prospective_signal": true,
+          "explicit_operational_impact": true
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "first_seen_cycle_id": "2026-10-05:evening",
+        "current_cycle_id": "2026-10-05:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "carry_forward": true
+      },
+      {
+        "category": "defense_security",
+        "category_label": "Défense et sécurité",
+        "title": "Polynésie française : plus de 8 kilos d’ice saisis dans les valises de deux Américains",
+        "link": "https://www.lnc.nc/article/polynesie-francaise-plus-de-8-kilos-d-ice-saisis-dans-les-valises-de-deux-americains",
+        "source_domain": "lnc.nc",
+        "guid": null,
+        "published_at": "2026-10-05T12:45:04+00:00",
+        "published_raw": "Mon, 05 Oct 2026 14:45:04 +0200",
+        "source": "HCFDC",
+        "description": "Deux Américains ont été interpellés à l’aéroport de Polynésie française, chacun transportant plus de 4 kilos de méthamphétamine dissimulés dans leurs valises, ce qui soulève des questions sur une éventuelle organisation criminelle commune. Le premier, un homme de 28 ans, a été arrêté samedi dernier avec 4,3 kilos d’ice, découverts lors d’une fouille filmée en direct, et placé en retenue douanière avant d’être présenté à la procureure. L’autre, un jeune de 21 ans, avait été arrêté le 13 septembre avec 4,13 kilos d’ice cachés dans une housse de tapis, après avoir déclaré avoir été rémunéré 2 000 dollars pour transporter 200 000 doses, ce qui lui a valu sept ans de prison et une amende de 300 millions de francs. Une enquête est en cours pour vérifier les liens possibles entre les deux affaires.",
+        "fingerprint": "d14033cd707340b05ed1a67e6be275daf0bcf2596788f7141eed36a213fa7648",
+        "feed_categories": [
+          "defense_security"
+        ],
+        "feed_category_labels": [
+          "Défense et sécurité"
+        ],
+        "qualification": "CONTEXT",
+        "event_state": "ACTIVE",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [
+            "\\ben cours\\b"
+          ],
+          "planned_matches": [],
+          "decision_reason": "EXPLICIT_ACTIVE_STATE",
+          "state_confidence": "EXPLICIT",
+          "qualification_context": "CONTEXT"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrancaise\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "air"
+        ],
+        "title_sectors": [],
+        "impacted_sectors": [],
+        "sector_detection": {
+          "air": {
+            "title_match": false,
+            "description_match": true,
+            "title_patterns": [],
+            "description_patterns": [
+              "\\baeroport\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "air": {
+            "explicit_pattern": false,
+            "local_relation": false,
+            "impact_candidate": false
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": false,
+          "prospective_signal": false,
+          "explicit_operational_impact": false
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "first_seen_cycle_id": "2026-10-05:evening",
+        "current_cycle_id": "2026-10-05:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "carry_forward": true
+      }
+    ],
     "carried_over_items": [],
-    "active_items": [],
+    "active_items": [
+      {
+        "category": "defense_security",
+        "category_label": "Défense et sécurité",
+        "title": "Polynésie française : plus de 8 kilos d’ice saisis dans les valises de deux Américains",
+        "link": "https://www.lnc.nc/article/polynesie-francaise-plus-de-8-kilos-d-ice-saisis-dans-les-valises-de-deux-americains",
+        "source_domain": "lnc.nc",
+        "guid": null,
+        "published_at": "2026-10-05T12:45:04+00:00",
+        "published_raw": "Mon, 05 Oct 2026 14:45:04 +0200",
+        "source": "HCFDC",
+        "description": "Deux Américains ont été interpellés à l’aéroport de Polynésie française, chacun transportant plus de 4 kilos de méthamphétamine dissimulés dans leurs valises, ce qui soulève des questions sur une éventuelle organisation criminelle commune. Le premier, un homme de 28 ans, a été arrêté samedi dernier avec 4,3 kilos d’ice, découverts lors d’une fouille filmée en direct, et placé en retenue douanière avant d’être présenté à la procureure. L’autre, un jeune de 21 ans, avait été arrêté le 13 septembre avec 4,13 kilos d’ice cachés dans une housse de tapis, après avoir déclaré avoir été rémunéré 2 000 dollars pour transporter 200 000 doses, ce qui lui a valu sept ans de prison et une amende de 300 millions de francs. Une enquête est en cours pour vérifier les liens possibles entre les deux affaires.",
+        "fingerprint": "d14033cd707340b05ed1a67e6be275daf0bcf2596788f7141eed36a213fa7648",
+        "feed_categories": [
+          "defense_security"
+        ],
+        "feed_category_labels": [
+          "Défense et sécurité"
+        ],
+        "qualification": "CONTEXT",
+        "event_state": "ACTIVE",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [
+            "\\ben cours\\b"
+          ],
+          "planned_matches": [],
+          "decision_reason": "EXPLICIT_ACTIVE_STATE",
+          "state_confidence": "EXPLICIT",
+          "qualification_context": "CONTEXT"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrancaise\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "air"
+        ],
+        "title_sectors": [],
+        "impacted_sectors": [],
+        "sector_detection": {
+          "air": {
+            "title_match": false,
+            "description_match": true,
+            "title_patterns": [],
+            "description_patterns": [
+              "\\baeroport\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "air": {
+            "explicit_pattern": false,
+            "local_relation": false,
+            "impact_candidate": false
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": false,
+          "prospective_signal": false,
+          "explicit_operational_impact": false
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "first_seen_cycle_id": "2026-10-05:evening",
+        "current_cycle_id": "2026-10-05:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "carry_forward": true
+      }
+    ],
     "planned_items": [],
     "resolved_items": [],
-    "unknown_items": [],
-    "carry_forward_items": []
+    "unknown_items": [
+      {
+        "category": "natural",
+        "category_label": "Risques naturels",
+        "title": "Sécheresse en Martinique : deux fois moins de pluie que la normale en septembre",
+        "link": "https://rci.fm/martinique/infos/Risques-naturels/Secheresse-en-Martinique-deux-fois-moins-de-pluie-que-la-normale-en",
+        "source_domain": "rci.fm",
+        "guid": null,
+        "published_at": "2026-10-05T12:46:17+00:00",
+        "published_raw": "Mon, 05 Oct 2026 14:46:17 +0200",
+        "source": "HCFDC",
+        "description": "De nombreux foyers de Fort-de-France, Schœlcher et du Lamentin ont de nouveau subi des coupures d'eau potable ce week-end, alors que la Martinique reste en alerte sécheresse depuis juillet, après un mois de septembre marqué par un déficit pluviométrique exceptionnel, avec seulement 50 % de la normale sur l'ensemble de l'île. À la station du Lamentin, seuls 100 millimètres de pluie ont été enregistrés, contre plus de 200 millimètres habituellement, et 28 millimètres au Vauclin, soit 20 % du niveau normal. Ce déficit s'étend à tous les mois de l'année, depuis avril, exacerbé par des températures élevées (jusqu'à 35 °C) et un El Niño exceptionnel dans l'océan Pacifique, combiné à une hausse de la température de l'Atlantique. La sécheresse pourrait persister plusieurs mois, avec un pic d'El Niño prévu entre décembre et janvier, mettant en péril le Carême 2027. Les prochaines pluies ne compenseront pas durablement le manque d'eau.",
+        "fingerprint": "db6212589ba0790c3336fe488f6eee18600f31cd4f0b7e7e77a865ec76f1d66f",
+        "feed_categories": [
+          "natural"
+        ],
+        "feed_category_labels": [
+          "Risques naturels"
+        ],
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [],
+          "planned_matches": [],
+          "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "state_confidence": "UNDETERMINED",
+          "qualification_context": "IMPACT_CANDIDATE"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrance\\b",
+            "\\bmartinique\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "water"
+        ],
+        "title_sectors": [],
+        "impacted_sectors": [
+          "water"
+        ],
+        "sector_detection": {
+          "water": {
+            "title_match": false,
+            "description_match": true,
+            "title_patterns": [],
+            "description_patterns": [
+              "\\bcoupures d eau\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "water": {
+            "explicit_pattern": true,
+            "local_relation": false,
+            "impact_candidate": true
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": true,
+          "prospective_signal": true,
+          "explicit_operational_impact": true
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "first_seen_cycle_id": "2026-10-05:evening",
+        "current_cycle_id": "2026-10-05:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "carry_forward": true
+      }
+    ],
+    "carry_forward_items": [
+      {
+        "category": "natural",
+        "category_label": "Risques naturels",
+        "title": "Sécheresse en Martinique : deux fois moins de pluie que la normale en septembre",
+        "link": "https://rci.fm/martinique/infos/Risques-naturels/Secheresse-en-Martinique-deux-fois-moins-de-pluie-que-la-normale-en",
+        "source_domain": "rci.fm",
+        "guid": null,
+        "published_at": "2026-10-05T12:46:17+00:00",
+        "published_raw": "Mon, 05 Oct 2026 14:46:17 +0200",
+        "source": "HCFDC",
+        "description": "De nombreux foyers de Fort-de-France, Schœlcher et du Lamentin ont de nouveau subi des coupures d'eau potable ce week-end, alors que la Martinique reste en alerte sécheresse depuis juillet, après un mois de septembre marqué par un déficit pluviométrique exceptionnel, avec seulement 50 % de la normale sur l'ensemble de l'île. À la station du Lamentin, seuls 100 millimètres de pluie ont été enregistrés, contre plus de 200 millimètres habituellement, et 28 millimètres au Vauclin, soit 20 % du niveau normal. Ce déficit s'étend à tous les mois de l'année, depuis avril, exacerbé par des températures élevées (jusqu'à 35 °C) et un El Niño exceptionnel dans l'océan Pacifique, combiné à une hausse de la température de l'Atlantique. La sécheresse pourrait persister plusieurs mois, avec un pic d'El Niño prévu entre décembre et janvier, mettant en péril le Carême 2027. Les prochaines pluies ne compenseront pas durablement le manque d'eau.",
+        "fingerprint": "db6212589ba0790c3336fe488f6eee18600f31cd4f0b7e7e77a865ec76f1d66f",
+        "feed_categories": [
+          "natural"
+        ],
+        "feed_category_labels": [
+          "Risques naturels"
+        ],
+        "qualification": "IMPACT_CANDIDATE",
+        "event_state": "UNKNOWN",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [],
+          "planned_matches": [],
+          "decision_reason": "INSUFFICIENT_TEMPORAL_EVIDENCE",
+          "state_confidence": "UNDETERMINED",
+          "qualification_context": "IMPACT_CANDIDATE"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrance\\b",
+            "\\bmartinique\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "water"
+        ],
+        "title_sectors": [],
+        "impacted_sectors": [
+          "water"
+        ],
+        "sector_detection": {
+          "water": {
+            "title_match": false,
+            "description_match": true,
+            "title_patterns": [],
+            "description_patterns": [
+              "\\bcoupures d eau\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "water": {
+            "explicit_pattern": true,
+            "local_relation": false,
+            "impact_candidate": true
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": true,
+          "prospective_signal": true,
+          "explicit_operational_impact": true
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "first_seen_cycle_id": "2026-10-05:evening",
+        "current_cycle_id": "2026-10-05:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "carry_forward": true
+      },
+      {
+        "category": "defense_security",
+        "category_label": "Défense et sécurité",
+        "title": "Polynésie française : plus de 8 kilos d’ice saisis dans les valises de deux Américains",
+        "link": "https://www.lnc.nc/article/polynesie-francaise-plus-de-8-kilos-d-ice-saisis-dans-les-valises-de-deux-americains",
+        "source_domain": "lnc.nc",
+        "guid": null,
+        "published_at": "2026-10-05T12:45:04+00:00",
+        "published_raw": "Mon, 05 Oct 2026 14:45:04 +0200",
+        "source": "HCFDC",
+        "description": "Deux Américains ont été interpellés à l’aéroport de Polynésie française, chacun transportant plus de 4 kilos de méthamphétamine dissimulés dans leurs valises, ce qui soulève des questions sur une éventuelle organisation criminelle commune. Le premier, un homme de 28 ans, a été arrêté samedi dernier avec 4,3 kilos d’ice, découverts lors d’une fouille filmée en direct, et placé en retenue douanière avant d’être présenté à la procureure. L’autre, un jeune de 21 ans, avait été arrêté le 13 septembre avec 4,13 kilos d’ice cachés dans une housse de tapis, après avoir déclaré avoir été rémunéré 2 000 dollars pour transporter 200 000 doses, ce qui lui a valu sept ans de prison et une amende de 300 millions de francs. Une enquête est en cours pour vérifier les liens possibles entre les deux affaires.",
+        "fingerprint": "d14033cd707340b05ed1a67e6be275daf0bcf2596788f7141eed36a213fa7648",
+        "feed_categories": [
+          "defense_security"
+        ],
+        "feed_category_labels": [
+          "Défense et sécurité"
+        ],
+        "qualification": "CONTEXT",
+        "event_state": "ACTIVE",
+        "event_state_evidence": {
+          "title_resolved_matches": [],
+          "resolved_matches": [],
+          "projected_resolution_matches": [],
+          "active_matches": [
+            "\\ben cours\\b"
+          ],
+          "planned_matches": [],
+          "decision_reason": "EXPLICIT_ACTIVE_STATE",
+          "state_confidence": "EXPLICIT",
+          "qualification_context": "CONTEXT"
+        },
+        "relevance": "FRANCE_INFRASTRUCTURE_RELEVANT",
+        "geographic_scope": "FRANCE",
+        "geographic_evidence": {
+          "scope": "FRANCE",
+          "decision_reason": "EXPLICIT_FRANCE_SCOPE",
+          "france_matches": [
+            "\\bfrancaise\\b"
+          ],
+          "france_specific_matches": [],
+          "foreign_matches": [],
+          "explicit_operational_effect_in_france": false,
+          "france_effect_matches": []
+        },
+        "sectors": [
+          "air"
+        ],
+        "title_sectors": [],
+        "impacted_sectors": [],
+        "sector_detection": {
+          "air": {
+            "title_match": false,
+            "description_match": true,
+            "title_patterns": [],
+            "description_patterns": [
+              "\\baeroport\\b"
+            ]
+          }
+        },
+        "sector_impacts": {
+          "air": {
+            "explicit_pattern": false,
+            "local_relation": false,
+            "impact_candidate": false
+          }
+        },
+        "signals": {
+          "infrastructure_match": true,
+          "threat_signal": false,
+          "prospective_signal": false,
+          "explicit_operational_impact": false
+        },
+        "causality": "NOT_ASSESSED",
+        "operational_confirmation": "NOT_CHECKED",
+        "affects_n0_n4": false,
+        "lifecycle": "NEW",
+        "first_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "first_seen_cycle_id": "2026-10-05:evening",
+        "current_cycle_id": "2026-10-05:evening",
+        "seen_count": 1,
+        "last_seen_at": "2026-10-05T15:07:05.386538+00:00",
+        "carry_forward": true
+      }
+    ]
   }
 }
