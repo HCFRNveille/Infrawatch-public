@@ -1,8 +1,8 @@
 {
   "schema_version": "infrawatch-dashboard-0.2",
   "mode": "LIVE",
-  "generated_at": "2026-10-08T10:06:56.645614+00:00",
-  "point_label": "ÉTAT COURANT NATIONAL · 12H06",
+  "generated_at": "2026-10-08T11:07:17.094126+00:00",
+  "point_label": "ÉTAT COURANT NATIONAL · 13H07",
   "location": "France",
   "last_consolidated_point": {
     "generated_at": "2026-10-08T06:07:41.493752+00:00",
@@ -14,11 +14,11 @@
   },
   "source_health": {
     "ok": 5,
-    "degraded": 1,
-    "error": 1,
-    "usable": 6,
+    "degraded": 0,
+    "error": 2,
+    "usable": 5,
     "total": 7,
-    "freshness_minutes": 0
+    "freshness_minutes": 1
   },
   "national": {
     "level": "N2",
@@ -30,10 +30,10 @@
   "driver": {
     "sector": "CARBURANTS",
     "sector_id": "fuel",
-    "metric": "8,27 %",
-    "numerator": 804,
+    "metric": "8,30 %",
+    "numerator": 807,
     "denominator": 9724,
-    "delta": -1.94
+    "delta": -1.91
   },
   "sectors": [
     {
@@ -42,17 +42,17 @@
       "short": "ÉLEC.",
       "level": "N0",
       "trend": "down",
-      "metric": "50,26 GW",
-      "detail": "écart prévision 0,97 %"
+      "metric": "50,17 GW",
+      "detail": "écart prévision 0,25 %"
     },
     {
       "id": "nuclear",
       "label": "Nucléaire",
       "short": "NUCL.",
-      "level": "N0",
-      "trend": "up",
-      "metric": "40,69 GW",
-      "detail": "64,60 % du parc"
+      "level": "ND",
+      "trend": "unknown",
+      "metric": "ND",
+      "detail": "disponibilité ND"
     },
     {
       "id": "gas",
@@ -69,8 +69,8 @@
       "short": "CARB.",
       "level": "N2",
       "trend": "down",
-      "metric": "8,27 %",
-      "detail": "804 stations"
+      "metric": "8,30 %",
+      "detail": "807 stations"
     },
     {
       "id": "telecom",
@@ -87,17 +87,17 @@
       "short": "RAIL",
       "level": "N0",
       "trend": "down",
-      "metric": "0,20 %",
+      "metric": "0,34 %",
       "detail": "trains annulés"
     },
     {
       "id": "road",
       "label": "Routier",
       "short": "ROUTE",
-      "level": "N1",
+      "level": "N0",
       "trend": "unknown",
-      "metric": "1,69 %",
-      "detail": "31 restrictions · 7 fermetures"
+      "metric": "2,18 %",
+      "detail": "30 restrictions · 5 fermetures"
     }
   ],
   "territories": [
@@ -107,7 +107,7 @@
     },
     {
       "name": "Bas-Rhin",
-      "value": 27.2109
+      "value": 27.8912
     },
     {
       "name": "Paris",
@@ -118,8 +118,8 @@
       "value": 16.8675
     },
     {
-      "name": "Tarn-et-Garonne",
-      "value": 15.625
+      "name": "Doubs",
+      "value": 14.7059
     }
   ],
   "history": [
@@ -461,30 +461,30 @@
     },
     {
       "label": "08/10",
-      "fuel": 8.2682,
+      "fuel": 8.2991,
       "telecom": null,
       "electricity": {
-        "consumption_mw": 50264.0,
-        "forecast_j_mw": 49776.0,
-        "forecast_j1_mw": 49900.0,
-        "forecast_error_pct": 0.971,
-        "physical_exchanges_mw": -12749.0,
-        "exchange_ratio_pct": -25.364,
-        "production_total_mw": 64572.0,
+        "consumption_mw": 50172.0,
+        "forecast_j_mw": 50045.0,
+        "forecast_j1_mw": 50350.0,
+        "forecast_error_pct": 0.253,
+        "physical_exchanges_mw": -11697.0,
+        "exchange_ratio_pct": -23.314,
+        "production_total_mw": 63562.0,
         "nuclear_production_mw": null
       },
       "nuclear": {
-        "fleet_availability_pct": 64.6,
-        "fleet_available_capacity_mw": 40690.0,
-        "fleet_unavailable_capacity_mw": 22300.0,
-        "fleet_max_capacity_mw": 62990.0,
-        "unplanned_current_events": 22,
-        "unplanned_publications_count": 22,
-        "unplanned_unique_assets_count": 14,
-        "unplanned_impactful_assets_count": 6,
-        "unplanned_unavailable_capacity_mw": 2795.0,
-        "unplanned_unavailable_capacity_ratio_pct": 4.44,
-        "planned_current_events": 45,
+        "fleet_availability_pct": null,
+        "fleet_available_capacity_mw": null,
+        "fleet_unavailable_capacity_mw": null,
+        "fleet_max_capacity_mw": null,
+        "unplanned_current_events": null,
+        "unplanned_publications_count": null,
+        "unplanned_unique_assets_count": null,
+        "unplanned_impactful_assets_count": null,
+        "unplanned_unavailable_capacity_mw": null,
+        "unplanned_unavailable_capacity_ratio_pct": null,
+        "planned_current_events": null,
         "nuclear_production_mw": null,
         "production_to_available_capacity_ratio_pct": null
       },
@@ -497,84 +497,26 @@
         "violet_limits_count": 0
       },
       "rail": {
-        "trips_count": 1467,
-        "canceled_trips": 3,
-        "canceled_ratio_pct": 0.2045,
-        "trips_delay_ge_30min": 25,
-        "trips_delay_ge_30min_ratio_pct": 1.7042,
-        "trips_delay_ge_60min": 7,
-        "trips_delay_ge_60min_ratio_pct": 0.4772
+        "trips_count": 1469,
+        "canceled_trips": 5,
+        "canceled_ratio_pct": 0.3404,
+        "trips_delay_ge_30min": 27,
+        "trips_delay_ge_30min_ratio_pct": 1.838,
+        "trips_delay_ge_60min": 10,
+        "trips_delay_ge_60min_ratio_pct": 0.6807
       },
       "road": {
-        "congestion_ratio_pct": 1.6901,
-        "unplanned_full_closure_locations_count": 7,
-        "unplanned_capacity_restriction_locations_count": 31,
-        "departments_with_unplanned_full_closure": 5,
-        "departments_with_unplanned_capacity_restriction": 21,
-        "recognized_ratio_pct": 88.7944,
+        "congestion_ratio_pct": 2.183,
+        "unplanned_full_closure_locations_count": 5,
+        "unplanned_capacity_restriction_locations_count": 30,
+        "departments_with_unplanned_full_closure": 4,
+        "departments_with_unplanned_capacity_restriction": 19,
+        "recognized_ratio_pct": 87.7337,
         "department_coverage_ratio_pct": 100.0
       }
     }
   ],
   "live_history": [
-    {
-      "generated_at": "2026-10-07T10:06:11.851018+00:00",
-      "label": "07/10 12:06",
-      "national_level": "N2",
-      "fuel": 9.0309,
-      "telecom": null,
-      "electricity": {
-        "consumption_mw": 50279.0,
-        "forecast_j_mw": 49750.0,
-        "forecast_j1_mw": 48800.0,
-        "forecast_error_pct": 1.052,
-        "physical_exchanges_mw": -2506.0,
-        "exchange_ratio_pct": -4.984,
-        "production_total_mw": 52890.0,
-        "nuclear_production_mw": 36567.0
-      },
-      "nuclear": {
-        "fleet_availability_pct": 59.88,
-        "fleet_available_capacity_mw": 37716.0,
-        "fleet_unavailable_capacity_mw": 25274.0,
-        "fleet_max_capacity_mw": 62990.0,
-        "unplanned_current_events": 23,
-        "unplanned_publications_count": 23,
-        "unplanned_unique_assets_count": 16,
-        "unplanned_impactful_assets_count": 6,
-        "unplanned_unavailable_capacity_mw": 2075.0,
-        "unplanned_unavailable_capacity_ratio_pct": 3.29,
-        "planned_current_events": 53,
-        "nuclear_production_mw": 36567.0,
-        "production_to_available_capacity_ratio_pct": 96.9535
-      },
-      "gas": {
-        "observation_date": "2026-10-07",
-        "operational_status": "ORANGE",
-        "data_quality": "OK",
-        "orange_limits_count": 1,
-        "red_limits_count": 0,
-        "violet_limits_count": 0
-      },
-      "rail": {
-        "trips_count": 1433,
-        "canceled_trips": 20,
-        "canceled_ratio_pct": 1.3957,
-        "trips_delay_ge_30min": null,
-        "trips_delay_ge_30min_ratio_pct": 2.7913,
-        "trips_delay_ge_60min": null,
-        "trips_delay_ge_60min_ratio_pct": 0.977
-      },
-      "road": {
-        "congestion_ratio_pct": 2.9518,
-        "unplanned_full_closure_locations_count": 5,
-        "unplanned_capacity_restriction_locations_count": 29,
-        "departments_with_unplanned_full_closure": 4,
-        "departments_with_unplanned_capacity_restriction": 19,
-        "recognized_ratio_pct": 88.0529,
-        "department_coverage_ratio_pct": 100.0
-      }
-    },
     {
       "generated_at": "2026-10-07T11:05:58.024170+00:00",
       "label": "07/10 13:05",
@@ -1908,6 +1850,64 @@
         "recognized_ratio_pct": 88.7944,
         "department_coverage_ratio_pct": 100.0
       }
+    },
+    {
+      "generated_at": "2026-10-08T11:05:58.592857+00:00",
+      "label": "08/10 13:05",
+      "national_level": "N2",
+      "fuel": 8.2991,
+      "telecom": null,
+      "electricity": {
+        "consumption_mw": 50172.0,
+        "forecast_j_mw": 50045.0,
+        "forecast_j1_mw": 50350.0,
+        "forecast_error_pct": 0.253,
+        "physical_exchanges_mw": -11697.0,
+        "exchange_ratio_pct": -23.314,
+        "production_total_mw": 63562.0,
+        "nuclear_production_mw": 36264.0
+      },
+      "nuclear": {
+        "fleet_availability_pct": null,
+        "fleet_available_capacity_mw": null,
+        "fleet_unavailable_capacity_mw": null,
+        "fleet_max_capacity_mw": null,
+        "unplanned_current_events": null,
+        "unplanned_publications_count": null,
+        "unplanned_unique_assets_count": null,
+        "unplanned_impactful_assets_count": null,
+        "unplanned_unavailable_capacity_mw": null,
+        "unplanned_unavailable_capacity_ratio_pct": null,
+        "planned_current_events": null,
+        "nuclear_production_mw": 36264.0,
+        "production_to_available_capacity_ratio_pct": null
+      },
+      "gas": {
+        "observation_date": "2026-10-08",
+        "operational_status": "ORANGE",
+        "data_quality": "OK",
+        "orange_limits_count": 1,
+        "red_limits_count": 0,
+        "violet_limits_count": 0
+      },
+      "rail": {
+        "trips_count": 1469,
+        "canceled_trips": 5,
+        "canceled_ratio_pct": 0.3404,
+        "trips_delay_ge_30min": null,
+        "trips_delay_ge_30min_ratio_pct": 1.838,
+        "trips_delay_ge_60min": null,
+        "trips_delay_ge_60min_ratio_pct": 0.6807
+      },
+      "road": {
+        "congestion_ratio_pct": 2.183,
+        "unplanned_full_closure_locations_count": 5,
+        "unplanned_capacity_restriction_locations_count": 30,
+        "departments_with_unplanned_full_closure": 4,
+        "departments_with_unplanned_capacity_restriction": 19,
+        "recognized_ratio_pct": 87.7337,
+        "department_coverage_ratio_pct": 100.0
+      }
     }
   ],
   "threats": {
@@ -1925,11 +1925,11 @@
       "text": "Aucune concomitance intersectorielle n'est caractérisée dans le point InfraWatch courant."
     }
   ],
-  "assessment": "Situation nationale N2 — Surveillance, orientée à l'amélioration à court terme ; en amélioration par rapport au dernier point comparable. Le niveau national demeure porté par les carburants, avec 8,27 % des stations éligibles signalant au moins une rupture (804 sur 9724). Le taux recule de 1,94 point par rapport au dernier point comparable. Les principales concentrations territoriales concernent Haut-Rhin, Bas-Rhin, Paris, Vosges, Tarn-et-Garonne.\n\nLe socle énergétique demeure robuste : électricité et nucléaire N0, avec une disponibilité nucléaire de 64,6 %. Le gaz est classé N1 (Smart NaTran ORANGE). Les télécommunications présentent des données insuffisantes. Le ferroviaire reste N0. Le réseau routier est qualifié N1 (1,69 % de congestion Traficolor, 21 départements avec restriction non planifiée). Aucune dynamique de cascade intersectorielle n'est caractérisée.\n\nLa couche Risques & Menaces retient 1 signal pertinent. Ces éléments restent contextuels et n'affectent pas automatiquement le niveau opérationnel N0-N4.",
+  "assessment": "Situation nationale N2 — Surveillance, orientée à l'amélioration à court terme ; en amélioration par rapport au dernier point comparable. Le niveau national demeure porté par les carburants, avec 8,30 % des stations éligibles signalant au moins une rupture (807 sur 9724). Le taux recule de 1,91 point par rapport au dernier point comparable. Les principales concentrations territoriales concernent Haut-Rhin, Bas-Rhin, Paris, Vosges, Doubs.\n\nLe socle énergétique présente une situation différenciée : électricité N0, nucléaire ND. Le gaz est classé N1 (Smart NaTran ORANGE). Les télécommunications présentent des données insuffisantes. Le ferroviaire reste N0. Le réseau routier est qualifié N0 (2,18 % de congestion Traficolor, 19 départements avec restriction non planifiée). Aucune dynamique de cascade intersectorielle n'est caractérisée.\n\nLa couche Risques & Menaces retient 1 signal pertinent. Ces éléments restent contextuels et n'affectent pas automatiquement le niveau opérationnel N0-N4.",
   "watchlist": [
     "Évolution du taux de ruptures carburants et des foyers Haut-Rhin/Bas-Rhin/Paris/Vosges",
     "Maintien ou retour au vert du signal gaz Smart NaTran (ORANGE)",
-    "Évolution du secteur routier actuellement N1"
+    "Confirmation de l'absence de dégradation intersectorielle ou d'effet de cascade"
   ],
   "authority": {
     "current_n0_n4_source": "current_status.json",
