@@ -1,6 +1,6 @@
 {
   "schema_version": "infrawatch-point-0.1",
-  "generated_at": "2026-10-08T12:20:52.396748+00:00",
+  "generated_at": "2026-10-08T12:28:36.477271+00:00",
   "operational_slot": "evening",
   "operational_cycle_id": "2026-10-08:evening",
   "report_posture": "VIGILANCE",
@@ -12,9 +12,9 @@
   },
   "source_alignment": {
     "status": "OK",
-    "operational_generated_at": "2026-10-08T12:20:37.221861+00:00",
-    "risks_threats_generated_at": "2026-10-08T12:20:37.242993+00:00",
-    "age_difference_seconds": 0.021,
+    "operational_generated_at": "2026-10-08T12:28:20.724632+00:00",
+    "risks_threats_generated_at": "2026-10-08T12:28:20.757901+00:00",
+    "age_difference_seconds": 0.033,
     "operational_slot": "evening",
     "risks_threats_slot": "evening",
     "same_operational_slot": true
@@ -26,6 +26,13 @@
       "label": "Surveillance"
     },
     "elevated_sectors": [
+      {
+        "sector": "telecom_mobile",
+        "level": "N1",
+        "label": "Vigilance",
+        "confidence": "élevée",
+        "rationale": "Concentrations territoriales multi-opérateurs significatives."
+      },
       {
         "sector": "gas",
         "level": "N1",
@@ -71,15 +78,7 @@
         "rationale": "Les indicateurs de circulation, de fermeture et de restriction restent sous les seuils opérationnels provisoires."
       }
     ],
-    "unavailable_sectors": [
-      {
-        "sector": "telecom_mobile",
-        "level": "ND",
-        "label": "Données insuffisantes",
-        "confidence": "faible",
-        "rationale": "Ratio national télécom non calculable."
-      }
-    ],
+    "unavailable_sectors": [],
     "sectors": {
       "electricity": {
         "level": "N0",
@@ -125,10 +124,10 @@
           "unplanned_impactful_assets_count": 7,
           "unplanned_unavailable_capacity_mw": 3560.0,
           "unplanned_unavailable_capacity_ratio_pct": 5.65,
-          "availability_h1_pct": 64.6,
+          "availability_h1_pct": 65.09,
           "availability_h6_pct": 64.6,
           "availability_h24_pct": 59.88,
-          "availability_delta_h1_points": 0.49,
+          "availability_delta_h1_points": 0.0,
           "availability_delta_h6_points": 0.49,
           "availability_delta_h24_points": 5.21,
           "nuclear_production_mw": 36002.0,
@@ -187,12 +186,61 @@
         }
       },
       "telecom_mobile": {
-        "level": "ND",
-        "label": "Données insuffisantes",
-        "confidence": "faible",
-        "rationale": "Ratio national télécom non calculable.",
-        "metrics": {},
-        "baseline": {}
+        "level": "N1",
+        "label": "Vigilance",
+        "confidence": "élevée",
+        "rationale": "Concentrations territoriales multi-opérateurs significatives.",
+        "metrics": {
+          "national_down_ratio_pct": 1.0859,
+          "unique_operator_sites_down": 1354,
+          "active_operator_sites_reference": 124690,
+          "four_operator_clusters": 7,
+          "multi_operator_hotspots_20pct": 0,
+          "slot": "evening",
+          "statistical_z_score": -0.1274,
+          "by_operator": [
+            {
+              "operator_code": "bouygues",
+              "operator": "Bouygues Telecom",
+              "sites_down": 310,
+              "active_sites_reference": 31111,
+              "down_ratio_pct": 0.9964
+            },
+            {
+              "operator_code": "free",
+              "operator": "Free",
+              "sites_down": 145,
+              "active_sites_reference": 30930,
+              "down_ratio_pct": 0.4688
+            },
+            {
+              "operator_code": "orange",
+              "operator": "Orange",
+              "sites_down": 643,
+              "active_sites_reference": 32025,
+              "down_ratio_pct": 2.0078
+            },
+            {
+              "operator_code": "sfr",
+              "operator": "SFR",
+              "sites_down": 256,
+              "active_sites_reference": 30624,
+              "down_ratio_pct": 0.8359
+            }
+          ]
+        },
+        "baseline": {
+          "comparable_slot": "evening",
+          "comparable_count": 30,
+          "national_down_ratio_pct": {
+            "count": 30,
+            "median": 1.022,
+            "mean": 1.1157,
+            "stdev": 0.234,
+            "p90": 1.443,
+            "p95": 1.5543
+          }
+        }
       },
       "gas": {
         "level": "N1",
@@ -232,14 +280,14 @@
         "confidence": "élevée",
         "rationale": "Le taux national de stations en rupture dépasse le seuil opérationnel de qualification. Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
         "metrics": {
-          "eligible_stations": 9732,
-          "stations_with_any_shortage": 821,
-          "national_shortage_ratio_pct": 8.4361,
-          "diesel_shortage_ratio_pct": 5.2533,
-          "petrol_shortage_ratio_pct": 7.5288,
+          "eligible_stations": 9730,
+          "stations_with_any_shortage": 783,
+          "national_shortage_ratio_pct": 8.0473,
+          "diesel_shortage_ratio_pct": 4.9922,
+          "petrol_shortage_ratio_pct": 7.2051,
           "departments_with_shortage": 93,
           "slot": "evening",
-          "statistical_z_score": -0.2684,
+          "statistical_z_score": -0.3967,
           "significant_departments": [
             {
               "dept_code": "68",
@@ -297,21 +345,9 @@
             },
             {
               "dept_code": "21",
-              "shortage_ratio_pct": 13.4921,
-              "stations_with_any_shortage": 17,
-              "eligible_stations": 126
-            },
-            {
-              "dept_code": "44",
-              "shortage_ratio_pct": 13.4503,
-              "stations_with_any_shortage": 23,
-              "eligible_stations": 171
-            },
-            {
-              "dept_code": "92",
-              "shortage_ratio_pct": 13.4328,
-              "stations_with_any_shortage": 9,
-              "eligible_stations": 67
+              "shortage_ratio_pct": 12.8,
+              "stations_with_any_shortage": 16,
+              "eligible_stations": 125
             },
             {
               "dept_code": "54",
@@ -332,10 +368,10 @@
               "eligible_stations": 128
             },
             {
-              "dept_code": "31",
-              "shortage_ratio_pct": 12.1053,
-              "stations_with_any_shortage": 23,
-              "eligible_stations": 190
+              "dept_code": "44",
+              "shortage_ratio_pct": 12.2807,
+              "stations_with_any_shortage": 21,
+              "eligible_stations": 171
             },
             {
               "dept_code": "15",
@@ -344,16 +380,28 @@
               "eligible_stations": 51
             },
             {
-              "dept_code": "35",
-              "shortage_ratio_pct": 11.4094,
-              "stations_with_any_shortage": 17,
-              "eligible_stations": 149
+              "dept_code": "91",
+              "shortage_ratio_pct": 11.6279,
+              "stations_with_any_shortage": 15,
+              "eligible_stations": 129
+            },
+            {
+              "dept_code": "31",
+              "shortage_ratio_pct": 11.5183,
+              "stations_with_any_shortage": 22,
+              "eligible_stations": 191
             },
             {
               "dept_code": "81",
               "shortage_ratio_pct": 11.2676,
               "stations_with_any_shortage": 8,
               "eligible_stations": 71
+            },
+            {
+              "dept_code": "07",
+              "shortage_ratio_pct": 11.1111,
+              "stations_with_any_shortage": 8,
+              "eligible_stations": 72
             }
           ],
           "severe_departments": [
@@ -402,26 +450,26 @@
         "confidence": "élevée",
         "rationale": "Les taux d'annulation et de retard restent sous les seuils opérationnels et sont compatibles avec la référence historique du créneau comparable.",
         "metrics": {
-          "collected_at": "2026-10-08T12:20:18.855796+00:00",
+          "collected_at": "2026-10-08T12:28:02.149802+00:00",
           "slot": "evening",
-          "trips_count": 1270,
-          "scheduled_trips": 1140,
-          "added_trips": 123,
+          "trips_count": 1264,
+          "scheduled_trips": 1132,
+          "added_trips": 125,
           "canceled_trips": 7,
-          "canceled_ratio_pct": 0.5512,
+          "canceled_ratio_pct": 0.5538,
           "trips_delay_ge_15min": 56,
-          "trips_delay_ge_15min_ratio_pct": 4.4094,
-          "trips_delay_ge_30min": 24,
-          "trips_delay_ge_30min_ratio_pct": 1.8898,
+          "trips_delay_ge_15min_ratio_pct": 4.4304,
+          "trips_delay_ge_30min": 23,
+          "trips_delay_ge_30min_ratio_pct": 1.8196,
           "trips_delay_ge_60min": 5,
-          "trips_delay_ge_60min_ratio_pct": 0.3937,
-          "average_max_delay_seconds": 120.7,
+          "trips_delay_ge_60min_ratio_pct": 0.3956,
+          "average_max_delay_seconds": 119.3,
           "maximum_delay_seconds": 4200,
           "active_service_alerts": 540,
           "qualified_operational_alerts": 0,
-          "canceled_statistical_z_score": -1.2198,
-          "delay_30_statistical_z_score": 0.6459,
-          "delay_60_statistical_z_score": -0.2054
+          "canceled_statistical_z_score": -1.2168,
+          "delay_30_statistical_z_score": 0.5212,
+          "delay_60_statistical_z_score": -0.1991
         },
         "baseline": {
           "comparable_slot": "evening",
@@ -458,9 +506,9 @@
         "confidence": "élevée",
         "rationale": "Les indicateurs de circulation, de fermeture et de restriction restent sous les seuils opérationnels provisoires.",
         "metrics": {
-          "collected_at": "2026-10-08T12:20:20.781110+00:00",
+          "collected_at": "2026-10-08T12:28:04.232492+00:00",
           "slot": "evening",
-          "congestion_ratio_pct": 2.3871,
+          "congestion_ratio_pct": 2.5441,
           "unplanned_situations_count_context_only": 107,
           "unplanned_full_closure_locations_count": 5,
           "unplanned_capacity_restriction_locations_count": 27,
@@ -469,8 +517,8 @@
           "department_coverage_ratio_pct": 100.0,
           "affected_departments_count": 70,
           "affected_regions_count": 12,
-          "recognized_ratio_pct": 87.8705,
-          "unknown_ratio_pct": 12.1295,
+          "recognized_ratio_pct": 87.8249,
+          "unknown_ratio_pct": 12.1751,
           "congestion_signal_level": 0,
           "closure_magnitude_signal_level": 0,
           "closure_territorial_signal_level": 0,
@@ -478,7 +526,7 @@
           "restriction_magnitude_signal_level": 0,
           "restriction_territorial_signal_level": 0,
           "restriction_family_level": 0,
-          "congestion_statistical_z_score": -1.1283,
+          "congestion_statistical_z_score": -1.0751,
           "closures_statistical_z_score": -1.1608,
           "restrictions_statistical_z_score": -1.1079,
           "closure_departments_statistical_z_score": -1.3786,
@@ -558,7 +606,7 @@
         ],
         "impacted_sectors": [],
         "first_seen_at": "2026-10-08T06:07:24.076289+00:00",
-        "last_seen_at": "2026-10-08T12:20:37.242993+00:00",
+        "last_seen_at": "2026-10-08T12:28:20.757901+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -583,7 +631,7 @@
         ],
         "impacted_sectors": [],
         "first_seen_at": "2026-10-08T06:07:24.076289+00:00",
-        "last_seen_at": "2026-10-08T12:20:37.242993+00:00",
+        "last_seen_at": "2026-10-08T12:28:20.757901+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
@@ -616,6 +664,13 @@
       "source": "national_status.json"
     },
     "operational_attention": [
+      {
+        "sector": "telecom_mobile",
+        "level": "N1",
+        "label": "Vigilance",
+        "confidence": "élevée",
+        "rationale": "Concentrations territoriales multi-opérateurs significatives."
+      },
       {
         "sector": "gas",
         "level": "N1",
@@ -650,7 +705,7 @@
         ],
         "impacted_sectors": [],
         "first_seen_at": "2026-10-08T06:07:24.076289+00:00",
-        "last_seen_at": "2026-10-08T12:20:37.242993+00:00",
+        "last_seen_at": "2026-10-08T12:28:20.757901+00:00",
         "carry_forward": true,
         "operational_confirmation": "NOT_CHECKED",
         "causality": "NOT_ESTABLISHED",
