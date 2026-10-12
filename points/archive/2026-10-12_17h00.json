@@ -1,0 +1,385 @@
+{
+  "schema_version": "point-national-document-1.1",
+  "cycle": "17H00",
+  "generated_at": "2026-10-12T15:07:45.928986+00:00",
+  "national": {
+    "level": "N3",
+    "label": "DÉGRADÉ",
+    "confidence": "multi-source",
+    "trend": "STABLE",
+    "trend_detail": "Niveau N3 maintenu"
+  },
+  "driver": {
+    "sector": "CARBURANTS",
+    "sector_id": "fuel",
+    "metric": "10,58 %",
+    "numerator": 1030,
+    "denominator": 9733,
+    "delta": -1.41
+  },
+  "source_health": {
+    "dashboard_snapshot": {
+      "generated_at": "2026-10-12T15:07:45.928986+00:00",
+      "age_minutes_at_generation": 3,
+      "meaning": "Âge du dashboard.json utilisé pour construire ce point. Ce n'est pas une mesure de fraîcheur individuelle des sources."
+    },
+    "backend_source_health": {
+      "ok": 7,
+      "degraded": 0,
+      "error": 0,
+      "usable": 7,
+      "total": 7,
+      "reported_freshness_minutes": 1,
+      "meaning": "Fraîcheur agrégée déclarée par le backend InfraWatch pour les sources exploitées. Cette valeur est distincte de l'âge du snapshot dashboard."
+    }
+  },
+  "national_synthesis": "La situation nationale demeure principalement structurée par les tensions d’approvisionnement en carburants, malgré un reflux observé depuis le pic nocturne.\nCette détente récente ne réduit pas le caractère très diffus des ruptures, présent dans la quasi-totalité des départements.\nLe gaz conserve une vigilance localisée sur la limite S1, stable depuis la nuit, tandis que les autres limites restent vertes.\nLa disponibilité nucléaire a nettement diminué au cours de l’après-midi, après un niveau plus élevé en début de journée ; cet élément appelle un suivi rapproché.\nLe système électrique présente un équilibre offre-demande proche des prévisions, avec des échanges physiques qui demeurent contextuels.\nLes télécommunications, le ferroviaire et le routier présentent des évolutions ponctuelles sans dégradation intersectorielle caractérisée.\nLe socle de continuité repose sur des données multi-sources récentes et exploitables.\nAucune concomitance intersectorielle structurante n’est caractérisée à ce stade.",
+  "sectors": {
+    "electricity": {
+      "label": "Électricité",
+      "official_level": "N0",
+      "backend_trend": "up",
+      "current": {
+        "consumption_mw": 45345.0,
+        "forecast_j_mw": 44650.0,
+        "forecast_j1_mw": 44350.0,
+        "forecast_error_pct": 1.533,
+        "physical_exchanges_mw": -10251.0,
+        "exchange_ratio_pct": -22.607,
+        "production_total_mw": 55937.0,
+        "production_by_fuel_mw": {
+          "nucleaire": 37653.0,
+          "gaz": 1868.0,
+          "fioul": 37.0,
+          "charbon": 0.0,
+          "eolien": 5008.0,
+          "solaire": 7845.0,
+          "hydraulique": 2557.0,
+          "bioenergies": 969.0
+        }
+      },
+      "analysis": "La consommation se situe légèrement au-dessus de la prévision, dans un contexte de production totale supérieure à la demande et d’échanges physiques exportateurs, qui restent un élément contextuel. L’écart à la prévision s’est accru au dernier relevé après une séquence intrajournalière fluctuante, mais demeure contenu. La production nucléaire constitue la première composante de l’offre, sans qu’elle permette à elle seule de qualifier la disponibilité du parc."
+    },
+    "nuclear": {
+      "label": "Nucléaire",
+      "official_level": "N0",
+      "backend_trend": "down",
+      "current": {
+        "fleet_max_capacity_mw": 62990.0,
+        "fleet_available_capacity_mw": 39990.0,
+        "fleet_unavailable_capacity_mw": 23000.0,
+        "fleet_availability_pct": 63.49,
+        "planned_current_events": 21,
+        "unplanned_current_events": 1,
+        "unplanned_publications_count": 1,
+        "unplanned_unique_assets_count": 1,
+        "unplanned_impactful_assets_count": 1,
+        "unplanned_unavailable_capacity_mw": 1330.0,
+        "unplanned_unavailable_capacity_ratio_pct": 2.11,
+        "chronic_current_events": 147,
+        "current_operational_unavailability_events": 22,
+        "nuclear_production_mw": 37653.0,
+        "production_to_available_capacity_ratio_pct": 94.156,
+        "interpretation_guards": {
+          "remit_publication_count_is_incident_count": false,
+          "remit_publication_count_can_alone_exceed_n1": false,
+          "physical_availability_is_primary": true,
+          "unplanned_physical_metrics_calibrating": true,
+          "rte_generation_proves_unavailability": false,
+          "automatic_causality": false
+        }
+      },
+      "analysis": "La disponibilité physique du parc a reculé fortement dans l’après-midi par rapport aux niveaux observés durant la matinée et au dernier point consolidé de la veille. La production est proche de la capacité disponible, en tant qu’indicateur de corroboration בלבד. Le parc comprend des indisponibilités planifiées et chroniques qui restent contextuelles ; une indisponibilité fortuite physique est également recensée et doit être suivie à partir des métriques consolidées disponibles. L’activité documentaire REMIT ne traduit pas, à elle seule, un volume d’incidents physiques ni une gravité opérationnelle."
+    },
+    "gas": {
+      "label": "Gaz",
+      "official_level": "N1",
+      "backend_trend": "unknown",
+      "current": {
+        "operational_status": "ORANGE",
+        "data_quality": "OK",
+        "limits_count": 10,
+        "green_limits_count": 9,
+        "orange_limits_count": 1,
+        "red_limits_count": 0,
+        "violet_limits_count": 0,
+        "unknown_limits_count": 0,
+        "alerts": [
+          {
+            "limit": "S1",
+            "vigilance": "ORANGE",
+            "application_side": "Aval",
+            "maintenance": "Oui"
+          }
+        ],
+        "consumption_reference": {
+          "freshness": "historical_reference",
+          "france_total_mw": 20961,
+          "natran_mw": 20075,
+          "terega_mw": 886
+        }
+      },
+      "analysis": "La situation opérationnelle demeure marquée par une vigilance sur la limite S1 à l’aval, associée à une maintenance déclarée, tandis que les autres limites sont vertes. Cette configuration est stable depuis son apparition durant la nuit et prolonge une séquence de vigilance récurrente sur la semaine. La référence de consommation fournie est historique et ne renseigne pas la situation en temps réel."
+    },
+    "fuel": {
+      "label": "Carburants",
+      "official_level": "N3",
+      "backend_trend": "down",
+      "current": {
+        "eligible_stations": 9733,
+        "stations_with_any_shortage": 1030,
+        "national_shortage_ratio_pct": 10.5826,
+        "departments_with_shortage": 94,
+        "top_departments": []
+      },
+      "analysis": "Les ruptures de carburants constituent le principal facteur de contrainte national. Leur proportion recule nettement depuis le maximum atteint durant la nuit et demeure inférieure au point consolidé précédent, ce qui constitue un signal favorable. Elles restent toutefois réparties sur un très grand nombre de départements ; l’absence de concentration départementale dominante documentée impose de maintenir l’attention sur la diffusion territoriale de la tension."
+    },
+    "telecom": {
+      "label": "Télécommunications",
+      "official_level": "N0",
+      "backend_trend": "up",
+      "current": {
+        "national_down_ratio_pct": 0.968,
+        "unique_operator_sites_down": 1207,
+        "four_operator_clusters": 4,
+        "top_departments": [
+          {
+            "operator_code": "orange",
+            "dept_code": "75",
+            "down_ratio_pct": 4.9544,
+            "sites_down": 38
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "83",
+            "down_ratio_pct": 4.7228,
+            "sites_down": 23
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "93",
+            "down_ratio_pct": 4.6921,
+            "sites_down": 16
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "37",
+            "down_ratio_pct": 4.2623,
+            "sites_down": 13
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "29",
+            "down_ratio_pct": 4.0,
+            "sites_down": 17
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "55",
+            "down_ratio_pct": 3.9855,
+            "sites_down": 11
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "27",
+            "down_ratio_pct": 3.7037,
+            "sites_down": 11
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "89",
+            "down_ratio_pct": 3.6364,
+            "sites_down": 4
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "94",
+            "down_ratio_pct": 3.5714,
+            "sites_down": 11
+          },
+          {
+            "operator_code": "orange",
+            "dept_code": "53",
+            "down_ratio_pct": 3.5533,
+            "sites_down": 7
+          }
+        ]
+      },
+      "analysis": "La part nationale de sites indisponibles a progressé depuis la veille et s’est stabilisée en fin d’après-midi après un pic intermédiaire. Des concentrations locales sont recensées, notamment sur le réseau Orange dans plusieurs départements, dont Paris et le Var. Quatre clusters multi-opérateurs sont signalés ; ils justifient un suivi territorial ciblé sans élément indiquant une dynamique nationale plus large."
+    },
+    "rail": {
+      "label": "Ferroviaire",
+      "official_level": "N0",
+      "backend_trend": "up",
+      "current": {
+        "trips_count": 2257,
+        "canceled_trips": 23,
+        "canceled_ratio_pct": 1.0191,
+        "trips_delay_ge_30min_ratio_pct": 1.1077,
+        "trips_delay_ge_60min_ratio_pct": 0.1772,
+        "service_alerts": {
+          "active_alerts_count": 565,
+          "operational_alerts_count": 0,
+          "informational_or_unqualified_alerts_count": 565,
+          "effects": {
+            "UNKNOWN_EFFECT": 565
+          },
+          "causes": {
+            "UNKNOWN_CAUSE": 153,
+            "OTHER_CAUSE": 205,
+            "MAINTENANCE": 207
+          }
+        }
+      },
+      "analysis": "Les annulations et retards significatifs restent contenus à l’échelle du programme observé, après une hausse matinale puis une stabilisation relative. Le taux d’annulation est supérieur au dernier point consolidé de la veille, sans signal opérationnel qualifié dans les alertes de service. Les nombreuses publications d’information disponibles sont contextuelles et ne doivent pas être assimilées à des perturbations opérationnelles indépendantes."
+    },
+    "road": {
+      "label": "Routier",
+      "official_level": "N0",
+      "backend_trend": "unknown",
+      "current": {
+        "congestion_ratio_pct": 8.1899,
+        "recognized_ratio_pct": 87.4145,
+        "unknown_ratio_pct": 12.5855,
+        "unplanned_situations_count": 132,
+        "unplanned_full_closure_locations_count": 6,
+        "unplanned_capacity_restriction_locations_count": 27,
+        "departments_with_unplanned_full_closure": 4,
+        "departments_with_unplanned_capacity_restriction": 19,
+        "department_coverage_ratio_pct": 100.0,
+        "affected_departments_count": 68,
+        "affected_regions_count": 12,
+        "interpretation_guards": {
+          "raw_event_count_is_impact": false,
+          "qtv_used_for_scoring": false,
+          "tipi_context_only": true,
+          "traficolor_unknown_is_quality_only": true,
+          "n4_automatic": false
+        },
+        "top_departments": [
+          {
+            "code": "13",
+            "name": "Bouches-du-Rhône",
+            "unplanned_situations_count": 7,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 4
+          },
+          {
+            "code": "92",
+            "name": "Hauts-de-Seine",
+            "unplanned_situations_count": 6,
+            "unplanned_full_closure_count": 2,
+            "unplanned_capacity_restriction_count": 3
+          },
+          {
+            "code": "38",
+            "name": "Isère",
+            "unplanned_situations_count": 5,
+            "unplanned_full_closure_count": 2,
+            "unplanned_capacity_restriction_count": 2
+          },
+          {
+            "code": "78",
+            "name": "Yvelines",
+            "unplanned_situations_count": 3,
+            "unplanned_full_closure_count": 1,
+            "unplanned_capacity_restriction_count": 2
+          },
+          {
+            "code": "58",
+            "name": "Nièvre",
+            "unplanned_situations_count": 2,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 2
+          },
+          {
+            "code": "75",
+            "name": "Paris",
+            "unplanned_situations_count": 1,
+            "unplanned_full_closure_count": 1,
+            "unplanned_capacity_restriction_count": 1
+          },
+          {
+            "code": "35",
+            "name": "Ille-et-Vilaine",
+            "unplanned_situations_count": 6,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 1
+          },
+          {
+            "code": "56",
+            "name": "Morbihan",
+            "unplanned_situations_count": 5,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 1
+          },
+          {
+            "code": "34",
+            "name": "Hérault",
+            "unplanned_situations_count": 4,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 1
+          },
+          {
+            "code": "48",
+            "name": "Lozère",
+            "unplanned_situations_count": 2,
+            "unplanned_full_closure_count": null,
+            "unplanned_capacity_restriction_count": 1
+          }
+        ]
+      },
+      "analysis": "La congestion a nettement augmenté au dernier relevé, après des niveaux plus faibles durant l’après-midi et un épisode matinal plus marqué. Des fermetures complètes et restrictions de capacité non planifiées sont réparties dans plusieurs départements et régions, avec des points plus visibles dans les Bouches-du-Rhône, les Hauts-de-Seine et l’Isère. La couverture départementale est complète ; la part de statuts Traficolor non reconnus relève de la qualité de couverture et non d’une dégradation opérationnelle."
+    }
+  },
+  "intersectoral_dynamics": [
+    {
+      "title": "Absence de dynamique intersectorielle caractérisée",
+      "analysis": "Les évolutions observées dans les carburants, le nucléaire, le gaz, les mobilités et les télécommunications ne permettent pas d’établir une concomitance intersectorielle structurante. Les compteurs risques et menaces ne fournissent aucun élément détaillé permettant d’attribuer une relation sectorielle ou territoriale précise.",
+      "status": "none"
+    }
+  ],
+  "surveillance_points": [
+    {
+      "sector_id": "fuel",
+      "title": "Poursuite de la détente des ruptures de carburants",
+      "analysis": "Vérifier au prochain cycle si le reflux observé depuis la nuit se confirme et si la diffusion territoriale des ruptures commence à se réduire."
+    },
+    {
+      "sector_id": "nuclear",
+      "title": "Stabilisation de la disponibilité physique du parc",
+      "analysis": "Suivre l’évolution après la baisse intervenue dans l’après-midi, en distinguant les indisponibilités fortuites physiques des événements planifiés, chroniques et documentaires."
+    },
+    {
+      "sector_id": "gas",
+      "title": "Maintien de la vigilance sur la limite S1",
+      "analysis": "Contrôler l’évolution de la vigilance aval et des paramètres de maintenance associés, ainsi que toute extension éventuelle à d’autres limites."
+    },
+    {
+      "sector_id": "road",
+      "title": "Évolution de la congestion de fin de journée",
+      "analysis": "Vérifier si la hausse observée au dernier relevé se prolonge et suivre la diffusion des fermetures complètes et restrictions non planifiées."
+    },
+    {
+      "sector_id": "telecom",
+      "title": "Concentrations territoriales de sites indisponibles",
+      "analysis": "Suivre la persistance des concentrations locales et l’évolution des clusters multi-opérateurs, notamment dans les départements les plus affectés."
+    }
+  ],
+  "national_assessment": "La situation nationale reste dominée par les tensions d’approvisionnement en carburants.\nLa baisse récente de leur ampleur constitue un signal favorable, sans effacer leur diffusion territoriale très large.\nLe prochain cycle devra déterminer si cette détente se consolide ou demeure réversible.\nLe gaz conserve un point de vigilance circonscrit et stable sur la limite S1.\nLa baisse de disponibilité nucléaire observée dans l’après-midi constitue la principale fragilité secondaire à surveiller.\nL’équilibre électrique demeure étayé par une production supérieure à la consommation observée et un écart prévisionnel limité.\nLes télécommunications conservent des fragilités locales, sans signal national caractérisé.\nLes mobilités ferroviaires restent contenues au regard des indicateurs disponibles.\nLe réseau routier appelle une attention sur la remontée récente de la congestion et les restrictions localisées.\nAucune dynamique intersectorielle caractérisée n’est établie.\nLes marges de résilience reposent sur la stabilité des autres secteurs essentiels et sur la fraîcheur des sources exploitées.\nL’horizon immédiat doit prioriser la confirmation du reflux carburants, la stabilisation de la disponibilité nucléaire et l’évolution des contraintes de mobilité.",
+  "doctrine": {
+    "scoring_authority": "InfraWatch backend only",
+    "llm_role": "qualitative analysis only",
+    "no_frontend_or_llm_scoring": true,
+    "no_automatic_causality": true,
+    "nuclear": {
+      "physical_availability_is_primary": true,
+      "remit_unplanned_publications_are_documentary": true,
+      "remit_publication_volume_can_alone_exceed_n1": false,
+      "unplanned_physical_metrics_are_separate": true,
+      "unplanned_physical_metrics_thresholds_calibrating": true,
+      "rte_nuclear_generation_is_corroboration_only": true,
+      "rte_generation_proves_unavailability": false
+    }
+  }
+}
