@@ -1,8 +1,167 @@
 {
-  "schema_version": "risks-threats-unavailable",
-  "generated_at": "2026-10-22T15:06:14.795147+00:00",
-  "source_health": "ERROR",
+  "schema_version": "risks-threats-0.4",
+  "generated_at": "2026-10-23T06:07:39.830879+00:00",
+  "generated_at_paris": "2026-10-23T08:07:39.830879+02:00",
+  "operational_slot": "morning",
+  "operational_cycle_id": "2026-10-23:morning",
+  "source_health": "OK",
+  "previous_state": {
+    "available": true,
+    "schema_version": "risks-threats-unavailable",
+    "generated_at": "2026-10-22T15:06:14.795147+00:00",
+    "operational_slot": null,
+    "operational_cycle_id": "2026-10-22:evening",
+    "same_operational_cycle": false
+  },
+  "doctrine": {
+    "purpose": "Couche exogène de contextualisation des risques et menaces concernant les infrastructures critiques.",
+    "relevance_rule": "Un contenu n'est retenu que s'il concerne une infrastructure, un réseau, un opérateur ou un service critique et si son ancrage géographique en France est explicitement établi. Un événement étranger est exclu, sauf si la source décrit explicitement un effet opérationnel en France.",
+    "geographic_scope": "FRANCE_ONLY",
+    "geographic_rule": "La couche Risques & Menaces est limitée au territoire français. La similarité, la proximité ou la pertinence stratégique d'un événement étranger ne suffisent pas à le retenir. Un événement étranger n'est admis que si la source décrit explicitement un effet opérationnel en France.",
+    "operational_scoring": false,
+    "affects_n0_n4": false,
+    "automatic_causality": false,
+    "qualification_levels": {
+      "CONTEXT": "Une infrastructure critique est explicitement concernée, sans menace ni impact opérationnel suffisamment caractérisé.",
+      "WATCH": "Une infrastructure critique est explicitement concernée par une menace, un phénomène ou une évolution susceptible de l'affecter, sans impact opérationnel suffisamment établi.",
+      "IMPACT_CANDIDATE": "La source décrit explicitement un effet opérationnel sur une infrastructure identifiée. Ce statut ne constitue ni une confirmation par les collecteurs InfraWatch ni une attribution causale."
+    },
+    "event_states": {
+      "ACTIVE": "La source indique explicitement que l'événement ou ses effets sont encore en cours.",
+      "RESOLVED": "La source indique explicitement un rétablissement effectivement constaté, une reprise effective ou la fin confirmée des perturbations.",
+      "PLANNED": "La source décrit un événement futur annoncé ou planifié susceptible d'affecter l'infrastructure.",
+      "UNKNOWN": "La source ne permet pas d'établir avec suffisamment de robustesse si l'événement est encore actif, résolu ou seulement planifié."
+    },
+    "resolution_rule": "Une reprise, un rétablissement ou un retour à la normale seulement prévu, estimé, attendu ou envisagé ne constitue jamais une résolution effective. Un état explicitement actif prévaut sur une perspective de résolution.",
+    "lifecycle": {
+      "NEW": "Événement découvert au cours du créneau opérationnel courant. Une réexécution technique dans ce même créneau conserve le statut NEW.",
+      "CARRIED_OVER": "Événement déjà identifié lors d'un créneau opérationnel antérieur et conservé pour continuité de situation."
+    },
+    "carry_forward_rule": "Un événement explicitement RESOLVED n'est jamais éligible au report. Les événements ACTIVE, PLANNED ou UNKNOWN peuvent être reportés dans la limite de 36 heures.",
+    "causality_rule": "Aucun lien causal entre un événement de veille et une anomalie opérationnelle InfraWatch n'est inféré automatiquement.",
+    "temporal_rule": {
+      "evening": "Le point de 17h constitue la consolidation principale de la veille Risques & Menaces disponible dans la journée.",
+      "morning": "Le point de 08h reprend la situation pertinente consolidée à 17h la veille et distingue les éléments hérités des nouveaux signaux apparus depuis.",
+      "retry": "Une réexécution technique au cours du même créneau opérationnel ne constitue pas un nouveau point de situation et ne transforme pas NEW en CARRIED_OVER."
+    }
+  },
+  "window": {
+    "lookback_hours": 24,
+    "max_carry_hours": 36,
+    "start_utc": "2026-10-22T06:07:39.830879+00:00",
+    "end_utc": "2026-10-23T06:07:39.830879+00:00"
+  },
+  "summary": {
+    "feeds_configured": 7,
+    "feeds_ok": 7,
+    "feeds_error": 0,
+    "raw_items_total": 650,
+    "recent_items_before_dedup": 0,
+    "recent_items_after_dedup": 0,
+    "excluded_no_infrastructure": 0,
+    "retained_infrastructure_relevant": 0,
+    "context": 0,
+    "watch": 0,
+    "impact_candidates": 0,
+    "new": 0,
+    "carried_over": 0,
+    "event_states": {
+      "active": 0,
+      "resolved": 0,
+      "planned": 0,
+      "unknown": 0
+    },
+    "eligible_for_next_carry": 0,
+    "sector_counts": {},
+    "impacted_sector_counts": {}
+  },
+  "feeds": {
+    "cyber": {
+      "category": "cyber",
+      "label": "Cyber",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=zBppjyAgpkfZ6kHh8d7TEXwqxs6xU2dU1gIY8yrsgzJ8q8TLHECvHwG-gQVsNNcRJgiYoAqQn3UqHGo6hGqDQxPjO0kj",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: Cybersécurité France",
+      "raw_items_count": 50,
+      "items_count": 50
+    },
+    "natural": {
+      "category": "natural",
+      "label": "Risques naturels",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=5bFClyAgpkfZ6kHh8dfHQC8_24frSDQR1A4O8ivdngko_sjMCxL8FhmqhRg0bd4Kc0_F6xeMlipuTShszDbcClzjfRl2M-9KfZqD1w0",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: Flux Risques naturels France (CS)",
+      "raw_items_count": 100,
+      "items_count": 100
+    },
+    "collective_accidents": {
+      "category": "collective_accidents",
+      "label": "Accidents collectifs",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=Q_ZAjCAgpkfZ6kHh8dfGQy8_24frSDQR1A4O8ivdngko_sjMCxL8FhmqhRg0bd4Kc07G6xeMlipuTShszDbdCVzjfRl2M-9KfZqD1g4",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: France: accidents collectifs",
+      "raw_items_count": 100,
+      "items_count": 100
+    },
+    "societal": {
+      "category": "societal",
+      "label": "Risques sociétaux",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=JsgVLiAgpkfZ6kHh8dfGQS8_24frSDQR1A4O8ivdngko_sjMCxL8FhmqhRg0bd4Kc07E6xeMlipuTShszDbdC1zjfRl2M-9KfZqD1gw",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: France : Risques Sociétaux France",
+      "raw_items_count": 100,
+      "items_count": 100
+    },
+    "technological": {
+      "category": "technological",
+      "label": "Risques technologiques",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=mId0ECAgpkfZ6kHh8dfHVmgr2pu-RyBW1g4C6DDHtT8lp8TMDAK-BwGqkQg5ONIGcFuRuB6Ugi5zFnFvwyGKTxfqcR1_ebsffA",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: France : Risques Technologiques",
+      "raw_items_count": 100,
+      "items_count": 100
+    },
+    "defense_security": {
+      "category": "defense_security",
+      "label": "Défense et sécurité",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=EEOCDyAgpkfZ6kHh8dXHVmgr2pu-RyBW1g4C6DDHtT8lp8TMDAK-BwGqkQg5ONIEcFuRuB6Ugi5zFnFtwyGKTxfqcR1_ebsdfA",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: Sécurité France",
+      "raw_items_count": 100,
+      "items_count": 100
+    },
+    "hybrid_threats": {
+      "category": "hybrid_threats",
+      "label": "Menaces hybrides",
+      "url": "https://cloud.amisw.com/rss/rss.php?cc=uMtSbCAgpkfZ6kHh8dXNQC8_24frSDQR1A4O8ivdngko_sjMCxL8FhmqhRg0bd4KcUXF6xeMlipuTShszDTWClzjfRl2M-9KfZqB3Q0",
+      "status": "OK",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "feed_title": "HCFDC: Menaces hybrides",
+      "raw_items_count": 100,
+      "items_count": 100
+    }
+  },
   "items": [],
-  "summary": {},
-  "error": "CollectionRetryError: Collecte impossible après 3 tentative(s). Dernière erreur : RuntimeError: La collecte Risques & Menaces n'a pas retourné un état exploitable."
+  "presentation": {
+    "new_items": [],
+    "carried_over_items": [],
+    "active_items": [],
+    "planned_items": [],
+    "resolved_items": [],
+    "unknown_items": [],
+    "carry_forward_items": []
+  }
 }
