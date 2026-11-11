@@ -1,31 +1,31 @@
 {
   "schema_version": "0.9",
-  "generated_at": "2026-11-11T08:06:11.651888+00:00",
+  "generated_at": "2026-11-11T09:06:07.010050+00:00",
   "electricity": {
-    "generated_at": "2026-11-11T08:06:12.097114+00:00",
+    "generated_at": "2026-11-11T09:06:07.607541+00:00",
     "source": "RTE / ODRÉ éCO2mix national temps réel",
     "source_api": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records",
-    "observation_time": "2026-11-11T07:45:00+00:00",
-    "consumption_mw": 46176.0,
+    "observation_time": "2026-11-11T08:45:00+00:00",
+    "consumption_mw": 47997.0,
     "forecast_j_mw": 48050.0,
-    "forecast_j1_mw": 47450.0,
-    "forecast_error_pct": -4.058,
-    "physical_exchanges_mw": -13500.0,
-    "exchange_ratio_pct": -29.236,
-    "production_total_mw": 59739.0,
+    "forecast_j1_mw": 48750.0,
+    "forecast_error_pct": -0.11,
+    "physical_exchanges_mw": -13636.0,
+    "exchange_ratio_pct": -28.41,
+    "production_total_mw": 61708.0,
     "production_by_fuel_mw": {
-      "nucleaire": 42220.0,
-      "gaz": 6183.0,
-      "fioul": 37.0,
-      "charbon": 492.0,
-      "eolien": 2544.0,
-      "solaire": 1147.0,
-      "hydraulique": 6144.0,
-      "bioenergies": 972.0
+      "nucleaire": 42186.0,
+      "gaz": 6344.0,
+      "fioul": 36.0,
+      "charbon": 493.0,
+      "eolien": 2346.0,
+      "solaire": 3182.0,
+      "hydraulique": 6150.0,
+      "bioenergies": 971.0
     }
   },
   "nuclear": {
-    "generated_at": "2026-11-11T08:07:01.413557+00:00",
+    "generated_at": "2026-11-11T09:06:57.285256+00:00",
     "source_url": "https://opendata.edf.fr/data-fair/api/v1/datasets/indisponibilites-des-moyens-de-production-edf-sa/lines",
     "encoding_used": null,
     "header_line": null,
@@ -74,14 +74,14 @@
     "method_note": "Seules les publications EDF Status=active sont retenues. Pour le calcul instantané de disponibilité, seuls les événements planifiés/programmés et fortuits/non programmés couvrant l'instant présent sont appliqués. Les événements chroniques sont conservés comme contexte mais exclus du calcul instantané. En cas de superposition d'événements opérationnels sur une unité, la puissance disponible minimale est retenue. Le volume de publications REMIT fortuites est conservé comme indicateur documentaire. L'impact physique fortuit est calculé par actif comme la perte marginale de puissance disponible entre l'état planifié seul et l'état combiné planifié + fortuit, afin d'éviter le double comptage des chevauchements."
   },
   "telecom_mobile": {
-    "generated_at": "2026-11-11T08:06:19.517106+00:00",
-    "rows_source_total": 1190,
-    "unique_operator_sites_down": 1187,
+    "generated_at": "2026-11-11T09:06:15.100145+00:00",
+    "rows_source_total": 1192,
+    "unique_operator_sites_down": 1189,
     "operators_ok": 4,
     "operators_expected": 4,
     "collection_complete": true,
     "active_operator_sites_reference": 124690,
-    "national_down_ratio_pct": 0.952,
+    "national_down_ratio_pct": 0.9536,
     "by_operator": [
       {
         "operator_code": "bouygues",
@@ -93,9 +93,9 @@
       {
         "operator_code": "free",
         "operator": "Free",
-        "sites_down": 83,
+        "sites_down": 85,
         "active_sites_reference": 30930,
-        "down_ratio_pct": 0.2683
+        "down_ratio_pct": 0.2748
       },
       {
         "operator_code": "orange",
@@ -304,12 +304,6 @@
         "rows": 3
       },
       {
-        "lat_r": 42.354,
-        "lon_r": 2.613,
-        "operators": 3,
-        "rows": 3
-      },
-      {
         "lat_r": 42.408,
         "lon_r": 8.621,
         "operators": 3,
@@ -378,6 +372,12 @@
       {
         "lat_r": 41.498,
         "lon_r": 9.124,
+        "operators": 2,
+        "rows": 2
+      },
+      {
+        "lat_r": 42.354,
+        "lon_r": 2.613,
         "operators": 2,
         "rows": 2
       },
@@ -565,15 +565,28 @@
       "source": "Smart NaTran",
       "dataset": "infovigilance",
       "observation_date": "2026-11-11",
-      "operational_status": "GREEN",
+      "operational_status": "ORANGE",
       "data_quality": "OK",
       "limits_count": 10,
-      "green_limits_count": 10,
-      "orange_limits_count": 0,
+      "green_limits_count": 9,
+      "orange_limits_count": 1,
       "red_limits_count": 0,
       "violet_limits_count": 0,
       "unknown_limits_count": 0,
-      "alerts": [],
+      "alerts": [
+        {
+          "limit": "SN3",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Amont",
+          "small_impact_works_gwh_25c": 150,
+          "maintenance": "Oui",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        }
+      ],
       "limits": [
         {
           "limit": "NS1",
@@ -609,7 +622,7 @@
         },
         {
           "limit": "SN3",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "SN4",
@@ -620,7 +633,7 @@
         "FF98BF57": "GREEN",
         "FFFF9933": "ORANGE"
       },
-      "collected_at": "2026-11-11T08:07:01.434855+00:00",
+      "collected_at": "2026-11-11T09:06:57.298837+00:00",
       "source_url": "https://www.smart.natrangroupe.com/api/v1/fr/infovigilance/export.xls"
     },
     "consumption_reference": {
@@ -632,37 +645,37 @@
       "terega_mw": 950,
       "france_total_mw": 24325
     },
-    "collected_at": "2026-11-11T08:07:01.434836+00:00"
+    "collected_at": "2026-11-11T09:06:57.298833+00:00"
   },
   "fuels": {
     "source": "Prix des carburants - Ministère de l'Économie",
     "dataset": "instantane_ruptures",
     "source_url": "https://donnees.roulez-eco.fr/opendata/instantane_ruptures",
-    "collected_at": "2026-11-11T08:07:02.654790+00:00",
-    "stations_source_total": 9827,
+    "collected_at": "2026-11-11T09:06:58.730778+00:00",
+    "stations_source_total": 9826,
     "stations_temporarily_closed": 0,
     "eligible_stations": 9786,
-    "stations_with_any_shortage": 970,
-    "national_shortage_ratio_pct": 9.9121,
+    "stations_with_any_shortage": 977,
+    "national_shortage_ratio_pct": 9.9837,
     "diesel": {
-      "stations": 9707,
-      "stations_in_shortage": 551,
-      "shortage_ratio_pct": 5.6763
+      "stations": 9708,
+      "stations_in_shortage": 557,
+      "shortage_ratio_pct": 5.7375
     },
     "petrol": {
-      "stations": 9718,
-      "stations_in_shortage": 871,
-      "shortage_ratio_pct": 8.9627
+      "stations": 9717,
+      "stations_in_shortage": 873,
+      "shortage_ratio_pct": 8.9843
     },
     "departments_with_shortage": 91,
     "top_departments_by_shortage_ratio": [
       {
         "dept_code": "67",
-        "eligible_stations": 147,
-        "stations_with_any_shortage": 51,
-        "stations_with_diesel_shortage": 31,
-        "stations_with_petrol_shortage": 49,
-        "shortage_ratio_pct": 34.6939
+        "eligible_stations": 145,
+        "stations_with_any_shortage": 50,
+        "stations_with_diesel_shortage": 29,
+        "stations_with_petrol_shortage": 47,
+        "shortage_ratio_pct": 34.4828
       },
       {
         "dept_code": "90",
@@ -700,7 +713,7 @@
         "dept_code": "31",
         "eligible_stations": 193,
         "stations_with_any_shortage": 39,
-        "stations_with_diesel_shortage": 34,
+        "stations_with_diesel_shortage": 35,
         "stations_with_petrol_shortage": 33,
         "shortage_ratio_pct": 20.2073
       },
@@ -729,6 +742,22 @@
         "shortage_ratio_pct": 18.2927
       },
       {
+        "dept_code": "54",
+        "eligible_stations": 93,
+        "stations_with_any_shortage": 17,
+        "stations_with_diesel_shortage": 8,
+        "stations_with_petrol_shortage": 16,
+        "shortage_ratio_pct": 18.2796
+      },
+      {
+        "dept_code": "37",
+        "eligible_stations": 90,
+        "stations_with_any_shortage": 16,
+        "stations_with_diesel_shortage": 7,
+        "stations_with_petrol_shortage": 15,
+        "shortage_ratio_pct": 17.7778
+      },
+      {
         "dept_code": "57",
         "eligible_stations": 131,
         "stations_with_any_shortage": 23,
@@ -745,14 +774,6 @@
         "shortage_ratio_pct": 17.5
       },
       {
-        "dept_code": "54",
-        "eligible_stations": 93,
-        "stations_with_any_shortage": 16,
-        "stations_with_diesel_shortage": 8,
-        "stations_with_petrol_shortage": 15,
-        "shortage_ratio_pct": 17.2043
-      },
-      {
         "dept_code": "41",
         "eligible_stations": 64,
         "stations_with_any_shortage": 11,
@@ -761,20 +782,20 @@
         "shortage_ratio_pct": 17.1875
       },
       {
-        "dept_code": "37",
-        "eligible_stations": 90,
-        "stations_with_any_shortage": 15,
+        "dept_code": "32",
+        "eligible_stations": 49,
+        "stations_with_any_shortage": 8,
         "stations_with_diesel_shortage": 7,
-        "stations_with_petrol_shortage": 14,
-        "shortage_ratio_pct": 16.6667
+        "stations_with_petrol_shortage": 4,
+        "shortage_ratio_pct": 16.3265
       },
       {
-        "dept_code": "78",
-        "eligible_stations": 143,
-        "stations_with_any_shortage": 23,
-        "stations_with_diesel_shortage": 14,
-        "stations_with_petrol_shortage": 22,
-        "shortage_ratio_pct": 16.0839
+        "dept_code": "60",
+        "eligible_stations": 117,
+        "stations_with_any_shortage": 19,
+        "stations_with_diesel_shortage": 11,
+        "stations_with_petrol_shortage": 18,
+        "shortage_ratio_pct": 16.2393
       },
       {
         "dept_code": "65",
@@ -793,49 +814,41 @@
         "shortage_ratio_pct": 16.0
       },
       {
-        "dept_code": "60",
-        "eligible_stations": 117,
-        "stations_with_any_shortage": 18,
-        "stations_with_diesel_shortage": 11,
-        "stations_with_petrol_shortage": 17,
+        "dept_code": "78",
+        "eligible_stations": 143,
+        "stations_with_any_shortage": 22,
+        "stations_with_diesel_shortage": 14,
+        "stations_with_petrol_shortage": 21,
         "shortage_ratio_pct": 15.3846
       },
       {
-        "dept_code": "72",
-        "eligible_stations": 97,
-        "stations_with_any_shortage": 14,
-        "stations_with_diesel_shortage": 5,
-        "stations_with_petrol_shortage": 12,
-        "shortage_ratio_pct": 14.433
-      },
-      {
-        "dept_code": "32",
-        "eligible_stations": 49,
-        "stations_with_any_shortage": 7,
-        "stations_with_diesel_shortage": 6,
-        "stations_with_petrol_shortage": 4,
-        "shortage_ratio_pct": 14.2857
+        "dept_code": "03",
+        "eligible_stations": 81,
+        "stations_with_any_shortage": 12,
+        "stations_with_diesel_shortage": 11,
+        "stations_with_petrol_shortage": 10,
+        "shortage_ratio_pct": 14.8148
       }
     ],
-    "active_temporary_rupture_events": 4737,
-    "definitive_rupture_records": 19404,
+    "active_temporary_rupture_events": 4757,
+    "definitive_rupture_records": 19402,
     "method_note": "Flux XML officiel instantané. Seules les ruptures temporaires actives sont traitées comme des indisponibilités opérationnelles. Une rupture temporaire reste active tant que sa date de fin est absente ou future. Les ruptures définitives sont interprétées comme des carburants non distribués et ne constituent pas une pénurie. Les stations faisant l'objet d'une fermeture temporaire active sont exclues du dénominateur. Une station est en rupture gazole lorsqu'elle distribue normalement du gazole et qu'une rupture temporaire active concerne ce carburant. Elle est en rupture essence lorsque toutes les essences SP95, SP98 et/ou E10 qu'elle distribue normalement sont en rupture temporaire active."
   },
   "rail": {
     "source": "SNCF / transport.data.gouv.fr",
     "scope": "TGV, Intercités et TER",
-    "collected_at": "2026-11-11T08:07:03.669171+00:00",
+    "collected_at": "2026-11-11T09:06:59.749528+00:00",
     "service_alerts": {
-      "active_alerts_count": 326,
+      "active_alerts_count": 333,
       "operational_alerts_count": 0,
-      "informational_or_unqualified_alerts_count": 326,
+      "informational_or_unqualified_alerts_count": 333,
       "effects": {
-        "UNKNOWN_EFFECT": 326
+        "UNKNOWN_EFFECT": 333
       },
       "causes": {
-        "UNKNOWN_CAUSE": 95,
+        "UNKNOWN_CAUSE": 96,
         "MAINTENANCE": 133,
-        "OTHER_CAUSE": 98
+        "OTHER_CAUSE": 104
       },
       "sample_active_alerts": [
         {
@@ -5157,29 +5170,29 @@
       "operational_alerts": []
     },
     "trip_updates": {
-      "trips_count": 896,
+      "trips_count": 933,
       "schedule_relationships": {
-        "SCHEDULED": 790,
-        "ADDED": 94,
-        "CANCELED": 12
+        "SCHEDULED": 817,
+        "ADDED": 105,
+        "CANCELED": 11
       },
-      "canceled_trips": 12,
-      "canceled_ratio_pct": 1.3393,
-      "trips_delay_ge_15min": 35,
-      "trips_delay_ge_15min_ratio_pct": 3.9062,
-      "trips_delay_ge_30min": 16,
-      "trips_delay_ge_30min_ratio_pct": 1.7857,
-      "trips_delay_ge_60min": 7,
-      "trips_delay_ge_60min_ratio_pct": 0.7812,
-      "average_max_delay_seconds": 114.0,
-      "maximum_delay_seconds": 9000
+      "canceled_trips": 11,
+      "canceled_ratio_pct": 1.179,
+      "trips_delay_ge_15min": 42,
+      "trips_delay_ge_15min_ratio_pct": 4.5016,
+      "trips_delay_ge_30min": 21,
+      "trips_delay_ge_30min_ratio_pct": 2.2508,
+      "trips_delay_ge_60min": 8,
+      "trips_delay_ge_60min_ratio_pct": 0.8574,
+      "average_max_delay_seconds": 144.0,
+      "maximum_delay_seconds": 13800
     }
   },
   "road": {
     "schema_version": "road-observation-1.4.2b",
     "source": "Bison Futé / transport.data.gouv.fr",
     "scope": "RRN non concédé — événements, Traficolor, vitesses et débits",
-    "collected_at": "2026-11-11T08:07:05.110818+00:00",
+    "collected_at": "2026-11-11T09:07:01.763423+00:00",
     "observation_mode": true,
     "scoring_enabled": true,
     "integration_enabled": true,
@@ -5189,40 +5202,41 @@
       "extended_context_for_scoring": false
     },
     "events": {
-      "situations_count": 214,
-      "situation_records_count": 432,
+      "situations_count": 216,
+      "situation_records_count": 434,
       "planned_situations_count": 153,
-      "unplanned_situations_count": 61,
-      "full_closure_records_count": 25,
-      "capacity_restriction_records_count": 141,
+      "unplanned_situations_count": 63,
+      "full_closure_records_count": 24,
+      "capacity_restriction_records_count": 142,
       "planned_full_closure_records_count": 20,
-      "unplanned_full_closure_records_count": 5,
+      "unplanned_full_closure_records_count": 4,
       "planned_capacity_restriction_records_count": 118,
-      "unplanned_capacity_restriction_records_count": 23,
-      "unique_full_closure_locations_count": 18,
-      "unique_capacity_restriction_locations_count": 97,
+      "unplanned_capacity_restriction_records_count": 24,
+      "unique_full_closure_locations_count": 17,
+      "unique_capacity_restriction_locations_count": 98,
       "planned_full_closure_locations_count": 13,
-      "unplanned_full_closure_locations_count": 5,
+      "unplanned_full_closure_locations_count": 4,
       "planned_capacity_restriction_locations_count": 77,
-      "unplanned_capacity_restriction_locations_count": 20,
-      "affected_axes_count": 70,
+      "unplanned_capacity_restriction_locations_count": 21,
+      "affected_axes_count": 71,
       "affected_axes": [
+        "A0002",
+        "A0003",
         "A0013",
         "A0016",
         "A0020",
         "A0033",
         "A0034",
         "A0047",
+        "A0055",
         "A0068",
         "A0072",
         "A0075",
         "A0077",
         "A0083",
         "A0084",
-        "A0086",
-        "A0131",
-        "A0507",
         "A0620",
+        "A0624",
         "N0002",
         "N0004",
         "N0005",
@@ -5252,6 +5266,7 @@
         "N0102",
         "N0106",
         "N0113",
+        "N0118",
         "N0122",
         "N0125",
         "N0134",
@@ -5266,7 +5281,6 @@
         "N0158",
         "N0164",
         "N0165",
-        "N0171",
         "N0175",
         "N0176",
         "N0202",
@@ -5285,15 +5299,15 @@
         "other": 113,
         "weather": 20,
         "roadworks": 153,
-        "obstruction": 19,
-        "accident": 3
+        "obstruction": 20,
+        "accident": 4
       },
       "record_types": {
         "RoadOrCarriagewayOrLaneManagement": 115,
         "WeatherRelatedRoadConditions": 5,
         "ReroutingManagement": 45,
         "MaintenanceWorks": 133,
-        "GeneralObstruction": 6,
+        "GeneralObstruction": 8,
         "GeneralNetworkManagement": 25,
         "EnvironmentalObstruction": 4,
         "SpeedManagement": 36,
@@ -5301,8 +5315,8 @@
         "GeneralInstructionOrMessageToRoadUsers": 18,
         "RoadsideServiceDisruption": 1,
         "InfrastructureDamageObstruction": 5,
-        "VehicleObstruction": 6,
-        "Accident": 3
+        "VehicleObstruction": 5,
+        "Accident": 4
       },
       "critical_events_sample": [
         {
@@ -5766,22 +5780,22 @@
     },
     "traffic": {
       "published_segments_count": 2191,
-      "recognized_segments_count": 1925,
-      "valid_segments_count": 1925,
-      "fluid_segments_count": 1877,
-      "dense_segments_count": 29,
-      "congested_segments_count": 17,
+      "recognized_segments_count": 1969,
+      "valid_segments_count": 1969,
+      "fluid_segments_count": 1914,
+      "dense_segments_count": 33,
+      "congested_segments_count": 20,
       "impossible_segments_count": 2,
-      "unknown_segments_count": 266,
-      "recognized_ratio_pct": 87.8594,
-      "unknown_ratio_pct": 12.1406,
-      "congestion_ratio_pct": 0.987,
+      "unknown_segments_count": 222,
+      "recognized_ratio_pct": 89.8676,
+      "unknown_ratio_pct": 10.1324,
+      "congestion_ratio_pct": 1.1173,
       "status_values_found": {
-        "fluid": 1877,
-        "dense": 29,
-        "congested": 17,
+        "fluid": 1914,
+        "dense": 33,
+        "congested": 20,
         "impossible": 2,
-        "unknown": 266
+        "unknown": 222
       },
       "parser_mode": "multi_directory_xml",
       "xml_parse_error": null,
@@ -5799,11 +5813,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 91,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficStBrieuc/TraficStBrieuc_DataTRT_20261111_090700.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficStBrieuc/TraficStBrieuc_DataTRT_20261111_100700.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:07:00+01:00",
-            "age_minutes": 0.13
+            "timestamp": "2026-11-11T10:07:00+01:00",
+            "age_minutes": 0.08
           }
         },
         {
@@ -5814,11 +5828,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 153,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/TraficTriskell56_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/TraficTriskell56_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.81
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.76
           }
         },
         {
@@ -5829,11 +5843,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 193,
           "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/TraficBreizhNantes_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/TraficBreizhNantes_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.82
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.77
           }
         },
         {
@@ -5844,11 +5858,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 177,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/TraficBreizhRennes_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/TraficBreizhRennes_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.83
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.79
           }
         },
         {
@@ -5859,11 +5873,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 54,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/TraficCaen_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/TraficCaen_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.84
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.8
           }
         },
         {
@@ -5874,11 +5888,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 10,
           "unknown_segments_count": 6,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficDirmc/TraficDirmc_DataTRT_20261111_090130.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficDirmc/TraficDirmc_DataTRT_20261111_100130.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:01:30+01:00",
-            "age_minutes": 5.68
+            "timestamp": "2026-11-11T10:01:30+01:00",
+            "age_minutes": 5.64
           }
         },
         {
@@ -5889,11 +5903,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 122,
           "unknown_segments_count": 37,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/TraficErato_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/TraficErato_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.85
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.82
           }
         },
         {
@@ -5902,13 +5916,13 @@
           "status": "OK",
           "xml_files_count": 81,
           "xml_files_collected": 1,
-          "valid_segments_count": 25,
-          "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20261111_090620.xml",
+          "valid_segments_count": 26,
+          "unknown_segments_count": 0,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.86
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.83
           }
         },
         {
@@ -5917,28 +5931,28 @@
           "status": "OK",
           "xml_files_count": 41,
           "xml_files_collected": 1,
-          "valid_segments_count": 99,
-          "unknown_segments_count": 11,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficHyrondelle/TraficHyrondelle_1_DataTRT_20261111_090640.xml",
+          "valid_segments_count": 98,
+          "unknown_segments_count": 12,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficHyrondelle/TraficHyrondelle_1_DataTRT_20261111_100640.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:40+01:00",
-            "age_minutes": 0.54
+            "timestamp": "2026-11-11T10:06:40+01:00",
+            "age_minutes": 0.51
           }
         },
         {
           "producer": "TraficLille",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLille/",
           "status": "OK",
-          "xml_files_count": 73,
+          "xml_files_count": 80,
           "xml_files_collected": 1,
           "valid_segments_count": 356,
           "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLille/TraficLille_DataTRT_20261111_090625.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLille/TraficLille_DataTRT_20261111_100325.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:25+01:00",
-            "age_minutes": 0.8
+            "timestamp": "2026-11-11T10:03:25+01:00",
+            "age_minutes": 3.77
           }
         },
         {
@@ -5949,26 +5963,26 @@
           "xml_files_collected": 1,
           "valid_segments_count": 111,
           "unknown_segments_count": 22,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/TraficLimoges_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/TraficLimoges_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.89
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.87
           }
         },
         {
           "producer": "TraficLyon",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/",
           "status": "OK",
-          "xml_files_count": 243,
+          "xml_files_count": 242,
           "xml_files_collected": 1,
-          "valid_segments_count": 195,
-          "unknown_segments_count": 159,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/TraficLyon_DataTRT_20261111_090704.xml",
+          "valid_segments_count": 242,
+          "unknown_segments_count": 112,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/TraficLyon_DataTRT_20261111_100609.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:07:04+01:00",
-            "age_minutes": 0.16
+            "timestamp": "2026-11-11T10:06:09+01:00",
+            "age_minutes": 1.06
           }
         },
         {
@@ -5977,13 +5991,13 @@
           "status": "OK",
           "xml_files_count": 40,
           "xml_files_collected": 1,
-          "valid_segments_count": 179,
-          "unknown_segments_count": 16,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMarius/TraficMarius_DataTRT_20261111_090000.xml",
+          "valid_segments_count": 174,
+          "unknown_segments_count": 21,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMarius/TraficMarius_DataTRT_20261111_100000.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:00:00+01:00",
-            "age_minutes": 7.24
+            "timestamp": "2026-11-11T10:00:00+01:00",
+            "age_minutes": 7.22
           }
         },
         {
@@ -5992,13 +6006,13 @@
           "status": "OK",
           "xml_files_count": 81,
           "xml_files_collected": 1,
-          "valid_segments_count": 64,
-          "unknown_segments_count": 10,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/TraficMyrabel_DataTRT_20261111_090630.xml",
+          "valid_segments_count": 66,
+          "unknown_segments_count": 8,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/TraficMyrabel_DataTRT_20261111_100630.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:30+01:00",
-            "age_minutes": 0.75
+            "timestamp": "2026-11-11T10:06:30+01:00",
+            "age_minutes": 0.73
           }
         },
         {
@@ -6009,67 +6023,67 @@
           "xml_files_collected": 1,
           "valid_segments_count": 96,
           "unknown_segments_count": 2,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/TraficRouen_DataTRT_20261111_090620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/TraficRouen_DataTRT_20261111_100620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-11T09:06:20+01:00",
-            "age_minutes": 0.92
+            "timestamp": "2026-11-11T10:06:20+01:00",
+            "age_minutes": 0.91
           }
         }
       ],
       "freshness": {
         "basis": "latest_filename_timestamp_per_producer",
         "producers_with_age_count": 15,
-        "min_age_minutes": 0.13,
-        "median_age_minutes": 0.83,
-        "max_age_minutes": 7.24,
+        "min_age_minutes": 0.08,
+        "median_age_minutes": 0.82,
+        "max_age_minutes": 7.22,
         "threshold_applied": false,
         "freshness_status": "OBSERVED"
       }
     },
     "flow": {
-      "measurement_sites_count": 1391,
+      "measurement_sites_count": 1395,
       "measurement_times": {
         "distinct_count": 1,
         "most_common": [
           {
-            "time": "2026-11-11T09:00:00.000+01:00",
-            "sites_count": 1391
+            "time": "2026-11-11T10:00:00.000+01:00",
+            "sites_count": 1395
           }
         ]
       },
       "speed": {
-        "raw_values_count": 1391,
+        "raw_values_count": 1395,
         "invalid_values_count": 3,
-        "sites_with_single_value": 1388,
+        "sites_with_single_value": 1392,
         "sites_with_multiple_values": 0,
         "sites_without_value": 3,
         "singleton_distribution_diagnostic": {
-          "count": 1388,
-          "median": 90.4485,
-          "p10": 51.0558,
+          "count": 1392,
+          "median": 89.5,
+          "p10": 26.2,
           "p90": 109.0,
           "min": 0.0,
-          "max": 153.0,
-          "mean": 83.9556
+          "max": 158.0,
+          "mean": 82.6575
         },
         "unit": "km/h",
         "unit_basis": "DATEX II speed / source documentation, diagnostic only",
         "national_mean_for_scoring": false
       },
       "flow": {
-        "raw_values_count": 1391,
+        "raw_values_count": 1395,
         "invalid_values_count": 0,
-        "sites_with_single_value": 1391,
+        "sites_with_single_value": 1395,
         "sites_with_multiple_values": 0,
         "sites_without_value": 0,
         "singleton_distribution_diagnostic": {
-          "count": 1391,
-          "median": 760.0,
-          "p10": 140.0,
-          "p90": 4100.0,
+          "count": 1395,
+          "median": 1240.0,
+          "p10": 164.0,
+          "p90": 6820.0,
           "min": 0.0,
-          "max": 19500.0
+          "max": 33100.0
         },
         "unit": "veh/h",
         "unit_validated": true,
@@ -6081,183 +6095,111 @@
       "station_measurements_sample": [
         {
           "measurement_site_reference": "MUM76.h1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 109.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 150.0
         },
         {
-          "measurement_site_reference": "A0001011200",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 83.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1560.0
-        },
-        {
           "measurement_site_reference": "A0027010102",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 86.0,
+          "speed_kmh_candidate": 98.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1160.0
+          "vehicle_flow_rate_candidate": 1610.0
         },
         {
           "measurement_site_reference": "MB631.B8",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 0.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 0.0
         },
         {
-          "measurement_site_reference": "MWO56.J1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 103.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 830.0
-        },
-        {
-          "measurement_site_reference": "MSR69.K1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 96.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 11300.0
-        },
-        {
           "measurement_site_reference": "MUM76.h2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 106.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 290.0
         },
         {
-          "measurement_site_reference": "N0041010100",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 84.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 350.0
-        },
-        {
           "measurement_site_reference": "MB233.Z1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 87.0,
+          "speed_kmh_candidate": 86.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1080.0
+          "vehicle_flow_rate_candidate": 1690.0
         },
         {
-          "measurement_site_reference": "MSR69.K2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_site_reference": "A0027010101",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 98.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 13800.0
+          "vehicle_flow_rate_candidate": 1610.0
         },
         {
-          "measurement_site_reference": "MYL42.R1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_site_reference": "MB233.Z2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 85.0,
+          "speed_kmh_candidate": 89.833336,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 2120.0
+        },
+        {
+          "measurement_site_reference": "MM313.k2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 91.48723,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1030.0
+        },
+        {
+          "measurement_site_reference": "MYP69.H3",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 74.666664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 10383.0
+        },
+        {
+          "measurement_site_reference": "MWF29.F2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 107.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 500.0
+        },
+        {
+          "measurement_site_reference": "MWF29.F1",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 109.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 620.0
         },
         {
-          "measurement_site_reference": "A0027010101",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_site_reference": "MRC14.T2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 86.0,
+          "speed_kmh_candidate": 94.666664,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 1160.0
         },
         {
-          "measurement_site_reference": "MB233.Z2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 90.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1140.0
-        },
-        {
-          "measurement_site_reference": "MB133.Q2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 110.5,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 790.0
-        },
-        {
-          "measurement_site_reference": "MM313.k2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 97.837555,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 750.0
-        },
-        {
-          "measurement_site_reference": "MYP69.H3",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 74.85714,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 7029.0
-        },
-        {
-          "measurement_site_reference": "MWF29.F2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 104.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 290.0
-        },
-        {
-          "measurement_site_reference": "MWF29.F1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 110.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 260.0
-        },
-        {
-          "measurement_site_reference": "A9022010250",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 88.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 160.0
-        },
-        {
-          "measurement_site_reference": "MRC14.T2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 93.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 587.0
-        },
-        {
           "measurement_site_reference": "MRC14.T1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 93.666664,
+          "speed_kmh_candidate": 93.333336,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 670.0
-        },
-        {
-          "measurement_site_reference": "A0001020150",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 112.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1300.0
+          "vehicle_flow_rate_candidate": 907.0
         },
         {
           "measurement_site_reference": "MM313.l2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 0.0,
           "flow_values_count": 1,
@@ -6265,47 +6207,31 @@
         },
         {
           "measurement_site_reference": "MY269.D1",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 82.5,
+          "speed_kmh_candidate": 82.666664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 12700.0
+        },
+        {
+          "measurement_site_reference": "MY269.D2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 82.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 8500.0
         },
         {
-          "measurement_site_reference": "MY269.D2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 85.666664,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 6100.0
-        },
-        {
-          "measurement_site_reference": "MYL42.R2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 86.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 480.0
-        },
-        {
-          "measurement_site_reference": "MWO56.J2",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 101.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 610.0
-        },
-        {
           "measurement_site_reference": "MY269.D3",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 82.833336,
+          "speed_kmh_candidate": 81.166664,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2900.0
+          "vehicle_flow_rate_candidate": 7000.0
         },
         {
           "measurement_site_reference": "MB631.A7",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 0.0,
           "flow_values_count": 1,
@@ -6313,52 +6239,140 @@
         },
         {
           "measurement_site_reference": "MB831.U6",
-          "measurement_time": "2026-11-11T09:00:00.000+01:00",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 84.0,
+          "speed_kmh_candidate": 93.5,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 410.0
+          "vehicle_flow_rate_candidate": 1320.0
+        },
+        {
+          "measurement_site_reference": "MB831.U5",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 92.166664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1070.0
+        },
+        {
+          "measurement_site_reference": "MM613.C1",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 105.68254,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1270.0
+        },
+        {
+          "measurement_site_reference": "MM113.Y1",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 92.46543,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1220.0
+        },
+        {
+          "measurement_site_reference": "MY269.C6",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 84.666664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 5500.0
+        },
+        {
+          "measurement_site_reference": "A0022013600",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 96.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 970.0
+        },
+        {
+          "measurement_site_reference": "MM313.m2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 0.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 0.0
+        },
+        {
+          "measurement_site_reference": "MY269.C1",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 87.333336,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 16200.0
+        },
+        {
+          "measurement_site_reference": "MY269.C4",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 75.333336,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 14300.0
+        },
+        {
+          "measurement_site_reference": "MY269.C2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 92.5,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 21800.0
+        },
+        {
+          "measurement_site_reference": "MB233.X1",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 89.5,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1420.0
+        },
+        {
+          "measurement_site_reference": "MB233.X2",
+          "measurement_time": "2026-11-11T10:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 88.833336,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1950.0
         }
       ],
       "structure_diagnostic": {
         "tag_counts": {
-          "measuredValue": 5564,
-          "averageVehicleSpeed": 1391,
-          "measurementSiteReference": 1391,
-          "measurementTimeDefault": 1391,
-          "siteMeasurements": 1391,
-          "speed": 1391,
-          "vehicleFlow": 1391,
-          "vehicleFlowRate": 1391,
+          "measuredValue": 5580,
+          "averageVehicleSpeed": 1395,
+          "measurementSiteReference": 1395,
+          "measurementTimeDefault": 1395,
+          "siteMeasurements": 1395,
+          "speed": 1395,
+          "vehicleFlow": 1395,
+          "vehicleFlowRate": 1395,
           "measurementSiteTableReference": 1
         },
         "value_samples": {
           "measurementTimeDefault": [
-            "2026-11-11T09:00:00.000+01:00"
+            "2026-11-11T10:00:00.000+01:00"
           ],
           "speed": [
             "109.0",
-            "83.0",
-            "86.0",
+            "98.0",
             "0.0",
-            "103.0",
-            "96.0",
             "106.0",
-            "84.0",
-            "87.0",
-            "98.0"
+            "86.0",
+            "89.833336",
+            "91.48723",
+            "74.666664",
+            "107.0",
+            "94.666664"
           ],
           "vehicleFlowRate": [
             "150",
-            "1560",
-            "1160",
+            "1610",
             "0",
-            "830",
-            "11300",
             "290",
-            "350",
-            "1080",
-            "13800"
+            "1690",
+            "2120",
+            "1030",
+            "10383",
+            "500",
+            "620"
           ]
         }
       },
@@ -6369,15 +6383,15 @@
     "extended_context": {
       "diagnostic_only": true,
       "not_for_scoring": true,
-      "text_length": 45451,
+      "text_length": 49516,
       "sca_producer_mentions": {
-        "ASF": 34,
-        "COFIROUTE": 16,
-        "ESCOTA": 6,
-        "APRR": 22,
-        "AREA": 2,
-        "SANEF": 8,
-        "SAPN": 8
+        "ASF": 32,
+        "COFIROUTE": 17,
+        "ESCOTA": 7,
+        "APRR": 26,
+        "AREA": 1,
+        "SANEF": 9,
+        "SAPN": 9
       },
       "interpretation_guard": "TIPI France entière confirme la présence de producteurs SCA mais les occurrences textuelles ne sont ni des événements uniques ni des métriques d'impact. Aucun compteur fermeture/restriction issu du HTML n'est utilisé."
     },
@@ -6410,30 +6424,31 @@
   },
   "road_enrichment": {
     "schema_version": "road-enrichment-1.1-cache-final2",
-    "collected_at": "2026-11-11T08:07:17.016269+00:00",
+    "collected_at": "2026-11-11T09:07:16.694720+00:00",
     "observation_mode": true,
     "scoring_enabled": true,
     "integration_enabled": true,
     "normalization": {
-      "raw_axes_count": 70,
-      "display_axes_count": 70,
+      "raw_axes_count": 71,
+      "display_axes_count": 71,
       "axis_display_map": {
+        "A0002": "A2",
+        "A0003": "A3",
         "A0013": "A13",
         "A0016": "A16",
         "A0020": "A20",
         "A0033": "A33",
         "A0034": "A34",
         "A0047": "A47",
+        "A0055": "A55",
         "A0068": "A68",
         "A0072": "A72",
         "A0075": "A75",
         "A0077": "A77",
         "A0083": "A83",
         "A0084": "A84",
-        "A0086": "A86",
-        "A0131": "A131",
-        "A0507": "A507",
         "A0620": "A620",
+        "A0624": "A624",
         "N0002": "N2",
         "N0004": "N4",
         "N0005": "N5",
@@ -6463,6 +6478,7 @@
         "N0102": "N102",
         "N0106": "N106",
         "N0113": "N113",
+        "N0118": "N118",
         "N0122": "N122",
         "N0125": "N125",
         "N0134": "N134",
@@ -6477,7 +6493,6 @@
         "N0158": "N158",
         "N0164": "N164",
         "N0165": "N165",
-        "N0171": "N171",
         "N0175": "N175",
         "N0176": "N176",
         "N0202": "N202",
@@ -12971,221 +12986,6 @@
         }
       },
       {
-        "situation_id": "261111-000240",
-        "axes_raw": [
-          "A0131"
-        ],
-        "axes_display": [
-          "A131"
-        ],
-        "coordinates": {
-          "latitude": 49.487076,
-          "longitude": 0.3689075
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "76657",
-          "commune_name": "Saint-Vigor-d'Ymonville",
-          "department_code": "76",
-          "department_name": "Seine-Maritime",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
-        "situation_id": "261111-000244",
-        "axes_raw": [
-          "N0165"
-        ],
-        "axes_display": [
-          "N165"
-        ],
-        "coordinates": {
-          "latitude": 47.643295,
-          "longitude": -2.6931777
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "56251",
-          "commune_name": "Theix-Noyalo",
-          "department_code": "56",
-          "department_name": "Morbihan",
-          "region_code": "53",
-          "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "261111-000257",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 48.544117,
-          "longitude": -2.7701778
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "22187",
-          "commune_name": "Plérin",
-          "department_code": "22",
-          "department_name": "Côtes-d'Armor",
-          "region_code": "53",
-          "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "261111-000270",
-        "axes_raw": [
-          "A0020"
-        ],
-        "axes_display": [
-          "A20"
-        ],
-        "coordinates": {
-          "latitude": 46.110126,
-          "longitude": 1.3748524
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "87014",
-          "commune_name": "Bessines-sur-Gartempe",
-          "department_code": "87",
-          "department_name": "Haute-Vienne",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
-        "situation_id": "261111-000265",
-        "axes_raw": [
-          "A0507"
-        ],
-        "axes_display": [
-          "A507"
-        ],
-        "coordinates": {
-          "latitude": 43.33,
-          "longitude": 5.397939
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "13055",
-          "commune_name": "Marseille",
-          "department_code": "13",
-          "department_name": "Bouches-du-Rhône",
-          "region_code": "93",
-          "region_name": "Provence-Alpes-Côte d'Azur"
-        }
-      },
-      {
-        "situation_id": "261111-000271",
-        "axes_raw": [
-          "A0086"
-        ],
-        "axes_display": [
-          "A86"
-        ],
-        "coordinates": {
-          "latitude": 48.75518,
-          "longitude": 2.3825982
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "94073",
-          "commune_name": "Thiais",
-          "department_code": "94",
-          "department_name": "Val-de-Marne",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "261111-000243",
-        "axes_raw": [
-          "N0171"
-        ],
-        "axes_display": [
-          "N171"
-        ],
-        "coordinates": {
-          "latitude": 47.37125,
-          "longitude": -1.9194316
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": true,
-        "capacity_restriction": true,
-        "record_types": [
-          "Accident",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "accident",
-          "other"
-        ],
-        "territorialization": {
-          "commune_code": "44195",
-          "commune_name": "Savenay",
-          "department_code": "44",
-          "department_name": "Loire-Atlantique",
-          "region_code": "52",
-          "region_name": "Pays de la Loire"
-        }
-      },
-      {
         "situation_id": "261111-000284",
         "axes_raw": [
           "N0010"
@@ -13217,12 +13017,16 @@
         }
       },
       {
-        "situation_id": "261111-000288",
-        "axes_raw": [],
-        "axes_display": [],
+        "situation_id": "261111-000294",
+        "axes_raw": [
+          "A0624"
+        ],
+        "axes_display": [
+          "A624"
+        ],
         "coordinates": {
-          "latitude": 48.632046,
-          "longitude": 2.495666
+          "latitude": 43.60502,
+          "longitude": 1.4043714
         },
         "source_departments": [],
         "planned": false,
@@ -13235,26 +13039,303 @@
           "accident"
         ],
         "territorialization": {
-          "commune_code": "91553",
-          "commune_name": "Saint-Germain-lès-Corbeil",
+          "commune_code": "31555",
+          "commune_name": "Toulouse",
+          "department_code": "31",
+          "department_name": "Haute-Garonne",
+          "region_code": "76",
+          "region_name": "Occitanie"
+        }
+      },
+      {
+        "situation_id": "261111-000314",
+        "axes_raw": [
+          "N0004"
+        ],
+        "axes_display": [
+          "N4"
+        ],
+        "coordinates": {
+          "latitude": 48.690105,
+          "longitude": 5.6797013
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "55520",
+          "commune_name": "Troussey",
+          "department_code": "55",
+          "department_name": "Meuse",
+          "region_code": "44",
+          "region_name": "Grand Est"
+        }
+      },
+      {
+        "situation_id": "261111-000319",
+        "axes_raw": [
+          "N0118"
+        ],
+        "axes_display": [
+          "N118"
+        ],
+        "coordinates": {
+          "latitude": 48.827793,
+          "longitude": 2.2248504
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "92072",
+          "commune_name": "Sèvres",
+          "department_code": "92",
+          "department_name": "Hauts-de-Seine",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "261111-000328",
+        "axes_raw": [
+          "N0118"
+        ],
+        "axes_display": [
+          "N118"
+        ],
+        "coordinates": {
+          "latitude": 48.749622,
+          "longitude": 2.20844
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "91064",
+          "commune_name": "Bièvres",
           "department_code": "91",
           "department_name": "Essonne",
           "region_code": "11",
           "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "261111-000331",
+        "axes_raw": [
+          "A0055"
+        ],
+        "axes_display": [
+          "A55"
+        ],
+        "coordinates": {
+          "latitude": 43.388897,
+          "longitude": 5.139857
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "13026",
+          "commune_name": "Châteauneuf-les-Martigues",
+          "department_code": "13",
+          "department_name": "Bouches-du-Rhône",
+          "region_code": "93",
+          "region_name": "Provence-Alpes-Côte d'Azur"
+        }
+      },
+      {
+        "situation_id": "261111-000338",
+        "axes_raw": [
+          "N0249"
+        ],
+        "axes_display": [
+          "N249"
+        ],
+        "coordinates": {
+          "latitude": 47.227085,
+          "longitude": -1.4642814
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "44009",
+          "commune_name": "Basse-Goulaine",
+          "department_code": "44",
+          "department_name": "Loire-Atlantique",
+          "region_code": "52",
+          "region_name": "Pays de la Loire"
+        }
+      },
+      {
+        "situation_id": "261111-000341",
+        "axes_raw": [
+          "A0003"
+        ],
+        "axes_display": [
+          "A3"
+        ],
+        "coordinates": {
+          "latitude": 48.88324,
+          "longitude": 2.4577148
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "93053",
+          "commune_name": "Noisy-le-Sec",
+          "department_code": "93",
+          "department_name": "Seine-Saint-Denis",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "261111-000342",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.723156,
+          "longitude": 6.0037217
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "73263",
+          "commune_name": "Saint-Offenge",
+          "department_code": "73",
+          "department_name": "Savoie",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "261111-000346",
+        "axes_raw": [
+          "A0002"
+        ],
+        "axes_display": [
+          "A2"
+        ],
+        "coordinates": {
+          "latitude": 50.337692,
+          "longitude": 3.5077598
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "59603",
+          "commune_name": "Trith-Saint-Léger",
+          "department_code": "59",
+          "department_name": "Nord",
+          "region_code": "32",
+          "region_name": "Hauts-de-France"
+        }
+      },
+      {
+        "situation_id": "261111-000347",
+        "axes_raw": [
+          "N0079"
+        ],
+        "axes_display": [
+          "N79"
+        ],
+        "coordinates": {
+          "latitude": 46.468582,
+          "longitude": 4.097829
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "Accident",
+          "RoadOrCarriagewayOrLaneManagement"
+        ],
+        "categories": [
+          "accident",
+          "other"
+        ],
+        "territorialization": {
+          "commune_code": "71342",
+          "commune_name": "Paray-le-Monial",
+          "department_code": "71",
+          "department_name": "Saône-et-Loire",
+          "region_code": "27",
+          "region_name": "Bourgogne-Franche-Comté"
         }
       }
     ],
     "territorialization": {
       "source": "API Découpage administratif / geo.api.gouv.fr",
       "method": "Recherche géographique commune par latitude/longitude",
-      "situations_total": 214,
-      "situations_with_coordinates": 214,
-      "geocoded_situations_count": 214,
+      "situations_total": 216,
+      "situations_with_coordinates": 216,
+      "geocoded_situations_count": 216,
       "unresolved_situations_count": 0,
       "coordinate_coverage_ratio_pct": 100.0,
       "geocoding_success_ratio_pct": 100.0,
       "department_coverage_ratio_pct": 100.0,
-      "affected_departments_count": 61,
+      "affected_departments_count": 63,
       "affected_regions_count": 12,
       "departments": [
         {
@@ -13276,6 +13357,14 @@
           "unplanned_capacity_restriction_count": 2
         },
         {
+          "code": "71",
+          "name": "Saône-et-Loire",
+          "situations_count": 4,
+          "unplanned_situations_count": 2,
+          "capacity_restriction_count": 4,
+          "unplanned_capacity_restriction_count": 2
+        },
+        {
           "code": "58",
           "name": "Nièvre",
           "situations_count": 2,
@@ -13290,16 +13379,6 @@
           "unplanned_situations_count": 3,
           "full_closure_count": 7,
           "capacity_restriction_count": 10,
-          "unplanned_full_closure_count": 1,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "44",
-          "name": "Loire-Atlantique",
-          "situations_count": 8,
-          "unplanned_situations_count": 2,
-          "capacity_restriction_count": 6,
-          "full_closure_count": 1,
           "unplanned_full_closure_count": 1,
           "unplanned_capacity_restriction_count": 1
         },
@@ -13332,24 +13411,8 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
-          "code": "87",
-          "name": "Haute-Vienne",
-          "situations_count": 3,
-          "unplanned_situations_count": 2,
-          "capacity_restriction_count": 2,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
           "code": "02",
           "name": "Aisne",
-          "situations_count": 2,
-          "unplanned_situations_count": 2,
-          "capacity_restriction_count": 1,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "94",
-          "name": "Val-de-Marne",
           "situations_count": 2,
           "unplanned_situations_count": 2,
           "capacity_restriction_count": 1,
@@ -13372,16 +13435,16 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
-          "code": "71",
-          "name": "Saône-et-Loire",
-          "situations_count": 3,
+          "code": "52",
+          "name": "Haute-Marne",
+          "situations_count": 2,
           "unplanned_situations_count": 1,
-          "capacity_restriction_count": 3,
+          "capacity_restriction_count": 2,
           "unplanned_capacity_restriction_count": 1
         },
         {
-          "code": "52",
-          "name": "Haute-Marne",
+          "code": "87",
+          "name": "Haute-Vienne",
           "situations_count": 2,
           "unplanned_situations_count": 1,
           "capacity_restriction_count": 2,
@@ -13404,10 +13467,34 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
+          "code": "91",
+          "name": "Essonne",
+          "situations_count": 1,
+          "unplanned_situations_count": 1,
+          "capacity_restriction_count": 1,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
+          "code": "93",
+          "name": "Seine-Saint-Denis",
+          "situations_count": 1,
+          "unplanned_situations_count": 1,
+          "capacity_restriction_count": 1,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
           "code": "73",
           "name": "Savoie",
-          "situations_count": 9,
-          "unplanned_situations_count": 9
+          "situations_count": 10,
+          "unplanned_situations_count": 10
+        },
+        {
+          "code": "92",
+          "name": "Hauts-de-Seine",
+          "situations_count": 5,
+          "unplanned_situations_count": 4,
+          "full_closure_count": 1,
+          "capacity_restriction_count": 1
         },
         {
           "code": "77",
@@ -13416,27 +13503,11 @@
           "unplanned_situations_count": 3
         },
         {
-          "code": "92",
-          "name": "Hauts-de-Seine",
-          "situations_count": 4,
-          "unplanned_situations_count": 3,
-          "full_closure_count": 1,
-          "capacity_restriction_count": 1
-        },
-        {
-          "code": "56",
-          "name": "Morbihan",
-          "situations_count": 6,
+          "code": "44",
+          "name": "Loire-Atlantique",
+          "situations_count": 8,
           "unplanned_situations_count": 2,
-          "capacity_restriction_count": 2,
-          "full_closure_count": 1
-        },
-        {
-          "code": "76",
-          "name": "Seine-Maritime",
-          "situations_count": 5,
-          "capacity_restriction_count": 1,
-          "unplanned_situations_count": 2
+          "capacity_restriction_count": 5
         },
         {
           "code": "08",
@@ -13452,6 +13523,14 @@
           "capacity_restriction_count": 4
         },
         {
+          "code": "31",
+          "name": "Haute-Garonne",
+          "situations_count": 7,
+          "full_closure_count": 3,
+          "capacity_restriction_count": 4,
+          "unplanned_situations_count": 1
+        },
+        {
           "code": "42",
           "name": "Loire",
           "situations_count": 6,
@@ -13460,19 +13539,27 @@
           "capacity_restriction_count": 5
         },
         {
+          "code": "56",
+          "name": "Morbihan",
+          "situations_count": 5,
+          "unplanned_situations_count": 1,
+          "capacity_restriction_count": 2,
+          "full_closure_count": 1
+        },
+        {
+          "code": "76",
+          "name": "Seine-Maritime",
+          "situations_count": 4,
+          "capacity_restriction_count": 1,
+          "unplanned_situations_count": 1
+        },
+        {
           "code": "15",
           "name": "Cantal",
           "situations_count": 3,
           "unplanned_situations_count": 1,
           "full_closure_count": 1,
           "capacity_restriction_count": 1
-        },
-        {
-          "code": "22",
-          "name": "Côtes-d'Armor",
-          "situations_count": 3,
-          "capacity_restriction_count": 2,
-          "unplanned_situations_count": 1
         },
         {
           "code": "13",
@@ -13502,11 +13589,23 @@
           "capacity_restriction_count": 1
         },
         {
+          "code": "55",
+          "name": "Meuse",
+          "situations_count": 2,
+          "unplanned_situations_count": 1
+        },
+        {
           "code": "64",
           "name": "Pyrénées-Atlantiques",
           "situations_count": 2,
           "unplanned_situations_count": 1,
           "capacity_restriction_count": 1
+        },
+        {
+          "code": "59",
+          "name": "Nord",
+          "situations_count": 1,
+          "unplanned_situations_count": 1
         },
         {
           "code": "60",
@@ -13521,8 +13620,8 @@
           "unplanned_situations_count": 1
         },
         {
-          "code": "91",
-          "name": "Essonne",
+          "code": "94",
+          "name": "Val-de-Marne",
           "situations_count": 1,
           "unplanned_situations_count": 1
         },
@@ -13542,13 +13641,6 @@
           "code": "05",
           "name": "Hautes-Alpes",
           "situations_count": 8
-        },
-        {
-          "code": "31",
-          "name": "Haute-Garonne",
-          "situations_count": 6,
-          "full_closure_count": 3,
-          "capacity_restriction_count": 4
         },
         {
           "code": "70",
@@ -13573,6 +13665,12 @@
           "name": "Pas-de-Calais",
           "situations_count": 3,
           "capacity_restriction_count": 3
+        },
+        {
+          "code": "22",
+          "name": "Côtes-d'Armor",
+          "situations_count": 2,
+          "capacity_restriction_count": 2
         },
         {
           "code": "26",
@@ -13649,11 +13747,6 @@
           "capacity_restriction_count": 1
         },
         {
-          "code": "55",
-          "name": "Meuse",
-          "situations_count": 1
-        },
-        {
           "code": "69",
           "name": "Rhône",
           "situations_count": 1,
@@ -13687,56 +13780,56 @@
         {
           "code": "84",
           "name": "Auvergne-Rhône-Alpes",
-          "situations_count": 28,
-          "unplanned_situations_count": 15
+          "situations_count": 29,
+          "unplanned_situations_count": 16
         },
         {
           "code": "11",
           "name": "Île-de-France",
-          "situations_count": 17,
-          "unplanned_situations_count": 12
+          "situations_count": 18,
+          "unplanned_situations_count": 13
         },
         {
           "code": "76",
           "name": "Occitanie",
-          "situations_count": 61,
-          "unplanned_situations_count": 7
+          "situations_count": 62,
+          "unplanned_situations_count": 8
         },
         {
           "code": "44",
           "name": "Grand Est",
-          "situations_count": 11,
-          "unplanned_situations_count": 6
+          "situations_count": 12,
+          "unplanned_situations_count": 7
         },
         {
-          "code": "53",
-          "name": "Bretagne",
-          "situations_count": 18,
+          "code": "27",
+          "name": "Bourgogne-Franche-Comté",
+          "situations_count": 16,
+          "unplanned_situations_count": 4
+        },
+        {
+          "code": "32",
+          "name": "Hauts-de-France",
+          "situations_count": 8,
           "unplanned_situations_count": 4
         },
         {
           "code": "75",
           "name": "Nouvelle-Aquitaine",
-          "situations_count": 11,
-          "unplanned_situations_count": 4
+          "situations_count": 10,
+          "unplanned_situations_count": 3
         },
         {
           "code": "28",
           "name": "Normandie",
-          "situations_count": 10,
-          "unplanned_situations_count": 4
-        },
-        {
-          "code": "27",
-          "name": "Bourgogne-Franche-Comté",
-          "situations_count": 15,
+          "situations_count": 9,
           "unplanned_situations_count": 3
         },
         {
-          "code": "32",
-          "name": "Hauts-de-France",
-          "situations_count": 7,
-          "unplanned_situations_count": 3
+          "code": "53",
+          "name": "Bretagne",
+          "situations_count": 16,
+          "unplanned_situations_count": 2
         },
         {
           "code": "52",
@@ -13757,23 +13850,23 @@
         }
       ],
       "resolver_stats": {
-        "persistent_entries_loaded": 28080,
-        "persistent_cache_hits": 210,
-        "unique_queries": 4,
-        "api_queries": 4,
-        "resolved": 4,
-        "persistent_entries_added": 4
+        "persistent_entries_loaded": 28084,
+        "persistent_cache_hits": 209,
+        "unique_queries": 7,
+        "api_queries": 7,
+        "resolved": 7,
+        "persistent_entries_added": 7
       },
       "interpretation_guard": "La territorialisation repose uniquement sur les coordonnées explicitement présentes dans le flux DATEX II. Une situation sans coordonnées ou non résolue reste ND ; aucun département n'est inféré artificiellement. Les agrégats territoriaux qualifiés peuvent désormais être utilisés par score_road() comme corroboration territoriale, sous réserve de la couverture observée."
     },
     "geocache": {
       "path": "data/road_geocache.json",
-      "entries_loaded": 28080,
-      "entries_after_run": 28084,
+      "entries_loaded": 28084,
+      "entries_after_run": 28091,
       "entries_loaded_reporting_basis": "cache_size_before_enrichment",
-      "entries_added_this_run": 4,
-      "persistent_cache_hits": 210,
-      "api_queries": 4,
+      "entries_added_this_run": 7,
+      "persistent_cache_hits": 209,
+      "api_queries": 7,
       "interpretation_guard": "Le cache persistant mémorise uniquement les résolutions positives coordonnées→territoire. Les échecs temporaires ne sont pas persistés."
     },
     "health": {
@@ -13782,14 +13875,14 @@
         "url": "https://www.data.gouv.fr/api/1/datasets/r/5f814261-10d8-4b46-bcc1-e847b28a473f",
         "http_status": 200,
         "content_type": "application/xml",
-        "content_bytes": 2410897,
+        "content_bytes": 2420081,
         "final_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/Evenementiel-DIR/grt/RRN/content.xml",
-        "etag": "\"24c991-65ffb1627c3d1-gzip\"",
-        "last_modified": "Wed, 11 Nov 2026 07:24:33 GMT",
+        "etag": "\"24ed71-65ffbecb48388-gzip\"",
+        "last_modified": "Wed, 11 Nov 2026 08:24:32 GMT",
         "freshness": {
           "basis": "http_last_modified",
-          "timestamp": "2026-11-11T07:24:33+00:00",
-          "age_minutes": 42.75,
+          "timestamp": "2026-11-11T08:24:32+00:00",
+          "age_minutes": 42.77,
           "threshold_applied": false,
           "freshness_status": "OBSERVED"
         },
@@ -13800,12 +13893,12 @@
         "source": "API Découpage administratif / geo.api.gouv.fr",
         "url": "https://geo.api.gouv.fr/communes",
         "resolver_stats": {
-          "persistent_entries_loaded": 28080,
-          "persistent_cache_hits": 210,
-          "unique_queries": 4,
-          "api_queries": 4,
-          "resolved": 4,
-          "persistent_entries_added": 4
+          "persistent_entries_loaded": 28084,
+          "persistent_cache_hits": 209,
+          "unique_queries": 7,
+          "api_queries": 7,
+          "resolved": 7,
+          "persistent_entries_added": 7
         }
       }
     },
