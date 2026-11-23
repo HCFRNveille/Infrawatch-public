@@ -1,31 +1,31 @@
 {
   "schema_version": "0.9",
-  "generated_at": "2026-11-22T23:06:19.593456+00:00",
+  "generated_at": "2026-11-23T00:06:20.822952+00:00",
   "electricity": {
-    "generated_at": "2026-11-22T23:06:20.418665+00:00",
+    "generated_at": "2026-11-23T00:06:21.393746+00:00",
     "source": "RTE / ODRÉ éCO2mix national temps réel",
     "source_api": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-tr/records",
-    "observation_time": "2026-11-22T22:45:00+00:00",
-    "consumption_mw": 52707.0,
-    "forecast_j_mw": 53250.0,
-    "forecast_j1_mw": 53150.0,
-    "forecast_error_pct": -1.03,
-    "physical_exchanges_mw": -10294.0,
-    "exchange_ratio_pct": -19.531,
-    "production_total_mw": 63513.0,
+    "observation_time": "2026-11-22T23:45:00+00:00",
+    "consumption_mw": 50353.0,
+    "forecast_j_mw": 51000.0,
+    "forecast_j1_mw": 51000.0,
+    "forecast_error_pct": -1.285,
+    "physical_exchanges_mw": -12102.0,
+    "exchange_ratio_pct": -24.034,
+    "production_total_mw": 63652.0,
     "production_by_fuel_mw": {
-      "nucleaire": 43509.0,
-      "gaz": 1578.0,
+      "nucleaire": 43306.0,
+      "gaz": 1865.0,
       "fioul": 37.0,
       "charbon": 0.0,
-      "eolien": 11121.0,
+      "eolien": 11575.0,
       "solaire": 0.0,
-      "hydraulique": 6287.0,
-      "bioenergies": 981.0
+      "hydraulique": 5891.0,
+      "bioenergies": 978.0
     }
   },
   "nuclear": {
-    "generated_at": "2026-11-22T23:06:35.417652+00:00",
+    "generated_at": "2026-11-23T00:06:31.642178+00:00",
     "source_url": "https://opendata.edf.fr/data-fair/api/v1/datasets/indisponibilites-des-moyens-de-production-edf-sa/lines",
     "encoding_used": null,
     "header_line": null,
@@ -74,14 +74,14 @@
     "method_note": "Seules les publications EDF Status=active sont retenues. Pour le calcul instantané de disponibilité, seuls les événements planifiés/programmés et fortuits/non programmés couvrant l'instant présent sont appliqués. Les événements chroniques sont conservés comme contexte mais exclus du calcul instantané. En cas de superposition d'événements opérationnels sur une unité, la puissance disponible minimale est retenue. Le volume de publications REMIT fortuites est conservé comme indicateur documentaire. L'impact physique fortuit est calculé par actif comme la perte marginale de puissance disponible entre l'état planifié seul et l'état combiné planifié + fortuit, afin d'éviter le double comptage des chevauchements."
   },
   "telecom_mobile": {
-    "generated_at": "2026-11-22T23:06:30.418728+00:00",
-    "rows_source_total": 1259,
-    "unique_operator_sites_down": 1258,
+    "generated_at": "2026-11-23T00:06:28.652991+00:00",
+    "rows_source_total": 1261,
+    "unique_operator_sites_down": 1260,
     "operators_ok": 4,
     "operators_expected": 4,
     "collection_complete": true,
     "active_operator_sites_reference": 124690,
-    "national_down_ratio_pct": 1.0089,
+    "national_down_ratio_pct": 1.0105,
     "by_operator": [
       {
         "operator_code": "bouygues",
@@ -93,9 +93,9 @@
       {
         "operator_code": "free",
         "operator": "Free",
-        "sites_down": 104,
+        "sites_down": 106,
         "active_sites_reference": 30930,
-        "down_ratio_pct": 0.3362
+        "down_ratio_pct": 0.3427
       },
       {
         "operator_code": "orange",
@@ -564,16 +564,41 @@
       "status": "OK",
       "source": "Smart NaTran",
       "dataset": "infovigilance",
-      "observation_date": "2026-11-22",
-      "operational_status": "GREEN",
+      "observation_date": "2026-11-23",
+      "operational_status": "ORANGE",
       "data_quality": "OK",
       "limits_count": 10,
-      "green_limits_count": 10,
-      "orange_limits_count": 0,
+      "green_limits_count": 8,
+      "orange_limits_count": 2,
       "red_limits_count": 0,
       "violet_limits_count": 0,
       "unknown_limits_count": 0,
-      "alerts": [],
+      "alerts": [
+        {
+          "limit": "SN3",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Amont",
+          "small_impact_works_gwh_25c": 55,
+          "maintenance": "Oui",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        },
+        {
+          "limit": "SN4",
+          "vigilance": "ORANGE",
+          "vigilance_rgb": "FFFF9933",
+          "detection_method": "validated_color",
+          "application_side": "Amont",
+          "small_impact_works_gwh_25c": 55,
+          "maintenance": "Oui",
+          "interruptible_uioli_sales_stop": "Non",
+          "localized_spread": "Non",
+          "mutualized_restriction": "Non"
+        }
+      ],
       "limits": [
         {
           "limit": "NS1",
@@ -609,18 +634,18 @@
         },
         {
           "limit": "SN3",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         },
         {
           "limit": "SN4",
-          "vigilance": "GREEN"
+          "vigilance": "ORANGE"
         }
       ],
       "known_color_mapping": {
         "FF98BF57": "GREEN",
         "FFFF9933": "ORANGE"
       },
-      "collected_at": "2026-11-22T23:06:35.433673+00:00",
+      "collected_at": "2026-11-23T00:06:31.661952+00:00",
       "source_url": "https://www.smart.natrangroupe.com/api/v1/fr/infovigilance/export.xls"
     },
     "consumption_reference": {
@@ -632,27 +657,27 @@
       "terega_mw": 950,
       "france_total_mw": 24325
     },
-    "collected_at": "2026-11-22T23:06:35.433669+00:00"
+    "collected_at": "2026-11-23T00:06:31.661947+00:00"
   },
   "fuels": {
     "source": "Prix des carburants - Ministère de l'Économie",
     "dataset": "instantane_ruptures",
     "source_url": "https://donnees.roulez-eco.fr/opendata/instantane_ruptures",
-    "collected_at": "2026-11-22T23:06:37.173482+00:00",
+    "collected_at": "2026-11-23T00:06:32.668505+00:00",
     "stations_source_total": 9824,
     "stations_temporarily_closed": 0,
     "eligible_stations": 9805,
-    "stations_with_any_shortage": 534,
-    "national_shortage_ratio_pct": 5.4462,
+    "stations_with_any_shortage": 530,
+    "national_shortage_ratio_pct": 5.4054,
     "diesel": {
-      "stations": 9782,
-      "stations_in_shortage": 318,
-      "shortage_ratio_pct": 3.2509
+      "stations": 9785,
+      "stations_in_shortage": 319,
+      "shortage_ratio_pct": 3.2601
     },
     "petrol": {
-      "stations": 9740,
-      "stations_in_shortage": 450,
-      "shortage_ratio_pct": 4.6201
+      "stations": 9742,
+      "stations_in_shortage": 446,
+      "shortage_ratio_pct": 4.5781
     },
     "departments_with_shortage": 88,
     "top_departments_by_shortage_ratio": [
@@ -737,14 +762,6 @@
         "shortage_ratio_pct": 10.4895
       },
       {
-        "dept_code": "95",
-        "eligible_stations": 108,
-        "stations_with_any_shortage": 11,
-        "stations_with_diesel_shortage": 4,
-        "stations_with_petrol_shortage": 11,
-        "shortage_ratio_pct": 10.1852
-      },
-      {
         "dept_code": "25",
         "eligible_stations": 102,
         "stations_with_any_shortage": 10,
@@ -767,6 +784,14 @@
         "stations_with_diesel_shortage": 12,
         "stations_with_petrol_shortage": 17,
         "shortage_ratio_pct": 9.3264
+      },
+      {
+        "dept_code": "95",
+        "eligible_stations": 108,
+        "stations_with_any_shortage": 10,
+        "stations_with_diesel_shortage": 4,
+        "stations_with_petrol_shortage": 10,
+        "shortage_ratio_pct": 9.2593
       },
       {
         "dept_code": "57",
@@ -804,7 +829,7 @@
         "dept_code": "30",
         "eligible_stations": 138,
         "stations_with_any_shortage": 11,
-        "stations_with_diesel_shortage": 7,
+        "stations_with_diesel_shortage": 8,
         "stations_with_petrol_shortage": 10,
         "shortage_ratio_pct": 7.971
       },
@@ -817,25 +842,25 @@
         "shortage_ratio_pct": 7.8652
       }
     ],
-    "active_temporary_rupture_events": 3400,
+    "active_temporary_rupture_events": 3401,
     "definitive_rupture_records": 19398,
     "method_note": "Flux XML officiel instantané. Seules les ruptures temporaires actives sont traitées comme des indisponibilités opérationnelles. Une rupture temporaire reste active tant que sa date de fin est absente ou future. Les ruptures définitives sont interprétées comme des carburants non distribués et ne constituent pas une pénurie. Les stations faisant l'objet d'une fermeture temporaire active sont exclues du dénominateur. Une station est en rupture gazole lorsqu'elle distribue normalement du gazole et qu'une rupture temporaire active concerne ce carburant. Elle est en rupture essence lorsque toutes les essences SP95, SP98 et/ou E10 qu'elle distribue normalement sont en rupture temporaire active."
   },
   "rail": {
     "source": "SNCF / transport.data.gouv.fr",
     "scope": "TGV, Intercités et TER",
-    "collected_at": "2026-11-22T23:06:38.423305+00:00",
+    "collected_at": "2026-11-23T00:06:33.888859+00:00",
     "service_alerts": {
-      "active_alerts_count": 226,
+      "active_alerts_count": 222,
       "operational_alerts_count": 0,
-      "informational_or_unqualified_alerts_count": 226,
+      "informational_or_unqualified_alerts_count": 222,
       "effects": {
-        "UNKNOWN_EFFECT": 226
+        "UNKNOWN_EFFECT": 222
       },
       "causes": {
-        "UNKNOWN_CAUSE": 73,
-        "MAINTENANCE": 59,
-        "OTHER_CAUSE": 94
+        "UNKNOWN_CAUSE": 76,
+        "MAINTENANCE": 61,
+        "OTHER_CAUSE": 85
       },
       "sample_active_alerts": [
         {
@@ -878,22 +903,22 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN860274F"
-              }
-            },
-            {
-              "trip": {
                 "trip_id": "OCESN861363F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN861574F"
+                "trip_id": "OCESN860274F"
               }
             },
             {
               "trip": {
                 "trip_id": "OCESN860243F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN861574F"
               }
             },
             {
@@ -933,12 +958,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN860004F"
+                "trip_id": "OCESN861577F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN861577F"
+                "trip_id": "OCESN860004F"
               }
             },
             {
@@ -983,17 +1008,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861552F"
-              }
-            },
-            {
-              "trip": {
                 "trip_id": "OCESN860221F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN861551F"
+                "trip_id": "OCESN861552F"
               }
             },
             {
@@ -1003,12 +1023,17 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861554F"
+                "trip_id": "OCESN861551F"
               }
             },
             {
               "trip": {
                 "trip_id": "OCESN860223F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN861554F"
               }
             },
             {
@@ -1028,17 +1053,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861556F"
-              }
-            },
-            {
-              "trip": {
                 "trip_id": "OCESN860225F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN861555F"
+                "trip_id": "OCESN861556F"
               }
             },
             {
@@ -1048,7 +1068,17 @@
             },
             {
               "trip": {
+                "trip_id": "OCESN861555F"
+              }
+            },
+            {
+              "trip": {
                 "trip_id": "OCESN860227F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN860226F"
               }
             },
             {
@@ -1063,7 +1093,7 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN860226F"
+                "trip_id": "OCESN860232F"
               }
             },
             {
@@ -1073,22 +1103,7 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN860232F"
-              }
-            },
-            {
-              "trip": {
                 "trip_id": "OCESN861562F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN861565F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN861323F"
               }
             },
             {
@@ -1098,7 +1113,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861322F"
+                "trip_id": "OCESN861323F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN861565F"
               }
             },
             {
@@ -1108,12 +1128,17 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861561F"
+                "trip_id": "OCESN861322F"
               }
             },
             {
               "trip": {
                 "trip_id": "OCESN860230F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN861561F"
               }
             },
             {
@@ -1138,22 +1163,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861566F"
-              }
-            },
-            {
-              "trip": {
                 "trip_id": "OCESN860235F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN861569F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN861327F"
+                "trip_id": "OCESN861566F"
               }
             },
             {
@@ -1163,12 +1178,22 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861568F"
+                "trip_id": "OCESN861327F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN861569F"
               }
             },
             {
               "trip": {
                 "trip_id": "OCESN860237F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN861568F"
               }
             },
             {
@@ -1248,12 +1273,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861302F"
+                "trip_id": "OCESN860213F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN860213F"
+                "trip_id": "OCESN861302F"
               }
             },
             {
@@ -1338,12 +1363,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN860296F"
+                "trip_id": "OCESN861385F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN861385F"
+                "trip_id": "OCESN860296F"
               }
             },
             {
@@ -1808,12 +1833,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN861612F"
+                "trip_id": "OCESN860523F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN860523F"
+                "trip_id": "OCESN861612F"
               }
             },
             {
@@ -2098,12 +2123,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN871650F"
+                "trip_id": "OCESN461695R"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN461695R"
+                "trip_id": "OCESN871650F"
               }
             },
             {
@@ -2744,6 +2769,786 @@
           ]
         },
         {
+          "id": "QOM:Broadcast::5245999377782406448:LOC",
+          "cause": "MAINTENANCE",
+          "effect": "UNKNOWN_EFFECT",
+          "header": "Travaux en cours",
+          "description": "<p> Des travaux de maintenance sont en cours entre Pierrefitte et Orry-la-Ville en journée du 05 Octobre au 11 Décembre 2026 En conséquence, l'offre de transport est modifiée en horaire et en parcours durant cette période sur certains TER des lignes C12, C14, K10, K14,K13 et K16.</p><p>Les horaires présentés tiennent compte de ces adaptations. </p><p>Plus de détails et d'info en <a href=\"https://ter-fiches-horaires.sncf.fr/publish/Affiche%20Travaux%20PN39%20Pierrefitte%20Orry%20de%20jour%20du%2005%20Octobre%20au%2011%20D%C3%83%C2%A9cembre%202026%20(1).pdf\">suivant ce lien</a></p>",
+          "active_periods": [
+            {
+              "start": "2026-10-20T13:30:00+00:00",
+              "end": "2026-12-11T22:59:00+00:00"
+            }
+          ],
+          "informed_entities": [
+            {
+              "trip": {
+                "trip_id": "OCESN848581F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848582F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848584F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848567F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848568F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848575F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848573F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847607F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847608F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847609F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847603F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847604F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847605F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847629F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847625F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847626F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847627F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847621F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847622F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847623F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847624F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847631F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847618F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847619F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847614F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847615F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847616F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847610F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847612F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847613F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847620F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848539F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848534F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848535F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848537F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848541F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848542F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848543F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848544F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848540F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848524F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848556F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848565F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848560F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848545F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848547F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848548F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848553F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN848554F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847633F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847634F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847635F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847927F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847928F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847922F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847925F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847920F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16480F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847919F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16474F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16475F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16472F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16473F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16478F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847916F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847917F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847918F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16477F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847911F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847912F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847914F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847910F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16470F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16471F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16462F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16467F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16468F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16465F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16466F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847945F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847941F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847943F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16460F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16452F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16453F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16450F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16451F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16456F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16457F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16454F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847939F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16455F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847933F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847934F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847935F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16458F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16459F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847931F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847932F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847908F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847909F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847904F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847905F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847906F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847907F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847900F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847903F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16398F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16396F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847831F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16390F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16394F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16392F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16386F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16388F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847867F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847869F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847863F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847871F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847873F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16382F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16378F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847856F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847857F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847858F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847859F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847852F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847854F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847855F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847860F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16372F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16370F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16364F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16362F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16368F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16366F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16360F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16354F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16352F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16358F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16356F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN16350F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847829F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847820F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847818F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847814F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847885F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847887F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847878F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847875F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847876F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847877F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN847880F"
+              }
+            }
+          ]
+        },
+        {
           "id": "QOM:Broadcast::6761102525454468295:LOC",
           "cause": "UNKNOWN_CAUSE",
           "effect": "UNKNOWN_EFFECT",
@@ -2775,6 +3580,12 @@
               }
             },
             {
+              "stop_id": "StopArea:OCE87286005",
+              "trip": {
+                "trip_id": "OCESN841911F"
+              }
+            },
+            {
               "stop_id": "StopArea:OCE87295048",
               "trip": {
                 "trip_id": "OCESN841911F"
@@ -2782,12 +3593,6 @@
             },
             {
               "stop_id": "StopArea:OCE87295055",
-              "trip": {
-                "trip_id": "OCESN841911F"
-              }
-            },
-            {
-              "stop_id": "StopArea:OCE87286005",
               "trip": {
                 "trip_id": "OCESN841911F"
               }
@@ -2856,13 +3661,13 @@
               }
             },
             {
-              "stop_id": "StopArea:OCE87286005",
+              "stop_id": "StopArea:OCE87343103",
               "trip": {
                 "trip_id": "OCESN841909F"
               }
             },
             {
-              "stop_id": "StopArea:OCE87343103",
+              "stop_id": "StopArea:OCE87286005",
               "trip": {
                 "trip_id": "OCESN841909F"
               }
@@ -2886,12 +3691,6 @@
               }
             },
             {
-              "stop_id": "StopArea:OCE87295709",
-              "trip": {
-                "trip_id": "OCESN841909F"
-              }
-            },
-            {
               "stop_id": "StopArea:OCE87295857",
               "trip": {
                 "trip_id": "OCESN841909F"
@@ -2899,6 +3698,12 @@
             },
             {
               "stop_id": "StopArea:OCE87295733",
+              "trip": {
+                "trip_id": "OCESN841909F"
+              }
+            },
+            {
+              "stop_id": "StopArea:OCE87295709",
               "trip": {
                 "trip_id": "OCESN841909F"
               }
@@ -2977,17 +3782,17 @@
           "informed_entities": [
             {
               "trip": {
+                "trip_id": "OCESN88848F"
+              }
+            },
+            {
+              "trip": {
                 "trip_id": "OCESN88843F"
               }
             },
             {
               "trip": {
                 "trip_id": "OCESN88840F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN88848F"
               }
             }
           ]
@@ -3018,6 +3823,12 @@
               }
             },
             {
+              "stop_id": "StopArea:OCE87594002",
+              "trip": {
+                "trip_id": "OCESN871651F"
+              }
+            },
+            {
               "stop_id": "StopArea:OCE87594325",
               "trip": {
                 "trip_id": "OCESN871651F"
@@ -3025,12 +3836,6 @@
             },
             {
               "stop_id": "StopArea:OCE87594333",
-              "trip": {
-                "trip_id": "OCESN871651F"
-              }
-            },
-            {
-              "stop_id": "StopArea:OCE87594002",
               "trip": {
                 "trip_id": "OCESN871651F"
               }
@@ -3737,12 +4542,12 @@
           "informed_entities": [
             {
               "trip": {
-                "trip_id": "OCESN864623F"
+                "trip_id": "OCESN864502F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN864502F"
+                "trip_id": "OCESN864623F"
               }
             },
             {
@@ -3757,12 +4562,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN864625F"
+                "trip_id": "OCESN864504F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN864504F"
+                "trip_id": "OCESN864625F"
               }
             },
             {
@@ -4752,12 +5557,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN854731F"
+                "trip_id": "OCESN854610F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN854610F"
+                "trip_id": "OCESN854731F"
               }
             },
             {
@@ -6252,12 +7057,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN857968F"
+                "trip_id": "OCESN858814F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN858814F"
+                "trip_id": "OCESN857968F"
               }
             },
             {
@@ -6277,17 +7082,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN857958F"
-              }
-            },
-            {
-              "trip": {
                 "trip_id": "OCESN858806F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN857959F"
+                "trip_id": "OCESN857958F"
               }
             },
             {
@@ -6297,12 +7097,17 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN857952F"
+                "trip_id": "OCESN857959F"
               }
             },
             {
               "trip": {
                 "trip_id": "OCESN858800F"
+              }
+            },
+            {
+              "trip": {
+                "trip_id": "OCESN857952F"
               }
             },
             {
@@ -6332,12 +7137,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN857954F"
+                "trip_id": "OCESN858802F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN858802F"
+                "trip_id": "OCESN857954F"
               }
             },
             {
@@ -6687,12 +7492,12 @@
             },
             {
               "trip": {
-                "trip_id": "OCESN859243F"
+                "trip_id": "OCESN863720F"
               }
             },
             {
               "trip": {
-                "trip_id": "OCESN863720F"
+                "trip_id": "OCESN859243F"
               }
             },
             {
@@ -8056,569 +8861,33 @@
               }
             }
           ]
-        },
-        {
-          "id": "QOM:Broadcast::4009294050521782540:LOC",
-          "cause": "MAINTENANCE",
-          "effect": "UNKNOWN_EFFECT",
-          "header": "Les dimanches 22 et 29 novembre 2026,  interruption totale des circulations entre Paris Montparnasse et Versailles Chantiers de 20 heures 30 jusqu'à la fin du service en raison de travaux sur les voies.",
-          "description": "<p>Les dimanches 22 et 29 novembre 2026, des travaux de remplacement d'appareils de voie à Paris Montparnasse imposent une interruption totale des circulations entre Paris Montparnasse et Versailles Chantiers de 20 heures 30 jusqu'à la fin du service.<span><span style=\"font-family:Calibri,sans-serif\"> Pour voyager entre ces deux gares, nous vous invitons à emprunter les trains de la Ligne V au départ de Versailles Chantiers et les trains de la Ligne B du RER en gare de Massy-Palaiseau. Pour réaliser ce trajet, vous devez être muni d'un titre de transport valable en île-de France ou d'un passe Navigo en cours de validité.  <span style=\"color:#333333\">Programme en ligne en cliquant <a href=\"https://ter-fiches-horaires.sncf.fr/publish/PRG%20TER%2014-26-%20Infos%20Travaux%20PCLM%20WE%20S47%20et%20S48%20.pdf\">ICI</a><b>,</b> sur les applications de mobilité, le site internet, le fil Twitter @RemiTrainPCLM ou en appelant au 0 806 70 33 33.</span></span></span></p>",
-          "active_periods": [
-            {
-              "start": "2026-11-13T05:00:00+00:00",
-              "end": "2026-11-29T22:59:00+00:00"
-            }
-          ],
-          "informed_entities": [
-            {
-              "trip": {
-                "trip_id": "OCESN862565F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862444F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862566F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862563F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862443F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862440F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862562F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862441F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862560F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862449F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862568F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862447F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862577F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862574F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862451F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862573F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862570F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862450F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862579F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862543F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862422F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862421F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862540F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862429F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862426F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862427F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862545F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862425F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862554F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862433F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862555F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862434F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862552F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862431F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862553F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862432F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862551F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862430F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862439F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862437F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862559F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862438F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862435F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862436F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862400F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862401F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862520F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862529F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862408F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862409F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862527F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862406F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862528F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862404F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862526F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862523F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862402F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862524F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862403F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862532F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862411F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862412F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862531F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862410F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862417F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862418F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862536F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862416F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862413F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862535F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862500F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862507F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862508F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862506F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862504F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862502F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862511F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862519F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862516F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862515F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862512F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN464041R"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN464040R"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862482F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862483F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862466F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862587F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862467F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862585F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862464F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862462F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862583F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862463F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862460F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862581F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862582F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862589F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862468F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862470F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862473F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862471F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862472F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862479F"
-              }
-            },
-            {
-              "trip": {
-                "trip_id": "OCESN862481F"
-              }
-            }
-          ]
         }
       ],
       "operational_alerts": []
     },
     "trip_updates": {
-      "trips_count": 128,
+      "trips_count": 49,
       "schedule_relationships": {
-        "SCHEDULED": 93,
-        "CANCELED": 3,
-        "ADDED": 32
+        "SCHEDULED": 31,
+        "ADDED": 18
       },
-      "canceled_trips": 3,
-      "canceled_ratio_pct": 2.3438,
-      "trips_delay_ge_15min": 39,
-      "trips_delay_ge_15min_ratio_pct": 30.4688,
-      "trips_delay_ge_30min": 31,
-      "trips_delay_ge_30min_ratio_pct": 24.2188,
-      "trips_delay_ge_60min": 24,
-      "trips_delay_ge_60min_ratio_pct": 18.75,
-      "average_max_delay_seconds": 1573.1,
-      "maximum_delay_seconds": 16800
+      "canceled_trips": 0,
+      "canceled_ratio_pct": 0.0,
+      "trips_delay_ge_15min": 15,
+      "trips_delay_ge_15min_ratio_pct": 30.6122,
+      "trips_delay_ge_30min": 12,
+      "trips_delay_ge_30min_ratio_pct": 24.4898,
+      "trips_delay_ge_60min": 11,
+      "trips_delay_ge_60min_ratio_pct": 22.449,
+      "average_max_delay_seconds": 2436.7,
+      "maximum_delay_seconds": 19800
     }
   },
   "road": {
     "schema_version": "road-observation-1.4.2b",
     "source": "Bison Futé / transport.data.gouv.fr",
     "scope": "RRN non concédé — événements, Traficolor, vitesses et débits",
-    "collected_at": "2026-11-22T23:06:40.167056+00:00",
+    "collected_at": "2026-11-23T00:06:34.935526+00:00",
     "observation_mode": true,
     "scoring_enabled": true,
     "integration_enabled": true,
@@ -8628,25 +8897,24 @@
       "extended_context_for_scoring": false
     },
     "events": {
-      "situations_count": 243,
-      "situation_records_count": 422,
+      "situations_count": 242,
+      "situation_records_count": 419,
       "planned_situations_count": 138,
-      "unplanned_situations_count": 105,
+      "unplanned_situations_count": 104,
       "full_closure_records_count": 17,
-      "capacity_restriction_records_count": 98,
+      "capacity_restriction_records_count": 96,
       "planned_full_closure_records_count": 12,
       "unplanned_full_closure_records_count": 5,
       "planned_capacity_restriction_records_count": 70,
-      "unplanned_capacity_restriction_records_count": 28,
+      "unplanned_capacity_restriction_records_count": 26,
       "unique_full_closure_locations_count": 15,
-      "unique_capacity_restriction_locations_count": 76,
+      "unique_capacity_restriction_locations_count": 74,
       "planned_full_closure_locations_count": 10,
       "unplanned_full_closure_locations_count": 5,
       "planned_capacity_restriction_locations_count": 51,
-      "unplanned_capacity_restriction_locations_count": 25,
-      "affected_axes_count": 70,
+      "unplanned_capacity_restriction_locations_count": 23,
+      "affected_axes_count": 69,
       "affected_axes": [
-        "A0006A",
         "A0007",
         "A0013",
         "A0016",
@@ -8690,9 +8958,9 @@
         "N0094",
         "N0100",
         "N0102",
+        "N0104",
         "N0106",
         "N0113",
-        "N0118",
         "N0124",
         "N0125",
         "N0134",
@@ -8708,7 +8976,7 @@
         "N0165",
         "N0166",
         "N0202",
-        "N0237",
+        "N0296",
         "N0320",
         "N0330",
         "N0532",
@@ -8721,28 +8989,28 @@
       "affected_departments": [],
       "department_coverage": "not_available_from_source",
       "situation_categories": {
-        "other": 101,
+        "other": 99,
         "weather": 28,
         "roadworks": 138,
         "obstruction": 50,
-        "accident": 6
+        "accident": 4
       },
       "record_types": {
-        "RoadOrCarriagewayOrLaneManagement": 87,
+        "RoadOrCarriagewayOrLaneManagement": 85,
         "WeatherRelatedRoadConditions": 8,
         "ReroutingManagement": 44,
         "MaintenanceWorks": 117,
-        "EnvironmentalObstruction": 10,
+        "EnvironmentalObstruction": 11,
         "GeneralNetworkManagement": 28,
         "SpeedManagement": 24,
-        "GeneralObstruction": 31,
+        "GeneralObstruction": 30,
         "ConstructionWorks": 30,
         "GeneralInstructionOrMessageToRoadUsers": 12,
         "RoadsideServiceDisruption": 1,
         "InfrastructureDamageObstruction": 4,
-        "VehicleObstruction": 18,
+        "VehicleObstruction": 19,
         "AnimalPresenceObstruction": 2,
-        "Accident": 6
+        "Accident": 4
       },
       "critical_events_sample": [
         {
@@ -9202,22 +9470,22 @@
     },
     "traffic": {
       "published_segments_count": 2191,
-      "recognized_segments_count": 1937,
-      "valid_segments_count": 1937,
-      "fluid_segments_count": 1895,
-      "dense_segments_count": 19,
-      "congested_segments_count": 20,
+      "recognized_segments_count": 1935,
+      "valid_segments_count": 1935,
+      "fluid_segments_count": 1896,
+      "dense_segments_count": 20,
+      "congested_segments_count": 16,
       "impossible_segments_count": 3,
-      "unknown_segments_count": 254,
-      "recognized_ratio_pct": 88.4071,
-      "unknown_ratio_pct": 11.5929,
-      "congestion_ratio_pct": 1.1874,
+      "unknown_segments_count": 256,
+      "recognized_ratio_pct": 88.3158,
+      "unknown_ratio_pct": 11.6842,
+      "congestion_ratio_pct": 0.9819,
       "status_values_found": {
-        "fluid": 1895,
-        "dense": 19,
-        "congested": 20,
+        "fluid": 1896,
+        "dense": 20,
+        "congested": 16,
         "impossible": 3,
-        "unknown": 254
+        "unknown": 256
       },
       "parser_mode": "multi_directory_xml",
       "xml_parse_error": null,
@@ -9235,11 +9503,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 91,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficStBrieuc/TraficStBrieuc_DataTRT_20261123_000400.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficStBrieuc/TraficStBrieuc_DataTRT_20261123_010400.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:04:00+01:00",
-            "age_minutes": 2.73
+            "timestamp": "2026-11-23T01:04:00+01:00",
+            "age_minutes": 2.63
           }
         },
         {
@@ -9250,11 +9518,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 153,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/TraficTriskell56_DataTRT_20261123_000620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TRAFIC_TraficTriskell56/TraficTriskell56_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.41
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.31
           }
         },
         {
@@ -9265,11 +9533,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 193,
           "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/TraficBreizhNantes_DataTRT_20261123_000620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhNantes/TraficBreizhNantes_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.42
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.32
           }
         },
         {
@@ -9280,11 +9548,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 177,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/TraficBreizhRennes_DataTRT_20261123_000620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficBreizhRennes/TraficBreizhRennes_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.44
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.33
           }
         },
         {
@@ -9295,11 +9563,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 54,
           "unknown_segments_count": 0,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/TraficCaen_DataTRT_20261123_000620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficCaen/TraficCaen_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.45
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.34
           }
         },
         {
@@ -9310,11 +9578,11 @@
           "xml_files_collected": 1,
           "valid_segments_count": 14,
           "unknown_segments_count": 2,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficDirmc/TraficDirmc_DataTRT_20261123_000130.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficDirmc/TraficDirmc_DataTRT_20261123_010130.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:01:30+01:00",
-            "age_minutes": 5.3
+            "timestamp": "2026-11-23T01:01:30+01:00",
+            "age_minutes": 5.18
           }
         },
         {
@@ -9323,13 +9591,13 @@
           "status": "OK",
           "xml_files_count": 242,
           "xml_files_collected": 1,
-          "valid_segments_count": 123,
-          "unknown_segments_count": 36,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/TraficErato_DataTRT_20261123_000620.xml",
+          "valid_segments_count": 119,
+          "unknown_segments_count": 40,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficErato/TraficErato_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.47
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.36
           }
         },
         {
@@ -9338,13 +9606,13 @@
           "status": "OK",
           "xml_files_count": 81,
           "xml_files_collected": 1,
-          "valid_segments_count": 25,
-          "unknown_segments_count": 1,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20261123_000620.xml",
+          "valid_segments_count": 23,
+          "unknown_segments_count": 3,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficGentiane/TraficGentiane_1_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.49
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.37
           }
         },
         {
@@ -9353,20 +9621,20 @@
           "status": "OK",
           "xml_files_count": 41,
           "xml_files_collected": 1,
-          "valid_segments_count": 98,
-          "unknown_segments_count": 12,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficHyrondelle/TraficHyrondelle_1_DataTRT_20261123_000640.xml",
+          "valid_segments_count": 97,
+          "unknown_segments_count": 13,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficHyrondelle/TraficHyrondelle_1_DataTRT_20261123_010640.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:40+01:00",
-            "age_minutes": 0.17
+            "timestamp": "2026-11-23T01:06:40+01:00",
+            "age_minutes": 0.05
           }
         },
         {
           "producer": "TraficLille",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLille/",
           "status": "OK",
-          "xml_files_count": 38,
+          "xml_files_count": 18,
           "xml_files_collected": 1,
           "valid_segments_count": 354,
           "unknown_segments_count": 3,
@@ -9374,7 +9642,7 @@
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
             "timestamp": "2026-11-22T21:57:26+01:00",
-            "age_minutes": 129.41
+            "age_minutes": 189.29
           }
         },
         {
@@ -9385,26 +9653,26 @@
           "xml_files_collected": 1,
           "valid_segments_count": 109,
           "unknown_segments_count": 24,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/TraficLimoges_DataTRT_20261123_000620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLimoges/TraficLimoges_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.53
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.4
           }
         },
         {
           "producer": "TraficLyon",
           "directory_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/",
           "status": "OK",
-          "xml_files_count": 242,
+          "xml_files_count": 241,
           "xml_files_collected": 1,
-          "valid_segments_count": 209,
-          "unknown_segments_count": 145,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/TraficLyon_DataTRT_20261123_000640.xml",
+          "valid_segments_count": 223,
+          "unknown_segments_count": 131,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficLyon/TraficLyon_DataTRT_20261123_010545.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:40+01:00",
-            "age_minutes": 0.21
+            "timestamp": "2026-11-23T01:05:45+01:00",
+            "age_minutes": 0.99
           }
         },
         {
@@ -9413,13 +9681,13 @@
           "status": "OK",
           "xml_files_count": 40,
           "xml_files_collected": 1,
-          "valid_segments_count": 182,
-          "unknown_segments_count": 13,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMarius/TraficMarius_DataTRT_20261123_000000.xml",
+          "valid_segments_count": 179,
+          "unknown_segments_count": 16,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMarius/TraficMarius_DataTRT_20261123_010000.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:00:00+01:00",
-            "age_minutes": 6.89
+            "timestamp": "2026-11-23T01:00:00+01:00",
+            "age_minutes": 6.75
           }
         },
         {
@@ -9428,13 +9696,13 @@
           "status": "OK",
           "xml_files_count": 81,
           "xml_files_collected": 1,
-          "valid_segments_count": 59,
-          "unknown_segments_count": 15,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/TraficMyrabel_DataTRT_20261123_000630.xml",
+          "valid_segments_count": 53,
+          "unknown_segments_count": 21,
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficMyrabel/TraficMyrabel_DataTRT_20261123_010630.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:30+01:00",
-            "age_minutes": 0.4
+            "timestamp": "2026-11-23T01:06:30+01:00",
+            "age_minutes": 0.26
           }
         },
         {
@@ -9445,67 +9713,67 @@
           "xml_files_collected": 1,
           "valid_segments_count": 96,
           "unknown_segments_count": 2,
-          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/TraficRouen_DataTRT_20261123_000620.xml",
+          "selected_xml": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/TRAFICOLOR-DIR/TraficRouen/TraficRouen_DataTRT_20261123_010620.xml",
           "snapshot_selection": {
             "selection_mode": "latest_filename_timestamp",
-            "timestamp": "2026-11-23T00:06:20+01:00",
-            "age_minutes": 0.58
+            "timestamp": "2026-11-23T01:06:20+01:00",
+            "age_minutes": 0.43
           }
         }
       ],
       "freshness": {
         "basis": "latest_filename_timestamp_per_producer",
         "producers_with_age_count": 15,
-        "min_age_minutes": 0.17,
-        "median_age_minutes": 0.47,
-        "max_age_minutes": 129.41,
+        "min_age_minutes": 0.05,
+        "median_age_minutes": 0.37,
+        "max_age_minutes": 189.29,
         "threshold_applied": false,
         "freshness_status": "OBSERVED"
       }
     },
     "flow": {
-      "measurement_sites_count": 1202,
+      "measurement_sites_count": 1197,
       "measurement_times": {
         "distinct_count": 1,
         "most_common": [
           {
-            "time": "2026-11-23T00:00:00.000+01:00",
-            "sites_count": 1202
+            "time": "2026-11-23T01:00:00.000+01:00",
+            "sites_count": 1197
           }
         ]
       },
       "speed": {
-        "raw_values_count": 1202,
+        "raw_values_count": 1197,
         "invalid_values_count": 2,
-        "sites_with_single_value": 1200,
+        "sites_with_single_value": 1195,
         "sites_with_multiple_values": 0,
         "sites_without_value": 2,
         "singleton_distribution_diagnostic": {
-          "count": 1200,
-          "median": 88.6667,
+          "count": 1195,
+          "median": 87.3333,
           "p10": 0.0,
-          "p90": 105.0,
+          "p90": 103.0,
           "min": 0.0,
-          "max": 156.3429,
-          "mean": 76.5216
+          "max": 250.0,
+          "mean": 74.5267
         },
         "unit": "km/h",
         "unit_basis": "DATEX II speed / source documentation, diagnostic only",
         "national_mean_for_scoring": false
       },
       "flow": {
-        "raw_values_count": 1202,
+        "raw_values_count": 1197,
         "invalid_values_count": 0,
-        "sites_with_single_value": 1202,
+        "sites_with_single_value": 1197,
         "sites_with_multiple_values": 0,
         "sites_without_value": 0,
         "singleton_distribution_diagnostic": {
-          "count": 1202,
-          "median": 210.0,
-          "p10": 20.0,
-          "p90": 1749.0,
+          "count": 1197,
+          "median": 120.0,
+          "p10": 10.0,
+          "p90": 973.4,
           "min": 0.0,
-          "max": 6000.0
+          "max": 5200.0
         },
         "unit": "veh/h",
         "unit_validated": true,
@@ -9517,284 +9785,284 @@
       "station_measurements_sample": [
         {
           "measurement_site_reference": "MUM76.h1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 109.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 150.0
         },
         {
-          "measurement_site_reference": "MWO56.J1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MB631.B8",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 108.0,
+          "speed_kmh_candidate": 82.5,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 180.0
+          "vehicle_flow_rate_candidate": 340.0
         },
         {
-          "measurement_site_reference": "MB631.B8",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MWO56.J1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 81.5,
+          "speed_kmh_candidate": 111.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 540.0
+          "vehicle_flow_rate_candidate": 60.0
         },
         {
           "measurement_site_reference": "MSR69.K1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 96.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 4800.0
+          "vehicle_flow_rate_candidate": 5200.0
         },
         {
           "measurement_site_reference": "MUM76.h2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 106.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 290.0
         },
         {
-          "measurement_site_reference": "MSR69.K2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 97.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 5100.0
-        },
-        {
           "measurement_site_reference": "MB233.Z1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 88.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 250.0
-        },
-        {
-          "measurement_site_reference": "MYL42.R1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 99.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 40.0
-        },
-        {
-          "measurement_site_reference": "MB233.Z2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 88.833336,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 300.0
-        },
-        {
-          "measurement_site_reference": "MB133.Q2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 99.833336,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 370.0
-        },
-        {
-          "measurement_site_reference": "MM313.k2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 99.18813,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 630.0
-        },
-        {
-          "measurement_site_reference": "MYP69.H3",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 74.833336,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1967.0
-        },
-        {
-          "measurement_site_reference": "MWF29.F2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 96.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 80.0
-        },
-        {
-          "measurement_site_reference": "MWF29.F1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 105.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 50.0
-        },
-        {
-          "measurement_site_reference": "MRC14.T2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 88.0,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 73.0
-        },
-        {
-          "measurement_site_reference": "MRC14.T1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 87.0,
+          "speed_kmh_candidate": 72.833336,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 120.0
         },
         {
-          "measurement_site_reference": "MM313.l2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 95.526436,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 630.0
-        },
-        {
-          "measurement_site_reference": "MY269.D1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
-          "speed_values_count": 1,
-          "speed_kmh_candidate": 98.666664,
-          "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 3000.0
-        },
-        {
-          "measurement_site_reference": "MYL42.R2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MSR69.K2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
           "speed_kmh_candidate": 91.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 60.0
+          "vehicle_flow_rate_candidate": 4100.0
         },
         {
-          "measurement_site_reference": "MY269.D2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MYL42.R1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 78.333336,
+          "speed_kmh_candidate": 91.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 2400.0
+          "vehicle_flow_rate_candidate": 50.0
         },
         {
-          "measurement_site_reference": "MWO56.J2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MB233.Z2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 99.0,
+          "speed_kmh_candidate": 84.333336,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 100.0
+          "vehicle_flow_rate_candidate": 140.0
         },
         {
-          "measurement_site_reference": "MY269.D3",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MB133.Q2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 23.666666,
+          "speed_kmh_candidate": 91.5,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 200.0
+          "vehicle_flow_rate_candidate": 270.0
         },
         {
-          "measurement_site_reference": "MB631.A7",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MM313.k2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 88.5,
+          "speed_kmh_candidate": 104.09809,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 610.0
+          "vehicle_flow_rate_candidate": 480.0
         },
         {
-          "measurement_site_reference": "MB831.U6",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MYP69.H3",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 82.333336,
+          "speed_kmh_candidate": 57.333332,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 70.0
+          "vehicle_flow_rate_candidate": 700.0
         },
         {
-          "measurement_site_reference": "MWO56.K1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MWF29.F2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 120.0,
+          "speed_kmh_candidate": 108.0,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 20.0
         },
         {
-          "measurement_site_reference": "MM713.N1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MWF29.F1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 103.21087,
+          "speed_kmh_candidate": 107.0,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 310.0
+          "vehicle_flow_rate_candidate": 20.0
+        },
+        {
+          "measurement_site_reference": "MRC14.T2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 90.666664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 43.0
+        },
+        {
+          "measurement_site_reference": "MRC14.T1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 94.333336,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 53.0
+        },
+        {
+          "measurement_site_reference": "MM313.l2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 102.01782,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 410.0
+        },
+        {
+          "measurement_site_reference": "MY269.D1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 84.666664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 1450.0
+        },
+        {
+          "measurement_site_reference": "MY269.D2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 81.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 2850.0
+        },
+        {
+          "measurement_site_reference": "MYL42.R2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 96.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 30.0
+        },
+        {
+          "measurement_site_reference": "MWO56.J2",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 116.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 20.0
+        },
+        {
+          "measurement_site_reference": "MY269.D3",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 40.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 400.0
+        },
+        {
+          "measurement_site_reference": "MB631.A7",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 85.166664,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 250.0
+        },
+        {
+          "measurement_site_reference": "MB831.U6",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 30.333334,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 40.0
+        },
+        {
+          "measurement_site_reference": "MWO56.K1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 87.0,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 20.0
         },
         {
           "measurement_site_reference": "MB831.U5",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 77.166664,
+          "speed_kmh_candidate": 74.666664,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 180.0
+          "vehicle_flow_rate_candidate": 120.0
+        },
+        {
+          "measurement_site_reference": "MM713.N1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
+          "speed_values_count": 1,
+          "speed_kmh_candidate": 95.26193,
+          "flow_values_count": 1,
+          "vehicle_flow_rate_candidate": 80.0
         },
         {
           "measurement_site_reference": "MA311.T1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 107.545456,
+          "speed_kmh_candidate": 102.5,
           "flow_values_count": 1,
           "vehicle_flow_rate_candidate": 318.0
         },
         {
-          "measurement_site_reference": "MA311.T2",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MM613.C1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 85.818184,
+          "speed_kmh_candidate": 114.48226,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 330.0
+          "vehicle_flow_rate_candidate": 270.0
         },
         {
-          "measurement_site_reference": "MM613.C1",
-          "measurement_time": "2026-11-23T00:00:00.000+01:00",
+          "measurement_site_reference": "MM113.Y1",
+          "measurement_time": "2026-11-23T01:00:00.000+01:00",
           "speed_values_count": 1,
-          "speed_kmh_candidate": 111.475914,
+          "speed_kmh_candidate": 98.58167,
           "flow_values_count": 1,
-          "vehicle_flow_rate_candidate": 1220.0
+          "vehicle_flow_rate_candidate": 220.0
         }
       ],
       "structure_diagnostic": {
         "tag_counts": {
-          "measuredValue": 4808,
-          "averageVehicleSpeed": 1202,
-          "measurementSiteReference": 1202,
-          "measurementTimeDefault": 1202,
-          "siteMeasurements": 1202,
-          "speed": 1202,
-          "vehicleFlow": 1202,
-          "vehicleFlowRate": 1202,
+          "measuredValue": 4788,
+          "averageVehicleSpeed": 1197,
+          "measurementSiteReference": 1197,
+          "measurementTimeDefault": 1197,
+          "siteMeasurements": 1197,
+          "speed": 1197,
+          "vehicleFlow": 1197,
+          "vehicleFlowRate": 1197,
           "measurementSiteTableReference": 1
         },
         "value_samples": {
           "measurementTimeDefault": [
-            "2026-11-23T00:00:00.000+01:00"
+            "2026-11-23T01:00:00.000+01:00"
           ],
           "speed": [
             "109.0",
-            "108.0",
-            "81.5",
+            "82.5",
+            "111.0",
             "96.0",
             "106.0",
-            "97.0",
-            "88.0",
-            "99.0",
-            "88.833336",
-            "99.833336"
+            "72.833336",
+            "91.0",
+            "84.333336",
+            "91.5",
+            "104.09809"
           ],
           "vehicleFlowRate": [
             "150",
-            "180",
-            "540",
-            "4800",
+            "340",
+            "60",
+            "5200",
             "290",
-            "5100",
-            "250",
-            "40",
-            "300",
-            "370"
+            "120",
+            "4100",
+            "50",
+            "140",
+            "270"
           ]
         }
       },
@@ -9805,14 +10073,16 @@
     "extended_context": {
       "diagnostic_only": true,
       "not_for_scoring": true,
-      "text_length": 68363,
+      "text_length": 69810,
       "sca_producer_mentions": {
-        "ASF": 28,
-        "COFIROUTE": 13,
-        "ESCOTA": 9,
-        "APRR": 12,
-        "SANEF": 2,
-        "SAPN": 2
+        "ASF": 33,
+        "COFIROUTE": 14,
+        "ESCOTA": 8,
+        "APRR": 9,
+        "AREA": 1,
+        "SANEF": 3,
+        "SAPN": 3,
+        "ATMB": 1
       },
       "interpretation_guard": "TIPI France entière confirme la présence de producteurs SCA mais les occurrences textuelles ne sont ni des événements uniques ni des métriques d'impact. Aucun compteur fermeture/restriction issu du HTML n'est utilisé."
     },
@@ -9845,15 +10115,14 @@
   },
   "road_enrichment": {
     "schema_version": "road-enrichment-1.1-cache-final2",
-    "collected_at": "2026-11-22T23:06:56.886788+00:00",
+    "collected_at": "2026-11-23T00:06:47.665643+00:00",
     "observation_mode": true,
     "scoring_enabled": true,
     "integration_enabled": true,
     "normalization": {
-      "raw_axes_count": 70,
-      "display_axes_count": 70,
+      "raw_axes_count": 69,
+      "display_axes_count": 69,
       "axis_display_map": {
-        "A0006A": "A6A",
         "A0007": "A7",
         "A0013": "A13",
         "A0016": "A16",
@@ -9897,9 +10166,9 @@
         "N0094": "N94",
         "N0100": "N100",
         "N0102": "N102",
+        "N0104": "N104",
         "N0106": "N106",
         "N0113": "N113",
-        "N0118": "N118",
         "N0124": "N124",
         "N0125": "N125",
         "N0134": "N134",
@@ -9915,7 +10184,7 @@
         "N0165": "N165",
         "N0166": "N166",
         "N0202": "N202",
-        "N0237": "N237",
+        "N0296": "N296",
         "N0320": "N320",
         "N0330": "N330",
         "N0532": "N532",
@@ -16736,68 +17005,6 @@
         }
       },
       {
-        "situation_id": "261122-001807",
-        "axes_raw": [
-          "N0147"
-        ],
-        "axes_display": [
-          "N147"
-        ],
-        "coordinates": {
-          "latitude": 46.434185,
-          "longitude": 0.6014307
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "86131",
-          "commune_name": "Lhommaizé",
-          "department_code": "86",
-          "department_name": "Vienne",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
-        "situation_id": "261122-001815",
-        "axes_raw": [
-          "N0237"
-        ],
-        "axes_display": [
-          "N237"
-        ],
-        "coordinates": {
-          "latitude": 46.17654,
-          "longitude": -1.1660697
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "17200",
-          "commune_name": "Lagord",
-          "department_code": "17",
-          "department_name": "Charente-Maritime",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
         "situation_id": "261122-001816",
         "axes_raw": [],
         "axes_display": [],
@@ -16880,37 +17087,6 @@
           "department_name": "Savoie",
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "261122-001837",
-        "axes_raw": [
-          "A0063"
-        ],
-        "axes_display": [
-          "A63"
-        ],
-        "coordinates": {
-          "latitude": 44.579216,
-          "longitude": -0.8355268
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "33498",
-          "commune_name": "Salles",
-          "department_code": "33",
-          "department_name": "Gironde",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
         }
       },
       {
@@ -17034,39 +17210,6 @@
         }
       },
       {
-        "situation_id": "261122-001839",
-        "axes_raw": [
-          "A0020"
-        ],
-        "axes_display": [
-          "A20"
-        ],
-        "coordinates": {
-          "latitude": 45.264,
-          "longitude": 1.5476898
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "RoadOrCarriagewayOrLaneManagement",
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction",
-          "other"
-        ],
-        "territorialization": {
-          "commune_code": "19178",
-          "commune_name": "Sadroc",
-          "department_code": "19",
-          "department_name": "Corrèze",
-          "region_code": "75",
-          "region_name": "Nouvelle-Aquitaine"
-        }
-      },
-      {
         "situation_id": "261122-001854",
         "axes_raw": [],
         "axes_display": [],
@@ -17091,312 +17234,6 @@
           "department_name": "Savoie",
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "261122-001829",
-        "axes_raw": [
-          "A0150"
-        ],
-        "axes_display": [
-          "A150"
-        ],
-        "coordinates": {
-          "latitude": 49.459316,
-          "longitude": 1.0446857
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "76157",
-          "commune_name": "Canteleu",
-          "department_code": "76",
-          "department_name": "Seine-Maritime",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
-        "situation_id": "261122-001863",
-        "axes_raw": [
-          "A0007"
-        ],
-        "axes_display": [
-          "A7"
-        ],
-        "coordinates": {
-          "latitude": 45.66156,
-          "longitude": 4.8421025
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "69276",
-          "commune_name": "Feyzin",
-          "department_code": "69",
-          "department_name": "Rhône",
-          "region_code": "84",
-          "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "261122-001865",
-        "axes_raw": [
-          "A0006A"
-        ],
-        "axes_display": [
-          "A6A"
-        ],
-        "coordinates": {
-          "latitude": 48.78323,
-          "longitude": 2.3468096
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "94038",
-          "commune_name": "L'Haÿ-les-Roses",
-          "department_code": "94",
-          "department_name": "Val-de-Marne",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "261122-001866",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 48.97801,
-          "longitude": 2.2399676
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident"
-        ],
-        "categories": [
-          "accident"
-        ],
-        "territorialization": {
-          "commune_code": "95582",
-          "commune_name": "Sannois",
-          "department_code": "95",
-          "department_name": "Val-d'Oise",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "261122-001867",
-        "axes_raw": [
-          "N0013"
-        ],
-        "axes_display": [
-          "N13"
-        ],
-        "coordinates": {
-          "latitude": 49.34365,
-          "longitude": -1.027885
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "Accident",
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "accident",
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "14136",
-          "commune_name": "Cardonville",
-          "department_code": "14",
-          "department_name": "Calvados",
-          "region_code": "28",
-          "region_name": "Normandie"
-        }
-      },
-      {
-        "situation_id": "261122-001868",
-        "axes_raw": [
-          "A0075"
-        ],
-        "axes_display": [
-          "A75"
-        ],
-        "coordinates": {
-          "latitude": 45.496193,
-          "longitude": 3.2540658
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "63054",
-          "commune_name": "Le Broc",
-          "department_code": "63",
-          "department_name": "Puy-de-Dôme",
-          "region_code": "84",
-          "region_name": "Auvergne-Rhône-Alpes"
-        }
-      },
-      {
-        "situation_id": "261122-001870",
-        "axes_raw": [
-          "N0165"
-        ],
-        "axes_display": [
-          "N165"
-        ],
-        "coordinates": {
-          "latitude": 47.792408,
-          "longitude": -3.31136
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "Accident",
-          "RoadOrCarriagewayOrLaneManagement"
-        ],
-        "categories": [
-          "accident",
-          "other"
-        ],
-        "territorialization": {
-          "commune_code": "56036",
-          "commune_name": "Caudan",
-          "department_code": "56",
-          "department_name": "Morbihan",
-          "region_code": "53",
-          "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "261122-001871",
-        "axes_raw": [],
-        "axes_display": [],
-        "coordinates": {
-          "latitude": 48.535442,
-          "longitude": -2.0091836
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "22213",
-          "commune_name": "Plouër-sur-Rance",
-          "department_code": "22",
-          "department_name": "Côtes-d'Armor",
-          "region_code": "53",
-          "region_name": "Bretagne"
-        }
-      },
-      {
-        "situation_id": "261122-001872",
-        "axes_raw": [
-          "N0118"
-        ],
-        "axes_display": [
-          "N118"
-        ],
-        "coordinates": {
-          "latitude": 48.7011,
-          "longitude": 2.1927156
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": true,
-        "record_types": [
-          "VehicleObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "91471",
-          "commune_name": "Orsay",
-          "department_code": "91",
-          "department_name": "Essonne",
-          "region_code": "11",
-          "region_name": "Île-de-France"
-        }
-      },
-      {
-        "situation_id": "261122-001873",
-        "axes_raw": [
-          "A0075"
-        ],
-        "axes_display": [
-          "A75"
-        ],
-        "coordinates": {
-          "latitude": 43.60827,
-          "longitude": 3.4612436
-        },
-        "source_departments": [],
-        "planned": false,
-        "full_closure": false,
-        "capacity_restriction": false,
-        "record_types": [
-          "GeneralObstruction"
-        ],
-        "categories": [
-          "obstruction"
-        ],
-        "territorialization": {
-          "commune_code": "34079",
-          "commune_name": "Clermont-l'Hérault",
-          "department_code": "34",
-          "department_name": "Hérault",
-          "region_code": "76",
-          "region_name": "Occitanie"
         }
       },
       {
@@ -17452,30 +17289,414 @@
           "region_code": "84",
           "region_name": "Auvergne-Rhône-Alpes"
         }
+      },
+      {
+        "situation_id": "261122-001880",
+        "axes_raw": [
+          "A0075"
+        ],
+        "axes_display": [
+          "A75"
+        ],
+        "coordinates": {
+          "latitude": 44.92302,
+          "longitude": 3.2102313
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "15108",
+          "commune_name": "Val d'Arcomie",
+          "department_code": "15",
+          "department_name": "Cantal",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "261122-001892",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.66578,
+          "longitude": 5.895776
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "EnvironmentalObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "73300",
+          "commune_name": "Tresserve",
+          "department_code": "73",
+          "department_name": "Savoie",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "261122-001895",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.474487,
+          "longitude": 6.525479
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "73284",
+          "commune_name": "Salins-Fontaine",
+          "department_code": "73",
+          "department_name": "Savoie",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "261122-001898",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 43.586647,
+          "longitude": 1.4014914
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "31555",
+          "commune_name": "Toulouse",
+          "department_code": "31",
+          "department_name": "Haute-Garonne",
+          "region_code": "76",
+          "region_name": "Occitanie"
+        }
+      },
+      {
+        "situation_id": "261122-001899",
+        "axes_raw": [
+          "N0296"
+        ],
+        "axes_display": [
+          "N296"
+        ],
+        "coordinates": {
+          "latitude": 43.554222,
+          "longitude": 5.437261
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "13001",
+          "commune_name": "Aix-en-Provence",
+          "department_code": "13",
+          "department_name": "Bouches-du-Rhône",
+          "region_code": "93",
+          "region_name": "Provence-Alpes-Côte d'Azur"
+        }
+      },
+      {
+        "situation_id": "261122-001886",
+        "axes_raw": [
+          "N0104"
+        ],
+        "axes_display": [
+          "N104"
+        ],
+        "coordinates": {
+          "latitude": 48.610275,
+          "longitude": 2.4315104
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "91340",
+          "commune_name": "Lisses",
+          "department_code": "91",
+          "department_name": "Essonne",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "261122-001901",
+        "axes_raw": [
+          "A0007"
+        ],
+        "axes_display": [
+          "A7"
+        ],
+        "coordinates": {
+          "latitude": 45.611916,
+          "longitude": 4.807287
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "69297",
+          "commune_name": "Ternay",
+          "department_code": "69",
+          "department_name": "Rhône",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "261123-000004",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.552593,
+          "longitude": 6.162535
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "73270",
+          "commune_name": "Saint-Pierre-d'Albigny",
+          "department_code": "73",
+          "department_name": "Savoie",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
+      },
+      {
+        "situation_id": "261123-000006",
+        "axes_raw": [
+          "N0165"
+        ],
+        "axes_display": [
+          "N165"
+        ],
+        "coordinates": {
+          "latitude": 47.665527,
+          "longitude": -2.9042795
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "56167",
+          "commune_name": "Plougoumelen",
+          "department_code": "56",
+          "department_name": "Morbihan",
+          "region_code": "53",
+          "region_name": "Bretagne"
+        }
+      },
+      {
+        "situation_id": "261122-001837",
+        "axes_raw": [
+          "A0063"
+        ],
+        "axes_display": [
+          "A63"
+        ],
+        "coordinates": {
+          "latitude": 44.579216,
+          "longitude": -0.8355268
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction",
+          "VehicleObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "33498",
+          "commune_name": "Salles",
+          "department_code": "33",
+          "department_name": "Gironde",
+          "region_code": "75",
+          "region_name": "Nouvelle-Aquitaine"
+        }
+      },
+      {
+        "situation_id": "261122-001888",
+        "axes_raw": [
+          "N0012"
+        ],
+        "axes_display": [
+          "N12"
+        ],
+        "coordinates": {
+          "latitude": 48.791435,
+          "longitude": 2.0559008
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": true,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "78297",
+          "commune_name": "Guyancourt",
+          "department_code": "78",
+          "department_name": "Yvelines",
+          "region_code": "11",
+          "region_name": "Île-de-France"
+        }
+      },
+      {
+        "situation_id": "261123-000017",
+        "axes_raw": [
+          "A0020"
+        ],
+        "axes_display": [
+          "A20"
+        ],
+        "coordinates": {
+          "latitude": 46.004536,
+          "longitude": 1.3378407
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "Accident"
+        ],
+        "categories": [
+          "accident"
+        ],
+        "territorialization": {
+          "commune_code": "87183",
+          "commune_name": "Saint-Sylvestre",
+          "department_code": "87",
+          "department_name": "Haute-Vienne",
+          "region_code": "75",
+          "region_name": "Nouvelle-Aquitaine"
+        }
+      },
+      {
+        "situation_id": "261123-000020",
+        "axes_raw": [],
+        "axes_display": [],
+        "coordinates": {
+          "latitude": 45.682182,
+          "longitude": 6.398267
+        },
+        "source_departments": [],
+        "planned": false,
+        "full_closure": false,
+        "capacity_restriction": false,
+        "record_types": [
+          "GeneralObstruction"
+        ],
+        "categories": [
+          "obstruction"
+        ],
+        "territorialization": {
+          "commune_code": "73011",
+          "commune_name": "Albertville",
+          "department_code": "73",
+          "department_name": "Savoie",
+          "region_code": "84",
+          "region_name": "Auvergne-Rhône-Alpes"
+        }
       }
     ],
     "territorialization": {
       "source": "API Découpage administratif / geo.api.gouv.fr",
       "method": "Recherche géographique commune par latitude/longitude",
-      "situations_total": 243,
-      "situations_with_coordinates": 243,
-      "geocoded_situations_count": 243,
+      "situations_total": 242,
+      "situations_with_coordinates": 242,
+      "geocoded_situations_count": 242,
       "unresolved_situations_count": 0,
       "coordinate_coverage_ratio_pct": 100.0,
       "geocoding_success_ratio_pct": 100.0,
       "department_coverage_ratio_pct": 100.0,
-      "affected_departments_count": 59,
+      "affected_departments_count": 58,
       "affected_regions_count": 12,
       "departments": [
         {
           "code": "78",
           "name": "Yvelines",
-          "situations_count": 7,
-          "unplanned_situations_count": 7,
+          "situations_count": 8,
+          "unplanned_situations_count": 8,
           "full_closure_count": 1,
           "unplanned_full_closure_count": 1,
-          "capacity_restriction_count": 4,
-          "unplanned_capacity_restriction_count": 4
+          "capacity_restriction_count": 5,
+          "unplanned_capacity_restriction_count": 5
         },
         {
           "code": "54",
@@ -17542,33 +17763,16 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
-          "code": "56",
-          "name": "Morbihan",
-          "situations_count": 8,
+          "code": "87",
+          "name": "Haute-Vienne",
+          "situations_count": 4,
           "unplanned_situations_count": 2,
-          "full_closure_count": 1,
-          "capacity_restriction_count": 4,
+          "capacity_restriction_count": 3,
           "unplanned_capacity_restriction_count": 1
         },
         {
           "code": "02",
           "name": "Aisne",
-          "situations_count": 2,
-          "unplanned_situations_count": 2,
-          "capacity_restriction_count": 1,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "14",
-          "name": "Calvados",
-          "situations_count": 2,
-          "unplanned_situations_count": 2,
-          "capacity_restriction_count": 1,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "94",
-          "name": "Val-de-Marne",
           "situations_count": 2,
           "unplanned_situations_count": 2,
           "capacity_restriction_count": 1,
@@ -17591,27 +17795,11 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
-          "code": "87",
-          "name": "Haute-Vienne",
-          "situations_count": 3,
-          "unplanned_situations_count": 1,
-          "capacity_restriction_count": 3,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
           "code": "03",
           "name": "Allier",
           "situations_count": 2,
           "unplanned_situations_count": 1,
           "capacity_restriction_count": 1,
-          "unplanned_capacity_restriction_count": 1
-        },
-        {
-          "code": "19",
-          "name": "Corrèze",
-          "situations_count": 2,
-          "capacity_restriction_count": 2,
-          "unplanned_situations_count": 1,
           "unplanned_capacity_restriction_count": 1
         },
         {
@@ -17632,6 +17820,14 @@
           "unplanned_capacity_restriction_count": 1
         },
         {
+          "code": "14",
+          "name": "Calvados",
+          "situations_count": 1,
+          "unplanned_situations_count": 1,
+          "capacity_restriction_count": 1,
+          "unplanned_capacity_restriction_count": 1
+        },
+        {
           "code": "91",
           "name": "Essonne",
           "situations_count": 1,
@@ -17642,35 +17838,22 @@
         {
           "code": "73",
           "name": "Savoie",
-          "situations_count": 24,
-          "unplanned_situations_count": 24
+          "situations_count": 28,
+          "unplanned_situations_count": 28
         },
         {
           "code": "31",
           "name": "Haute-Garonne",
-          "situations_count": 11,
+          "situations_count": 12,
           "full_closure_count": 2,
           "capacity_restriction_count": 3,
-          "unplanned_situations_count": 6
+          "unplanned_situations_count": 7
         },
         {
           "code": "92",
           "name": "Hauts-de-Seine",
           "situations_count": 4,
           "unplanned_situations_count": 4
-        },
-        {
-          "code": "76",
-          "name": "Seine-Maritime",
-          "situations_count": 6,
-          "capacity_restriction_count": 1,
-          "unplanned_situations_count": 3
-        },
-        {
-          "code": "34",
-          "name": "Hérault",
-          "situations_count": 5,
-          "unplanned_situations_count": 3
         },
         {
           "code": "81",
@@ -17686,11 +17869,32 @@
           "unplanned_situations_count": 3
         },
         {
+          "code": "56",
+          "name": "Morbihan",
+          "situations_count": 8,
+          "unplanned_situations_count": 2,
+          "full_closure_count": 1,
+          "capacity_restriction_count": 3
+        },
+        {
           "code": "44",
           "name": "Loire-Atlantique",
           "situations_count": 5,
           "unplanned_situations_count": 2,
           "capacity_restriction_count": 2
+        },
+        {
+          "code": "76",
+          "name": "Seine-Maritime",
+          "situations_count": 5,
+          "capacity_restriction_count": 1,
+          "unplanned_situations_count": 2
+        },
+        {
+          "code": "34",
+          "name": "Hérault",
+          "situations_count": 4,
+          "unplanned_situations_count": 2
         },
         {
           "code": "32",
@@ -17707,8 +17911,8 @@
           "unplanned_situations_count": 2
         },
         {
-          "code": "63",
-          "name": "Puy-de-Dôme",
+          "code": "15",
+          "name": "Cantal",
           "situations_count": 2,
           "unplanned_situations_count": 2
         },
@@ -17735,15 +17939,8 @@
           "unplanned_situations_count": 1
         },
         {
-          "code": "17",
-          "name": "Charente-Maritime",
-          "situations_count": 2,
-          "capacity_restriction_count": 1,
-          "unplanned_situations_count": 1
-        },
-        {
-          "code": "22",
-          "name": "Côtes-d'Armor",
+          "code": "13",
+          "name": "Bouches-du-Rhône",
           "situations_count": 2,
           "capacity_restriction_count": 1,
           "unplanned_situations_count": 1
@@ -17783,21 +17980,14 @@
           "unplanned_situations_count": 1
         },
         {
-          "code": "86",
-          "name": "Vienne",
-          "situations_count": 2,
-          "capacity_restriction_count": 1,
-          "unplanned_situations_count": 1
-        },
-        {
-          "code": "15",
-          "name": "Cantal",
+          "code": "60",
+          "name": "Oise",
           "situations_count": 1,
           "unplanned_situations_count": 1
         },
         {
-          "code": "60",
-          "name": "Oise",
+          "code": "63",
+          "name": "Puy-de-Dôme",
           "situations_count": 1,
           "unplanned_situations_count": 1
         },
@@ -17808,8 +17998,8 @@
           "unplanned_situations_count": 1
         },
         {
-          "code": "95",
-          "name": "Val-d'Oise",
+          "code": "94",
+          "name": "Val-de-Marne",
           "situations_count": 1,
           "unplanned_situations_count": 1
         },
@@ -17855,8 +18045,20 @@
           "capacity_restriction_count": 2
         },
         {
-          "code": "13",
-          "name": "Bouches-du-Rhône",
+          "code": "17",
+          "name": "Charente-Maritime",
+          "situations_count": 1,
+          "capacity_restriction_count": 1
+        },
+        {
+          "code": "19",
+          "name": "Corrèze",
+          "situations_count": 1,
+          "capacity_restriction_count": 1
+        },
+        {
+          "code": "22",
+          "name": "Côtes-d'Armor",
           "situations_count": 1,
           "capacity_restriction_count": 1
         },
@@ -17884,6 +18086,12 @@
           "capacity_restriction_count": 1
         },
         {
+          "code": "86",
+          "name": "Vienne",
+          "situations_count": 1,
+          "capacity_restriction_count": 1
+        },
+        {
           "code": "90",
           "name": "Territoire de Belfort",
           "situations_count": 1,
@@ -17894,8 +18102,8 @@
         {
           "code": "84",
           "name": "Auvergne-Rhône-Alpes",
-          "situations_count": 41,
-          "unplanned_situations_count": 32
+          "situations_count": 45,
+          "unplanned_situations_count": 36
         },
         {
           "code": "76",
@@ -17906,26 +18114,8 @@
         {
           "code": "11",
           "name": "Île-de-France",
-          "situations_count": 19,
-          "unplanned_situations_count": 19
-        },
-        {
-          "code": "75",
-          "name": "Nouvelle-Aquitaine",
-          "situations_count": 14,
-          "unplanned_situations_count": 6
-        },
-        {
-          "code": "28",
-          "name": "Normandie",
-          "situations_count": 10,
-          "unplanned_situations_count": 6
-        },
-        {
-          "code": "53",
-          "name": "Bretagne",
-          "situations_count": 25,
-          "unplanned_situations_count": 5
+          "situations_count": 18,
+          "unplanned_situations_count": 18
         },
         {
           "code": "27",
@@ -17940,10 +18130,34 @@
           "unplanned_situations_count": 5
         },
         {
+          "code": "53",
+          "name": "Bretagne",
+          "situations_count": 24,
+          "unplanned_situations_count": 4
+        },
+        {
+          "code": "75",
+          "name": "Nouvelle-Aquitaine",
+          "situations_count": 12,
+          "unplanned_situations_count": 4
+        },
+        {
+          "code": "28",
+          "name": "Normandie",
+          "situations_count": 8,
+          "unplanned_situations_count": 4
+        },
+        {
           "code": "32",
           "name": "Hauts-de-France",
           "situations_count": 7,
           "unplanned_situations_count": 3
+        },
+        {
+          "code": "93",
+          "name": "Provence-Alpes-Côte d'Azur",
+          "situations_count": 31,
+          "unplanned_situations_count": 2
         },
         {
           "code": "52",
@@ -17952,35 +18166,29 @@
           "unplanned_situations_count": 2
         },
         {
-          "code": "93",
-          "name": "Provence-Alpes-Côte d'Azur",
-          "situations_count": 30,
-          "unplanned_situations_count": 1
-        },
-        {
           "code": "24",
           "name": "Centre-Val de Loire",
           "situations_count": 1
         }
       ],
       "resolver_stats": {
-        "persistent_entries_loaded": 32310,
-        "persistent_cache_hits": 234,
-        "unique_queries": 9,
-        "api_queries": 9,
-        "resolved": 9,
-        "persistent_entries_added": 9
+        "persistent_entries_loaded": 32319,
+        "persistent_cache_hits": 235,
+        "unique_queries": 7,
+        "api_queries": 7,
+        "resolved": 7,
+        "persistent_entries_added": 7
       },
       "interpretation_guard": "La territorialisation repose uniquement sur les coordonnées explicitement présentes dans le flux DATEX II. Une situation sans coordonnées ou non résolue reste ND ; aucun département n'est inféré artificiellement. Les agrégats territoriaux qualifiés peuvent désormais être utilisés par score_road() comme corroboration territoriale, sous réserve de la couverture observée."
     },
     "geocache": {
       "path": "data/road_geocache.json",
-      "entries_loaded": 32310,
-      "entries_after_run": 32319,
+      "entries_loaded": 32319,
+      "entries_after_run": 32326,
       "entries_loaded_reporting_basis": "cache_size_before_enrichment",
-      "entries_added_this_run": 9,
-      "persistent_cache_hits": 234,
-      "api_queries": 9,
+      "entries_added_this_run": 7,
+      "persistent_cache_hits": 235,
+      "api_queries": 7,
       "interpretation_guard": "Le cache persistant mémorise uniquement les résolutions positives coordonnées→territoire. Les échecs temporaires ne sont pas persistés."
     },
     "health": {
@@ -17989,14 +18197,14 @@
         "url": "https://www.data.gouv.fr/api/1/datasets/r/5f814261-10d8-4b46-bcc1-e847b28a473f",
         "http_status": 200,
         "content_type": "application/xml",
-        "content_bytes": 2270741,
+        "content_bytes": 2250933,
         "final_url": "http://tipi.bison-fute.gouv.fr/bison-fute-ouvert/publicationsDIR/Evenementiel-DIR/grt/RRN/content.xml",
-        "etag": "\"22a615-660e4f11064d8-gzip\"",
-        "last_modified": "Sun, 22 Nov 2026 22:24:33 GMT",
+        "etag": "\"2258b5-660e5c79c6327-gzip\"",
+        "last_modified": "Sun, 22 Nov 2026 23:24:32 GMT",
         "freshness": {
           "basis": "http_last_modified",
-          "timestamp": "2026-11-22T22:24:33+00:00",
-          "age_minutes": 42.42,
+          "timestamp": "2026-11-22T23:24:32+00:00",
+          "age_minutes": 42.28,
           "threshold_applied": false,
           "freshness_status": "OBSERVED"
         },
@@ -18007,12 +18215,12 @@
         "source": "API Découpage administratif / geo.api.gouv.fr",
         "url": "https://geo.api.gouv.fr/communes",
         "resolver_stats": {
-          "persistent_entries_loaded": 32310,
-          "persistent_cache_hits": 234,
-          "unique_queries": 9,
-          "api_queries": 9,
-          "resolved": 9,
-          "persistent_entries_added": 9
+          "persistent_entries_loaded": 32319,
+          "persistent_cache_hits": 235,
+          "unique_queries": 7,
+          "api_queries": 7,
+          "resolved": 7,
+          "persistent_entries_added": 7
         }
       }
     },
