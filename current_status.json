@@ -1,6 +1,6 @@
 {
   "schema_version": "analytics-0.9",
-  "generated_at": "2026-11-23T23:07:41.066210+00:00",
+  "generated_at": "2026-11-24T00:07:26.885934+00:00",
   "national": {
     "level": "N2",
     "label": "Surveillance"
@@ -12,24 +12,24 @@
       "confidence": "élevée",
       "rationale": "Consommation et prévision compatibles avec un fonctionnement national normal.",
       "metrics": {
-        "consumption_mw": 58292.0,
-        "forecast_error_pct": -1.643,
-        "forecast_error_abs_pct": 1.643,
-        "exchange_ratio_pct": -4.755,
-        "observation_time": "2026-11-23T22:45:00+00:00",
-        "slot": "evening",
-        "statistical_z_score": 0.6819
+        "consumption_mw": 55885.0,
+        "forecast_error_pct": -1.548,
+        "forecast_error_abs_pct": 1.548,
+        "exchange_ratio_pct": -5.926,
+        "observation_time": "2026-11-23T23:45:00+00:00",
+        "slot": "morning",
+        "statistical_z_score": 0.6884
       },
       "baseline": {
-        "comparable_slot": "evening",
-        "comparable_count": 88,
+        "comparable_slot": "morning",
+        "comparable_count": 87,
         "forecast_error_abs_pct": {
-          "count": 88,
-          "median": 0.9455,
-          "mean": 1.0491,
-          "stdev": 0.8709,
-          "p90": 2.2229,
-          "p95": 2.9243
+          "count": 87,
+          "median": 0.756,
+          "mean": 0.9523,
+          "stdev": 0.8654,
+          "p90": 1.8664,
+          "p95": 2.4814
         }
       }
     },
@@ -56,8 +56,8 @@
         "availability_delta_h1_points": 0.0,
         "availability_delta_h6_points": 0.0,
         "availability_delta_h24_points": 22.09,
-        "nuclear_production_mw": 44230.0,
-        "production_to_available_capacity_ratio_pct": 74.8494,
+        "nuclear_production_mw": 44184.0,
+        "production_to_available_capacity_ratio_pct": 74.7715,
         "slot": "morning",
         "availability_statistical_z_score": 5.121,
         "unplanned_publications_statistical_z_score": -0.8823,
@@ -115,15 +115,15 @@
       "level": "N1",
       "label": "Vigilance",
       "confidence": "élevée",
-      "rationale": "Indisponibilité nationale au-dessus d'un seuil opérationnel et supérieure au bruit de fond historique du créneau comparable. Concentrations territoriales multi-opérateurs significatives.",
+      "rationale": "Concentrations territoriales multi-opérateurs significatives.",
       "metrics": {
-        "national_down_ratio_pct": 2.1229,
-        "unique_operator_sites_down": 2647,
+        "national_down_ratio_pct": 1.1966,
+        "unique_operator_sites_down": 1492,
         "active_operator_sites_reference": 124690,
         "four_operator_clusters": 13,
         "multi_operator_hotspots_20pct": 0,
         "slot": "morning",
-        "statistical_z_score": 2.8337,
+        "statistical_z_score": 0.1681,
         "by_operator": [
           {
             "operator_code": "bouygues",
@@ -135,9 +135,9 @@
           {
             "operator_code": "free",
             "operator": "Free",
-            "sites_down": 1373,
+            "sites_down": 218,
             "active_sites_reference": 30930,
-            "down_ratio_pct": 4.4391
+            "down_ratio_pct": 0.7048
           },
           {
             "operator_code": "orange",
@@ -169,42 +169,66 @@
       }
     },
     "gas": {
-      "level": "N1",
-      "label": "Vigilance",
+      "level": "N2",
+      "label": "Surveillance",
       "confidence": "élevée",
-      "rationale": "Au moins une limite du réseau NaTran présente un niveau de vigilance orange.",
+      "rationale": "Au moins une limite du réseau NaTran présente une situation de congestion dégradée ou un mécanisme opérationnel équivalent.",
       "metrics": {
-        "observation_date": "2026-11-23",
-        "operational_status": "ORANGE",
+        "observation_date": "2026-11-24",
+        "operational_status": "RED",
         "data_quality": "OK",
         "limits_count": 10,
-        "green_limits_count": 8,
-        "orange_limits_count": 2,
-        "red_limits_count": 0,
+        "green_limits_count": 6,
+        "orange_limits_count": 0,
+        "red_limits_count": 4,
         "violet_limits_count": 0,
         "unknown_limits_count": 0,
         "alerts": [
           {
             "limit": "SN0",
-            "vigilance": "ORANGE",
-            "vigilance_rgb": "FFFF9933",
-            "detection_method": "validated_color",
+            "vigilance": "RED",
+            "vigilance_rgb": "FFFF4D4D",
+            "detection_method": "congestion_mechanism_fallback",
             "application_side": "Amont",
             "small_impact_works_gwh_25c": 20,
             "maintenance": "Non",
-            "interruptible_uioli_sales_stop": "Non",
+            "interruptible_uioli_sales_stop": "Oui",
+            "localized_spread": "Non",
+            "mutualized_restriction": "Non"
+          },
+          {
+            "limit": "SN1",
+            "vigilance": "RED",
+            "vigilance_rgb": "FFFF4D4D",
+            "detection_method": "congestion_mechanism_fallback",
+            "application_side": "Amont",
+            "small_impact_works_gwh_25c": 20,
+            "maintenance": "Non",
+            "interruptible_uioli_sales_stop": "Oui",
+            "localized_spread": "Non",
+            "mutualized_restriction": "Non"
+          },
+          {
+            "limit": "SN3",
+            "vigilance": "RED",
+            "vigilance_rgb": "FFFF4D4D",
+            "detection_method": "congestion_mechanism_fallback",
+            "application_side": "Amont",
+            "small_impact_works_gwh_25c": 55,
+            "maintenance": "Oui",
+            "interruptible_uioli_sales_stop": "Oui",
             "localized_spread": "Non",
             "mutualized_restriction": "Non"
           },
           {
             "limit": "SN4",
-            "vigilance": "ORANGE",
-            "vigilance_rgb": "FFFF9933",
-            "detection_method": "validated_color",
+            "vigilance": "RED",
+            "vigilance_rgb": "FFFF4D4D",
+            "detection_method": "congestion_mechanism_fallback",
             "application_side": "Amont",
             "small_impact_works_gwh_25c": 55,
             "maintenance": "Oui",
-            "interruptible_uioli_sales_stop": "Non",
+            "interruptible_uioli_sales_stop": "Oui",
             "localized_spread": "Non",
             "mutualized_restriction": "Non"
           }
@@ -218,19 +242,19 @@
       "confidence": "élevée",
       "rationale": "Des concentrations territoriales significatives de ruptures sont observées. La dégradation affecte plusieurs territoires à un niveau élevé.",
       "metrics": {
-        "eligible_stations": 9800,
-        "stations_with_any_shortage": 453,
-        "national_shortage_ratio_pct": 4.6224,
-        "diesel_shortage_ratio_pct": 2.8788,
-        "petrol_shortage_ratio_pct": 3.7946,
+        "eligible_stations": 9805,
+        "stations_with_any_shortage": 430,
+        "national_shortage_ratio_pct": 4.3855,
+        "diesel_shortage_ratio_pct": 2.8723,
+        "petrol_shortage_ratio_pct": 3.5439,
         "departments_with_shortage": 87,
         "slot": "morning",
-        "statistical_z_score": -1.7859,
+        "statistical_z_score": -1.8677,
         "significant_departments": [
           {
             "dept_code": "75",
-            "shortage_ratio_pct": 25.5319,
-            "stations_with_any_shortage": 12,
+            "shortage_ratio_pct": 27.6596,
+            "stations_with_any_shortage": 13,
             "eligible_stations": 47
           },
           {
@@ -247,15 +271,9 @@
           },
           {
             "dept_code": "67",
-            "shortage_ratio_pct": 16.2162,
-            "stations_with_any_shortage": 24,
+            "shortage_ratio_pct": 15.5405,
+            "stations_with_any_shortage": 23,
             "eligible_stations": 148
-          },
-          {
-            "dept_code": "41",
-            "shortage_ratio_pct": 12.5,
-            "stations_with_any_shortage": 8,
-            "eligible_stations": 64
           },
           {
             "dept_code": "25",
@@ -270,23 +288,17 @@
             "eligible_stations": 82
           },
           {
-            "dept_code": "60",
-            "shortage_ratio_pct": 10.3448,
-            "stations_with_any_shortage": 12,
-            "eligible_stations": 116
-          },
-          {
-            "dept_code": "92",
-            "shortage_ratio_pct": 10.2941,
+            "dept_code": "41",
+            "shortage_ratio_pct": 10.9375,
             "stations_with_any_shortage": 7,
-            "eligible_stations": 68
+            "eligible_stations": 64
           }
         ],
         "severe_departments": [
           {
             "dept_code": "75",
-            "shortage_ratio_pct": 25.5319,
-            "stations_with_any_shortage": 12,
+            "shortage_ratio_pct": 27.6596,
+            "stations_with_any_shortage": 13,
             "eligible_stations": 47
           },
           {
@@ -303,8 +315,8 @@
           },
           {
             "dept_code": "67",
-            "shortage_ratio_pct": 16.2162,
-            "stations_with_any_shortage": 24,
+            "shortage_ratio_pct": 15.5405,
+            "stations_with_any_shortage": 23,
             "eligible_stations": 148
           }
         ]
@@ -323,31 +335,31 @@
       }
     },
     "rail": {
-      "level": "N1",
-      "label": "Vigilance",
+      "level": "N0",
+      "label": "Rien à signaler",
       "confidence": "élevée",
-      "rationale": "Les annulations ou retards dépassent les seuils opérationnels et sont supérieurs à la référence historique du créneau comparable.",
+      "rationale": "Les annulations ou retards présentent une anomalie statistique mais restent sous les seuils opérationnels de vigilance.",
       "metrics": {
-        "collected_at": "2026-11-23T23:07:19.403489+00:00",
+        "collected_at": "2026-11-24T00:07:05.595753+00:00",
         "slot": "morning",
-        "trips_count": 108,
-        "scheduled_trips": 54,
-        "added_trips": 54,
+        "trips_count": 52,
+        "scheduled_trips": 17,
+        "added_trips": 35,
         "canceled_trips": 0,
         "canceled_ratio_pct": 0.0,
-        "trips_delay_ge_15min": 9,
-        "trips_delay_ge_15min_ratio_pct": 8.3333,
-        "trips_delay_ge_30min": 4,
-        "trips_delay_ge_30min_ratio_pct": 3.7037,
-        "trips_delay_ge_60min": 4,
-        "trips_delay_ge_60min_ratio_pct": 3.7037,
-        "average_max_delay_seconds": 377.2,
-        "maximum_delay_seconds": 7800,
-        "active_service_alerts": 251,
+        "trips_delay_ge_15min": 1,
+        "trips_delay_ge_15min_ratio_pct": 1.9231,
+        "trips_delay_ge_30min": 1,
+        "trips_delay_ge_30min_ratio_pct": 1.9231,
+        "trips_delay_ge_60min": 1,
+        "trips_delay_ge_60min_ratio_pct": 1.9231,
+        "average_max_delay_seconds": 155.8,
+        "maximum_delay_seconds": 4800,
+        "active_service_alerts": 254,
         "qualified_operational_alerts": 0,
         "canceled_statistical_z_score": -0.7349,
-        "delay_30_statistical_z_score": 1.4656,
-        "delay_60_statistical_z_score": 5.9635
+        "delay_30_statistical_z_score": -0.1305,
+        "delay_60_statistical_z_score": 2.5576
       },
       "baseline": {
         "comparable_slot": "morning",
@@ -384,10 +396,10 @@
       "confidence": "élevée",
       "rationale": "Les indicateurs de circulation, de fermeture et de restriction restent sous les seuils opérationnels provisoires.",
       "metrics": {
-        "collected_at": "2026-11-23T23:07:21.064504+00:00",
+        "collected_at": "2026-11-24T00:07:07.222740+00:00",
         "slot": "morning",
-        "congestion_ratio_pct": 0.4391,
-        "unplanned_situations_count_context_only": 96,
+        "congestion_ratio_pct": 1.2746,
+        "unplanned_situations_count_context_only": 89,
         "unplanned_full_closure_locations_count": 5,
         "unplanned_capacity_restriction_locations_count": 23,
         "departments_with_unplanned_full_closure": 5,
@@ -395,8 +407,8 @@
         "department_coverage_ratio_pct": 100.0,
         "affected_departments_count": 62,
         "affected_regions_count": 12,
-        "recognized_ratio_pct": 83.1584,
-        "unknown_ratio_pct": 16.8416,
+        "recognized_ratio_pct": 85.9425,
+        "unknown_ratio_pct": 14.0575,
         "congestion_signal_level": 0,
         "closure_magnitude_signal_level": 0,
         "closure_territorial_signal_level": 0,
@@ -404,7 +416,7 @@
         "restriction_magnitude_signal_level": 0,
         "restriction_territorial_signal_level": 0,
         "restriction_family_level": 0,
-        "congestion_statistical_z_score": -1.2651,
+        "congestion_statistical_z_score": -1.1006,
         "closures_statistical_z_score": -0.6184,
         "restrictions_statistical_z_score": -1.1375,
         "closure_departments_statistical_z_score": 0.0393,
